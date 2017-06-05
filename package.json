@@ -1,0 +1,29 @@
+{
+  "name": "nintendo-switch-eshop",
+  "version": "1.0.3",
+  "description": "Crawler for Nintendo Switch eShop.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "eshop",
+    "switch",
+    "nintendo",
+    "crawler",
+    "lib"
+  ],
+  "author": "lmmfranco",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lmmfranco/nintendo-switch-eshop.git"
+  },  
+  "dependencies": {
+    "array-unique-x": "^1.0.5",
+    "country-data": "0.0.31",
+    "q": "^1.5.0",
+    "request": "^2.81.0",
+    "xml2js": "^0.4.17"
+  }
+}
