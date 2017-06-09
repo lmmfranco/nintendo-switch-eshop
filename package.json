@@ -1,10 +1,11 @@
 {
   "name": "nintendo-switch-eshop",
-  "version": "1.0.3",
-  "description": "Crawler for Nintendo Switch eShop.",
+  "version": "1.0.5",
+  "description": "Unofficial API lib for Nintendo Switch eShop game listing and pricing information.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "jsdoc": "jsdoc2md index.js > DOC.MD"
   },
   "keywords": [
     "eshop",
@@ -18,12 +19,15 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lmmfranco/nintendo-switch-eshop.git"
-  },  
+  },
   "dependencies": {
     "array-unique-x": "^1.0.5",
     "country-data": "0.0.31",
     "q": "^1.5.0",
     "request": "^2.81.0",
     "xml2js": "^0.4.17"
+  },
+  "devDependencies": {
+    "jsdoc-to-markdown": "^3.0.0"
   }
 }
