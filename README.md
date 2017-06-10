@@ -1,14 +1,14 @@
 ## About
-**nitendo-switch-eshop** is a npm lib module written to extract Nintendo Switch's eShop game and pricing information.
+**nintendo-switch-eshop** is a npm lib module written to extract Nintendo Switch's eShop game and pricing information.
 
 ## Installation
 To install it just type the following at your command line
 ```shell
-npm install --save nitendo-switch-eshop
+npm install --save nintendo-switch-eshop
 ```
 And require it in your node module as follows:
 ```javascript
-const SwitchEshop = require('nitendo-switch-eshop');
+const SwitchEshop = require('nintendo-switch-eshop');
 ```
 
 
