@@ -236,8 +236,7 @@ function getGamesEurope() {
         request.get({
             url: GET_GAMES_EU_URL,
             qs: {
-                fl: "product_code_txt,title,date_from,nsuid_txt,image_url_sq_s",
-                fq: "type:GAME AND (system_type:\"nintendoswitch_gamecard\" OR system_type:\"nintendoswitch_downloadsoftware\" OR system_type:\"nintendoswitch_digitaldistribution\") AND product_code_txt:*",
+                fq: "type:GAME AND system_type:nintendoswitch* AND product_code_txt:*",
                 q: "*",
                 rows: "9999",
                 sort: "sorting_title asc",
