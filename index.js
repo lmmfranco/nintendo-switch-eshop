@@ -7,7 +7,9 @@ const Q = require("q");
 
 const GET_GAMES_US_URL = "http://www.nintendo.com/json/content/get/filter/game?system=switch&sort=title&direction=asc&shop=ncom";
 const GET_GAMES_EU_URL = "http://search.nintendo-europe.com/en/select";
-const GET_GAMES_JP_URL = "http://search1.nintendo.co.jp/search/softwareXml.php?hard%5B15%5D=switch_all&hard%5B16%5D=switch&hard%5B17%5D=switch_dl&release_mode=&SearchWindow=1&mode=mf&";
+const GET_GAMES_JP_CURRENT = "https://www.nintendo.co.jp/data/software/xml-system/switch-onsale.xml";
+const GET_GAMES_JP_COMING = "https://www.nintendo.co.jp/data/software/xml-system/switch-coming.xml";
+const GET_GAMES_JP_ALT = "https://www.nintendo.co.jp/api/search/title?category=products&pf=switch&q=*&count=25";
 const GET_PRICE_URL = "https://api.ec.nintendo.com/v1/price?lang=en";
 
 const GAME_LIST_LIMIT = 200;
@@ -100,19 +102,20 @@ const GAME_CHECK_CODE_JP = "70010000000039";
  */
 
 /**
- * @typedef {Object} GameJP
- * @property {string[]} Row
- * @property {string[]} TitleName A single item array containing the game title
- * @property {string[]} LinkUrl A single item array containing the game url
- * @property {string[]} Imgpath A single item array containing the game thumbnail url
- * @property {string[]} ImgpathSp A single item array containing the game cover art url
- * @property {string[]} Detail A single item array containing the HTML markup for game details
- * @property {string[]} HardId
- * @property {string[]} TrialFlg
- * @property {string[]} TermType
- * @property {string[]} MediaType
- * @property {string[]} SoftType
- */
+* @typedef {Object} GameJP
+* @property {string[]} LinkURL A single item array containing the game url
+* @property {string[]} LinkTarget
+* @property {string[]} ScreenshotImgURL A single item array containing the game thumbnail url
+* @property {string[]} ScreenshotImgURLComing 
+* @property {string[]} TitleName A single item array containing the game title
+* @property {string[]} TitleNameRuby
+* @property {string[]} SoftType
+* @property {string[]} SalesDate
+* @property {string[]} SalesDateStr
+* @property {string[]} MakerName
+* @property {string[]} Hard 
+* @property {string[]} Memo
+*/
 
 /**
  * @typedef {Object} EShop
@@ -121,6 +124,21 @@ const GAME_CHECK_CODE_JP = "70010000000039";
  * @property {string} currency
  * @property {Region} region
  */
+
+/**
+ * @typedef {Object} PriceResponse
+ * @property {PriceError} error
+ * @property {boolean} personalized
+ * @property {string} country
+ * @property {TitleData[]} prices
+ */
+
+/**
+ * @typedef {Object} TitleData
+ * @property {number} title_id
+ * @property {string} sales_status
+ * @property {PriceData[]} regular_price
+ */ 
 
 /**
  * @typedef {Object} PriceError
@@ -133,22 +151,6 @@ const GAME_CHECK_CODE_JP = "70010000000039";
  * @property {string} amount
  * @property {string} currency
  * @property {string} raw_value
- */
-
-/**
- * @typedef {Object} TitleData
- * @property {number} title_id
- * @property {string} sales_status
- * @property {PriceData[]} regular_price
- */  
-
-
-/**
- * @typedef {Object} PriceResponse
- * @property {PriceError} error
- * @property {boolean} personalized
- * @property {string} country
- * @property {TitleData[]} prices
  */
 
 /**
@@ -195,33 +197,24 @@ function getGamesAmerica(offset, games) {
 }
 
 /**
- * Fetches all games on japanese eshop. Paginates every 16 games.
+ * Fetches all games on japanese eshop.
  * @returns {Promise<GameJP[]>} Promise containing all the games.
  */
-function getGamesJapan(page, games) {
-    page = page || 1;
-    games = games || [];
-
+function getGamesJapan() {
     return new Promise((resolve, reject) => {
-        request.get({
-            url: GET_GAMES_JP_URL,
-            qs: {
-                page: page,
-                "_": new Date().getTime(),
-            }
-        }, (err, res, body) => {
+      request.get(GET_GAMES_JP_CURRENT, (err, res, body1) => {
             if (err) return reject(err);
 
-            xml2js.parseString(body, function (err, result) {
-                let response = result;
-                let totalGameCount = response.Software.TotalCount[0];
-                let accumulatedGames = games.concat(response.Software.TotalInfolist[0].TitleInfo);
+            request.get(GET_GAMES_JP_COMING, (err, res, body2) => {
+                if (err) return reject(err);
 
-                if(accumulatedGames.length < totalGameCount) {
-                    getGamesJapan(page + 1, accumulatedGames).then(resolve).catch(reject);
-                } else {
-                    return resolve(accumulatedGames);
-                }
+                xml2js.parseString(body1, (err, result1) => {
+                    let currentGames = result1.TitleInfoList.TitleInfo;
+                    xml2js.parseString(body2, (err, result2) => {
+                        let comingGames = result2.TitleInfoList.TitleInfo;
+                        return resolve(currentGames.concat(comingGames));
+                    });
+                });
             });
         });
     });
@@ -393,7 +386,7 @@ function parseGameCode(game, region) {
             codeParse = GAME_CODE_REGEX_EU.exec(game.product_code_txt[0]);
             break;
         case Region.ASIA:
-            codeParse = GAME_CODE_REGEX_JP.exec(game.Imgpath[0]);
+            codeParse = GAME_CODE_REGEX_JP.exec(game.ScreenshotImgURL[0]);
             break;
         default:
         case Region.AMERICAS:
@@ -416,7 +409,7 @@ function parseNSUID(game, region) {
         case Region.EUROPE:
             return game.nsuid_txt ? game.nsuid_txt[0] : null;
         case Region.ASIA:
-            nsuidParse = NSUID_REGEX_JP.exec(game.LinkUrl[0]);
+            nsuidParse = NSUID_REGEX_JP.exec(game.LinkURL[0]);
             return (nsuidParse && nsuidParse.length > 0) ? nsuidParse[0] : null;
         default:
         case Region.AMERICAS:

@@ -1,6 +1,6 @@
 {
   "name": "nintendo-switch-eshop",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Unofficial API lib for Nintendo Switch eShop game listing and pricing information.",
   "main": "index.js",
   "scripts": {

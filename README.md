@@ -1,3 +1,8 @@
+<p>
+    <a href="https://www.npmjs.com/package/nintendo-switch-eshop"><img src="https://img.shields.io/npm/v/nintendo-switch-eshop.svg?maxAge=3600" alt="NPM version" /></a>
+    <a href="https://www.npmjs.com/package/nintendo-switch-eshop"><img src="https://img.shields.io/npm/dt/nintendo-switch-eshop.svg?maxAge=3600" alt="NPM downloads" /></a>
+</p>
+
 ## About
 **nintendo-switch-eshop** is a npm lib module written to extract Nintendo Switch's eShop game and pricing information.
 
@@ -11,7 +16,6 @@ And require it in your node module as follows:
 const SwitchEshop = require('nintendo-switch-eshop');
 ```
 
-
 ## Functions
 
 <dl>
@@ -19,7 +23,7 @@ const SwitchEshop = require('nintendo-switch-eshop');
 <dd><p>Fetches all games on american eshops. Paginates every 200 games.</p>
 </dd>
 <dt><a href="#getGamesJapan">getGamesJapan()</a> ⇒ <code>Promise&lt;Array&lt;GameJP&gt;&gt;</code></dt>
-<dd><p>Fetches all games on japanese eshop. Paginates every 16 games.</p>
+<dd><p>Fetches all games on japanese eshop.</p>
 </dd>
 <dt><a href="#getGamesEurope">getGamesEurope()</a> ⇒ <code>Promise&lt;Array&lt;GameEU&gt;&gt;</code></dt>
 <dd><p>Fetches all games on european eshop. Paginates every 9999 games.</p>
@@ -68,13 +72,13 @@ This method will launch several requests at nintendo web services, so don&#39;t 
 <dd></dd>
 <dt><a href="#EShop">EShop</a> : <code>Object</code></dt>
 <dd></dd>
-<dt><a href="#PriceError">PriceError</a> : <code>Object</code></dt>
-<dd></dd>
-<dt><a href="#PriceData">PriceData</a> : <code>Object</code></dt>
+<dt><a href="#PriceResponse">PriceResponse</a> : <code>Object</code></dt>
 <dd></dd>
 <dt><a href="#TitleData">TitleData</a> : <code>Object</code></dt>
 <dd></dd>
-<dt><a href="#PriceResponse">PriceResponse</a> : <code>Object</code></dt>
+<dt><a href="#PriceError">PriceError</a> : <code>Object</code></dt>
+<dd></dd>
+<dt><a href="#PriceData">PriceData</a> : <code>Object</code></dt>
 <dd></dd>
 </dl>
 
@@ -83,6 +87,7 @@ This method will launch several requests at nintendo web services, so don&#39;t 
 ## Region : <code>enum</code>
 Region code constant.
 
+**Kind**: global enum  
 **Read only**: true  
 **Properties**
 
@@ -97,24 +102,28 @@ Region code constant.
 ## getGamesAmerica() ⇒ <code>Promise&lt;Array&lt;GameUS&gt;&gt;</code>
 Fetches all games on american eshops. Paginates every 200 games.
 
+**Kind**: global function  
 **Returns**: <code>Promise&lt;Array&lt;GameUS&gt;&gt;</code> - Promise containing all the games.  
 <a name="getGamesJapan"></a>
 
 ## getGamesJapan() ⇒ <code>Promise&lt;Array&lt;GameJP&gt;&gt;</code>
-Fetches all games on japanese eshop. Paginates every 16 games.
+Fetches all games on japanese eshop.
 
+**Kind**: global function  
 **Returns**: <code>Promise&lt;Array&lt;GameJP&gt;&gt;</code> - Promise containing all the games.  
 <a name="getGamesEurope"></a>
 
 ## getGamesEurope() ⇒ <code>Promise&lt;Array&lt;GameEU&gt;&gt;</code>
 Fetches all games on european eshop. Paginates every 9999 games.
 
+**Kind**: global function  
 **Returns**: <code>Promise&lt;Array&lt;GameEU&gt;&gt;</code> - Promise containing all the games.  
 <a name="getShopsByCountryCodes"></a>
 
 ## getShopsByCountryCodes(countryCodes, gamecode, region) ⇒ <code>Promise&lt;Array&lt;Eshop&gt;&gt;</code>
 Gets all active eshops given a list of countries.
 
+**Kind**: global function  
 **Returns**: <code>Promise&lt;Array&lt;Eshop&gt;&gt;</code> - A list of shop objects with country code, name and default currency.  
 
 | Param | Type | Description |
@@ -129,6 +138,7 @@ Gets all active eshops given a list of countries.
 Gets all active eshops on american countries.
 This method will launch several requests at nintendo web services, so don't abuse it.
 
+**Kind**: global function  
 **Returns**: <code>Promise&lt;Array&lt;Eshop&gt;&gt;</code> - A list of shop objects with country code, name and default currency.  
 <a name="getShopsEurope"></a>
 
@@ -137,6 +147,7 @@ Gets all active eshops on european countries.
 Please note that South Africa and Oceania countries are included.
 This method will launch several requests at nintendo web services, so don't abuse it.
 
+**Kind**: global function  
 **Returns**: <code>Promise&lt;Array&lt;Eshop&gt;&gt;</code> - A list of shop objects with country code, name and default currency.  
 <a name="getShopsAsia"></a>
 
@@ -144,6 +155,7 @@ This method will launch several requests at nintendo web services, so don't abus
 Gets all active eshops on asian countries.
 This method will launch several requests at nintendo web services, so don't abuse it.
 
+**Kind**: global function  
 **Returns**: <code>Promise&lt;Array&lt;Eshop&gt;&gt;</code> - A list of shop objects with country code, name and default currency.  
 <a name="getActiveShops"></a>
 
@@ -151,12 +163,14 @@ This method will launch several requests at nintendo web services, so don't abus
 Gets all active eshops.
 This method will launch several requests at nintendo web services, so don't abuse it.
 
+**Kind**: global function  
 **Returns**: <code>Promise&lt;Array&lt;Eshop&gt;&gt;</code> - A list of shop objects with country code, name and default currency.  
 <a name="getPrices"></a>
 
 ## getPrices(country, gameIds) ⇒ [<code>Promise&lt;PriceResponse&gt;</code>](#PriceResponse)
 Get pricing information for the requested games. Paginates every 50 games.
 
+**Kind**: global function  
 **Returns**: [<code>Promise&lt;PriceResponse&gt;</code>](#PriceResponse) - A promise containing the pricing information.  
 
 | Param | Type | Description |
@@ -169,6 +183,7 @@ Get pricing information for the requested games. Paginates every 50 games.
 ## parseGameCode(game, region) ⇒ <code>string</code>
 Parses the game code to extract the cross-region protion.
 
+**Kind**: global function  
 **Returns**: <code>string</code> - The 4-digit resulting game code.  
 
 | Param | Type | Description |
@@ -181,6 +196,7 @@ Parses the game code to extract the cross-region protion.
 ## parseNSUID(game, region) ⇒ <code>string</code>
 Extracts NSUID information from the game object.
 
+**Kind**: global function  
 **Returns**: <code>string</code> - The 14-digit NSUID.  
 
 | Param | Type | Description |
@@ -191,6 +207,7 @@ Extracts NSUID information from the game object.
 <a name="Categories"></a>
 
 ## Categories : <code>Object</code>
+**Kind**: global typedef  
 **Properties**
 
 | Name | Type |
@@ -200,6 +217,7 @@ Extracts NSUID information from the game object.
 <a name="GameUS"></a>
 
 ## GameUS : <code>Object</code>
+**Kind**: global typedef  
 **Properties**
 
 | Name | Type | Description |
@@ -225,6 +243,7 @@ Extracts NSUID information from the game object.
 <a name="GameEU"></a>
 
 ## GameEU : <code>Object</code>
+**Kind**: global typedef  
 **Properties**
 
 | Name | Type | Description |
@@ -279,25 +298,28 @@ Extracts NSUID information from the game object.
 <a name="GameJP"></a>
 
 ## GameJP : <code>Object</code>
+**Kind**: global typedef  
 **Properties**
 
 | Name | Type | Description |
 | --- | --- | --- |
-| Row | <code>Array&lt;string&gt;</code> |  |
+| LinkURL | <code>Array&lt;string&gt;</code> | A single item array containing the game url |
+| LinkTarget | <code>Array&lt;string&gt;</code> |  |
+| ScreenshotImgURL | <code>Array&lt;string&gt;</code> | A single item array containing the game thumbnail url |
+| ScreenshotImgURLComing | <code>Array&lt;string&gt;</code> |  |
 | TitleName | <code>Array&lt;string&gt;</code> | A single item array containing the game title |
-| LinkUrl | <code>Array&lt;string&gt;</code> | A single item array containing the game url |
-| Imgpath | <code>Array&lt;string&gt;</code> | A single item array containing the game thumbnail url |
-| ImgpathSp | <code>Array&lt;string&gt;</code> | A single item array containing the game cover art url |
-| Detail | <code>Array&lt;string&gt;</code> | A single item array containing the HTML markup for game details |
-| HardId | <code>Array&lt;string&gt;</code> |  |
-| TrialFlg | <code>Array&lt;string&gt;</code> |  |
-| TermType | <code>Array&lt;string&gt;</code> |  |
-| MediaType | <code>Array&lt;string&gt;</code> |  |
+| TitleNameRuby | <code>Array&lt;string&gt;</code> |  |
 | SoftType | <code>Array&lt;string&gt;</code> |  |
+| SalesDate | <code>Array&lt;string&gt;</code> |  |
+| SalesDateStr | <code>Array&lt;string&gt;</code> |  |
+| MakerName | <code>Array&lt;string&gt;</code> |  |
+| Hard | <code>Array&lt;string&gt;</code> |  |
+| Memo | <code>Array&lt;string&gt;</code> |  |
 
 <a name="EShop"></a>
 
 ## EShop : <code>Object</code>
+**Kind**: global typedef  
 **Properties**
 
 | Name | Type |
@@ -307,9 +329,35 @@ Extracts NSUID information from the game object.
 | currency | <code>string</code> | 
 | region | [<code>Region</code>](#Region) | 
 
+<a name="PriceResponse"></a>
+
+## PriceResponse : <code>Object</code>
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type |
+| --- | --- |
+| error | [<code>PriceError</code>](#PriceError) | 
+| personalized | <code>boolean</code> | 
+| country | <code>string</code> | 
+| prices | [<code>Array&lt;TitleData&gt;</code>](#TitleData) | 
+
+<a name="TitleData"></a>
+
+## TitleData : <code>Object</code>
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type |
+| --- | --- |
+| title_id | <code>number</code> | 
+| sales_status | <code>string</code> | 
+| regular_price | [<code>Array&lt;PriceData&gt;</code>](#PriceData) | 
+
 <a name="PriceError"></a>
 
 ## PriceError : <code>Object</code>
+**Kind**: global typedef  
 **Properties**
 
 | Name | Type |
@@ -320,6 +368,7 @@ Extracts NSUID information from the game object.
 <a name="PriceData"></a>
 
 ## PriceData : <code>Object</code>
+**Kind**: global typedef  
 **Properties**
 
 | Name | Type |
@@ -328,26 +377,4 @@ Extracts NSUID information from the game object.
 | currency | <code>string</code> | 
 | raw_value | <code>string</code> | 
 
-<a name="TitleData"></a>
-
-## TitleData : <code>Object</code>
-**Properties**
-
-| Name | Type |
-| --- | --- |
-| title_id | <code>number</code> | 
-| sales_status | <code>string</code> | 
-| regular_price | [<code>Array&lt;PriceData&gt;</code>](#PriceData) | 
-
-<a name="PriceResponse"></a>
-
-## PriceResponse : <code>Object</code>
-**Properties**
-
-| Name | Type |
-| --- | --- |
-| error | [<code>PriceError</code>](#PriceError) | 
-| personalized | <code>boolean</code> | 
-| country | <code>string</code> | 
-| prices | [<code>Array&lt;TitleData&gt;</code>](#TitleData) | 
 

@@ -82,17 +82,18 @@ declare namespace SwitchEshop {
     }
 
     export interface GameJP {
-        Row: string[];
+        LinkURL: string[];
+        LinkTarget: string[];
+        ScreenshotImgURL: string[];
+        ScreenshotImgURLComing: string[];
         TitleName: string[];
-        LinkUrl: string[];
-        Imgpath: string[];
-        ImgpathSp: string[];
-        Detail: string[];
-        HardId: string[];
-        TrialFlg: string[];
-        TermType: string[];
-        MediaType: string[];
+        TitleNameRuby: string[];
         SoftType: string[];
+        SalesDate: string[];
+        SalesDateStr: string[];
+        MakerName: string[];
+        Hard: string[];
+        Memo: string[];
     }
 
     export type Game = GameUS | GameEU | GameJP;
