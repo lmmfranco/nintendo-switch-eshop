@@ -130,12 +130,17 @@ declare namespace SwitchEshop {
         prices: TitleData[];
     }
 
+    export interface RequestOptions {
+        locale: string;
+        limit: number;
+    }
+
     export interface IExports {
         Region: Region,
         parseGameCode(game: Game, region: Region): string,
         parseNSUID(game: Game, region: Region): string,
-        getGamesAmerica(): Promise<GameUS[]>,
-        getGamesEurope(): Promise<GameEU[]>,
+        getGamesAmerica(options?: RequestOptions): Promise<GameUS[]>,
+        getGamesEurope(options?: RequestOptions): Promise<GameEU[]>,
         getGamesJapan(): Promise<GameJP[]>,
         getPrices(country: string, gameIds: string | string[]): Promise<PriceResponse>,
         getShopsByCountryCodes(countryCodes: string[], gamecode: string, region: Region): Promise<EShop[]>,

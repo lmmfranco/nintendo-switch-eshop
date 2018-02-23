@@ -19,13 +19,13 @@ const SwitchEshop = require('nintendo-switch-eshop');
 ## Functions
 
 <dl>
-<dt><a href="#getGamesAmerica">getGamesAmerica()</a> ⇒ <code>Promise&lt;Array&lt;GameUS&gt;&gt;</code></dt>
+<dt><a href="#getGamesAmerica">getGamesAmerica([options])</a> ⇒ <code>Promise&lt;Array&lt;GameUS&gt;&gt;</code></dt>
 <dd><p>Fetches all games on american eshops. Paginates every 200 games.</p>
 </dd>
 <dt><a href="#getGamesJapan">getGamesJapan()</a> ⇒ <code>Promise&lt;Array&lt;GameJP&gt;&gt;</code></dt>
 <dd><p>Fetches all games on japanese eshop.</p>
 </dd>
-<dt><a href="#getGamesEurope">getGamesEurope()</a> ⇒ <code>Promise&lt;Array&lt;GameEU&gt;&gt;</code></dt>
+<dt><a href="#getGamesEurope">getGamesEurope([options])</a> ⇒ <code>Promise&lt;Array&lt;GameEU&gt;&gt;</code></dt>
 <dd><p>Fetches all games on european eshop. Paginates every 9999 games.</p>
 </dd>
 <dt><a href="#getShopsByCountryCodes">getShopsByCountryCodes(countryCodes, gamecode, region)</a> ⇒ <code>Promise&lt;Array&lt;Eshop&gt;&gt;</code></dt>
@@ -80,6 +80,8 @@ This method will launch several requests at nintendo web services, so don&#39;t 
 <dd></dd>
 <dt><a href="#PriceData">PriceData</a> : <code>Object</code></dt>
 <dd></dd>
+<dt><a href="#RequestOptions">RequestOptions</a> : <code>Object</code></dt>
+<dd></dd>
 </dl>
 
 <a name="Region"></a>
@@ -99,25 +101,35 @@ Region code constant.
 
 <a name="getGamesAmerica"></a>
 
-## getGamesAmerica() ⇒ <code>Promise&lt;Array&lt;GameUS&gt;&gt;</code>
+## getGamesAmerica([options]) ⇒ <code>Promise.&lt;Array.&lt;GameUS&gt;&gt;</code>
 Fetches all games on american eshops. Paginates every 200 games.
 
 **Kind**: global function  
-**Returns**: <code>Promise&lt;Array&lt;GameUS&gt;&gt;</code> - Promise containing all the games.  
+**Returns**: <code>Promise.&lt;Array.&lt;GameUS&gt;&gt;</code> - Promise containing all the games.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [options] | [<code>RequestOptions</code>](#RequestOptions) | Request options (Optional) |
+
 <a name="getGamesJapan"></a>
 
-## getGamesJapan() ⇒ <code>Promise&lt;Array&lt;GameJP&gt;&gt;</code>
+## getGamesJapan() ⇒ <code>Promise.&lt;Array.&lt;GameJP&gt;&gt;</code>
 Fetches all games on japanese eshop.
 
 **Kind**: global function  
-**Returns**: <code>Promise&lt;Array&lt;GameJP&gt;&gt;</code> - Promise containing all the games.  
+**Returns**: <code>Promise.&lt;Array.&lt;GameJP&gt;&gt;</code> - Promise containing all the games.  
 <a name="getGamesEurope"></a>
 
-## getGamesEurope() ⇒ <code>Promise&lt;Array&lt;GameEU&gt;&gt;</code>
+## getGamesEurope([options]) ⇒ <code>Promise.&lt;Array.&lt;GameEU&gt;&gt;</code>
 Fetches all games on european eshop. Paginates every 9999 games.
 
 **Kind**: global function  
-**Returns**: <code>Promise&lt;Array&lt;GameEU&gt;&gt;</code> - Promise containing all the games.  
+**Returns**: <code>Promise.&lt;Array.&lt;GameEU&gt;&gt;</code> - Promise containing all the games.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [options] | [<code>RequestOptions</code>](#RequestOptions) | Request options (Optional) |
+
 <a name="getShopsByCountryCodes"></a>
 
 ## getShopsByCountryCodes(countryCodes, gamecode, region) ⇒ <code>Promise&lt;Array&lt;Eshop&gt;&gt;</code>
@@ -377,4 +389,14 @@ Extracts NSUID information from the game object.
 | currency | <code>string</code> | 
 | raw_value | <code>string</code> | 
 
+<a name="RequestOptions"></a>
+
+## RequestOptions : <code>Object</code>
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| locale | <code>string</code> | Game information locale. (EU Only) |
+| limit | <code>number</code> | Game count limit |
 

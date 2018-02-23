@@ -6,11 +6,12 @@ const regions = require("country-data").regions;
 const Q = require("q");
 
 const GET_GAMES_US_URL = "http://www.nintendo.com/json/content/get/filter/game?system=switch&sort=title&direction=asc&shop=ncom";
-const GET_GAMES_EU_URL = "http://search.nintendo-europe.com/en/select";
+const GET_GAMES_EU_URL = "http://search.nintendo-europe.com/{locale}/select";
 const GET_GAMES_JP_CURRENT = "https://www.nintendo.co.jp/data/software/xml-system/switch-onsale.xml";
 const GET_GAMES_JP_COMING = "https://www.nintendo.co.jp/data/software/xml-system/switch-coming.xml";
 const GET_GAMES_JP_ALT = "https://www.nintendo.co.jp/api/search/title?category=products&pf=switch&q=*&count=25";
 const GET_PRICE_URL = "https://api.ec.nintendo.com/v1/price?lang=en";
+const DEFAULT_LOCALE = "en";
 
 const GAME_LIST_LIMIT = 200;
 const PRICE_LIST_LIMIT = 50;
@@ -153,6 +154,12 @@ const GAME_CHECK_CODE_JP = "70010000000039";
  * @property {string} raw_value
  */
 
+ /**
+ * @typedef {Object} RequestOptions
+ * @property {string} locale Game information locale. (EU Only)
+ * @property {number} limit Game count limit
+ */
+
 /**
  * Region code constant.
  * @readonly
@@ -166,9 +173,11 @@ const Region = {
 
 /**
  * Fetches all games on american eshops. Paginates every 200 games.
+ * @param {RequestOptions} [options] Request options (Optional)
  * @returns {Promise<GameUS[]>} Promise containing all the games.
  */
-function getGamesAmerica(offset, games) {
+function getGamesAmerica(options, offset, games) {
+    const limit = hasProp(options, "limit") ? options.limit : GAME_LIST_LIMIT;
     offset = offset || 0;
     games = games || [];
 
@@ -176,7 +185,7 @@ function getGamesAmerica(offset, games) {
         request.get({
             url: GET_GAMES_US_URL,
             qs: {
-                limit: GAME_LIST_LIMIT,
+                limit: limit,
                 offset: offset,
             }
         }, (err, res, body) => {
@@ -187,8 +196,8 @@ function getGamesAmerica(offset, games) {
             // Sometimes the last page of the request returns all items (thus giving duplicates)
             let accumulatedGames = unique(games.concat(filteredResponse.games.game), "slug");
 
-            if (filteredResponse.games.game.length + offset < filteredResponse.filter.total) {
-                getGamesAmerica(offset + GAME_LIST_LIMIT, accumulatedGames).then(resolve).catch(reject);
+            if (!hasProp(options, "limit") && filteredResponse.games.game.length + offset < filteredResponse.filter.total) {
+                getGamesAmerica(options, offset + limit, accumulatedGames).then(resolve).catch(reject);
             } else {
                 return resolve(accumulatedGames);
             }
@@ -222,16 +231,19 @@ function getGamesJapan() {
 
 /**
  * Fetches all games on european eshop. Paginates every 9999 games.
+ * @param {RequestOptions} [options] Request options (Optional)
  * @returns {Promise<GameEU[]>} Promise containing all the games.
  */
-function getGamesEurope() {
+function getGamesEurope(options) {
+    const locale = hasProp(options, "locale") ? options.locale.toLowerCase() : DEFAULT_LOCALE
+    const limit = hasProp(options, "limit") ? options.limit : "9999";
     return new Promise((resolve, reject) => {
         request.get({
-            url: GET_GAMES_EU_URL,
+            url: GET_GAMES_EU_URL.replace("{locale}", locale),
             qs: {
                 fq: "type:GAME AND system_type:nintendoswitch* AND product_code_txt:*",
                 q: "*",
-                rows: "9999",
+                rows: limit,
                 sort: "sorting_title asc",
                 start: "0",
                 wt: "json"
@@ -415,6 +427,10 @@ function parseNSUID(game, region) {
         case Region.AMERICAS:
             return game.nsuid;
     }
+}
+
+function hasProp(obj, prop) {
+    return obj && prop in obj;
 }
 
 module.exports = {
