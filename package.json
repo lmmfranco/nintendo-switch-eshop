@@ -1,11 +1,14 @@
 {
   "name": "nintendo-switch-eshop",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Unofficial API lib for Nintendo Switch eShop game listing and pricing information.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "jsdoc": "jsdoc2md index.js > DOC.MD"
+    "jsdoc": "jsdoc2md index.js > assets/jsdoc.md",
+    "fixformat": "replace '.&lt;' '&lt;' assets/jsdoc.md",
+    "concatfiles": "concat-cli -f assets/template.md -f assets/jsdoc.md -o README.md",
+    "cleanup": "rm assets/jsdoc.md",
+    "docs": "npm run jsdoc && npm run fixformat && npm run concatfiles && npm run cleanup"
   },
   "keywords": [
     "eshop",
@@ -28,6 +31,8 @@
     "xml2js": "^0.4.17"
   },
   "devDependencies": {
-    "jsdoc-to-markdown": "^3.0.0"
+    "concat-cli": "^4.0.0",
+    "jsdoc-to-markdown": "^3.0.0",
+    "replace": "^1.0.0"
   }
 }

@@ -20,13 +20,13 @@ const SwitchEshop = require('nintendo-switch-eshop');
 
 <dl>
 <dt><a href="#getGamesAmerica">getGamesAmerica([options])</a> ⇒ <code>Promise&lt;Array&lt;GameUS&gt;&gt;</code></dt>
-<dd><p>Fetches all games on american eshops. Paginates every 200 games.</p>
+<dd><p>Fetches all games on american eshops.<br>Paginates every 200 games. <em>(maximum item count per request)</em></p>
 </dd>
 <dt><a href="#getGamesJapan">getGamesJapan()</a> ⇒ <code>Promise&lt;Array&lt;GameJP&gt;&gt;</code></dt>
 <dd><p>Fetches all games on japanese eshop.</p>
 </dd>
 <dt><a href="#getGamesEurope">getGamesEurope([options])</a> ⇒ <code>Promise&lt;Array&lt;GameEU&gt;&gt;</code></dt>
-<dd><p>Fetches all games on european eshop. Paginates every 9999 games.</p>
+<dd><p>Fetches all games on european eshop.<br>Paginates every 9999 games. <em>(maximum item count per request)</em></p>
 </dd>
 <dt><a href="#getShopsByCountryCodes">getShopsByCountryCodes(countryCodes, gamecode, region)</a> ⇒ <code>Promise&lt;Array&lt;Eshop&gt;&gt;</code></dt>
 <dd><p>Gets all active eshops given a list of countries.</p>
@@ -101,11 +101,12 @@ Region code constant.
 
 <a name="getGamesAmerica"></a>
 
-## getGamesAmerica([options]) ⇒ <code>Promise.&lt;Array.&lt;GameUS&gt;&gt;</code>
-Fetches all games on american eshops. Paginates every 200 games.
+## getGamesAmerica([options]) ⇒ <code>Promise&lt;Array&lt;GameUS&gt;&gt;</code>
+Fetches all games on american eshops.  
+Paginates every 200 games. _(maximum item count per request)_
 
 **Kind**: global function  
-**Returns**: <code>Promise.&lt;Array.&lt;GameUS&gt;&gt;</code> - Promise containing all the games.  
+**Returns**: <code>Promise&lt;Array&lt;GameUS&gt;&gt;</code> - Promise containing all the games.  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -113,18 +114,19 @@ Fetches all games on american eshops. Paginates every 200 games.
 
 <a name="getGamesJapan"></a>
 
-## getGamesJapan() ⇒ <code>Promise.&lt;Array.&lt;GameJP&gt;&gt;</code>
+## getGamesJapan() ⇒ <code>Promise&lt;Array&lt;GameJP&gt;&gt;</code>
 Fetches all games on japanese eshop.
 
 **Kind**: global function  
-**Returns**: <code>Promise.&lt;Array.&lt;GameJP&gt;&gt;</code> - Promise containing all the games.  
+**Returns**: <code>Promise&lt;Array&lt;GameJP&gt;&gt;</code> - Promise containing all the games.  
 <a name="getGamesEurope"></a>
 
-## getGamesEurope([options]) ⇒ <code>Promise.&lt;Array.&lt;GameEU&gt;&gt;</code>
-Fetches all games on european eshop. Paginates every 9999 games.
+## getGamesEurope([options]) ⇒ <code>Promise&lt;Array&lt;GameEU&gt;&gt;</code>
+Fetches all games on european eshop.  
+Paginates every 9999 games. _(maximum item count per request)_
 
 **Kind**: global function  
-**Returns**: <code>Promise.&lt;Array.&lt;GameEU&gt;&gt;</code> - Promise containing all the games.  
+**Returns**: <code>Promise&lt;Array&lt;GameEU&gt;&gt;</code> - Promise containing all the games.  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -398,5 +400,6 @@ Extracts NSUID information from the game object.
 | Name | Type | Description |
 | --- | --- | --- |
 | locale | <code>string</code> | Game information locale. (EU Only) |
-| limit | <code>number</code> | Game count limit |
+| limit | <code>number</code> | Game count limit (Can only be lower than default page size) |
+| shop | <code>string</code> | Either `'retail' | 'ncom' | 'all'`. Defaults to `'ncom'`. (US Only) |
 

@@ -5,7 +5,7 @@ const countries = require("country-data").countries;
 const regions = require("country-data").regions;
 const Q = require("q");
 
-const GET_GAMES_US_URL = "http://www.nintendo.com/json/content/get/filter/game?system=switch&sort=title&direction=asc&shop=ncom";
+const GET_GAMES_US_URL = "http://www.nintendo.com/json/content/get/filter/game?system=switch&sort=title&direction=asc";
 const GET_GAMES_EU_URL = "http://search.nintendo-europe.com/{locale}/select";
 const GET_GAMES_JP_CURRENT = "https://www.nintendo.co.jp/data/software/xml-system/switch-onsale.xml";
 const GET_GAMES_JP_COMING = "https://www.nintendo.co.jp/data/software/xml-system/switch-coming.xml";
@@ -157,7 +157,8 @@ const GAME_CHECK_CODE_JP = "70010000000039";
  /**
  * @typedef {Object} RequestOptions
  * @property {string} locale Game information locale. (EU Only)
- * @property {number} limit Game count limit
+ * @property {number} limit Game count limit (Can only be lower than default page size)
+ * @property {string} shop Either `'retail' | 'ncom' | 'all'`. Defaults to `'ncom'`. (US Only)
  */
 
 /**
@@ -172,7 +173,8 @@ const Region = {
 };
 
 /**
- * Fetches all games on american eshops. Paginates every 200 games.
+ * Fetches all games on american eshops.  
+ * Paginates every 200 games. _(maximum item count per request)_
  * @param {RequestOptions} [options] Request options (Optional)
  * @returns {Promise<GameUS[]>} Promise containing all the games.
  */
@@ -180,6 +182,14 @@ function getGamesAmerica(options, offset, games) {
     const limit = hasProp(options, "limit") ? options.limit : GAME_LIST_LIMIT;
     offset = offset || 0;
     games = games || [];
+    const shop = hasProp(options, "shop") ? options.shop : "ncom";
+    let shopParam;
+
+    if(shop === "all") {
+        shopParam = ["ncom","retail"];
+    } else {
+        shopParam += shop;
+    }
 
     return new Promise((resolve, reject) => {
         request.get({
@@ -187,6 +197,10 @@ function getGamesAmerica(options, offset, games) {
             qs: {
                 limit: limit,
                 offset: offset,
+                shop: shopParam
+            },
+            qsStringifyOptions: {
+                indices: false
             }
         }, (err, res, body) => {
             if (err) return reject(err);
@@ -230,7 +244,8 @@ function getGamesJapan() {
 }
 
 /**
- * Fetches all games on european eshop. Paginates every 9999 games.
+ * Fetches all games on european eshop.  
+ * Paginates every 9999 games. _(maximum item count per request)_
  * @param {RequestOptions} [options] Request options (Optional)
  * @returns {Promise<GameEU[]>} Promise containing all the games.
  */

@@ -133,6 +133,7 @@ declare namespace SwitchEshop {
     export interface RequestOptions {
         locale: string;
         limit: number;
+        shop: string;
     }
 
     export interface IExports {
