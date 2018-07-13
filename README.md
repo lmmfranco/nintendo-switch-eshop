@@ -401,5 +401,5 @@ Extracts NSUID information from the game object.
 | --- | --- | --- |
 | locale | <code>string</code> | Game information locale. (EU Only) |
 | limit | <code>number</code> | Game count limit (Can only be lower than default page size) |
-| shop | <code>string</code> | Either `'retail' | 'ncom' | 'all'`. Defaults to `'ncom'`. (US Only) |
+| shop | <code>string</code> | Either `'retail' / 'ncom' / 'all'`. Defaults to `'ncom'`. (US Only) |
 

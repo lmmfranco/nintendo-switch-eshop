@@ -158,7 +158,7 @@ const GAME_CHECK_CODE_JP = "70010000000039";
  * @typedef {Object} RequestOptions
  * @property {string} locale Game information locale. (EU Only)
  * @property {number} limit Game count limit (Can only be lower than default page size)
- * @property {string} shop Either `'retail' | 'ncom' | 'all'`. Defaults to `'ncom'`. (US Only)
+ * @property {string} shop Either `'retail' / 'ncom' / 'all'`. Defaults to `'ncom'`. (US Only)
  */
 
 /**
