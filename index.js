@@ -139,6 +139,7 @@ const GAME_CHECK_CODE_JP = "70010000000039";
  * @property {number} title_id
  * @property {string} sales_status
  * @property {PriceData[]} regular_price
+ * @property {PriceData[]} [discount_price]
  */ 
 
 /**
@@ -152,6 +153,8 @@ const GAME_CHECK_CODE_JP = "70010000000039";
  * @property {string} amount
  * @property {string} currency
  * @property {string} raw_value
+ * @property {string} [start_datetime]
+ * @property {string} [end_datetime]
  */
 
  /**

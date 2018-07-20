@@ -367,6 +367,7 @@ Extracts NSUID information from the game object.
 | title_id | <code>number</code> | 
 | sales_status | <code>string</code> | 
 | regular_price | [<code>Array&lt;PriceData&gt;</code>](#PriceData) | 
+| [discount_price] | [<code>Array&lt;PriceData&gt;</code>](#PriceData) | 
 
 <a name="PriceError"></a>
 
@@ -390,6 +391,8 @@ Extracts NSUID information from the game object.
 | amount | <code>string</code> | 
 | currency | <code>string</code> | 
 | raw_value | <code>string</code> | 
+| [start_datetime] | <code>string</code> | 
+| [end_datetime] | <code>string</code> | 
 
 <a name="RequestOptions"></a>
 
