@@ -188,7 +188,7 @@ function getGamesAmerica(options, offset, games) {
     if(shop === "all") {
         shopParam = ["ncom","retail"];
     } else {
-        shopParam += shop;
+        shopParam = shop;
     }
 
     return new Promise((resolve, reject) => {
