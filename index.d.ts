@@ -134,8 +134,8 @@ declare namespace SwitchEshop {
     }
 
     export interface RequestOptions {
-        locale: string;
-        limit: number;
+        locale?: string;
+        limit?: number;
         shop: string;
     }
 
