@@ -1,18 +1,13 @@
-export as namespace SwitchEshop;
-
-declare var eshop: SwitchEshop.IExports;
-export = eshop;
-
-declare namespace SwitchEshop {
-    export enum Region {
+declare namespace switcheshop {
+    enum Region {
         AMERICAS, EUROPE, ASIA
     }
 
-    export interface Categories {
+    interface Categories {
         category: string[];
     }
 
-    export interface GameUS {
+    interface GameUS {
         game_code: string;
         buyonline: boolean;
         front_box_art: string;
@@ -32,7 +27,7 @@ declare namespace SwitchEshop {
         buyitnow: boolean;
     }
 
-    export interface GameEU {
+    interface GameEU {
         age_rating_type: string;
         age_rating_value: string;
         copyright_s: string;
@@ -81,7 +76,7 @@ declare namespace SwitchEshop {
         title_extras_txt: string[];
     }
 
-    export interface GameJP {
+     interface GameJP {
         LinkURL: string[];
         LinkTarget: string[];
         ScreenshotImgURL: string[];
@@ -96,21 +91,21 @@ declare namespace SwitchEshop {
         Memo: string[];
     }
 
-    export type Game = GameUS | GameEU | GameJP;
+    type Game = GameUS | GameEU | GameJP;
 
-    export interface EShop {
+    interface EShop {
         code: string;
         country: string;
         currency: string;
         region: Region;
     }
 
-    export interface PriceError {
+    interface PriceError {
         code: string;
         message: string;
     }
 
-    export interface PriceData {
+    interface PriceData {
         amount: string;
         currency: string;
         raw_value: string;
@@ -118,7 +113,7 @@ declare namespace SwitchEshop {
         end_datetime: string;
     }        
 
-    export interface TitleData {
+    interface TitleData {
         title_id: number;
         sales_status: string;
         regular_price: PriceData[];
@@ -126,32 +121,31 @@ declare namespace SwitchEshop {
     }    
 
 
-    export interface PriceResponse {
+    interface PriceResponse {
         error: PriceError;
         personalized: boolean;
         country: string;
         prices: TitleData[];
     }
 
-    export interface RequestOptions {
+    interface RequestOptions {
         locale?: string;
         limit?: number;
         shop: string;
     }
 
-    export interface IExports {
-        Region: Region,
-        parseGameCode(game: Game, region: Region): string,
-        parseNSUID(game: Game, region: Region): string,
-        getGamesAmerica(options?: RequestOptions): Promise<GameUS[]>,
-        getGamesEurope(options?: RequestOptions): Promise<GameEU[]>,
-        getGamesJapan(): Promise<GameJP[]>,
-        getPrices(country: string, gameIds: string | string[]): Promise<PriceResponse>,
-        getShopsByCountryCodes(countryCodes: string[], gamecode: string, region: Region): Promise<EShop[]>,
-        getShopsAmerica(): Promise<EShop[]>,
-        getShopsEurope(): Promise<EShop[]>,
-        getShopsAsia(): Promise<EShop[]>,
-        getActiveShops(): Promise<EShop[]>
-    }
+    const Region: Region;
+    function parseGameCode(game: Game, region: Region): string;
+    function parseNSUID(game: Game, region: Region): string;
+    function getGamesAmerica(options?: RequestOptions): Promise<GameUS[]>;
+    function getGamesEurope(options?: RequestOptions): Promise<GameEU[]>;
+    function getGamesJapan(): Promise<GameJP[]>;
+    function getPrices(country: string, gameIds: string | string[]): Promise<PriceResponse>;
+    function getShopsByCountryCodes(countryCodes: string[], gamecode: string, region: Region): Promise<EShop[]>;
+    function getShopsAmerica(): Promise<EShop[]>;
+    function getShopsEurope(): Promise<EShop[]>;
+    function getShopsAsia(): Promise<EShop[]>;
+    function getActiveShops(): Promise<EShop[]>;
 }
 
+export = switcheshop;
