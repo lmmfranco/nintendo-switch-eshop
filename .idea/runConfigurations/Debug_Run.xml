@@ -1,0 +1,5 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Debug Run" type="NodeJSConfigurationType" node-parameters="--inspect=5858 --require ts-node/register" path-to-js-file="./test/app.ts" working-dir="$PROJECT_DIR$">
+    <method v="2" />
+  </configuration>
+</component>

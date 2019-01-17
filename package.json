@@ -1,14 +1,19 @@
 {
   "name": "nintendo-switch-eshop",
-  "version": "1.1.4",
+  "version": "2.0.0",
   "description": "Unofficial API lib for Nintendo Switch eShop game listing and pricing information.",
-  "main": "index.js",
-  "scripts": {
-    "jsdoc": "jsdoc2md index.js > assets/jsdoc.md",
-    "fixformat": "replace '.&lt;' '&lt;' assets/jsdoc.md",
-    "concatfiles": "concat-cli -f assets/template.md -f assets/jsdoc.md -o README.md",
-    "cleanup": "rm assets/jsdoc.md",
-    "docs": "npm run jsdoc && npm run fixformat && npm run concatfiles && npm run cleanup"
+  "author": "lmmfranco",
+  "license": "Apache-2.0",
+  "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "runkitExampleFilename": "./dist/example.js",
+  "homepage": "https://github.com/lmmfranco/nintendo-switch-eshop",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lmmfranco/nintendo-switch-eshop.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lmmfranco/nintendo-switch-eshop/issues/new"
   },
   "keywords": [
     "eshop",
@@ -17,22 +22,41 @@
     "crawler",
     "lib"
   ],
-  "author": "lmmfranco",
-  "license": "Apache-2.0",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/lmmfranco/nintendo-switch-eshop.git"
+  "engines": {
+    "node": ">=8.0.0"
   },
   "dependencies": {
-    "array-unique-x": "^1.0.5",
+    "@types/country-data": "^0.0.0",
+    "@types/node-fetch": "^2.1.4",
+    "@types/q": "^1.5.1",
+    "awesome-querystring": "^1.1.5",
     "country-data": "0.0.31",
-    "q": "^1.5.0",
-    "request": "^2.81.0",
-    "xml2js": "^0.4.17"
+    "fast-xml-parser": "^3.12.12",
+    "node-fetch": "^2.3.0",
+    "q": "^1.5.0"
   },
   "devDependencies": {
-    "concat-cli": "^4.0.0",
-    "jsdoc-to-markdown": "^3.0.0",
-    "replace": "^1.0.0"
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-typescript": "^7.1.0",
+    "@babel/register": "^7.0.0",
+    "@types/jest": "^23.3.12",
+    "@types/node": "^10.12.18",
+    "common-tags": "^1.8.0",
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-jest": "^4.0.2",
+    "gulp-typescript": "^5.0.0",
+    "gulp-uglify-es": "^1.0.4",
+    "jest": "^23.6.0",
+    "jsdoc-babel": "^0.5.0",
+    "jsdoc-to-markdown": "^4.0.1",
+    "milky-tslint": "^1.0.2",
+    "ts-jest": "^23.10.5",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.12.1",
+    "typescript": "^3.2.2",
+    "yargs": "^12.0.5"
   }
 }
