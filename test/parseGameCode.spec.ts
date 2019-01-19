@@ -6,7 +6,7 @@ test('parseGameCode', async () => {
         buyitnow: true,
         buyonline: true,
         ca_price: 64.99,
-        categories: {category: ['Party', 'Multiplayer', 'Action'],},
+        categories: {category: ['Party', 'Multiplayer', 'Action']},
         digitaldownload: false,
         eshop_price: 49.99,
         free_to_start: false,
