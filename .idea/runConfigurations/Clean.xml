@@ -1,0 +1,13 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Clean" type="js.build_tools.gulp">
+    <node-interpreter>project</node-interpreter>
+    <node-options />
+    <gulpfile>$PROJECT_DIR$/gulpfile.babel.js</gulpfile>
+    <tasks>
+      <task>clean</task>
+    </tasks>
+    <arguments />
+    <envs />
+    <method v="2" />
+  </configuration>
+</component>
