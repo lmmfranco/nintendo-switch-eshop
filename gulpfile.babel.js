@@ -2,11 +2,12 @@ import gulp from 'gulp';
 import jest from 'gulp-jest';
 import ts from 'typescript';
 import del from 'del';
+import replace from 'gulp-replace';
 import uglify from 'gulp-uglify-es';
 import * as gulpTs from 'gulp-typescript';
 import * as tslint from 'tslint';
 import { argv } from 'yargs';
-import { exec } from 'child_process';
+import { execSync } from 'child_process';
 import { oneLine } from "common-tags";
 import { milkyLint, milkyReport } from 'milky-tslint';
 
@@ -36,18 +37,25 @@ const compile = () => {
 gulp.task('docs', () => {
     const opts = {
         template: './docs/template.hbs',
-        exampleLang: 'ts',
+        exampleLang: 'js',
         inputFiles: './lib/*.ts',
         configFile: './jsdoc2md.json',
-        outFile: './docs/index.md',
+        outFile: './README.md',
     };
     const docsCommand = oneLine`node ./node_modules/jsdoc-to-markdown/bin/cli.js
         --files ${opts.inputFiles}
         --template ${opts.template}
         --example-lang ${opts.exampleLang}
         --configure ${opts.configFile}
+        --no-cache
         > ${opts.outFile}`;
-    return exec(docsCommand);
+    execSync(docsCommand);
+
+    return gulp.src('./README.md', {base: './'})
+        .pipe(replace(/(Promise)\.&lt;/g, 'Promise&lt;'))
+        .pipe(replace(/(Array)\.&lt;/g, 'Array&lt;'))
+        .pipe(replace(/ - <p>(.+)<\/p>/g, (match, p1) => ` - ${p1}`))
+        .pipe(gulp.dest('./'))
 });
 
 gulp.task('lint', () => {

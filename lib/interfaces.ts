@@ -1,15 +1,15 @@
 import { Country } from 'country-data';
 
 /**
- * @typedef {ICategory} ICategory
+ * @typedef {Category} Category
  * @property {string[]} category
  */
-export interface ICategory {
+export interface Category {
     category: string[];
 }
 
 /**
- * @typedef {IGameEU} IGameEU
+ * @typedef {GameEU} GameEU
  * @property {string} age_rating_type
  * @property {string} age_rating_value
  * @property {string} copyright_s
@@ -57,7 +57,7 @@ export interface ICategory {
  * @property {string[]} system_type
  * @property {string[]} title_extras_txt
  */
-export interface IGameEU {
+export interface GameEU {
     age_rating_type: string;
     age_rating_value: string;
     copyright_s: string;
@@ -107,7 +107,7 @@ export interface IGameEU {
 }
 
 /**
- * @typedef {IGameUS} IGameUS
+ * @typedef {GameUS} GameUS
  * @property {string} game_code Product code. Can be parsed for a region wide code.
  * @property {boolean} buyonline
  * @property {string} front_box_art
@@ -122,11 +122,11 @@ export interface IGameEU {
  * @property {boolean} free_to_start
  * @property {boolean} digitaldownload
  * @property {string} release_date
- * @property {ICategory} categories
+ * @property {Category} categories
  * @property {string} slug Game URL name
  * @property {boolean} buyitnow
  */
-export interface IGameUS {
+export interface GameUS {
     game_code: string;
     buyonline: boolean;
     front_box_art: string;
@@ -141,13 +141,13 @@ export interface IGameUS {
     free_to_start: boolean;
     digitaldownload: boolean;
     release_date: string;
-    categories: ICategory;
+    categories: Category;
     slug: string;
     buyitnow: boolean;
 }
 
 /**
- * @typedef {IGameJP} IGameJP
+ * @typedef {GameJP} GameJP
  * @property {string[]} LinkURL A single item array containing the game url
  * @property {string[]} LinkTarget
  * @property {string[]} ScreenshotImgURL A single item array containing the game thumbnail url
@@ -161,7 +161,7 @@ export interface IGameUS {
  * @property {string[]} Hard
  * @property {string[]} Memo
  */
-export interface IGameJP {
+export interface GameJP {
     LinkURL: string[];
     LinkTarget: string[];
     ScreenshotImgURL: string[];
@@ -177,13 +177,13 @@ export interface IGameJP {
 }
 
 /**
- * @typedef {IEshop} IEshop
+ * @typedef {EShop} EShop
  * @property {string} code
  * @property {string} country
  * @property {string} currency
  * @property {Region} region
  */
-export interface IEshop {
+export interface EShop {
     code: string;
     country: string;
     currency: string;
@@ -191,52 +191,52 @@ export interface IEshop {
 }
 
 /**
- * @typedef {IPriceResponse} IPriceResponse
- * @property {IPriceError} error
+ * @typedef {PriceResponse} PriceResponse
+ * @property {PriceError} error
  * @property {boolean} personalized
  * @property {string} country
- * @property {ITitleData[]} prices
+ * @property {TitleData[]} prices
  */
-export interface IPriceResponse {
-    error: IPriceError;
+export interface PriceResponse {
+    error: PriceError;
     personalized: boolean;
     country: Country;
-    prices: ITitleData[];
+    prices: TitleData[];
 }
 
 /**
- * @typedef {ITitleData} ITitleData
+ * @typedef {TitleData} TitleData
  * @property {number} title_id
  * @property {string} sales_status
- * @property {IPriceData} regular_price
- * @property {IPriceData} [discount_price]
+ * @property {PriceData} regular_price
+ * @property {PriceData} [discount_price]
  */
-export interface ITitleData {
+export interface TitleData {
     title_id: number;
     sales_status: string;
-    regular_price: IPriceData;
-    discount_price?: IPriceData;
+    regular_price: PriceData;
+    discount_price?: PriceData;
 }
 
 /**
- * @typedef {IPriceError} IPriceError
+ * @typedef {PriceError} PriceError
  * @property {string} code
  * @property {string} message
  */
-export interface IPriceError {
+export interface PriceError {
     code: string;
     message: string;
 }
 
 /**
- * @typedef {IPriceData} IPriceData
+ * @typedef {PriceData} PriceData
  * @property {string} amount
  * @property {string} currency
  * @property {string} raw_value
  * @property {string} [start_datetime]
  * @property {string} [end_datetime]
  */
-export interface IPriceData {
+export interface PriceData {
     amount: string;
     currency: string;
     raw_value: string;
@@ -245,38 +245,37 @@ export interface IPriceData {
 }
 
 /**
- * @typedef {IRequestOptions} IRequestOptions
+ * @typedef {RequestOptions} RequestOptions
  * @property {number} limit Game count limit (Can only be lower than default page size)
  */
-interface IRequestOptions {
+interface RequestOptions {
     limit?: number;
 }
 
 /**
- * @typedef {IUSOptions} IUSOptions
+ * @typedef {USRequestOptions} USRequestOptions
  * @property {'retail' | 'ncom' | 'all'} shop Either `'retail' / 'ncom' / 'all'`. Defaults to `'ncom'`.
- * @extends IRequestOptions
+ * @extends RequestOptions
  */
-export interface IUSOptions extends IRequestOptions {
+export interface USRequestOptions extends RequestOptions {
     shop?: 'retail' | 'ncom' | 'all';
 }
 
 /**
- * @typedef {IEUOptions} IEUOptions
+ * @typedef {EURequestOptions} EURequestOptions
  * @property {string} locale Game information locale. (EU Only)
- * @extends IRequestOptions
+ * @extends RequestOptions
  */
-export interface IEUOptions extends IRequestOptions {
+export interface EURequestOptions extends RequestOptions {
     locale?: string;
 }
-
 
 /**
  * Predefined options for the unit system
  * @enum {Region} Region
- * @property {Region.AMERICAS}
- * @property {Region.EUROPE}
- * @property {Region.ASIA}
+ * @property {Region.AMERICAS} 1
+ * @property {Region.EUROPE} 2
+ * @property {Region.ASIA} 3
  */
 export enum Region {
     AMERICAS = 1,

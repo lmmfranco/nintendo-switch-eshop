@@ -28,12 +28,10 @@
   "dependencies": {
     "@types/country-data": "^0.0.0",
     "@types/node-fetch": "^2.1.4",
-    "@types/q": "^1.5.1",
     "awesome-querystring": "^1.1.5",
     "country-data": "0.0.31",
     "fast-xml-parser": "^3.12.12",
-    "node-fetch": "^2.3.0",
-    "q": "^1.5.0"
+    "node-fetch": "^2.3.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
@@ -47,6 +45,7 @@
     "del": "^3.0.0",
     "gulp": "^4.0.0",
     "gulp-jest": "^4.0.2",
+    "gulp-replace": "^1.0.0",
     "gulp-typescript": "^5.0.0",
     "gulp-uglify-es": "^1.0.4",
     "jest": "^23.6.0",

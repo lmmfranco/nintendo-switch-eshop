@@ -97,6 +97,6 @@
             "singleline": "never"
         }],
         "triple-equals": true,
-        "no-console": false
+        "interface-name": false
     }
 }
