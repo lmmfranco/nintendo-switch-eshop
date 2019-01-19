@@ -29,14 +29,21 @@
 ---
 
 ## Installation
-To install it just type the following at your command line
-```shell
-npm install --save nintendo-switch-eshop
+
+Add the package through your package manager of choice:
+```sh
+npm install nintendo-switch-eshop
+# yarn add nintendo-switch-eshop
 ```
-And require it in your node module as follows:
-```javascript
-const SwitchEshop = require('nintendo-switch-eshop');
+
+Require your desired functions:
+```js
+const { getGamesAmerica, getGamesEurope, getGamesJapan } = require('nintendo-switch-eshop');
+// TypeScript / Babel: import { getGamesAmerica, getGamesEurope, getGamesJapan } from 'nintendo-switch-eshop';
 ```
+
+For calling functions with the correct parameters and syntax please refer to the documentation below:
+
 * * *
 
 {{>main}}
