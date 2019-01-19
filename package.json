@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "concat-cli": "^4.0.0",
-    "jsdoc-to-markdown": "^3.0.0",
+    "jsdoc-to-markdown": "^4.0.1",
     "replace": "^1.0.0"
   }
 }
