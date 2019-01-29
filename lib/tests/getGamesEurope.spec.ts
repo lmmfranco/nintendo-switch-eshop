@@ -1,4 +1,4 @@
-import { getGamesEurope } from '../lib';
+import { getGamesEurope } from '../';
 
 test('getGamesEurope', async () => {
     const data = await getGamesEurope({locale: 'en', limit: 1});
