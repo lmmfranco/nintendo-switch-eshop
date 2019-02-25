@@ -1,5 +1,5 @@
-import { getPrices } from '../';
-import { US_GAME_CHECK_CODE } from '../constants';
+import { getPrices } from '../lib';
+import { US_GAME_CHECK_CODE } from '../lib/constants';
 
 test('getPrices', async () => {
     const expectedReturn = {

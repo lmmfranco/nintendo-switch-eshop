@@ -1,4 +1,4 @@
-import { getGamesAmerica } from '../';
+import { getGamesAmerica } from '../lib';
 
 test('getGamesAmerica', async () => {
     const data = await getGamesAmerica({shop: 'ncom', limit: 1});

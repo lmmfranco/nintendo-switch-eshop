@@ -1,6 +1,6 @@
 import { lookup } from 'country-data';
-import { getShopsByCountryCodes, Region } from '../';
-import { US_GAME_CHECK_CODE } from '../constants';
+import { getShopsByCountryCodes, Region } from '../lib';
+import { US_GAME_CHECK_CODE } from '../lib/constants';
 
 test('getShopsByCountry', async () => {
     const expectedReturn = [{code: 'US', country: 'United States', currency: 'USD', region: 1}];

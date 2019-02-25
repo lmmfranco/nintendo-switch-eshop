@@ -1,7 +1,7 @@
-import { parseGameCode, Region } from '../';
-import { GameUS } from '../interfaces';
+import { parseNSUID, Region } from '../lib';
+import { GameUS } from '../lib/interfaces';
 
-test('parseGameCode', async () => {
+test('parseNSUID', async () => {
     const game: GameUS = {
         buyitnow: true,
         buyonline: true,
@@ -22,8 +22,8 @@ test('parseGameCode', async () => {
         video_link: 'h1OTBqODE64B-g16PJeQj6tifbVKl_v8',
     };
 
-    const data = parseGameCode(game, Region.AMERICAS);
+    const data = parseNSUID(game, Region.AMERICAS);
     expect(typeof data).toBe('string');
-    expect(data).toHaveLength(4);
-    expect(data).toBe('AACC');
+    expect(data).toHaveLength(14);
+    expect(data).toBe('70010000000141');
 });

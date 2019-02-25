@@ -1,4 +1,4 @@
-import { getGamesJapan } from '../';
+import { getGamesJapan } from '../lib';
 
 test('getGamesJapan', async () => {
     jest.setTimeout(30000);

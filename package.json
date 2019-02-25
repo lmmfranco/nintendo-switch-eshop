@@ -15,6 +15,18 @@
   "bugs": {
     "url": "https://github.com/lmmfranco/nintendo-switch-eshop/issues/new"
   },
+  "scripts": {
+    "docs": "jsdoc2md --files ./lib/*.ts --template ./docs/template.hbs --example-lang js --configure ./jsdoc2md.json --no-cache > ./README.md",
+    "test": "jest",
+    "lint": "tslint --fix -p . -c ./tslint.json ./lib/*.ts",
+    "clean": "rimraf ./dist",
+    "prebuild": "yarn clean && yarn lint && yarn test",
+    "build": "tsc",
+    "postbuild": "terser-folder ./dist -eo ./dist -x .js && copyfiles ./docs/example.js ./dist && yarn docs && yarn replace:promise && yarn replace:array && yarn replace:paragraph",
+    "replace:promise": "replace --silent \"(Promise)\\.&lt;\" \"Promise&lt;\" README.md",
+    "replace:array": "replace --silent \"(Array)\\.&lt;\" \"Array&lt;\" README.md",
+    "replace:paragraph": "replace --silent \" - <p>(.+)</p>\" \" - $1\" README.md"
+  },
   "keywords": [
     "eshop",
     "switch",
@@ -26,38 +38,37 @@
     "node": ">=8.0.0"
   },
   "dependencies": {
-    "@types/country-data": "^0.0.0",
-    "@types/node-fetch": "^2.1.4",
     "awesome-querystring": "^1.1.5",
-    "country-data": "0.0.31",
+    "country-data": "^0.0.31",
     "fast-xml-parser": "^3.12.12",
     "node-fetch": "^2.3.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
+    "@babel/polyfill": "^7.2.5",
     "@babel/preset-env": "^7.3.1",
-    "@babel/register": "^7.0.0",
-    "@types/jest": "^23.3.13",
-    "@types/node": "^10.12.19",
-    "common-tags": "^1.8.0",
-    "del": "^3.0.0",
-    "gulp": "^4.0.0",
-    "gulp-jest": "^4.0.2",
-    "gulp-replace": "^1.0.0",
-    "gulp-typescript": "^5.0.0",
-    "gulp-uglify-es": "^1.0.4",
+    "@babel/preset-typescript": "^7.3.3",
+    "@types/country-data": "^0.0.0",
+    "@types/jest": "^24.0.6",
+    "@types/node": "^11.9.5",
+    "@types/node-fetch": "^2.1.4",
+    "copyfiles": "^2.1.0",
     "jest": "^24.0.0",
-    "jest-cli": "^24.0.0",
-    "jest-runner-tsc": "^1.3.2",
-    "jest-runner-tslint": "^1.0.5",
     "jsdoc-babel": "^0.5.0",
     "jsdoc-to-markdown": "^4.0.1",
-    "milky-tslint": "^1.0.2",
-    "ts-jest": "^23.10.5",
-    "ts-node": "^8.0.2",
+    "replace": "^1.0.1",
+    "rimraf": "^2.6.3",
+    "terser-folder": "^2.0.0",
     "tslint": "^5.12.1",
-    "typescript": "^3.2.4",
-    "yargs": "^12.0.5"
+    "typescript": "^3.2.4"
+  },
+  "files": [
+    "./dist"
+  ],
+  "directories": {
+    "lib": "./lib",
+    "test": "./tests",
+    "doc": "./docs",
+    "example": "./dist/example.js"
   }
 }
