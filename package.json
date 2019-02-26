@@ -17,12 +17,12 @@
   },
   "scripts": {
     "docs": "jsdoc2md --files ./lib/*.ts --template ./docs/template.hbs --example-lang js --configure ./jsdoc2md.json --no-cache > ./README.md",
-    "test": "jest",
+    "test": "jest --no-cache",
     "lint": "tslint --fix -p . -c ./tslint.json ./lib/*.ts",
     "clean": "rimraf ./dist",
     "prebuild": "yarn clean && yarn lint && yarn test",
     "build": "tsc",
-    "postbuild": "terser-folder ./dist -eo ./dist -x .js && copyfiles ./docs/example.js ./dist && yarn docs && yarn replace:promise && yarn replace:array && yarn replace:paragraph",
+    "postbuild": "terser-folder ./dist -eo ./dist -x .js && copyfiles -u 1 ./docs/example.js ./dist && yarn docs && yarn replace:promise && yarn replace:array && yarn replace:paragraph",
     "replace:promise": "replace --silent \"(Promise)\\.&lt;\" \"Promise&lt;\" README.md",
     "replace:array": "replace --silent \"(Array)\\.&lt;\" \"Array&lt;\" README.md",
     "replace:paragraph": "replace --silent \" - <p>(.+)</p>\" \" - $1\" README.md"
@@ -63,12 +63,12 @@
     "typescript": "^3.2.4"
   },
   "files": [
-    "./dist"
+    "dist/"
   ],
   "directories": {
-    "lib": "./lib",
-    "test": "./tests",
-    "doc": "./docs",
-    "example": "./dist/example.js"
+    "lib": "lib/",
+    "test": "tests/",
+    "doc": "docs/",
+    "example": "dist/example.js"
   }
 }

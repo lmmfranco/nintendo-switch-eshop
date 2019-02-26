@@ -43,6 +43,14 @@ const arrayRemoveDuplicates = (array: any[], property: string) => {
 };
 
 /**
+ * Checks if object has a certain property
+ * @param {object} obj Object to traverse
+ * @param {string} prop Property to find
+ * @private
+ */
+const hasProp = (obj: object, prop: string) => obj && prop in obj;
+
+/**
  * Fetches all games on american eshops
  *
  * Paginates every 200 games, _(maximum item count per request)_
@@ -334,5 +342,3 @@ export const parseNSUID = (game: GameUS | GameEU | GameJP, region: Region): stri
             return (game as GameUS).nsuid;
     }
 };
-
-const hasProp = (obj: object, prop: string) => obj && prop in obj;

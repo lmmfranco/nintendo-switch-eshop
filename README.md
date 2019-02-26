@@ -294,6 +294,7 @@ This method will launch several requests at nintendo web services, so don't abus
 | gift_finder_detail_page_store_link_s | <code>string</code> |  |
 | gift_finder_wishlist_image_url_s | <code>string</code> |  |
 | image_url | <code>string</code> |  |
+| image_url_h2x1_s | <code>string</code> |  |
 | image_url_sq_s | <code>string</code> |  |
 | image_url_tm_s | <code>string</code> |  |
 | originally_for_t | <code>string</code> |  |
