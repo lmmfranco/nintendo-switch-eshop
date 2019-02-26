@@ -260,7 +260,7 @@ interface RequestOptions {
  * @extends RequestOptions
  */
 export interface USRequestOptions extends RequestOptions {
-    shop?: 'retail' | 'ncom' | 'all';
+    shop?: 'retail' | 'ncom' | 'all' | 'unfiltered';
 }
 
 /**

@@ -55,7 +55,8 @@ const arrayRemoveDuplicates = (array: any[], property: string) => {
 export const getGamesAmerica = async (options: USRequestOptions = {}, offset: number = 0, games: GameUS[] = []): Promise<GameUS[]> => {
     const limit = hasProp(options, 'limit') ? options.limit : US_GAME_LIST_LIMIT;
     const shopProp = hasProp(options, 'shop') ? options.shop : 'ncom';
-    const shop = shopProp === 'all' ? ['ncom', 'retail'] : shopProp;
+    let shop = shopProp === 'all' ? ['ncom', 'retail'] : shopProp;
+    shop = shop === 'unfiltered' ? undefined : shop;
 
     try {
         const gamesUS = await fetch(`${US_GET_GAMES_URL}?${stringify({
