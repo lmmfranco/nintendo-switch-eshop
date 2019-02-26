@@ -23,6 +23,7 @@ export interface Category {
  * @property {string} gift_finder_detail_page_store_link_s
  * @property {string} gift_finder_wishlist_image_url_s
  * @property {string} image_url
+ * @property {string} image_url_h2x1_s
  * @property {string} image_url_sq_s
  * @property {string} image_url_tm_s
  * @property {string} originally_for_t
@@ -71,6 +72,7 @@ export interface GameEU {
     gift_finder_detail_page_store_link_s: string;
     gift_finder_wishlist_image_url_s: string;
     image_url: string;
+    image_url_h2x1_s: string;
     image_url_sq_s: string;
     image_url_tm_s: string;
     originally_for_t: string;

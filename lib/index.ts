@@ -1,2 +1,2 @@
 export * from './nintendo-switch-eshop';
-export { Region } from './interfaces';
+export { Region, GameEU, GameJP, GameUS } from './interfaces';
