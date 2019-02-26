@@ -52,17 +52,16 @@ const arrayRemoveDuplicates = (array: any[], property: string) => {
  * @method
  * @name getGamesAmerica
  */
-export const getGamesAmerica = async (options: USRequestOptions = {shop: 'ncom', limit: US_GAME_LIST_LIMIT}, offset: number = 0, games: GameUS[] = []): Promise<GameUS[]> => {
-    if (!options.limit) options.limit = US_GAME_LIST_LIMIT;
-    if (!options.shop) options.shop = 'ncom';
-
-    const shopParam = options.shop === 'all' ? ['ncom', 'retail'] : options.shop;
+export const getGamesAmerica = async (options: USRequestOptions = {}, offset: number = 0, games: GameUS[] = []): Promise<GameUS[]> => {
+    const limit = hasProp(options, 'limit') ? options.limit : US_GAME_LIST_LIMIT;
+    const shopProp = hasProp(options, 'shop') ? options.shop : 'ncom';
+    const shop = shopProp === 'all' ? ['ncom', 'retail'] : shopProp;
 
     try {
         const gamesUS = await fetch(`${US_GET_GAMES_URL}?${stringify({
-            limit: options.limit,
+            limit,
             offset,
-            shop: shopParam,
+            shop,
             ...US_GET_GAMES_OPTIONS,
         })}`);
 
@@ -71,14 +70,13 @@ export const getGamesAmerica = async (options: USRequestOptions = {shop: 'ncom',
         const filteredResponse = await gamesUS.json();
         const accumulatedGames: GameUS[] = arrayRemoveDuplicates(games.concat(filteredResponse.games.game), 'slug');
 
-        if (!options.limit && filteredResponse.games.game.length + offset < filteredResponse.filter.total) {
-            await getGamesAmerica(options, offset + options.limit, accumulatedGames);
+        if (!hasProp(options, 'limit') && filteredResponse.games.game.length + offset < filteredResponse.filter.total) {
+            return await getGamesAmerica(options, offset + (limit as number), accumulatedGames);
         }
-
         return accumulatedGames;
     } catch (err) {
         if (/(?:US_games_request_failed)/i.test(err.toString())) throw new EshopError('Fetching of US Games failed');
-        return err;
+        throw err;
     }
 };
 
@@ -104,7 +102,7 @@ export const getGamesJapan = async (): Promise<GameJP[]> => {
     } catch (err) {
         if (/(?:JP_current_games_US_games_request_failed)/i.test(err.toString())) throw new EshopError('Fetching of Current JP Games failed');
         if (/(?:JP_coming_games_US_games_request_failed)/i.test(err.toString())) throw new EshopError('Fetching of Upcoming JP Games failed');
-        return err;
+        throw err;
     }
 };
 
@@ -135,7 +133,7 @@ export const getGamesEurope = async (options: EURequestOptions = {limit: EU_GAME
         return <GameEU[]> gamesData.response.docs;
     } catch (err) {
         if (/(?:EU_games_request_failed)/i.test(err.toString())) throw new EshopError('Fetching of EU Games failed');
-        return err;
+        throw err;
     }
 };
 
@@ -175,7 +173,7 @@ export const getPrices = async (country: string, gameIds: string[] | string, off
     } catch (err) {
         if (/(?:PRICE_Rate_Limit)/i.test(err.toString())) throw new EshopError('Looks like you ran into a rate limit while getting price data, please do not spam the Nintendo servers.');
         if (/(?:PRICE_get_request_failed)/i.test(err.toString())) throw new EshopError('Fetching of eShop prices failed');
-        return err;
+        throw err;
     }
 };
 
@@ -218,7 +216,7 @@ export const getShopsByCountryCodes = async (countryCodes: string[], gameCode: s
         return eShops;
     } catch (err) {
         if (/(?:ACTIVE_SHOPS_Rate_Limit)/i.test(err.toString())) throw new EshopError('Looks like you ran into a rate limit while getting price data, please do not spam the Nintendo servers.');
-        return err;
+        throw err;
     }
 };
 
@@ -338,3 +336,5 @@ export const parseNSUID = (game: GameUS | GameEU | GameJP, region: Region): stri
             return (game as GameUS).nsuid;
     }
 };
+
+const hasProp = (obj: object, prop: string) => obj && prop in obj;
