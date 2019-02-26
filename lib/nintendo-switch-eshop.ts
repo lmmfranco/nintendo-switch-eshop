@@ -161,7 +161,7 @@ export const getPrices = async (country: string, gameIds: string[] | string, off
 
         if (response.prices && response.prices.length + offset < gameIds.length) {
             const accumulatedPrices = prices.concat(response.prices);
-            getPrices(country, gameIds, offset + PRICE_LIST_LIMIT, accumulatedPrices);
+            return await getPrices(country, gameIds, offset + PRICE_LIST_LIMIT, accumulatedPrices);
         } else if (response.prices) {
             response.prices = response.prices.concat(prices);
             return response;
