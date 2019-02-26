@@ -38,6 +38,7 @@
     "node": ">=8.0.0"
   },
   "dependencies": {
+    "@types/country-data": "^0.0.0",
     "awesome-querystring": "^1.1.5",
     "country-data": "^0.0.31",
     "fast-xml-parser": "^3.12.12",
@@ -48,7 +49,6 @@
     "@babel/polyfill": "^7.2.5",
     "@babel/preset-env": "^7.3.1",
     "@babel/preset-typescript": "^7.3.3",
-    "@types/country-data": "^0.0.0",
     "@types/jest": "^24.0.6",
     "@types/node": "^11.9.5",
     "@types/node-fetch": "^2.1.4",
