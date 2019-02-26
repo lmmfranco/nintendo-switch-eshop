@@ -8,6 +8,7 @@ import {
     EU_GAME_CHECK_CODE,
     EU_GAME_CODE_REGEX,
     EU_GAME_LIST_LIMIT,
+    EU_GET_GAMES_OPTIONS,
     EU_GET_GAMES_URL,
     JP_GAME_CHECK_CODE,
     JP_GAME_CODE_REGEX,
@@ -120,12 +121,8 @@ export const getGamesEurope = async (options: EURequestOptions = {limit: EU_GAME
 
     try {
         const gamesEU = await fetch(`${EU_GET_GAMES_URL.replace('{locale}', options.locale)}?${stringify({
-            fq: 'type:GAME AND system_type:nintendoswitch* AND product_code_txt:*',
-            q: '*',
             rows: options.limit,
-            sort: 'sorting_title asc',
-            start: '0',
-            wt: 'json',
+            ...EU_GET_GAMES_OPTIONS,
         })}`);
 
         if (!gamesEU.ok) throw new Error('EU_games_request_failed');

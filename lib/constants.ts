@@ -4,6 +4,7 @@ export const US_GAME_CHECK_CODE = '70010000000185';
 export const US_GAME_CODE_REGEX = /HAC\w(\w{4})/;
 export const US_GAME_LIST_LIMIT = 200;
 
+export const EU_GET_GAMES_OPTIONS = {fq: 'type:GAME AND system_type:nintendoswitch* AND product_code_txt:*', q: '*', sort: 'sorting_title asc', start: '0', wt: 'json'};
 export const EU_GET_GAMES_URL = 'http://search.nintendo-europe.com/{locale}/select';
 export const EU_GAME_CHECK_CODE = '70010000000184';
 export const EU_GAME_CODE_REGEX = /HAC\w(\w{4})/;
