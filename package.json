@@ -38,7 +38,7 @@
     "node": ">=8.0.0"
   },
   "dependencies": {
-    "@types/country-data": "^0.0.0",
+    "@types/country-data": "^0.0.1",
     "awesome-querystring": "^1.1.5",
     "country-data": "^0.0.31",
     "fast-xml-parser": "^3.12.12",
