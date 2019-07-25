@@ -1,5 +1,7 @@
 export const US_GET_GAMES_OPTIONS = {system: 'switch', sort: 'title', direction: 'asc'};
-export const US_GET_GAMES_URL = 'http://www.nintendo.com/json/content/get/filter/game';
+export const US_ALGOLIA_ID = 'U3B6GR4UA3';
+export const US_ALGOLIA_KEY = '9a20c93440cf63cf1a7008d75f7438bf';
+export const US_GET_GAMES_URL = `https://${US_ALGOLIA_ID}-dsn.algolia.net/1/indexes/*/queries`;
 export const US_GAME_CHECK_CODE = '70010000000185';
 export const US_GAME_CODE_REGEX = /HAC\w(\w{4})/;
 export const US_GAME_LIST_LIMIT = 200;

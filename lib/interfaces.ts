@@ -148,6 +148,25 @@ export interface GameUS {
     buyitnow: boolean;
 }
 
+export interface AlgoliaResults {
+    hits: GameUS[];
+    nbHits: number;
+    page: number;
+    nbPages: number;
+    hitsPerPage: number;
+    processingTimeMS: number;
+    facets: any;
+    exhaustiveFacetsCount: boolean;
+    exhaustiveNbHits: boolean;
+    query: string;
+    params: string;
+    index: string;
+}
+
+export interface AlgoliaResponse {
+    results: AlgoliaResults[];
+}
+
 /**
  * @typedef {GameJP} GameJP
  * @property {string[]} LinkURL A single item array containing the game url

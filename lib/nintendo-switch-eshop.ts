@@ -18,13 +18,24 @@ import {
     PRICE_GET_OPTIONS,
     PRICE_GET_URL,
     PRICE_LIST_LIMIT,
+    US_ALGOLIA_ID, US_ALGOLIA_KEY,
     US_GAME_CHECK_CODE,
     US_GAME_CODE_REGEX,
-    US_GAME_LIST_LIMIT,
-    US_GET_GAMES_OPTIONS,
+    US_GAME_LIST_LIMIT, US_GET_GAMES_OPTIONS,
     US_GET_GAMES_URL,
 } from './constants';
-import { EShop, EURequestOptions, GameEU, GameJP, GameUS, PriceResponse, Region, TitleData, USRequestOptions } from './interfaces';
+import {
+    AlgoliaResponse,
+    EShop,
+    EURequestOptions,
+    GameEU,
+    GameJP,
+    GameUS,
+    PriceResponse,
+    Region,
+    TitleData,
+    USRequestOptions
+} from './interfaces';
 
 /**
  * Removed duplicates from an array
@@ -51,6 +62,16 @@ const arrayRemoveDuplicates = (array: any[], property: string) => {
 const hasProp = (obj: object, prop: string) => obj && prop in obj;
 
 /**
+ * Checks is the variable is of type array
+ * @param {any | any[]} object Object to check
+ * @returns boolean
+ */
+const isArray = <T>(object: T | T[] | undefined): object is T[] => {
+    if (!object) return false;
+    return !!(<T[]> object).map;
+};
+
+/**
  * Fetches all games on american eshops
  *
  * Paginates every 200 games, _(maximum item count per request)_
@@ -67,20 +88,69 @@ export const getGamesAmerica = async (options: USRequestOptions = {}, offset: nu
     let shop = shopProp === 'all' ? ['ncom', 'retail'] : shopProp;
     shop = shop === 'unfiltered' ? undefined : shop;
 
+    const page = Math.floor(offset / <number> limit);
+
+    const shopMapper = (shopType: 'ncom' | 'retail' | string) => {
+        return shopType === 'ncom'
+            ? ['filterShops:On Nintendo.com']
+            : shopType === 'retail'
+                ? ['filterShops:On retail']
+                : [''];
+    };
+
+    const shopFilters = isArray(shop) ? shop.map(value => shopMapper(value)) :
+        [shop ? shopMapper(shop) : []];
+
+    const sortingOptions = {
+        sortBy: US_GET_GAMES_OPTIONS.sort,
+        direction: US_GET_GAMES_OPTIONS.direction
+    };
+
+    const body = {
+        body: JSON.stringify({
+            requests: [
+                {
+                    indexName: 'noa_aem_game_en_us' + (sortingOptions.sortBy && sortingOptions.direction
+                        ? `_${sortingOptions.sortBy}_${sortingOptions.direction}` : ''),
+                    params: stringify({
+                        facetFilters: [
+                            ['platform:Nintendo Switch'],
+                            ...shopFilters
+                        ],
+                        facets: [
+                            'generalFilters',
+                            'platform',
+                            'availability',
+                            'categories',
+                            'filterShops',
+                            'virtualConsole',
+                            'characters',
+                            'priceRange',
+                            'esrb',
+                            'filterPlayers'
+                        ],
+                        hitsPerPage: limit,
+                        page,
+                    }),
+                }
+            ],
+        }),
+        headers: { 'Content-Type': 'application/json' },
+        method: 'post',
+    };
+
     try {
         const gamesUS = await fetch(`${US_GET_GAMES_URL}?${stringify({
-            limit,
-            offset,
-            shop,
-            ...US_GET_GAMES_OPTIONS,
-        })}`);
+            'x-algolia-api-key': US_ALGOLIA_KEY,
+            'x-algolia-application-id': US_ALGOLIA_ID
+        })}`, body);
 
         if (!gamesUS.ok) throw new Error('US_games_request_failed');
 
-        const filteredResponse = await gamesUS.json();
-        const accumulatedGames: GameUS[] = arrayRemoveDuplicates(games.concat(filteredResponse.games.game), 'slug');
+        const filteredResponse: AlgoliaResponse = await gamesUS.json();
+        const accumulatedGames: GameUS[] = arrayRemoveDuplicates(games.concat(filteredResponse.results[0].hits), 'slug');
 
-        if (!hasProp(options, 'limit') && filteredResponse.games.game.length + offset < filteredResponse.filter.total) {
+        if (!hasProp(options, 'limit') && filteredResponse.results[0].hits.length + offset < filteredResponse.results[0].nbHits) {
             return await getGamesAmerica(options, offset + (limit as number), accumulatedGames);
         }
         return accumulatedGames;

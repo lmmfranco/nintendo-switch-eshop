@@ -56,6 +56,8 @@ For calling functions with the correct parameters and syntax please refer to the
 ## Functions
 
 <dl>
+<dt><a href="#isArray">isArray(object)</a> ⇒</dt>
+<dd><p>Checks is the variable is of type array</p></dd>
 <dt><a href="#getGamesAmerica">getGamesAmerica([options], [offset], [games])</a> ⇒ <code>Promise&lt;Array&lt;GameUS&gt;&gt;</code></dt>
 <dd><p>Fetches all games on american eshops</p>
 <p>Paginates every 200 games, <em>(maximum item count per request)</em></p></dd>
@@ -69,16 +71,16 @@ For calling functions with the correct parameters and syntax please refer to the
 <dd><p>Gets all active eShops given a list of countries.</p></dd>
 <dt><a href="#getShopsAmerica">getShopsAmerica()</a> ⇒ <code>Promise&lt;Array&lt;EShop&gt;&gt;</code></dt>
 <dd><p>Gets all active eShops on American countries.
-This method will launch several requests at nintendo web services, so don&#39;t abuse it.</p></dd>
+This method will launch several requests at nintendo web services, so don't abuse it.</p></dd>
 <dt><a href="#getShopsEurope">getShopsEurope()</a> ⇒ <code>Promise&lt;Array&lt;EShop&gt;&gt;</code></dt>
 <dd><p>Gets all active eShops on European countries.
-This method will launch several requests at nintendo web services, so don&#39;t abuse it.</p></dd>
+This method will launch several requests at nintendo web services, so don't abuse it.</p></dd>
 <dt><a href="#getShopsAsia">getShopsAsia()</a> ⇒ <code>Promise&lt;Array&lt;EShop&gt;&gt;</code></dt>
 <dd><p>Gets all active eShops on Asian countries
-This method will launch several requests at nintendo web services, so don&#39;t abuse it.</p></dd>
+This method will launch several requests at nintendo web services, so don't abuse it.</p></dd>
 <dt><a href="#getActiveShops">getActiveShops()</a> ⇒ <code>Promise&lt;Array&lt;EShop&gt;&gt;</code></dt>
 <dd><p>Gets all active eShops.
-This method will launch several requests at nintendo web services, so don&#39;t abuse it.</p></dd>
+This method will launch several requests at nintendo web services, so don't abuse it.</p></dd>
 <dt><a href="#parseGameCode">parseGameCode(game, region)</a> ⇒ <code>string</code> | <code>null</code></dt>
 <dd><p>Parses the game code to extract the cross-region protion.</p></dd>
 <dt><a href="#parseNSUID">parseNSUID(game, region)</a> ⇒ <code>string</code> | <code>null</code></dt>
@@ -142,6 +144,18 @@ This method will launch several requests at nintendo web services, so don&#39;t 
 | 2 | <code>Region.EUROPE</code> | 
 | 3 | <code>Region.ASIA</code> | 
 
+<a name="isArray"></a>
+
+## isArray(object) ⇒
+<p>Checks is the variable is of type array</p>
+
+**Kind**: global function  
+**Returns**: <p>boolean</p>  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| object | <code>any</code> \| <code>Array&lt;any&gt;</code> | <p>Object to check</p> |
+
 <a name="getGamesAmerica"></a>
 
 ## getGamesAmerica([options], [offset], [games]) ⇒ <code>Promise&lt;Array&lt;GameUS&gt;&gt;</code>
@@ -149,7 +163,7 @@ This method will launch several requests at nintendo web services, so don&#39;t 
 <p>Paginates every 200 games, <em>(maximum item count per request)</em></p>
 
 **Kind**: global function  
-**Returns**: <code>Promise&lt;Array&lt;GameUS&gt;&gt;</code> - Promise containing all the games  
+**Returns**: <code>Promise&lt;Array&lt;GameUS&gt;&gt;</code> -   
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -163,14 +177,14 @@ This method will launch several requests at nintendo web services, so don&#39;t 
 <p>Fetches all games on japanese eShops</p>
 
 **Kind**: global function  
-**Returns**: <code>Promise&lt;Array&lt;GameJP&gt;&gt;</code> - Promise containing all the games  
+**Returns**: <code>Promise&lt;Array&lt;GameJP&gt;&gt;</code> -   
 <a name="getGamesEurope"></a>
 
 ## getGamesEurope([options]) ⇒ <code>Promise&lt;Array&lt;GameUS&gt;&gt;</code>
 <p>Fetches all games on european eShops</p>
 
 **Kind**: global function  
-**Returns**: <code>Promise&lt;Array&lt;GameUS&gt;&gt;</code> - Promise containing all the games  
+**Returns**: <code>Promise&lt;Array&lt;GameUS&gt;&gt;</code> -   
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -182,7 +196,7 @@ This method will launch several requests at nintendo web services, so don&#39;t 
 <p>Get pricing information for the requested games. Paginates every 50 games.</p>
 
 **Kind**: global function  
-**Returns**: [<code>Promise&lt;PriceResponse&gt;</code>](#PriceResponse) - A promise containing the pricing information.  
+**Returns**: [<code>Promise&lt;PriceResponse&gt;</code>](#PriceResponse) -   
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -197,7 +211,7 @@ This method will launch several requests at nintendo web services, so don&#39;t 
 <p>Gets all active eShops given a list of countries.</p>
 
 **Kind**: global function  
-**Returns**: <code>Promise&lt;Array&lt;EShop&gt;&gt;</code> - A list of shop objects with country code, name and default currency.  
+**Returns**: <code>Promise&lt;Array&lt;EShop&gt;&gt;</code> -   
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -212,7 +226,7 @@ This method will launch several requests at nintendo web services, so don&#39;t 
 This method will launch several requests at nintendo web services, so don't abuse it.</p>
 
 **Kind**: global function  
-**Returns**: <code>Promise&lt;Array&lt;EShop&gt;&gt;</code> - A list of shop objects with country code, name and default currency.  
+**Returns**: <code>Promise&lt;Array&lt;EShop&gt;&gt;</code> -   
 <a name="getShopsEurope"></a>
 
 ## getShopsEurope() ⇒ <code>Promise&lt;Array&lt;EShop&gt;&gt;</code>
@@ -220,7 +234,7 @@ This method will launch several requests at nintendo web services, so don't abus
 This method will launch several requests at nintendo web services, so don't abuse it.</p>
 
 **Kind**: global function  
-**Returns**: <code>Promise&lt;Array&lt;EShop&gt;&gt;</code> - A list of shop objects with country code, name and default currency.  
+**Returns**: <code>Promise&lt;Array&lt;EShop&gt;&gt;</code> -   
 <a name="getShopsAsia"></a>
 
 ## getShopsAsia() ⇒ <code>Promise&lt;Array&lt;EShop&gt;&gt;</code>
@@ -228,7 +242,7 @@ This method will launch several requests at nintendo web services, so don't abus
 This method will launch several requests at nintendo web services, so don't abuse it.</p>
 
 **Kind**: global function  
-**Returns**: <code>Promise&lt;Array&lt;EShop&gt;&gt;</code> - A list of shop objects with country code, name and default currency.  
+**Returns**: <code>Promise&lt;Array&lt;EShop&gt;&gt;</code> -   
 <a name="getActiveShops"></a>
 
 ## getActiveShops() ⇒ <code>Promise&lt;Array&lt;EShop&gt;&gt;</code>
@@ -236,14 +250,14 @@ This method will launch several requests at nintendo web services, so don't abus
 This method will launch several requests at nintendo web services, so don't abuse it.</p>
 
 **Kind**: global function  
-**Returns**: <code>Promise&lt;Array&lt;EShop&gt;&gt;</code> - A list of shop objects with country code, name and default currency.  
+**Returns**: <code>Promise&lt;Array&lt;EShop&gt;&gt;</code> -   
 <a name="parseGameCode"></a>
 
 ## parseGameCode(game, region) ⇒ <code>string</code> \| <code>null</code>
 <p>Parses the game code to extract the cross-region protion.</p>
 
 **Kind**: global function  
-**Returns**: <code>string</code> \| <code>null</code> - The 4-digit resulting game code  
+**Returns**: <code>string</code> \| <code>null</code> -   
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -256,7 +270,7 @@ This method will launch several requests at nintendo web services, so don't abus
 <p>Extracts NSUID information from the game object.</p>
 
 **Kind**: global function  
-**Returns**: <code>string</code> \| <code>null</code> - The 14-digits NSUID  
+**Returns**: <code>string</code> \| <code>null</code> -   
 
 | Param | Type | Description |
 | --- | --- | --- |
