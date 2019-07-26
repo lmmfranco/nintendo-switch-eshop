@@ -96,6 +96,10 @@ This method will launch several requests at nintendo web services, so don't abus
 <dd></dd>
 <dt><a href="#GameUS">GameUS</a> : <code><a href="#GameUS">GameUS</a></code></dt>
 <dd></dd>
+<dt><a href="#AlgoliaResults">AlgoliaResults</a> : <code><a href="#AlgoliaResults">AlgoliaResults</a></code></dt>
+<dd></dd>
+<dt><a href="#AlgoliaResponse">AlgoliaResponse</a> : <code><a href="#AlgoliaResponse">AlgoliaResponse</a></code></dt>
+<dd></dd>
 <dt><a href="#GameJP">GameJP</a> : <code><a href="#GameJP">GameJP</a></code></dt>
 <dd></dd>
 <dt><a href="#EShop">EShop</a> : <code><a href="#EShop">EShop</a></code></dt>
@@ -369,6 +373,36 @@ This method will launch several requests at nintendo web services, so don't abus
 | slug | <code>string</code> | <p>Game URL name</p> |
 | buyitnow | <code>boolean</code> |  |
 
+<a name="AlgoliaResults"></a>
+
+## AlgoliaResults : [<code>AlgoliaResults</code>](#AlgoliaResults)
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| hits | [<code>Array&lt;GameUS&gt;</code>](#GameUS) | <p>The games found</p> |
+| nbHits | <code>number</code> | <p>Total number of hits with current query</p> |
+| hitsPerPage | <code>number</code> | <p>Number of hits per page</p> |
+| processingTimeMS | <code>number</code> |  |
+| facets | <code>Object.&lt;Object&gt;</code> |  |
+| facetFilters | <code>Array&lt;Array&lt;string&gt;&gt;</code> | <p>Filters for the search query</p> |
+| exhaustiveFacetsCount | <code>boolean</code> |  |
+| exhaustiveNbHits | <code>boolean</code> |  |
+| query | <code>string</code> |  |
+| params | <code>string</code> |  |
+| index | <code>string</code> |  |
+
+<a name="AlgoliaResponse"></a>
+
+## AlgoliaResponse : [<code>AlgoliaResponse</code>](#AlgoliaResponse)
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type |
+| --- | --- |
+| results | [<code>Array&lt;AlgoliaResponse&gt;</code>](#AlgoliaResponse) | 
+
 <a name="GameJP"></a>
 
 ## GameJP : [<code>GameJP</code>](#GameJP)
@@ -462,7 +496,7 @@ This method will launch several requests at nintendo web services, so don't abus
 
 | Name | Type | Description |
 | --- | --- | --- |
-| limit | <code>number</code> | <p>Game count limit (Can only be lower than default page size)</p> |
+| limit | <code>number</code> | <p>Game count limit (Can only be lower than default page size). On the US eshop, the max limit is 1000. Leave empty to get all the games.</p> |
 
 <a name="USRequestOptions"></a>
 
