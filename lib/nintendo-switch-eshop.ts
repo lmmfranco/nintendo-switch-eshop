@@ -95,14 +95,14 @@ export const getGamesAmerica = async (options: USRequestOptions = {}, offset: nu
 
     const shopMapper = (shopType: 'ncom' | 'retail' | string) => {
         return shopType === 'ncom'
-            ? ['filterShops:On Nintendo.com']
+            ? 'filterShops:On Nintendo.com'
             : shopType === 'retail'
-                ? ['filterShops:On retail']
-                : [''];
+                ? 'filterShops:On retail'
+                : '';
     };
 
     const shopFilters = isArray(shop) ? shop.map(value => shopMapper(value)) :
-        [shop ? shopMapper(shop) : []];
+        [shop ? shopMapper(shop) : ''];
 
     const sortingOptions = {
         direction: US_GET_GAMES_OPTIONS.direction,
@@ -118,19 +118,7 @@ export const getGamesAmerica = async (options: USRequestOptions = {}, offset: nu
                     params: stringify({
                         facetFilters: [
                             [US_GET_GAMES_OPTIONS.system],
-                            ...shopFilters
-                        ],
-                        facets: [
-                            'generalFilters',
-                            'platform',
-                            'availability',
-                            'categories',
-                            'filterShops',
-                            'virtualConsole',
-                            'characters',
-                            'priceRange',
-                            'esrb',
-                            'filterPlayers'
+                            shopFilters
                         ],
                         hitsPerPage: limit,
                         page,
@@ -174,18 +162,17 @@ export const getGamesAmerica = async (options: USRequestOptions = {}, offset: nu
                         params: stringify({
                             facetFilters: [
                                 [US_GET_GAMES_OPTIONS.system],
-                                ...shopFilters
+                                shopFilters
                             ],
                             facets: [
-                                'platform',
                                 'categories'
                             ],
-                            hitsPerPage: 0,
-                        }),
-                    }],
+                            hitsPerPage: 0
+                        })
+                    }]
                 }),
                 headers: { 'Content-Type': 'application/json' },
-                method: 'post',
+                method: 'post'
             };
 
             const gamesToCount = await fetch(`${US_GET_GAMES_URL}?${stringify({
@@ -205,14 +192,10 @@ export const getGamesAmerica = async (options: USRequestOptions = {}, offset: nu
                         facetFilters: JSON.stringify([
                             [US_GET_GAMES_OPTIONS.system],
                             [`categories:${category}`],
-                            ...shopFilters
+                            shopFilters
                         ]),
-                        facets: [
-                            'platform',
-                            'categories'
-                        ],
-                        hitsPerPage: 1000,
-                    }),
+                        hitsPerPage: 1000
+                    })
                 }];
 
                 const manyPriceRangeRequests = US_PRICE_RANGES.map(priceRange => ({
@@ -222,14 +205,14 @@ export const getGamesAmerica = async (options: USRequestOptions = {}, offset: nu
                             [US_GET_GAMES_OPTIONS.system],
                             [`categories:${category}`],
                             [`priceRange:${priceRange}`],
-                            ...shopFilters
+                            shopFilters
                         ]),
                         facets: [
                             'platform',
                             'categories'
                         ],
-                        hitsPerPage: 1000,
-                    }),
+                        hitsPerPage: 1000
+                    })
                 }));
 
                 const finalGamesBody = {
