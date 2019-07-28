@@ -56,8 +56,6 @@ For calling functions with the correct parameters and syntax please refer to the
 ## Functions
 
 <dl>
-<dt><a href="#isArray">isArray(object)</a> ⇒</dt>
-<dd><p>Checks is the variable is of type array</p></dd>
 <dt><a href="#getGamesAmerica">getGamesAmerica([options], [offset], [games])</a> ⇒ <code>Promise&lt;Array&lt;GameUS&gt;&gt;</code></dt>
 <dd><p>Fetches all games on american eshops</p>
 <p>Paginates every 200 games, <em>(maximum item count per request)</em></p></dd>
@@ -147,18 +145,6 @@ This method will launch several requests at nintendo web services, so don't abus
 | 1 | <code>Region.AMERICAS</code> | 
 | 2 | <code>Region.EUROPE</code> | 
 | 3 | <code>Region.ASIA</code> | 
-
-<a name="isArray"></a>
-
-## isArray(object) ⇒
-<p>Checks is the variable is of type array</p>
-
-**Kind**: global function  
-**Returns**: <p>boolean</p>  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| object | <code>any</code> \| <code>Array&lt;any&gt;</code> | <p>Object to check</p> |
 
 <a name="getGamesAmerica"></a>
 

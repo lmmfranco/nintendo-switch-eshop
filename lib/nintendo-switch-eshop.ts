@@ -66,6 +66,7 @@ const hasProp = (obj: object, prop: string) => obj && prop in obj;
 
 /**
  * Checks is the variable is of type array
+ * @private
  * @param {any | any[]} object Object to check
  * @returns boolean
  */
@@ -167,12 +168,12 @@ export const getGamesAmerica = async (options: USRequestOptions = {}, offset: nu
                             facets: [
                                 'categories'
                             ],
-                            hitsPerPage: 0
-                        })
-                    }]
+                            hitsPerPage: 0,
+                        }),
+                    }],
                 }),
                 headers: { 'Content-Type': 'application/json' },
-                method: 'post'
+                method: 'post',
             };
 
             const gamesToCount = await fetch(`${US_GET_GAMES_URL}?${stringify({
@@ -194,8 +195,8 @@ export const getGamesAmerica = async (options: USRequestOptions = {}, offset: nu
                             [`categories:${category}`],
                             shopFilters
                         ]),
-                        hitsPerPage: 1000
-                    })
+                        hitsPerPage: 1000,
+                    }),
                 }];
 
                 const manyPriceRangeRequests = US_PRICE_RANGES.map(priceRange => ({
@@ -211,8 +212,8 @@ export const getGamesAmerica = async (options: USRequestOptions = {}, offset: nu
                             'platform',
                             'categories'
                         ],
-                        hitsPerPage: 1000
-                    })
+                        hitsPerPage: 1000,
+                    }),
                 }));
 
                 const finalGamesBody = {
