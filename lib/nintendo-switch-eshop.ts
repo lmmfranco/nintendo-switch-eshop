@@ -18,13 +18,27 @@ import {
     PRICE_GET_OPTIONS,
     PRICE_GET_URL,
     PRICE_LIST_LIMIT,
+    US_ALGOLIA_ID,
+    US_ALGOLIA_KEY,
     US_GAME_CHECK_CODE,
     US_GAME_CODE_REGEX,
     US_GAME_LIST_LIMIT,
     US_GET_GAMES_OPTIONS,
     US_GET_GAMES_URL,
+    US_PRICE_RANGES,
 } from './constants';
-import { EShop, EURequestOptions, GameEU, GameJP, GameUS, PriceResponse, Region, TitleData, USRequestOptions } from './interfaces';
+import {
+    AlgoliaResponse,
+    EShop,
+    EURequestOptions,
+    GameEU,
+    GameJP,
+    GameUS,
+    PriceResponse,
+    Region,
+    TitleData,
+    USRequestOptions
+} from './interfaces';
 
 /**
  * Removed duplicates from an array
@@ -51,6 +65,17 @@ const arrayRemoveDuplicates = (array: any[], property: string) => {
 const hasProp = (obj: object, prop: string) => obj && prop in obj;
 
 /**
+ * Checks is the variable is of type array
+ * @private
+ * @param {any | any[]} object Object to check
+ * @returns boolean
+ */
+const isArray = <T>(object: T | T[] | undefined): object is T[] => {
+    if (!object) return false;
+    return !!(<T[]> object).map;
+};
+
+/**
  * Fetches all games on american eshops
  *
  * Paginates every 200 games, _(maximum item count per request)_
@@ -67,23 +92,159 @@ export const getGamesAmerica = async (options: USRequestOptions = {}, offset: nu
     let shop = shopProp === 'all' ? ['ncom', 'retail'] : shopProp;
     shop = shop === 'unfiltered' ? undefined : shop;
 
+    const page = Math.floor(offset / <number> limit);
+
+    const shopMapper = (shopType: 'ncom' | 'retail' | string) => {
+        return shopType === 'ncom'
+            ? 'filterShops:On Nintendo.com'
+            : shopType === 'retail'
+                ? 'filterShops:On retail'
+                : '';
+    };
+
+    const shopFilters = isArray(shop) ? shop.map(value => shopMapper(value)) :
+        [shop ? shopMapper(shop) : ''];
+
+    const sortingOptions = {
+        direction: US_GET_GAMES_OPTIONS.direction,
+        sortBy: US_GET_GAMES_OPTIONS.sort,
+    };
+
+    const body = {
+        body: JSON.stringify({
+            requests: [
+                {
+                    indexName: `noa_aem_game_en_us${(sortingOptions.sortBy && sortingOptions.direction
+                        ? `_${sortingOptions.sortBy}_${sortingOptions.direction}` : '')}`,
+                    params: stringify({
+                        facetFilters: [
+                            [US_GET_GAMES_OPTIONS.system],
+                            shopFilters
+                        ],
+                        hitsPerPage: limit,
+                        page,
+                    }),
+                }
+            ],
+        }),
+        headers: { 'Content-Type': 'application/json' },
+        method: 'post',
+    };
+
     try {
-        const gamesUS = await fetch(`${US_GET_GAMES_URL}?${stringify({
-            limit,
-            offset,
-            shop,
-            ...US_GET_GAMES_OPTIONS,
-        })}`);
+        if (hasProp(options, 'limit')) {
+            const gamesUS = await fetch(`${US_GET_GAMES_URL}?${stringify({
+                'x-algolia-api-key': US_ALGOLIA_KEY,
+                'x-algolia-application-id': US_ALGOLIA_ID,
+            })}`, body);
 
-        if (!gamesUS.ok) throw new Error('US_games_request_failed');
+            if (!gamesUS.ok) throw new Error('US_games_request_failed');
 
-        const filteredResponse = await gamesUS.json();
-        const accumulatedGames: GameUS[] = arrayRemoveDuplicates(games.concat(filteredResponse.games.game), 'slug');
+            const filteredResponse: AlgoliaResponse = await gamesUS.json();
+            const accumulatedGames: GameUS[] = arrayRemoveDuplicates(games.concat(filteredResponse.results[0].hits), 'slug');
 
-        if (!hasProp(options, 'limit') && filteredResponse.games.game.length + offset < filteredResponse.filter.total) {
-            return await getGamesAmerica(options, offset + (limit as number), accumulatedGames);
+            if (!hasProp(options, 'limit') && filteredResponse.results[0].hits.length + offset < filteredResponse.results[0].nbHits) {
+                return await getGamesAmerica(options, offset + (limit as number), accumulatedGames);
+            }
+            return accumulatedGames;
+
+        } else {
+            /*
+             * Using a workaround to get all the games.
+             * Basically, fetch all the games from the different categories one by one,
+             * if one category has > 1000 games, fetch all the games in each price range one by one.
+             */
+
+            // Get the counts of all the games in the different categories.
+            const countGamesBody = {
+                body: JSON.stringify({
+                    requests: [{
+                        indexName: 'noa_aem_game_en_us',
+                        params: stringify({
+                            facetFilters: [
+                                [US_GET_GAMES_OPTIONS.system],
+                                shopFilters
+                            ],
+                            facets: [
+                                'categories'
+                            ],
+                            hitsPerPage: 0,
+                        }),
+                    }],
+                }),
+                headers: { 'Content-Type': 'application/json' },
+                method: 'post',
+            };
+
+            const gamesToCount = await fetch(`${US_GET_GAMES_URL}?${stringify({
+                'x-algolia-api-key': US_ALGOLIA_KEY,
+                'x-algolia-application-id': US_ALGOLIA_ID,
+            })}`, countGamesBody);
+            if (!gamesToCount.ok) throw new Error('US_games_request_failed');
+
+            const response: AlgoliaResponse = await gamesToCount.json();
+            const categoryCount = response.results[0].facets.categories;
+
+            // Loop through all the categories and fetch the games.
+            const allGamesPromises = Object.entries(categoryCount).map(async ([category, count]) => {
+                const normalRequest = [{
+                    indexName: 'noa_aem_game_en_us',
+                    params: stringify({
+                        facetFilters: JSON.stringify([
+                            [US_GET_GAMES_OPTIONS.system],
+                            [`categories:${category}`],
+                            shopFilters
+                        ]),
+                        hitsPerPage: 1000,
+                    }),
+                }];
+
+                const manyPriceRangeRequests = US_PRICE_RANGES.map(priceRange => ({
+                    indexName: 'noa_aem_game_en_us',
+                    params: stringify({
+                        facetFilters: JSON.stringify([
+                            [US_GET_GAMES_OPTIONS.system],
+                            [`categories:${category}`],
+                            [`priceRange:${priceRange}`],
+                            shopFilters
+                        ]),
+                        facets: [
+                            'platform',
+                            'categories'
+                        ],
+                        hitsPerPage: 1000,
+                    }),
+                }));
+
+                const finalGamesBody = {
+                    body: JSON.stringify({
+                        requests: count > 1000 ? manyPriceRangeRequests : normalRequest,
+                    }),
+                    headers: { 'Content-Type': 'application/json' },
+                    method: 'post',
+                };
+
+                const allGamesResponse = await fetch(`${US_GET_GAMES_URL}?${stringify({
+                    'x-algolia-api-key': US_ALGOLIA_KEY,
+                    'x-algolia-application-id': US_ALGOLIA_ID,
+                })}`, finalGamesBody);
+
+                if (!allGamesResponse.ok) throw new Error('US_games_request_failed');
+
+                const gamesResponse: AlgoliaResponse = await allGamesResponse.json();
+                return count > 1000
+                    ? gamesResponse.results
+                        .map(result => result.hits)
+                        .reduce((a, b) => a.concat(b, []))
+                    : gamesResponse.results[0].hits;
+            });
+
+            // Finally fetch all the games and remove duplicates
+            let allGames = (await Promise.all(allGamesPromises)).reduce((a , b) => a.concat(b, []));
+            allGames = arrayRemoveDuplicates(allGames, 'slug');
+            return allGames;
+
         }
-        return accumulatedGames;
     } catch (err) {
         if (/(?:US_games_request_failed)/i.test(err.toString())) throw new EshopError('Fetching of US Games failed');
         throw err;

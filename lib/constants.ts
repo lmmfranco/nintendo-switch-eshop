@@ -1,8 +1,18 @@
-export const US_GET_GAMES_OPTIONS = {system: 'switch', sort: 'title', direction: 'asc'};
-export const US_GET_GAMES_URL = 'http://www.nintendo.com/json/content/get/filter/game';
+export const US_GET_GAMES_OPTIONS = {system: 'platform:Nintendo Switch', sort: 'title', direction: 'asc'};
+export const US_ALGOLIA_ID = 'U3B6GR4UA3';
+export const US_ALGOLIA_KEY = '9a20c93440cf63cf1a7008d75f7438bf';
+export const US_GET_GAMES_URL = `https://${US_ALGOLIA_ID}-dsn.algolia.net/1/indexes/*/queries`;
 export const US_GAME_CHECK_CODE = '70010000000185';
 export const US_GAME_CODE_REGEX = /HAC\w(\w{4})/;
 export const US_GAME_LIST_LIMIT = 200;
+export const US_PRICE_RANGES = [
+    'Free to start',
+    '$0 - $4.99',
+    '$5 - $9.99',
+    '$10 - $19.99',
+    '$20 - $39.99',
+    '$40+'
+];
 
 export const EU_GET_GAMES_OPTIONS = {fq: 'type:GAME AND system_type:nintendoswitch* AND product_code_txt:*', q: '*', sort: 'sorting_title asc', start: '0', wt: 'json'};
 export const EU_GET_GAMES_URL = 'http://search.nintendo-europe.com/{locale}/select';

@@ -149,6 +149,48 @@ export interface GameUS {
 }
 
 /**
+ * @typedef {AlgoliaResults} AlgoliaResults
+ * @property {GameUS[]} hits The games found
+ * @property {number} nbHits Total number of hits with current query
+ * @property {number} hitsPerPage Number of hits per page
+ * @property {number} processingTimeMS
+ * @property {Object.<Object>} facets
+ * @property {Array.<string[]>} facetFilters Filters for the search query
+ * @property {boolean} exhaustiveFacetsCount
+ * @property {boolean} exhaustiveNbHits
+ * @property {string} query
+ * @property {string} params
+ * @property {string} index
+ */
+export interface AlgoliaResults {
+    hits: GameUS[];
+    nbHits: number;
+    page: number;
+    nbPages: number;
+    hitsPerPage: number;
+    processingTimeMS: number;
+    facets: {
+        [key: string]: {
+            [key: string]: number;
+        };
+    };
+    facetFilters: string[][];
+    exhaustiveFacetsCount: boolean;
+    exhaustiveNbHits: boolean;
+    query: string;
+    params: string;
+    index: string;
+}
+
+/**
+ * @typedef {AlgoliaResponse} AlgoliaResponse
+ * @property {AlgoliaResponse[]} results
+ */
+export interface AlgoliaResponse {
+    results: AlgoliaResults[];
+}
+
+/**
  * @typedef {GameJP} GameJP
  * @property {string[]} LinkURL A single item array containing the game url
  * @property {string[]} LinkTarget
@@ -248,7 +290,7 @@ export interface PriceData {
 
 /**
  * @typedef {RequestOptions} RequestOptions
- * @property {number} limit Game count limit (Can only be lower than default page size)
+ * @property {number} limit Game count limit (Can only be lower than default page size). On the US eshop, the max limit is 1000. Leave empty to get all the games.
  */
 interface RequestOptions {
     limit?: number;

@@ -1,8 +1,6 @@
 import { getGamesAmerica } from '../lib';
 
-
-// FIXME: Un-skip this test when the new endpoint for American games is configured
-describe.skip('getGamesAmerica', () => {
+describe('getGamesAmerica', () => {
     it('should allow custom limit', async () => {
         const data = await getGamesAmerica({shop: 'ncom', limit: 1});
         expect(data).toBeInstanceOf(Object);
