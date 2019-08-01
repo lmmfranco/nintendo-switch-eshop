@@ -2,7 +2,7 @@
 name: API Issue
 about: Report issues due to the Nintendo API changing here
 title: '[API] '
-labels: API changed 👩‍💻'
+labels: 'API changed 👩‍💻'
 assignees: '[Favna, Immfranco]'
 
 ---
