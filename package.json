@@ -31,7 +31,7 @@
     "postdocs": "yarn docs:replace && yarn docs:clean",
     "docs:clean": "rimraf ./docsbuild",
     "docs:build": "tsc -p ./tsconfig.docs.json",
-    "docs:replace": "replace --silent \".&lt;\" \"&lt;\" ./README2.md",
+    "docs:replace": "replace --silent \".&lt;\" \"&lt;\" ./README.md",
     "copyfiles": "copyfiles -u 1 ./docs/example.js ./dist"
   },
   "keywords": [
