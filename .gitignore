@@ -1,13 +1,30 @@
-# Node modules
+# Dependencies
 node_modules/
 
-# Any logs created
-*.log
-*.stackdump
+# Misc
+.DS_Store
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
-# IDE settings
+# File Archives
+*.zip
+*.tar.xz
+*.7z
+*.rar
+
+# Logs
+logs
+*.log*
+coverage/
+
+# IDE Settings
 .idea/
 .vscode/
+.vs/
+*.iml
 
-# NPM Dist
+# Transpiled files
 dist/
