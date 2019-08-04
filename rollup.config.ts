@@ -23,7 +23,11 @@ export default {
     }
   ],
   plugins: [
-    json(),
+    json({
+      preferConst: true,
+      compact: true,
+      namedExports: false,
+    }),
     progress(),
     external(),
     resolve({ preferBuiltins: true }),
