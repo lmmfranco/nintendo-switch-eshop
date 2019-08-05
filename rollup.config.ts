@@ -4,6 +4,7 @@ import external from 'rollup-plugin-peer-deps-external';
 import progress from 'rollup-plugin-progress';
 import { terser } from 'rollup-plugin-terser';
 import typescript from 'rollup-plugin-typescript2';
+import json from 'rollup-plugin-json';
 
 export default {
   input: 'src/index.ts',
@@ -22,6 +23,11 @@ export default {
     }
   ],
   plugins: [
+    json({
+      preferConst: true,
+      compact: true,
+      namedExports: false,
+    }),
     progress(),
     external(),
     resolve({ preferBuiltins: true }),

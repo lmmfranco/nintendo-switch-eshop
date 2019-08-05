@@ -67,6 +67,7 @@
     "rimraf": "^2.6.3",
     "rollup": "^1.18.0",
     "rollup-plugin-commonjs": "^10.0.1",
+    "rollup-plugin-json": "^4.0.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-peer-deps-external": "^2.2.0",
     "rollup-plugin-progress": "^1.1.1",
