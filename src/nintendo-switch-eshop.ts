@@ -64,7 +64,7 @@ const arrayRemoveDuplicates = (array: any[], property: string) => {
  * @method
  * @private
  */
-const hasProp = (obj: object, prop: string) => obj && prop in obj;
+const hasProp = <O extends {}>(obj: O, prop: keyof O) => obj && prop in obj;
 
 /**
  * Checks if the variable is an array of strings
