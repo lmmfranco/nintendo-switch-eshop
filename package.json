@@ -64,7 +64,7 @@
     "jest": "^24.8.0",
     "jsdoc-to-markdown": "^5.0.0",
     "replace": "^1.1.0",
-    "rimraf": "^2.6.3",
+    "rimraf": "^3.0.0",
     "rollup": "^1.18.0",
     "rollup-plugin-commonjs": "^10.0.1",
     "rollup-plugin-json": "^4.0.0",
