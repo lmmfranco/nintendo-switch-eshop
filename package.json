@@ -54,7 +54,7 @@
     "node-fetch": "^2.6.0"
   },
   "devDependencies": {
-    "@favware/eslint-config": "^1.0.0",
+    "@favware/eslint-config": "^3.0.0",
     "@types/jest": "^24.0.16",
     "@types/node": "^12.6.9",
     "@types/node-fetch": "^2.5.0",
