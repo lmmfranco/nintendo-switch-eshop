@@ -13,7 +13,7 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
-    "prebuild": "yarn lint && yarn test && yarn clean",
+    "prebuild": "yarn lint && yarn test",
     "build": "rollup -c rollup.config.ts",
     "start": "yarn build -w",
     "prepublishOnly": "yarn build && yarn docs",

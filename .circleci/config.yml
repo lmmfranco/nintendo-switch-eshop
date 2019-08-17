@@ -26,11 +26,6 @@ commands:
 
 # List of jobs
 jobs:
-  node-v8:
-    docker:
-      - image: circleci/node:8
-    steps:
-      - nodejs
   node-v10:
     docker:
       - image: circleci/node:10
@@ -41,11 +36,16 @@ jobs:
       - image: circleci/node:11
     steps:
       - nodejs
+  node-v12:
+    docker:
+      - image: circleci/node:12
+    steps:
+      - nodejs
 
 workflows:
   version: 2
   node-multi-build:
     jobs:
-      - node-v8
       - node-v10
       - node-v11
+      - node-v12
