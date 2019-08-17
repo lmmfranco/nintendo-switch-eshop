@@ -89,6 +89,5 @@ export class EshopError extends Error {
     super(message);
     this.message = message;
     this.name = 'EshopError';
-    this.stack = '';
   }
 }

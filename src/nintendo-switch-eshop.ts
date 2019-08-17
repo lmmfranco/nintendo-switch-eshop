@@ -267,8 +267,8 @@ export const getGamesJapan = async (): Promise<GameJP[]> => {
   try {
     const currentGamesJP = await fetch(JP_GET_GAMES_CURRENT);
     const comingGamesJP = await fetch(JP_GET_GAMES_COMING);
-    if (!currentGamesJP.ok) throw new Error('JP_current_games_US_games_request_failed');
-    if (!comingGamesJP.ok) throw new Error('JP_coming_games_US_games_request_failed');
+    if (!currentGamesJP.ok) throw new Error('JP_current_games_request_failed');
+    if (!comingGamesJP.ok) throw new Error('JP_coming_games_request_failed');
 
     const parsedCurrentGames = xml2json(await currentGamesJP.text());
     const parsedComingGames = xml2json(await comingGamesJP.text());
@@ -277,8 +277,8 @@ export const getGamesJapan = async (): Promise<GameJP[]> => {
 
     return currentGames.concat(comingGames);
   } catch (err) {
-    if (/(?:JP_current_games_US_games_request_failed)/i.test(err.toString())) throw new EshopError('Fetching of Current JP Games failed');
-    if (/(?:JP_coming_games_US_games_request_failed)/i.test(err.toString())) throw new EshopError('Fetching of Upcoming JP Games failed');
+    if (/(?:JP_current_games_request_failed)/i.test(err.toString())) throw new EshopError('Fetching of Current JP Games failed');
+    if (/(?:JP_coming_games_request_failed)/i.test(err.toString())) throw new EshopError('Fetching of Upcoming JP Games failed');
     throw err;
   }
 };
@@ -392,8 +392,8 @@ export const getShopsByCountryCodes = async (countryCodes: string[], gameCode: s
 
     return eShops;
   } catch (err) {
-    if (/(?:ACTIVE_SHOPS_Rate_Limit)/i.test(err.toString())) throw new EshopError('Looks like you ran into a rate limit while getting price data, please do not spam the Nintendo servers.');
-    throw err;
+    if (/(?:ACTIVE_SHOPS_Rate_Limit)/i.test(err.toString())) throw new Error('Looks like you ran into a rate limit while getting price data, please do not spam the Nintendo servers.');
+    throw new Error(err);
   }
 };
 
@@ -459,11 +459,15 @@ export const getShopsAsia = async (): Promise<EShop[]> => {
  * @name getActiveShops
  */
 export const getActiveShops = async (): Promise<EShop[]> => {
-  const shopsAmerica = await getShopsAmerica();
-  const shopsAsia = await getShopsAsia();
-  const shopsEurope = await getShopsEurope();
+  try {
+    const shopsAmerica = await getShopsAmerica();
+    const shopsAsia = await getShopsAsia();
+    const shopsEurope = await getShopsEurope();
 
-  return shopsAmerica.concat(shopsAsia, shopsEurope);
+    return shopsAmerica.concat(shopsAsia, shopsEurope);
+  } catch(err) {
+    throw new Error(err);
+  }
 };
 
 /**
@@ -489,6 +493,8 @@ export const parseGameCode = (game: GameUS | GameEU | GameJP, region: Region): s
       codeParse = US_GAME_CODE_REGEX.exec((game as GameUS).game_code);
       break;
   }
+
+  console.log(`The region was set to ${region} and the codeParse is ${codeParse}`)
 
   return (codeParse && codeParse.length > 1) ? codeParse[1] : null;
 };
