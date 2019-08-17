@@ -10,6 +10,68 @@
   "types": "dist/index.d.ts",
   "runkitExampleFilename": "./dist/example.js",
   "homepage": "https://github.com/lmmfranco/nintendo-switch-eshop",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
+    "prebuild": "yarn lint && yarn test && yarn clean",
+    "build": "rollup -c rollup.config.ts",
+    "start": "yarn build -w",
+    "prepublishOnly": "yarn build && yarn docs",
+    "predocs": "yarn docs:clean && yarn lint && yarn docs:build",
+    "docs": "jsdoc2md --template ./docs/template.hbs --files ./docsbuild/*.js --example-lang ts > ./README.md",
+    "postdocs": "yarn docs:replace && yarn docs:clean",
+    "docs:clean": "rimraf ./docsbuild",
+    "docs:build": "tsc -p ./tsconfig.docs.json",
+    "docs:replace": "replace --silent \".&lt;\" \"&lt;\" ./README.md",
+    "commit": "git-cz",
+    "cz": "git-cz",
+    "release": "standard-version",
+    "push": "git push --follow-tags origin master",
+    "publish": "git push --follow-tags origin master && npm publish"
+  },
+  "peerDependencies": {},
+  "dependencies": {
+    "@favware/querystring": "^2.0.3",
+    "@types/country-data": "^0.0.1",
+    "country-data": "^0.0.31",
+    "fast-xml-parser": "^3.12.20",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "@favware/eslint-config": "^3.0.0",
+    "@types/jest": "^24.0.17",
+    "@types/node": "^12.7.2",
+    "@types/node-fetch": "^2.5.0",
+    "common-tags": "^1.8.0",
+    "cz-conventional-changelog": "^3.0.2",
+    "eslint": "^6.1.0",
+    "husky": "^3.0.3",
+    "jest": "^24.9.0",
+    "jsdoc-to-markdown": "^5.0.0",
+    "lint-staged": "^9.2.1",
+    "replace": "^1.1.0",
+    "rollup": "^1.19.4",
+    "rollup-plugin-cleaner": "^1.0.0",
+    "rollup-plugin-commonjs": "^10.0.2",
+    "rollup-plugin-copy": "^3.1.0",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-peer-deps-external": "^2.2.0",
+    "rollup-plugin-progress": "^1.1.1",
+    "rollup-plugin-terser": "5.1.1",
+    "rollup-plugin-typescript2": "^0.22.1",
+    "standard-version": "^7.0.0",
+    "ts-jest": "^24.0.2",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.5.3"
+  },
+  "files": [
+    "dist/"
+  ],
+  "engines": {
+    "node": ">=10",
+    "npm": ">=6"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lmmfranco/nintendo-switch-eshop.git"
@@ -17,67 +79,28 @@
   "bugs": {
     "url": "https://github.com/lmmfranco/nintendo-switch-eshop/issues/new"
   },
-  "scripts": {
-    "test": "jest",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
-    "prebuild": "yarn lint && yarn test && yarn clean",
-    "build": "rollup -c rollup.config.ts",
-    "postbuild": "yarn copyfiles",
-    "start": "yarn build -w",
-    "prepublishOnly": "yarn build && yarn docs",
-    "clean": "rimraf ./dist",
-    "predocs": "yarn docs:clean && yarn lint && yarn docs:build",
-    "docs": "jsdoc2md --template ./docs/template.hbs --files ./docsbuild/*.js --example-lang ts > ./README.md",
-    "postdocs": "yarn docs:replace && yarn docs:clean",
-    "docs:clean": "rimraf ./docsbuild",
-    "docs:build": "tsc -p ./tsconfig.docs.json",
-    "docs:replace": "replace --silent \".&lt;\" \"&lt;\" ./README.md",
-    "copyfiles": "copyfiles -u 1 ./docs/example.js ./dist"
-  },
   "keywords": [
     "eshop",
     "switch",
     "nintendo",
     "crawler",
-    "lib"
+    "lib",
+    "typescript"
   ],
-  "engines": {
-    "node": ">=8",
-    "npm": ">=5"
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint-staged"
+    }
   },
-  "peerDependencies": {},
-  "dependencies": {
-    "@favware/querystring": "^2.0.3",
-    "@types/country-data": "^0.0.1",
-    "country-data": "^0.0.31",
-    "fast-xml-parser": "^3.12.19",
-    "node-fetch": "^2.6.0"
+  "lint-staged": {
+    "*.{js,ts}": [
+      "yarn lint",
+      "git add"
+    ]
   },
-  "devDependencies": {
-    "@favware/eslint-config": "^1.0.0",
-    "@types/jest": "^24.0.16",
-    "@types/node": "^12.6.9",
-    "@types/node-fetch": "^2.5.0",
-    "common-tags": "^1.8.0",
-    "copyfiles": "^2.1.1",
-    "eslint": "^6.1.0",
-    "jest": "^24.8.0",
-    "jsdoc-to-markdown": "^5.0.0",
-    "replace": "^1.1.0",
-    "rimraf": "^3.0.0",
-    "rollup": "^1.18.0",
-    "rollup-plugin-commonjs": "^10.0.1",
-    "rollup-plugin-json": "^4.0.0",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-peer-deps-external": "^2.2.0",
-    "rollup-plugin-progress": "^1.1.1",
-    "rollup-plugin-terser": "5.1.1",
-    "rollup-plugin-typescript2": "^0.22.1",
-    "ts-jest": "^24.0.2",
-    "ts-node": "^8.3.0",
-    "typescript": "^3.5.3"
-  },
-  "files": [
-    "dist/"
-  ]
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }

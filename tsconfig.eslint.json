@@ -1,0 +1,25 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": true,
+    "baseUrl": "./"
+  },
+  "include": [
+    "src",
+    "typings",
+    "__tests__",
+    "**/*.tsx",
+    "**/*.ts",
+    "**/*.d.ts",
+    "**/*.js"
+  ],
+  "exclude": [
+    "**/node_modules",
+    "**/build",
+    "**/bin",
+    "**/out",
+    "**/dist",
+    "**/coverage"
+  ]
+}

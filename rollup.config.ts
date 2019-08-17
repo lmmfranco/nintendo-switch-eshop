@@ -5,6 +5,8 @@ import progress from 'rollup-plugin-progress';
 import { terser } from 'rollup-plugin-terser';
 import typescript from 'rollup-plugin-typescript2';
 import json from 'rollup-plugin-json';
+import cleaner from 'rollup-plugin-cleaner';
+import copy from 'rollup-plugin-copy';
 
 export default {
   input: 'src/index.ts',
@@ -23,6 +25,11 @@ export default {
     }
   ],
   plugins: [
+    cleaner({
+      targets: [
+        './dist/'
+      ],
+    }),
     json({
       preferConst: true,
       compact: true,
@@ -36,6 +43,7 @@ export default {
       clean: true,
     }),
     commonjs(),
-    terser({ ecma: 5 })
+    terser({ ecma: 5 }),
+    copy({targets: [ { src: 'docs/example.js', dest: 'dist/' } ] })
   ],
 };
