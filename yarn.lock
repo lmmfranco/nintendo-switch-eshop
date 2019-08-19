@@ -177,10 +177,10 @@
     "@typescript-eslint/parser" "^2.0.0"
     eslint-plugin-jest "^22.15.1"
 
-"@favware/querystring@^2.0.3":
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/@favware/querystring/-/querystring-2.0.3.tgz#5f65ac958529fd4b59ba9c43a8cc368c977d7d70"
-  integrity sha512-pHbWp3D5aFbV5+X7iEkGF9eoyMRbXFDWI76C2o6827Tw2ofHvh9s/qFQw3fpAQZGd9ud3T0+9SQA0a5EdcqprQ==
+"@favware/querystring@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@favware/querystring/-/querystring-3.0.1.tgz#66ce27547ea84a4e803c4ce6e5d8cec652f50dae"
+  integrity sha512-DrZVSV4Q0bMGTT7DaEcWHwkGxu+px4z9Avcf0xGtBCnGZ9HkCjnqUMNko8wE+TvyTeSmBDOg4PVtB45uP8/m8A==
 
 "@jest/console@^24.7.1", "@jest/console@^24.9.0":
   version "24.9.0"
