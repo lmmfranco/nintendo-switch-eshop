@@ -31,7 +31,7 @@
   },
   "peerDependencies": {},
   "dependencies": {
-    "@favware/querystring": "^2.0.3",
+    "@favware/querystring": "^3.0.1",
     "@types/country-data": "^0.0.1",
     "country-data": "^0.0.31",
     "fast-xml-parser": "^3.12.20",
