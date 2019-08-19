@@ -494,8 +494,6 @@ export const parseGameCode = (game: GameUS | GameEU | GameJP, region: Region): s
       break;
   }
 
-  console.log(`The region was set to ${region} and the codeParse is ${codeParse}`)
-
   return (codeParse && codeParse.length > 1) ? codeParse[1] : null;
 };
 
