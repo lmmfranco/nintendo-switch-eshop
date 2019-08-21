@@ -23,6 +23,7 @@
     "docs:clean": "rimraf ./docsbuild",
     "docs:build": "tsc -p ./tsconfig.docs.json",
     "docs:replace": "replace --silent \".&lt;\" \"&lt;\" ./README.md",
+    "up": "yarn upgrade-interactive --latest",
     "commit": "git-cz",
     "cz": "git-cz",
     "release": "standard-version",
@@ -38,19 +39,21 @@
     "node-fetch": "^2.6.0"
   },
   "devDependencies": {
-    "@favware/eslint-config": "^3.0.0",
-    "@types/jest": "^24.0.17",
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
+    "@favware/eslint-config": "^3.0.1",
+    "@types/jest": "^24.0.18",
     "@types/node": "^12.7.2",
     "@types/node-fetch": "^2.5.0",
     "common-tags": "^1.8.0",
     "cz-conventional-changelog": "^3.0.2",
-    "eslint": "^6.1.0",
-    "husky": "^3.0.3",
+    "eslint": "^6.2.1",
+    "husky": "^3.0.4",
     "jest": "^24.9.0",
     "jsdoc-to-markdown": "^5.0.0",
-    "lint-staged": "^9.2.1",
-    "replace": "^1.1.0",
-    "rollup": "^1.19.4",
+    "lint-staged": "^9.2.3",
+    "replace": "^1.1.1",
+    "rollup": "^1.20.0",
     "rollup-plugin-cleaner": "^1.0.0",
     "rollup-plugin-commonjs": "^10.0.2",
     "rollup-plugin-copy": "^3.1.0",
@@ -89,6 +92,7 @@
   ],
   "husky": {
     "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "pre-commit": "yarn lint-staged"
     }
   },
@@ -102,5 +106,10 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   }
 }
