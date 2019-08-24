@@ -16,8 +16,9 @@
     "lint": "eslint . --ext .js,.ts --fix",
     "prebuild": "yarn lint && yarn test",
     "build": "rollup -c rollup.config.ts",
-    "start": "rollup -wc rollup.config.ts",
+    "start": "yarn build -w",
     "docs": "jsdoc2md --template ./docs/template.hbs --files ./docsbuild/*.js --example-lang ts > ./README.md",
+    "docs:clean": "rimraf ./docsbuild",
     "docs:build": "tsc -p ./tsconfig.docs.json",
     "docs:replace": "replace --silent \".&lt;\" \"&lt;\" ./README.md"
   },
