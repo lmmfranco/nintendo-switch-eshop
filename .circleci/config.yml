@@ -22,7 +22,7 @@ commands:
           command: yarn lint
       - run:
           name: Testing
-          command: yarn test
+          command: yarn test:ci
 
 # List of jobs
 jobs:
