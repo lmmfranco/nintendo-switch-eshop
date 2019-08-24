@@ -1,0 +1,23 @@
+{
+  "packages": [
+    "packages/*"
+  ],
+  "version": "2.2.1",
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "command": {
+    "publish": {
+      "conventionalCommits": true,
+      "push": true
+    },
+    "version": {
+      "allowBranch": "master",
+      "conventionalCommits": true,
+      "push": true,
+      "message": "chore(release): publish"
+    },
+    "create": {
+      "license": "Apache-2.0"
+    }
+  }
+}

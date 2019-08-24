@@ -1,60 +1,40 @@
 {
-  "name": "nintendo-switch-eshop",
-  "version": "2.2.1",
-  "description": "Unofficial API lib for Nintendo Switch eShop game listing and pricing information.",
-  "author": "lmmfranco",
-  "license": "Apache-2.0",
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
-  "jsnext:main": "dist/index.es.js",
-  "types": "dist/index.d.ts",
-  "runkitExampleFilename": "./dist/example.js",
-  "homepage": "https://github.com/lmmfranco/nintendo-switch-eshop",
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
-    "test": "jest",
-    "test:ci": "jest --testPathIgnorePatterns getActiveShops",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
-    "prebuild": "yarn lint && yarn test",
-    "build": "rollup -c rollup.config.ts",
-    "start": "yarn build -w",
+    "lint": "lerna run lint --parallel",
+    "test": "lerna run test --parallel",
+    "test:ci": "lerna run test:ci --parallel",
+    "build": "lerna run build --parallel",
+    "predocs": "yarn docs:clean && lerna run docs:build --parallel",
+    "docs": "lerna run docs --parallel",
+    "docs:clean": "rimraf packages/**/docsbuild",
+    "postdocs": "lerna run docs:replace --parallel && yarn docs:clean",
     "prepublishOnly": "yarn build && yarn docs",
-    "predocs": "yarn docs:clean && yarn lint && yarn docs:build",
-    "docs": "jsdoc2md --template ./docs/template.hbs --files ./docsbuild/*.js --example-lang ts > ./README.md",
-    "postdocs": "yarn docs:replace && yarn docs:clean",
-    "docs:clean": "rimraf ./docsbuild",
-    "docs:build": "tsc -p ./tsconfig.docs.json",
-    "docs:replace": "replace --silent \".&lt;\" \"&lt;\" ./README.md",
-    "up": "yarn upgrade-interactive --latest",
     "commit": "git-cz",
     "cz": "git-cz",
-    "release": "standard-version",
-    "push": "git push --follow-tags origin master",
-    "publish": "git push --follow-tags origin master && npm publish"
-  },
-  "peerDependencies": {},
-  "dependencies": {
-    "@favware/querystring": "^3.0.1",
-    "@types/country-data": "^0.0.1",
-    "country-data": "^0.0.31",
-    "fast-xml-parser": "^3.12.20",
-    "node-fetch": "^2.6.0"
+    "up": "yarn upgrade-interactive --latest"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-conventional": "^8.1.0",
-    "@favware/eslint-config": "^3.0.1",
+    "@favware/eslint-config": "^3.0.2",
     "@types/jest": "^24.0.18",
     "@types/node": "^12.7.2",
     "@types/node-fetch": "^2.5.0",
     "common-tags": "^1.8.0",
     "cz-conventional-changelog": "^3.0.2",
-    "eslint": "^6.2.1",
+    "eslint": "^6.2.2",
     "husky": "^3.0.4",
     "jest": "^24.9.0",
     "jsdoc-to-markdown": "^5.0.0",
+    "lerna": "^3.16.4",
     "lint-staged": "^9.2.3",
     "replace": "^1.1.1",
-    "rollup": "^1.20.0",
+    "rollup": "^1.20.1",
     "rollup-plugin-cleaner": "^1.0.0",
     "rollup-plugin-commonjs": "^10.0.2",
     "rollup-plugin-copy": "^3.1.0",
@@ -64,33 +44,10 @@
     "rollup-plugin-progress": "^1.1.1",
     "rollup-plugin-terser": "5.1.1",
     "rollup-plugin-typescript2": "^0.23.0",
-    "standard-version": "^7.0.0",
     "ts-jest": "^24.0.2",
     "ts-node": "^8.3.0",
     "typescript": "^3.5.3"
   },
-  "files": [
-    "dist/"
-  ],
-  "engines": {
-    "node": ">=10",
-    "npm": ">=6"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/lmmfranco/nintendo-switch-eshop.git"
-  },
-  "bugs": {
-    "url": "https://github.com/lmmfranco/nintendo-switch-eshop/issues/new"
-  },
-  "keywords": [
-    "eshop",
-    "switch",
-    "nintendo",
-    "crawler",
-    "lib",
-    "typescript"
-  ],
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",

@@ -18,7 +18,7 @@ const getJapaneseGames = async () => {
   return data;
 };
 
-(async() => {
+(async () => {
   console.log(await getAmericanGames('ncom', 1));
   console.log(await getEuropeanGames('en', 1));
   console.log(await getJapaneseGames());

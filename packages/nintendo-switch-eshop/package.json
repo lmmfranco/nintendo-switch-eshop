@@ -1,0 +1,59 @@
+{
+  "name": "nintendo-switch-eshop",
+  "version": "2.2.1",
+  "description": "Unofficial API lib for Nintendo Switch eShop game listing and pricing information.",
+  "author": "lmmfranco",
+  "license": "Apache-2.0",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "jsnext:main": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "runkitExampleFilename": "./dist/example.js",
+  "homepage": "https://github.com/lmmfranco/nintendo-switch-eshop/tree/master/packages/nintendo-switch-eshop#readme",
+  "scripts": {
+    "test": "jest",
+    "test:ci": "jest --testPathIgnorePatterns getActiveShops",
+    "lint": "eslint . --ext .js,.ts --fix",
+    "prebuild": "yarn lint && yarn test",
+    "build": "rollup -c rollup.config.ts",
+    "start": "rollup -wc rollup.config.ts",
+    "prepublishOnly": "yarn build && yarn docs",
+    "docs": "jsdoc2md --template ./docs/template.hbs --files ./docsbuild/*.js --example-lang ts > ./README.md",
+    "docs:build": "tsc -p ./tsconfig.docs.json",
+    "docs:replace": "replace --silent \".&lt;\" \"&lt;\" ./README.md"
+  },
+  "dependencies": {
+    "@favware/querystring": "^3.0.2",
+    "@types/country-data": "^0.0.1",
+    "country-data": "^0.0.31",
+    "fast-xml-parser": "^3.12.20",
+    "node-fetch": "^2.6.0"
+  },
+  "files": [
+    "dist/"
+  ],
+  "engines": {
+    "node": ">=10",
+    "npm": ">=6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lmmfranco/nintendo-switch-eshop.git",
+    "directory": "packages/nintendo-switch-eshop"
+  },
+  "bugs": {
+    "url": "https://github.com/lmmfranco/nintendo-switch-eshop/issues"
+  },
+  "keywords": [
+    "eshop",
+    "switch",
+    "nintendo",
+    "crawler",
+    "lib",
+    "typescript"
+  ],
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  }
+}
