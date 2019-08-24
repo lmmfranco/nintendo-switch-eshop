@@ -17,7 +17,6 @@
     "prebuild": "yarn lint && yarn test",
     "build": "rollup -c rollup.config.ts",
     "start": "rollup -wc rollup.config.ts",
-    "prepublishOnly": "yarn build && yarn docs",
     "docs": "jsdoc2md --template ./docs/template.hbs --files ./docsbuild/*.js --example-lang ts > ./README.md",
     "docs:build": "tsc -p ./tsconfig.docs.json",
     "docs:replace": "replace --silent \".&lt;\" \"&lt;\" ./README.md"
@@ -55,5 +54,6 @@
   "directories": {
     "lib": "lib",
     "test": "__tests__"
-  }
+  },
+  "gitHead": "918a3b5816d8139aed97de666de9ad08491faf6e"
 }
