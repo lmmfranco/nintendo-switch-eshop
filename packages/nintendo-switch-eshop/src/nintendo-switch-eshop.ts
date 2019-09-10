@@ -86,7 +86,7 @@ const isStringArray = (array: string | string[]): array is string[] => {
  * @returns {Promise<GameUS[]>} Promise containing all the games
  * @method
  */
-export const getGamesAmerica = async (options: USRequestOptions = {}, offset = 0, games: GameUS[] = []): Promise<any> => {
+export const getGamesAmerica = async (options: USRequestOptions = {}, offset = 0, games: GameUS[] = []): Promise<GameUS[]> => {
   /* eslint-disable */
   const limit = hasProp(options, 'limit') ? options.limit : US_GAME_LIST_LIMIT;
   const shopProp = hasProp(options, 'shop') ? options.shop : 'ncom';
