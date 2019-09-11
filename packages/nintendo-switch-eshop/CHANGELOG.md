@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.3](https://github.com/lmmfranco/nintendo-switch-eshop/compare/v2.2.2...v2.2.3) (2019-09-11)
+
+
+### Bug Fixes
+
+* typing get games america ([2d756b9](https://github.com/lmmfranco/nintendo-switch-eshop/commit/2d756b9))
+
+
+
+
+
 ## 2.2.2 (2019-08-24)
 
 **Note:** Version bump only for package nintendo-switch-eshop
