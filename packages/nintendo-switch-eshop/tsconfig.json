@@ -7,4 +7,14 @@
   "include": [
     "src"
   ],
+  "typedocOptions": {
+    "mode": "file",
+    "out": "api-docs-md",
+    "readme": "none",
+    "theme": "markdown",
+    "excludeExternals": true,
+    "excludePrivate": true,
+    "excludeProtected": true,
+    "excludeNotExported": true
+  }
 }

@@ -83,7 +83,7 @@ export const PRICE_LIST_LIMIT = 50;
 export class EshopError extends Error {
   /**
    * Create an EshopError
-   * @param {string} message The message the error should show
+   * @param message The message the error should show
    */
   public constructor(message: string) {
     super(message);

@@ -1,64 +1,11 @@
 import { Country } from 'country-data';
 
-/**
- * @typedef {Category} Category
- * @property {string[]} category
- */
-export type Category = {
+export interface Category {
+  /** Categories array */
   category: string[];
-};
+}
 
-/**
- * @typedef {GameEU} GameEU
- * @property {string} age_rating_type
- * @property {string} age_rating_value
- * @property {string} copyright_s
- * @property {string} developer
- * @property {string} excerpt
- * @property {string} fs_id
- * @property {string} game_series_t
- * @property {string} gift_finder_carousel_image_url_s
- * @property {string} gift_finder_description_s
- * @property {string} gift_finder_detail_page_image_url_s
- * @property {string} gift_finder_detail_page_store_link_s
- * @property {string} gift_finder_wishlist_image_url_s
- * @property {string} image_url
- * @property {string} image_url_h2x1_s
- * @property {string} image_url_sq_s
- * @property {string} image_url_tm_s
- * @property {string} originally_for_t
- * @property {string} pretty_agerating_s
- * @property {string} pretty_date_s
- * @property {string} publisher
- * @property {string} sorting_title
- * @property {string} title
- * @property {string} type
- * @property {string} url
- * @property {boolean} add_on_content_b
- * @property {boolean} club_nintendo
- * @property {boolean} near_field_comm_b
- * @property {boolean} physical_version_b
- * @property {boolean} play_mode_handheld_mode_b
- * @property {boolean} play_mode_tabletop_mode_b
- * @property {boolean} play_mode_tv_mode_b
- * @property {Date} change_date
- * @property {Date} date_from
- * @property {Date} priority
- * @property {number} age_rating_sorting_i
- * @property {number} players_from
- * @property {number} players_to
- * @property {string[]} compatible_controller
- * @property {string[]} game_categories_txt
- * @property {string[]} game_category
- * @property {string[]} language_availability
- * @property {string[]} nsuid_txt Array containing the 14-digit game unique identifier
- * @property {string[]} playable_on_txt
- * @property {string[]} product_code_txt Array containing the product code
- * @property {string[]} system_names_txt
- * @property {string[]} system_type
- * @property {string[]} title_extras_txt
- */
-export type GameEU = {
+export interface GameEU {
   age_rating_type: string;
   age_rating_value: string;
   copyright_s: string;
@@ -100,73 +47,50 @@ export type GameEU = {
   game_categories_txt: string[];
   game_category: string[];
   language_availability: string[];
+  /** Array containing the 14-digit game unique identifier */
   nsuid_txt: string[];
   playable_on_txt: string[];
+  /** Array containing the product code */
   product_code_txt: string[];
   system_names_txt: string[];
   system_type: string[];
   title_extras_txt: string[];
-};
+}
 
-/**
- * @typedef {GameUS} GameUS
- * @property {string} game_code Product code. Can be parsed for a region wide code.
- * @property {boolean} buyonline
- * @property {string} front_box_art
- * @property {number} eshop_price USA eShop price (in dollars)
- * @property {string} nsuid 14-digit game unique identifier
- * @property {string} video_link
- * @property {string} number_of_players
- * @property {number} ca_price Canada eShop price (in canadian dollars)
- * @property {string} id
- * @property {string} title
- * @property {string} system Gaming platform
- * @property {boolean} free_to_start
- * @property {boolean} digitaldownload
- * @property {string} release_date
- * @property {Category} categories
- * @property {string} slug Game URL name
- * @property {boolean} buyitnow
- */
-export type GameUS = {
+export interface GameUS {
+  /** Product code. Can be parsed for a region wide code. */
   game_code: string;
   buyonline: boolean;
   front_box_art: string;
+  /** USA eShop price (in dollars) */
   eshop_price: number;
+  /** 14-digit game unique identifier */
   nsuid: string;
   video_link: string;
   number_of_players: string;
+  /** Canada eShop price (in canadian dollars) */
   ca_price: number;
   id: string;
   title: string;
+  /** Gaming platform */
   system: string;
   free_to_start: boolean;
   digitaldownload: boolean;
   release_date: string;
   categories: Category;
+  /** Game URL name */
   slug: string;
   buyitnow: boolean;
-};
+}
 
-/**
- * @typedef {AlgoliaResults} AlgoliaResults
- * @property {GameUS[]} hits The games found
- * @property {number} nbHits Total number of hits with current query
- * @property {number} hitsPerPage Number of hits per page
- * @property {number} processingTimeMS
- * @property {Object.<Object>} facets
- * @property {Array.<string[]>} facetFilters Filters for the search query
- * @property {boolean} exhaustiveFacetsCount
- * @property {boolean} exhaustiveNbHits
- * @property {string} query
- * @property {string} params
- * @property {string} index
- */
-export type AlgoliaResults = {
+export interface AlgoliaResults {
+  /** The games found */
   hits: GameUS[];
+  /** Total number of hits with current query */
   nbHits: number;
   page: number;
   nbPages: number;
+  /** Number of hits per page */
   hitsPerPage: number;
   processingTimeMS: number;
   facets: {
@@ -174,42 +98,27 @@ export type AlgoliaResults = {
       [key: string]: number;
     };
   };
+  /** Filters for the search query */
   facetFilters: string[][];
   exhaustiveFacetsCount: boolean;
   exhaustiveNbHits: boolean;
   query: string;
   params: string;
   index: string;
-};
+}
 
-/**
- * @typedef {AlgoliaResponse} AlgoliaResponse
- * @property {AlgoliaResponse[]} results
- */
-export type AlgoliaResponse = {
+export interface AlgoliaResponse {
   results: AlgoliaResults[];
-};
+}
 
-/**
- * @typedef {GameJP} GameJP
- * @property {string[]} LinkURL A single item array containing the game url
- * @property {string[]} LinkTarget
- * @property {string[]} ScreenshotImgURL A single item array containing the game thumbnail url
- * @property {string[]} ScreenshotImgURLComing
- * @property {string[]} TitleName A single item array containing the game title
- * @property {string[]} TitleNameRuby
- * @property {string[]} SoftType
- * @property {string[]} SalesDate
- * @property {string[]} SalesDateStr
- * @property {string[]} MakerName
- * @property {string[]} Hard
- * @property {string[]} Memo
- */
-export type GameJP = {
+export interface GameJP {
+  /** A single item array containing the game url */
   LinkURL: string[];
   LinkTarget: string[];
+  /** A single item array containing the game thumbnail url */
   ScreenshotImgURL: string[];
   ScreenshotImgURLComing: string[];
+  /** A single item array containing the game title */
   TitleName: string[];
   TitleNameRuby: string[];
   SoftType: string[];
@@ -218,108 +127,66 @@ export type GameJP = {
   MakerName: string[];
   Hard: string[];
   Memo: string[];
-};
+}
 
-/**
- * @typedef {EShop} EShop
- * @property {string} code
- * @property {string} country
- * @property {string} currency
- * @property {Region} region
- */
-export type EShop = {
+export interface EShop {
   code: string;
   country: string;
   currency: string;
   region: Region;
-};
+}
 
-/**
- * @typedef {PriceResponse} PriceResponse
- * @property {PriceError} error
- * @property {boolean} personalized
- * @property {string} country
- * @property {TitleData[]} prices
- */
-export type PriceResponse = {
+export interface PriceResponse {
   error: PriceError;
   personalized: boolean;
   country: Country;
   prices: TitleData[];
-};
+}
 
-/**
- * @typedef {TitleData} TitleData
- * @property {number} title_id
- * @property {string} sales_status
- * @property {PriceData} regular_price
- * @property {PriceData} [discount_price]
- */
-export type TitleData = {
+export interface TitleData {
   title_id: number;
   sales_status: string;
   regular_price: PriceData;
   discount_price?: PriceData;
-};
+}
 
-/**
- * @typedef {PriceError} PriceError
- * @property {string} code
- * @property {string} message
- */
-export type PriceError = {
+export interface PriceError {
   code: string;
   message: string;
-};
+}
 
-/**
- * @typedef {PriceData} PriceData
- * @property {string} amount
- * @property {string} currency
- * @property {string} raw_value
- * @property {string} [start_datetime]
- * @property {string} [end_datetime]
- */
-export type PriceData = {
+export interface PriceData {
   amount: string;
   currency: string;
   raw_value: string;
   start_datetime?: string;
   end_datetime?: string;
-};
+}
 
-/**
- * @typedef {RequestOptions} RequestOptions
- * @property {number} limit Game count limit (Can only be lower than default page size). On the US eshop, the max limit is 1000. Leave empty to get all the games.
- */
-type RequestOptions = {
+export interface RequestOptions {
+  /**
+   * Game count limit (Can only be lower than default page size).
+   *
+   * @remarks
+   * On the US eshop, the max limit is 1000. Leave empty to get all the games. */
   limit?: number;
-};
+}
 
-/**
- * @typedef {USRequestOptions} USRequestOptions
- * @property {'retail' | 'ncom' | 'all'} shop Either `'retail' / 'ncom' / 'all'`. Defaults to `'ncom'`.
- * @extends RequestOptions
- */
 export type USRequestOptions = {
+  /**
+   * Either `'retail'`,  `'ncom'` or `'all'`.
+   * @default ncom
+   */
   shop?: 'retail' | 'ncom' | 'all' | 'unfiltered';
 } & RequestOptions;
 
-/**
- * @typedef {EURequestOptions} EURequestOptions
- * @property {string} locale Game information locale. (EU Only)
- * @extends RequestOptions
- */
 export type EURequestOptions = {
+  /** Game information locale. (EU Only) */
   locale?: string;
 } & RequestOptions;
 
 /**
  * Predefined options for the unit system
- * @enum {Region} Region
- * @property {Region.AMERICAS} 1
- * @property {Region.EUROPE} 2
- * @property {Region.ASIA} 3
  */
 export enum Region {
   AMERICAS = 1,

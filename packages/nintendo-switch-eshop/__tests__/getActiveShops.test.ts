@@ -5,7 +5,7 @@ describe('getActiveShops', () => {
     jest.setTimeout(100 * 1000); // This request takes a long while
     const shops = await getActiveShops();
 
-    expect(shops.length).not.toBe(0);
+    expect(shops).not.toHaveLength(0);
     expect(shops).toStrictEqual(
       expect.arrayContaining([
         expect.objectContaining({

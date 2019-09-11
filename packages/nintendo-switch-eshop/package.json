@@ -13,17 +13,17 @@
   "scripts": {
     "test": "jest",
     "test:ci": "jest --testPathIgnorePatterns getActiveShops",
-    "lint": "eslint . --ext .js,.ts --fix",
+    "lint": "eslint src __tests__ --ext js,ts --fix",
     "prebuild": "yarn lint && yarn test",
     "build": "rollup -c rollup.config.ts",
     "start": "yarn build -w",
-    "docs": "jsdoc2md --template ./docs/template.hbs --files ./docsbuild/*.js --example-lang ts > ./README.md",
-    "docs:clean": "rimraf ./docsbuild",
-    "docs:build": "tsc -p ./tsconfig.docs.json",
-    "docs:replace": "replace --silent \".&lt;\" \"&lt;\" ./README.md"
+    "predocs": "yarn docs:cleanup && typedoc",
+    "docs": "concat-md --dir-name-as-title api-docs-md > docs/api.md",
+    "postdocs": "cp docs/readme-template.md README.md && cat docs/api.md >> README.md && cp README.md ../../README.md && yarn docs:cleanup",
+    "docs:cleanup": "rimraf docs/api.md api-docs-md"
   },
   "dependencies": {
-    "@favware/querystring": "^3.0.2",
+    "@favware/querystring": "^3.0.3",
     "@types/country-data": "^0.0.1",
     "country-data": "^0.0.31",
     "fast-xml-parser": "^3.12.20",
@@ -55,6 +55,5 @@
   "directories": {
     "lib": "lib",
     "test": "__tests__"
-  },
-  "gitHead": "918a3b5816d8139aed97de666de9ad08491faf6e"
+  }
 }

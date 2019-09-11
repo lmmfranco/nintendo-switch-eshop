@@ -42,9 +42,9 @@ import {
 
 /**
  * Removed duplicates from an array
- * @param {any[]} array The input array
- * @param {string} property The property to check
- * @method
+ *
+ * @param array The input array
+ * @param property The property to check
  * @private
  */
 const arrayRemoveDuplicates = (array: any[], property: string) => {
@@ -59,17 +59,18 @@ const arrayRemoveDuplicates = (array: any[], property: string) => {
 
 /**
  * Checks if object has a certain property
- * @param {object} obj Object to traverse
- * @param {string} prop Property to find
- * @method
+ *
+ * @param obj Object to traverse
+ * @param prop Property to find
  * @private
  */
 const hasProp = <O extends {}>(obj: O, prop: keyof O) => obj && prop in obj;
 
 /**
- * Checks if the variable is an array of strings
- * @param {string | string[]} array Array to check
- * @returns boolean
+ * TypeGuard to check if the variable is an array of strings
+ *
+ * @param array Array to check
+ * @returns Boolean representing whether the input is an array
  * @private
  */
 const isStringArray = (array: string | string[]): array is string[] => {
@@ -79,18 +80,18 @@ const isStringArray = (array: string | string[]): array is string[] => {
 /**
  * Fetches all games on american eshops
  *
+ * @remarks
  * Paginates every 200 games, _(maximum item count per request)_
- * @param {USRequestOptions} [options] (Optional) Options for the request
- * @param {number} [offset] (Optional) Offset to start searching at
- * @param {string[]} [games] (Optional) Array of games to filter by
- * @returns {Promise<GameUS[]>} Promise containing all the games
- * @method
+ *
+ * @param options _(Optional)_ Options for the request
+ * @param offset _(Optional)_ Offset to start searching at
+ * @param games _(Optional)_ Array of games to filter by
+ * @returns Promise containing all the games
  */
 export const getGamesAmerica = async (options: USRequestOptions = {}, offset = 0, games: GameUS[] = []): Promise<GameUS[]> => {
-  /* eslint-disable */
   const limit = hasProp(options, 'limit') ? options.limit : US_GAME_LIST_LIMIT;
   const shopProp = hasProp(options, 'shop') ? options.shop : 'ncom';
-  let shop = shopProp === 'all' ? ['ncom', 'retail'] : shopProp;
+  let shop = shopProp === 'all' ? [ 'ncom', 'retail' ] : shopProp;
   shop = shop === 'unfiltered' ? undefined : shop;
 
   const page = Math.floor(offset / (limit as number));
@@ -106,7 +107,7 @@ export const getGamesAmerica = async (options: USRequestOptions = {}, offset = 0
     }
   };
 
-  let shopFilters: ReturnType<typeof shopMapper> | (ReturnType<typeof shopMapper>)[] = [''];
+  let shopFilters: ReturnType<typeof shopMapper> | (ReturnType<typeof shopMapper>)[] = [ '' ];
 
   if (shop) {
     shopFilters = isStringArray(shop) ? shop.map(value => shopMapper(value)) : shopMapper(shop);
@@ -126,7 +127,7 @@ export const getGamesAmerica = async (options: USRequestOptions = {}, offset = 0
             ? `_${sortingOptions.sortBy}_${sortingOptions.direction}` : '')}`,
           params: stringify({
             facetFilters: [
-              [US_GET_GAMES_OPTIONS.system],
+              [ US_GET_GAMES_OPTIONS.system ],
               shopFilters
             ],
             hitsPerPage: limit,
@@ -166,11 +167,11 @@ export const getGamesAmerica = async (options: USRequestOptions = {}, offset = 0
      */
     const countGamesBody = {
       body: JSON.stringify({
-        requests: [{
+        requests: [ {
           indexName: 'noa_aem_game_en_us',
           params: stringify({
             facetFilters: [
-              [US_GET_GAMES_OPTIONS.system],
+              [ US_GET_GAMES_OPTIONS.system ],
               shopFilters
             ],
             facets: [
@@ -178,7 +179,7 @@ export const getGamesAmerica = async (options: USRequestOptions = {}, offset = 0
             ],
             hitsPerPage: 0,
           }),
-        }],
+        } ],
       }),
       headers: { 'Content-Type': 'application/json' },
       method: 'post',
@@ -194,26 +195,26 @@ export const getGamesAmerica = async (options: USRequestOptions = {}, offset = 0
     const categoryCount = response.results[0].facets.categories;
 
     // Loop through all the categories and fetch the games.
-    const allGamesPromises = Object.entries(categoryCount).map(async ([category, count]) => {
-      const normalRequest = [{
+    const allGamesPromises = Object.entries(categoryCount).map(async ([ category, count ]) => {
+      const normalRequest = [ {
         indexName: 'noa_aem_game_en_us',
         params: stringify({
           facetFilters: JSON.stringify([
-            [US_GET_GAMES_OPTIONS.system],
-            [`categories:${category}`],
+            [ US_GET_GAMES_OPTIONS.system ],
+            [ `categories:${category}` ],
             shopFilters
           ]),
           hitsPerPage: 1000,
         }),
-      }];
+      } ];
 
       const manyPriceRangeRequests = US_PRICE_RANGES.map(priceRange => ({
         indexName: 'noa_aem_game_en_us',
         params: stringify({
           facetFilters: JSON.stringify([
-            [US_GET_GAMES_OPTIONS.system],
-            [`categories:${category}`],
-            [`priceRange:${priceRange}`],
+            [ US_GET_GAMES_OPTIONS.system ],
+            [ `categories:${category}` ],
+            [ `priceRange:${priceRange}` ],
             shopFilters
           ]),
           facets: [
@@ -259,9 +260,8 @@ export const getGamesAmerica = async (options: USRequestOptions = {}, offset = 0
 
 /**
  * Fetches all games on japanese eShops
- * @returns {Promise<GameJP[]>} Promise containing all the games
- * @method
- * @name getGamesJapan
+ *
+ * @returns Promise containing all the games
  */
 export const getGamesJapan = async (): Promise<GameJP[]> => {
   try {
@@ -284,11 +284,13 @@ export const getGamesJapan = async (): Promise<GameJP[]> => {
 };
 
 /**
- * Fetches all games on european eShops
- * @param {EURequestOptions} [options] (Optional) Options for the request
- * @returns {Promise<GameUS[]>} Promise containing all the games
- * @method
- * @name getGamesEurope
+ * Fetches all games on the European, Australian or New Zealand eShops
+ *
+ * @remarks
+ * Games from Australia / New Zealand can be limited. They are included only as much as that Nintendo assigns them properly to the PAL region
+ *
+ * @param options - Request options to pass to the eShop request {@link EURequestOptions | See EURequestOptions for details}
+ * @returns Promise containing all requested EU/PAL games
  */
 export const getGamesEurope = async (options: EURequestOptions = { limit: EU_GAME_LIST_LIMIT, locale: EU_DEFAULT_LOCALE }): Promise<GameEU[]> => {
   if (!options.limit) options.limit = EU_GAME_LIST_LIMIT;
@@ -312,16 +314,15 @@ export const getGamesEurope = async (options: EURequestOptions = { limit: EU_GAM
 };
 
 /**
- * Get pricing information for the requested games. Paginates every 50 games.
- * @param {string} country A two digit country code. (ISO 3166-1 alpha-2 country code)
- * @param {string[] | string} gameIds One or more NSUID of the corresponding games.
- * @param {number} [offset] (Optional) The offset to start at
- * @param {TitleData[]} [prices] (Optional) An array of {@link TitleData}
- * @return {Promise<PriceResponse>} A promise containing the pricing information.
- * @method
- * @name getPrices
+ * Gets pricing information for the requested ames. Paginates every 50 games.
+ *
+ * @param country A two digit country code. (ISO 3166-1 alpha-2 country code)
+ * @param gameIds One or more NSUID of the corresponding games.
+ * @param offset _(Optional)_ The offset to start at
+ * @param prices _(Optional)_ An array of {@link TitleData}
+ * @returns A promise containing the pricing information.
  */
-export const getPrices = async (country: string, gameIds: string[] | string, offset: number = 0, prices: TitleData[] = []): Promise<PriceResponse> => {
+export const getPrices = async (country: string, gameIds: string[] | string, offset = 0, prices: TitleData[] = []): Promise<PriceResponse> => {
   try {
     const filteredIds = gameIds.slice(offset, offset + PRICE_LIST_LIMIT);
     const priceData = await fetch(`${PRICE_GET_URL}?${stringify({
@@ -355,12 +356,11 @@ export const getPrices = async (country: string, gameIds: string[] | string, off
 
 /**
  * Gets all active eShops given a list of countries.
- * @param {string[]} countryCodes A list of 2 digit country codes for every country eShop to lookup. (ISO 3166-1 alpha-2 country codes)
- * @param {string} gameCode A 14 digits game NSUID from the desired region.
- * @param {Region} region A region id that will be appended in the final shop object for filtering purposes.
- * @returns {Promise<EShop[]>} A list of shop objects with country code, name and default currency.
- * @method
- * @name getShopsByCountryCodes
+ *
+ * @param countryCodes A list of 2 digit country codes for every country eShop to lookup. (ISO 3166-1 alpha-2 country codes)
+ * @param gameCode A 14 digits game NSUID from the desired region.
+ * @param region A region id that will be appended in the final shop object for filtering purposes.
+ * @returns A list of shop objects with country code, name and default currency.
  */
 export const getShopsByCountryCodes = async (countryCodes: string[], gameCode: string, region: Region): Promise<EShop[]> => {
   try {
@@ -399,10 +399,11 @@ export const getShopsByCountryCodes = async (countryCodes: string[], gameCode: s
 
 /**
  * Gets all active eShops on American countries.
+ *
+ * @remarks
  * This method will launch several requests at nintendo web services, so don't abuse it.
- * @returns {Promise<EShop[]>} A list of shop objects with country code, name and default currency.
- * @method
- * @name getShopsAmerica
+ *
+ * @returns A list of shop objects with country code, name and default currency.
  */
 export const getShopsAmerica = async (): Promise<EShop[]> => {
   return getShopsByCountryCodes(
@@ -416,10 +417,11 @@ export const getShopsAmerica = async (): Promise<EShop[]> => {
 
 /**
  * Gets all active eShops on European countries.
+ *
+ * @remarks
  * This method will launch several requests at nintendo web services, so don't abuse it.
- * @returns {Promise<EShop[]>} A list of shop objects with country code, name and default currency.
- * @method
- * @name getShopsEurope
+ *
+ * @returns A list of shop objects with country code, name and default currency.
  */
 export const getShopsEurope = async (): Promise<EShop[]> => {
   return getShopsByCountryCodes(
@@ -435,10 +437,11 @@ export const getShopsEurope = async (): Promise<EShop[]> => {
 
 /**
  * Gets all active eShops on Asian countries
+ *
+ * @remarks
  * This method will launch several requests at nintendo web services, so don't abuse it.
- * @returns {Promise<EShop[]>} A list of shop objects with country code, name and default currency.
- * @method
- * @name getShopsAsia
+ *
+ * @returns A list of shop objects with country code, name and default currency.
  */
 export const getShopsAsia = async (): Promise<EShop[]> => {
   return getShopsByCountryCodes(
@@ -453,10 +456,11 @@ export const getShopsAsia = async (): Promise<EShop[]> => {
 
 /**
  * Gets all active eShops.
+ *
+ * @remarks
  * This method will launch several requests at nintendo web services, so don't abuse it.
- * @returns {Promise<EShop[]>} A list of shop objects with country code, name and default currency.
- * @method
- * @name getActiveShops
+ *
+ * @returns A list of shop objects with country code, name and default currency.
  */
 export const getActiveShops = async (): Promise<EShop[]> => {
   try {
@@ -465,18 +469,17 @@ export const getActiveShops = async (): Promise<EShop[]> => {
     const shopsEurope = await getShopsEurope();
 
     return shopsAmerica.concat(shopsAsia, shopsEurope);
-  } catch(err) {
+  } catch (err) {
     throw new Error(err);
   }
 };
 
 /**
  * Parses the game code to extract the cross-region protion.
- * @param {GameUS | GameEU | GameJP} game The game object returned from one of the other methods.
- * @param {Region} region Region code
- * @returns {string | null} The 4-digit resulting game code
- * @method
- * @name parseGameCode
+ *
+ * @param game The game object returned from one of the other methods.
+ * @param region Region code
+ * @returns The 4-digit resulting game code
  */
 export const parseGameCode = (game: GameUS | GameEU | GameJP, region: Region): string | null => {
   let codeParse: RegExpExecArray | null;
@@ -499,11 +502,10 @@ export const parseGameCode = (game: GameUS | GameEU | GameJP, region: Region): s
 
 /**
  * Extracts NSUID information from the game object.
- * @param {GameUS | GameEU | GameJP} game The game object returned from one of the other methods.
- * @param {Region} region Region code
- * @returns {string | null} The 14-digits NSUID
- * @method
- * @name parseNSUID
+ *
+ * @param game The game object returned from one of the other methods.
+ * @param region Region code
+ * @returns The 14-digits NSUID
  */
 export const parseNSUID = (game: GameUS | GameEU | GameJP, region: Region): string | null => {
   switch (region) {
