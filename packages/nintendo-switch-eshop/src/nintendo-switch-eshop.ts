@@ -475,7 +475,7 @@ export const getActiveShops = async (): Promise<EShop[]> => {
 };
 
 /**
- * Parses the game code to extract the cross-region protion.
+ * Parses the game code to extract the cross-region portion.
  *
  * @param game The game object returned from one of the other methods.
  * @param region Region code

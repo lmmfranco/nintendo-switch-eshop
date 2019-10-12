@@ -507,7 +507,7 @@ ___
 
 *Defined in [nintendo-switch-eshop.ts:484](https://github.com/lmmfranco/nintendo-switch-eshop/blob/007e160/packages/nintendo-switch-eshop/src/nintendo-switch-eshop.ts#L484)*
 
-Parses the game code to extract the cross-region protion.
+Parses the game code to extract the cross-region portion.
 
 **Parameters:**
 
