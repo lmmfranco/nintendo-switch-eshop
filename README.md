@@ -420,7 +420,7 @@ ___
 
 *Defined in [nintendo-switch-eshop.ts:325](https://github.com/lmmfranco/nintendo-switch-eshop/blob/007e160/packages/nintendo-switch-eshop/src/nintendo-switch-eshop.ts#L325)*
 
-Gets pricing information for the requested ames. Paginates every 50 games.
+Gets pricing information for the requested games. Paginates every 50 games.
 
 **Parameters:**
 

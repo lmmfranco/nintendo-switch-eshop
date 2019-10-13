@@ -314,7 +314,7 @@ export const getGamesEurope = async (options: EURequestOptions = { limit: EU_GAM
 };
 
 /**
- * Gets pricing information for the requested ames. Paginates every 50 games.
+ * Gets pricing information for the requested games. Paginates every 50 games.
  *
  * @param country A two digit country code. (ISO 3166-1 alpha-2 country code)
  * @param gameIds One or more NSUID of the corresponding games.
