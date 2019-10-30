@@ -1,6 +1,7 @@
 {
   "extends": "@favware/ts-config",
   "compilerOptions": {
-    "target": "es5"
+    "target": "es5",
+    "incremental": false
   }
 }
