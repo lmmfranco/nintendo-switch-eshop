@@ -22,18 +22,13 @@ commands:
           command: yarn lint
       - run:
           name: Testing
-          command: yarn test:ci
+          command: yarn test
 
 # List of jobs
 jobs:
   node-v10:
     docker:
       - image: circleci/node:10
-    steps:
-      - nodejs
-  node-v11:
-    docker:
-      - image: circleci/node:11
     steps:
       - nodejs
   node-v12:
@@ -47,5 +42,4 @@ workflows:
   node-multi-build:
     jobs:
       - node-v10
-      - node-v11
       - node-v12

@@ -1,21 +1,6 @@
 {
-    "compilerOptions": {
-      "module": "esnext",
-      "target": "es5",
-      "lib": ["esnext"],
-      "allowJs": false,
-      "allowSyntheticDefaultImports": true,
-      "declaration": true,
-      "esModuleInterop": true,
-      "forceConsistentCasingInFileNames": true,
-      "moduleResolution": "node",
-      "newLine": "lf",
-      "noFallthroughCasesInSwitch": true,
-      "noImplicitReturns": true,
-      "noImplicitThis": true,
-      "noUnusedLocals": true,
-      "noUnusedParameters": true,
-      "sourceMap": true,
-      "strict": true
-    }
+  "extends": "@favware/ts-config",
+  "compilerOptions": {
+    "target": "es5"
+  }
 }

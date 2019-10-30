@@ -12,7 +12,6 @@
   "homepage": "https://github.com/lmmfranco/nintendo-switch-eshop/tree/master/packages/nintendo-switch-eshop#readme",
   "scripts": {
     "test": "jest",
-    "test:ci": "jest --testPathIgnorePatterns getActiveShops",
     "lint": "eslint src __tests__ --ext js,ts --fix",
     "prebuild": "yarn lint && yarn test",
     "build": "rollup -c rollup.config.ts",
@@ -23,10 +22,10 @@
     "docs:cleanup": "rimraf docs/api.md api-docs-md"
   },
   "dependencies": {
-    "@favware/querystring": "^3.0.3",
+    "@favware/querystring": "^4.1.2",
     "@types/country-data": "^0.0.1",
     "country-data": "^0.0.31",
-    "fast-xml-parser": "^3.12.20",
+    "fast-xml-parser": "^3.14.0",
     "node-fetch": "^2.6.0"
   },
   "files": [
