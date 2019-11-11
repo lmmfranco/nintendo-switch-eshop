@@ -357,9 +357,9 @@
   integrity sha512-maKQWtM1ZSPd1lmvHBCFpl5keT7d0vwci0ZzeDWDoSzYVdxi/wNrYXtogw8MyQvz8mT3VAChqOO3II1aUzeLbg==
 
 "@favware/ts-config@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@favware/ts-config/-/ts-config-1.0.1.tgz#eac3d19c72f1b9fe5730e7391fcbbad66a67ed10"
-  integrity sha512-RQavGuQJfgMLGgRz3C6uXcnB3UxIivWfwwpm+4VaB5um8vbDSSYJSNYmlfGTyfzgrJWUawM9a0GS7OoJNq6JQA==
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@favware/ts-config/-/ts-config-1.1.0.tgz#67b3300af290de7ad16fab3f2438d13b27c563c9"
+  integrity sha512-+0lmpC+ZMmeKNZklDrawt3hfY2g6O+zPMt1ovGpo+xvImf4wofHRNL5j+Dos7GnDmF/9KgHQkGdu62CUgxYRSA==
 
 "@jest/console@^24.7.1", "@jest/console@^24.9.0":
   version "24.9.0"
