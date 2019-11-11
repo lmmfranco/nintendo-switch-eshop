@@ -22,7 +22,7 @@
     "docs:cleanup": "rimraf docs/api.md api-docs-md"
   },
   "dependencies": {
-    "@favware/querystring": "^4.1.2",
+    "@favware/querystring": "^4.1.3",
     "@types/country-data": "^0.0.1",
     "country-data": "^0.0.31",
     "fast-xml-parser": "^3.14.0",
