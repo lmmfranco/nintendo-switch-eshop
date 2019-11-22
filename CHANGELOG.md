@@ -1,7 +1,13 @@
-# Change Log
+# Changelog
 
-All notable changes to this project will be documented in this file.
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [2.2.5](https://github.com/lmmfranco/nintendo-switch-eshop/compare/v2.2.4...v2.2.5) (2019-11-22)
+
+
+### Bug Fixes
+
+* fixed getGamesAmerica ([83d8934](https://github.com/lmmfranco/nintendo-switch-eshop/commit/83d89348cdec76483f7839f798289e6780b64c82))
 
 ## [2.2.4](https://github.com/lmmfranco/nintendo-switch-eshop/compare/v2.2.3...v2.2.4) (2019-10-30)
 
