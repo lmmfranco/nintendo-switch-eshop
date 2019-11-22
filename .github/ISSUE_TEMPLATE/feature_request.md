@@ -2,7 +2,7 @@
 name: Feature request
 about: Request a feature for the library
 title: '[REQUEST] '
-labels: 'Addition 📤, Improvement 🎗️'
+labels: 'Type: Enhancement'
 assignees: ''
 
 ---

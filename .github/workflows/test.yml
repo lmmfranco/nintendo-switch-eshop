@@ -1,0 +1,33 @@
+name: Unit Tests
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  test:
+    name: Node v${{ matrix.node_version }} - ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        node_version: [10, 12, 13]
+        os: [ubuntu-latest, windows-latest, macOS-latest]
+
+    steps:
+    - name: Checkout Project
+      uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node_version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node_version }}
+    - name: Restore CI Cache
+      uses: actions/cache@v1
+      with:
+        path: node_modules
+        key: ${{ runner.os }}-${{ matrix.node_version }}-${{ hashFiles(matrix.os == 'windows-latest' && '**\yarn.lock' || '**/yarn.lock') }}
+    - name: Install Dependencies
+      run: yarn
+    - name: Test
+      run: yarn test

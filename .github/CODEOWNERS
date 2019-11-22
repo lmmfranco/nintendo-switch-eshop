@@ -1,0 +1,10 @@
+# Favna
+/*.json
+/.eslintrc
+/.eslingignore
+/.editorconfig
+/packages/nintendo-switch-eshop/__tests__/*
+/packages/nintendo-switch-eshop/docs/*
+
+# Immfranco
+/packages/nintendo-switch-eshop/src/*

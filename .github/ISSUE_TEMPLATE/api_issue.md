@@ -2,8 +2,8 @@
 name: API Issue
 about: Report issues due to the Nintendo API changing here
 title: '[API] '
-labels: 'API changed 👩‍💻'
-assignees: '[Favna, Immfranco]'
+labels: 'Type: API Issue'
+assignees: 'Favna, Immfranco'
 
 ---
 
