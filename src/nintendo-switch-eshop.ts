@@ -3,41 +3,15 @@ import { countries, Country, regions } from 'country-data';
 import { parse as xml2json } from 'fast-xml-parser';
 import fetch from 'node-fetch';
 import {
-  EshopError,
-  EU_DEFAULT_LOCALE,
-  EU_GAME_CHECK_CODE,
-  EU_GAME_CODE_REGEX,
-  EU_GAME_LIST_LIMIT,
-  EU_GET_GAMES_OPTIONS,
-  EU_GET_GAMES_URL,
-  JP_GAME_CHECK_CODE,
-  JP_GAME_CODE_REGEX,
-  JP_GET_GAMES_COMING,
-  JP_GET_GAMES_CURRENT,
-  JP_NSUID_REGEX,
-  PRICE_GET_OPTIONS,
-  PRICE_GET_URL,
-  PRICE_LIST_LIMIT,
-  US_ALGOLIA_ID,
-  US_ALGOLIA_KEY,
-  US_GAME_CHECK_CODE,
-  US_GAME_CODE_REGEX,
-  US_GAME_LIST_LIMIT,
-  US_GET_GAMES_OPTIONS,
-  US_GET_GAMES_URL,
-  US_PRICE_RANGES
+  EshopError, EU_DEFAULT_LOCALE, EU_GAME_CHECK_CODE, EU_GAME_CODE_REGEX,
+  EU_GAME_LIST_LIMIT, EU_GET_GAMES_OPTIONS, EU_GET_GAMES_URL, JP_GAME_CHECK_CODE,
+  JP_GAME_CODE_REGEX, JP_GET_GAMES_COMING, JP_GET_GAMES_CURRENT, JP_NSUID_REGEX,
+  PRICE_GET_OPTIONS, PRICE_GET_URL, PRICE_LIST_LIMIT, US_ALGOLIA_HEADERS,
+  US_GAME_CHECK_CODE, US_GAME_CODE_REGEX, US_GAME_LIST_LIMIT, US_GET_GAMES_OPTIONS,
+  US_GET_GAMES_URL, US_PRICE_RANGES
 } from './constants';
 import {
-  AlgoliaResponse,
-  EShop,
-  EURequestOptions,
-  GameEU,
-  GameJP,
-  GameUS,
-  PriceResponse,
-  Region,
-  TitleData,
-  USRequestOptions
+  AlgoliaResponse, EShop, EURequestOptions, GameEU, GameJP, GameUS, PriceResponse, Region, TitleData, USRequestOptions
 } from './interfaces';
 
 /**
@@ -136,16 +110,13 @@ export const getGamesAmerica = async (options: USRequestOptions = {}, offset = 0
         }
       ],
     }),
-    headers: { 'Content-Type': 'application/json' },
-    method: 'post',
+    headers: US_ALGOLIA_HEADERS,
+    method: 'POST',
   };
 
   try {
     if (hasProp(options, 'limit')) {
-      const gamesUS = await fetch(`${US_GET_GAMES_URL}?${stringify({
-        'x-algolia-api-key': US_ALGOLIA_KEY,
-        'x-algolia-application-id': US_ALGOLIA_ID,
-      })}`, body);
+      const gamesUS = await fetch(US_GET_GAMES_URL, body);
 
       if (!gamesUS.ok) throw new Error('US_games_request_failed');
 
@@ -161,11 +132,11 @@ export const getGamesAmerica = async (options: USRequestOptions = {}, offset = 0
     /**
      * Using a workaround to get all the games.
      * Basically, fetch all the games from the different categories one by one,
-     * if one category has > 1000 games, fetch all the games in each price range one by one.
+     * if one category has > 100 games, fetch all the games in each price range one by one.
      *
      * Get the counts of all the games in the different categories.
      */
-    const countGamesBody = {
+    const categoriesRequestOptions = {
       body: JSON.stringify({
         requests: [ {
           indexName: 'noa_aem_game_en_us',
@@ -181,14 +152,11 @@ export const getGamesAmerica = async (options: USRequestOptions = {}, offset = 0
           }),
         } ],
       }),
-      headers: { 'Content-Type': 'application/json' },
-      method: 'post',
+      headers: US_ALGOLIA_HEADERS,
+      method: 'POST',
     };
 
-    const gamesToCount = await fetch(`${US_GET_GAMES_URL}?${stringify({
-      'x-algolia-api-key': US_ALGOLIA_KEY,
-      'x-algolia-application-id': US_ALGOLIA_ID,
-    })}`, countGamesBody);
+    const gamesToCount = await fetch(US_GET_GAMES_URL, categoriesRequestOptions);
     if (!gamesToCount.ok) throw new Error('US_games_request_failed');
 
     const response: AlgoliaResponse = await gamesToCount.json();
@@ -204,7 +172,7 @@ export const getGamesAmerica = async (options: USRequestOptions = {}, offset = 0
             [ `categories:${category}` ],
             shopFilters
           ]),
-          hitsPerPage: 1000,
+          hitsPerPage: 100,
         }),
       } ];
 
@@ -221,26 +189,23 @@ export const getGamesAmerica = async (options: USRequestOptions = {}, offset = 0
             'platform',
             'categories'
           ],
-          hitsPerPage: 1000,
+          hitsPerPage: 100,
         }),
       }));
 
-      const finalGamesBody = {
-        body: JSON.stringify({ requests: count > 1000 ? manyPriceRangeRequests : normalRequest }),
-        headers: { 'Content-Type': 'application/json' },
-        method: 'post',
+      const allGamesRequestOptions = {
+        body: JSON.stringify({ requests: count > 100 ? manyPriceRangeRequests : normalRequest }),
+        headers: US_ALGOLIA_HEADERS,
+        method: 'POST',
       };
 
-      const allGamesResponse = await fetch(`${US_GET_GAMES_URL}?${stringify({
-        'x-algolia-api-key': US_ALGOLIA_KEY,
-        'x-algolia-application-id': US_ALGOLIA_ID,
-      })}`, finalGamesBody);
+      const allGamesResponse = await fetch(US_GET_GAMES_URL, allGamesRequestOptions);
 
       if (!allGamesResponse.ok) throw new Error('US_games_request_failed');
 
       const gamesResponse: AlgoliaResponse = await allGamesResponse.json();
 
-      return count > 1000
+      return count > 100
         ? gamesResponse.results
           .map(result => result.hits)
           .reduce((a, b) => a.concat(b, []))

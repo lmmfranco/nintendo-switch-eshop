@@ -168,22 +168,21 @@ export interface RequestOptions {
    * Game count limit (Can only be lower than default page size).
    *
    * @remarks
-   * On the US eshop, the max limit is 1000. Leave empty to get all the games. */
+   * On the US eshop, the max limit is 100. Leave empty to get all the games. */
   limit?: number;
 }
 
-export type USRequestOptions = {
+export interface USRequestOptions extends RequestOptions {
   /**
    * Either `'retail'`,  `'ncom'` or `'all'`.
    * @default ncom
    */
   shop?: 'retail' | 'ncom' | 'all' | 'unfiltered';
-} & RequestOptions;
-
-export type EURequestOptions = {
+}
+export interface EURequestOptions extends RequestOptions {
   /** Game information locale. (EU Only) */
   locale?: string;
-} & RequestOptions;
+}
 
 /**
  * Predefined options for the unit system

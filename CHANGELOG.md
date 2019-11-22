@@ -5,7 +5,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [2.2.4](https://github.com/lmmfranco/nintendo-switch-eshop/compare/v2.2.3...v2.2.4) (2019-10-30)
 
-**Note:** Version bump only for package root
+**Note:** Version bump only for package nintendo-switch-eshop
 
 
 
@@ -24,62 +24,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## 2.2.2 (2019-08-24)
 
-
-### Build System
-
-* upgrade dependencies ([6bd89ab](https://github.com/lmmfranco/nintendo-switch-eshop/commit/6bd89ab))
-
-
-### BREAKING CHANGES
-
-* Unofficially drop support for NodeJS versions lower than 10 by setting engine field
-to >= 10. This is because conventional commits asks Node v10 or higher in their engines field.
-
-"fix 49", "fix 50"
-
-
-
-## 2.2.1 (2019-08-05)
-
-
-
-# 2.2.0 (2019-08-01)
-
-
-
-## 2.1.1 (2019-02-26)
-
-
-
-# 2.1.0 (2019-02-26)
-
-
-
-## 2.0.1 (2019-01-19)
-
-
-
-## 1.1.2 (2018-07-20)
-
-
-
-## 1.1.1 (2018-07-13)
-
-
-
-# 1.1.0 (2018-02-23)
-
-
-
-## 1.0.7 (2017-08-01)
-
-
-
-## 1.0.6 (2017-06-23)
-
-
-
-## 1.0.3 (2017-06-05)
+**Note:** Version bump only for package nintendo-switch-eshop
 
 
 

@@ -1,7 +1,27 @@
 {
   "extends": "@favware/ts-config",
   "compilerOptions": {
-    "target": "es5",
-    "incremental": false
+    "rootDir": "src",
+    "outDir": "dist",
+    "target": "es2020",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "resolveJsonModule": true
+  },
+  "include": [
+    "src"
+  ],
+  "typedocOptions": {
+    "mode": "modules",
+    "out": "./docs/",
+    "readme": "./README.md",
+    "name": "Nintendo Switch EShop",
+    "exclude": [
+      "src/index.ts"
+    ],
+    "excludeExternals": true,
+    "excludePrivate": true,
+    "excludeProtected": true,
+    "excludeNotExported": true
   }
 }

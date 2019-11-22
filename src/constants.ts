@@ -31,6 +31,13 @@ export const US_PRICE_RANGES = [
   '$40+'
 ];
 
+/** Request headers for US games */
+export const US_ALGOLIA_HEADERS = {
+  'Content-Type': 'application/json',
+  'X-Algolia-API-Key': US_ALGOLIA_KEY,
+  'X-Algolia-Application-Id': US_ALGOLIA_ID,
+};
+
 /** Options used for getting EU gmaes  */
 export const EU_GET_GAMES_OPTIONS = {
   fq: 'type:GAME AND system_type:nintendoswitch* AND product_code_txt:*',

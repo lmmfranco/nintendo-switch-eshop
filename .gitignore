@@ -11,15 +11,13 @@ node_modules
 
 # Build Artifacts
 dist/
-build/
-api-docs-md/
-packages/**/docs/api.md
 *.zip
 *.tar
 *.tar.xz
 *.tar.gz
 *.7z
 *.rar
+tsconfig.tsbuildinfo
 
 # Logs
 logs/
