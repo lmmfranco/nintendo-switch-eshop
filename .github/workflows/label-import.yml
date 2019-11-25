@@ -5,11 +5,12 @@ on:
   label:
 
 jobs:
-  labels:
-    name: LabelSync
+  labeler:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@1.0.0
-      - uses: lannonbr/issue-label-manager-action@2.0.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Checkout Project
+      uses: actions/checkout@v1
+    - name: Run Label Sync
+      uses: crazy-max/ghaction-github-labeler@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
