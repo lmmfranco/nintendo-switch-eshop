@@ -454,7 +454,7 @@ export const parseGameCode = (game: GameUS | GameEU | GameJP, region: Region): s
       codeParse = EU_GAME_CODE_REGEX.exec((game as GameEU).product_code_txt[0]);
       break;
     case Region.ASIA:
-      codeParse = JP_GAME_CODE_REGEX.exec((game as GameJP).ScreenshotImgURL[0]);
+      codeParse = JP_GAME_CODE_REGEX.exec((game as GameJP).ScreenshotImgURL);
       break;
     default:
     case Region.AMERICAS:
@@ -477,7 +477,7 @@ export const parseNSUID = (game: GameUS | GameEU | GameJP, region: Region): stri
     case Region.EUROPE:
       return (game as GameEU).nsuid_txt ? (game as GameEU).nsuid_txt[0] : null;
     case Region.ASIA:
-      const nsuidParse = JP_NSUID_REGEX.exec((game as GameJP).LinkURL[0]);
+      const nsuidParse = JP_NSUID_REGEX.exec((game as GameJP).LinkURL);
 
       return (nsuidParse && nsuidParse.length > 0) ? nsuidParse[0] : null;
     default:
