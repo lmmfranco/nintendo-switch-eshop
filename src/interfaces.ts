@@ -111,22 +111,26 @@ export interface AlgoliaResponse {
   results: AlgoliaResults[];
 }
 
-export interface GameJP {
-  /** A single item array containing the game url */
-  LinkURL: string[];
-  LinkTarget: string[];
-  /** A single item array containing the game thumbnail url */
-  ScreenshotImgURL: string[];
-  ScreenshotImgURLComing: string[];
-  /** A single item array containing the game title */
-  TitleName: string[];
-  TitleNameRuby: string[];
-  SoftType: string[];
-  SalesDate: string[];
-  SalesDateStr: string[];
-  MakerName: string[];
-  Hard: string[];
-  Memo: string[];
+export interface GameJP extends Record<string, string | number> {
+  /** The game url */
+  LinkURL: string;
+  /** The Link Target, if it exists */
+  LinkTarget: string;
+  /** The screenshot URL, if it exists */
+  ScreenshotImgURL: string;
+  /** The variation of the thumbnail */
+  ThumbVariation: string;
+  ComingThumb: 'yes' | string;
+  /** The game's title */
+  TitleName: string;
+  /** The title name in Asian characters */
+  TitleNameRuby: string;
+  SoftType: string;
+  D: number;
+  SalesDateStr: string;
+  MakerName: string;
+  Hard: string;
+  Memo: string;
 }
 
 export interface EShop {

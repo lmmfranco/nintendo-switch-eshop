@@ -477,7 +477,7 @@ export const parseNSUID = (game: GameUS | GameEU | GameJP, region: Region): stri
     case Region.EUROPE:
       return (game as GameEU).nsuid_txt ? (game as GameEU).nsuid_txt[0] : null;
     case Region.ASIA:
-      const nsuidParse = JP_NSUID_REGEX.exec((game as GameJP).LinkURL[0]);
+      const nsuidParse = JP_NSUID_REGEX.exec((game as GameJP).LinkURL);
 
       return (nsuidParse && nsuidParse.length > 0) ? nsuidParse[0] : null;
     default:
