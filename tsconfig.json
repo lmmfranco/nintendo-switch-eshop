@@ -6,6 +6,7 @@
     "target": "es6",
     "module": "commonjs",
     "moduleResolution": "node",
+    "declarationMap": true,
     "resolveJsonModule": true
   },
   "include": [
