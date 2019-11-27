@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.2.6](https://github.com/lmmfranco/nintendo-switch-eshop/compare/v2.2.5...v2.2.6) (2019-11-27)
+
+
+### Bug Fixes
+
+* jp nsuid parsing & tslib dep ([2bf5629](https://github.com/lmmfranco/nintendo-switch-eshop/commit/2bf56291fdd762b1dced28c11be23f3e7e1763aa)), closes [#90](https://github.com/lmmfranco/nintendo-switch-eshop/issues/90) [#91](https://github.com/lmmfranco/nintendo-switch-eshop/issues/91)
+
 ### [2.2.5](https://github.com/lmmfranco/nintendo-switch-eshop/compare/v2.2.4...v2.2.5) (2019-11-22)
 
 
