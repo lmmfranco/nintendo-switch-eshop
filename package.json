@@ -12,7 +12,7 @@
 		"build": "tsc",
 		"start": "tsc -w",
 		"docs": "typedoc",
-		"prepublishOnly": "tsc && typedoc",
+		"prepublishOnly": "tsc",
 		"sversion": "standard-version",
 		"commit": "git-cz",
 		"cz": "git-cz",
