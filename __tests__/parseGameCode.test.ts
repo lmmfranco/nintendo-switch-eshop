@@ -31,18 +31,19 @@ describe('Success: parseGameCode', () => {
 
   test('Region == ASIA', () => {
     const game: GameJP = {
-      LinkURL: [ '123456789123456789', 'invalid', 'not this one' ],
-      Hard: [ 'sample' ],
-      LinkTarget: [ 'sample' ],
-      MakerName: [ 'sample' ],
-      Memo: [ 'sample' ],
-      SalesDate: [ 'sample' ],
-      SalesDateStr: [ 'sample' ],
-      ScreenshotImgURL: [ 'https://example.com/HAC12345' ],
-      ScreenshotImgURLComing: [ 'sample' ],
-      SoftType: [ 'sample' ],
-      TitleName: [ 'sample' ],
-      TitleNameRuby: [ 'sample' ],
+      LinkURL: '123456789123456789',
+      Hard: 'sample',
+      LinkTarget: 'sample',
+      MakerName: 'sample',
+      Memo: 'sample',
+      D: new Date().getTime(),
+      SalesDateStr: 'sample',
+      ScreenshotImgURL: 'https://example.com/HAC12345',
+      ComingThumb: 'sample',
+      ThumbVariation: 'sample',
+      SoftType: 'sample',
+      TitleName: 'sample',
+      TitleNameRuby: 'sample',
     };
 
     const data = parseGameCode(game, Region.ASIA);

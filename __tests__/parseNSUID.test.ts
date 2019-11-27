@@ -31,18 +31,19 @@ describe('parse NSUID', () => {
 
   test('Success: Region == ASIA', () => {
     const game: GameJP = {
-      LinkURL: [ '123456789123456789', 'invalid', 'not this one' ],
-      Hard: [ 'sample' ],
-      LinkTarget: [ 'sample' ],
-      MakerName: [ 'sample' ],
-      Memo: [ 'sample' ],
-      SalesDate: [ 'sample' ],
-      SalesDateStr: [ 'sample' ],
-      ScreenshotImgURL: [ 'https://example.com/HAC12345' ],
-      ScreenshotImgURLComing: [ 'sample' ],
-      SoftType: [ 'sample' ],
-      TitleName: [ 'sample' ],
-      TitleNameRuby: [ 'sample' ],
+      LinkURL: '123456789123456789',
+      Hard: 'sample',
+      LinkTarget: 'sample',
+      MakerName: 'sample',
+      Memo: 'sample',
+      D: new Date().getTime(),
+      SalesDateStr: 'sample',
+      ScreenshotImgURL: 'https://example.com/HAC12345',
+      ComingThumb: 'sample',
+      ThumbVariation: 'sample',
+      SoftType: 'sample',
+      TitleName: 'sample',
+      TitleNameRuby: 'sample',
     };
 
     const data = parseNSUID(game, Region.ASIA);
@@ -53,18 +54,19 @@ describe('parse NSUID', () => {
 
   test('Fail: Region == ASIA', () => {
     const game: GameJP = {
-      LinkURL: [ 'fail', 'fail', 'fail' ],
-      Hard: [ 'sample' ],
-      LinkTarget: [ 'sample' ],
-      MakerName: [ 'sample' ],
-      Memo: [ 'sample' ],
-      SalesDate: [ 'sample' ],
-      SalesDateStr: [ 'sample' ],
-      ScreenshotImgURL: [ 'https://example.com/HAC12345' ],
-      ScreenshotImgURLComing: [ 'sample' ],
-      SoftType: [ 'sample' ],
-      TitleName: [ 'sample' ],
-      TitleNameRuby: [ 'sample' ],
+      LinkURL: 'fail',
+      Hard: 'sample',
+      LinkTarget: 'sample',
+      MakerName: 'sample',
+      Memo: 'sample',
+      D: new Date().getTime(),
+      SalesDateStr: 'sample',
+      ScreenshotImgURL: 'https://example.com/HAC12345',
+      ComingThumb: 'sample',
+      ThumbVariation: 'sample',
+      SoftType: 'sample',
+      TitleName: 'sample',
+      TitleNameRuby: 'sample',
     };
 
     const data = parseNSUID(game, Region.ASIA);

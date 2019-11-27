@@ -454,7 +454,7 @@ export const parseGameCode = (game: GameUS | GameEU | GameJP, region: Region): s
       codeParse = EU_GAME_CODE_REGEX.exec((game as GameEU).product_code_txt[0]);
       break;
     case Region.ASIA:
-      codeParse = JP_GAME_CODE_REGEX.exec((game as GameJP).ScreenshotImgURL[0]);
+      codeParse = JP_GAME_CODE_REGEX.exec((game as GameJP).ScreenshotImgURL);
       break;
     default:
     case Region.AMERICAS:
