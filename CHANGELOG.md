@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.2.7](https://github.com/lmmfranco/nintendo-switch-eshop/compare/v2.2.6...v2.2.7) (2019-12-10)
+
+
+### Bug Fixes
+
+* update getGamesJapan ([#97](https://github.com/lmmfranco/nintendo-switch-eshop/issues/97)) ([c351038](https://github.com/lmmfranco/nintendo-switch-eshop/commit/c3510381e340821842c85bf257a83851f414329e))
+
 ### [2.2.6](https://github.com/lmmfranco/nintendo-switch-eshop/compare/v2.2.5...v2.2.6) (2019-11-27)
 
 
