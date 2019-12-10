@@ -5,10 +5,10 @@ import fetch from 'node-fetch';
 import {
   EshopError, EU_DEFAULT_LOCALE, EU_GAME_CHECK_CODE, EU_GAME_CODE_REGEX,
   EU_GAME_LIST_LIMIT, EU_GET_GAMES_OPTIONS, EU_GET_GAMES_URL, JP_GAME_CHECK_CODE,
-  JP_GAME_CODE_REGEX, JP_GET_GAMES_COMING, JP_GET_GAMES_CURRENT, JP_NSUID_REGEX,
+  JP_GAME_CODE_REGEX,
   PRICE_GET_OPTIONS, PRICE_GET_URL, PRICE_LIST_LIMIT, US_ALGOLIA_HEADERS,
   US_GAME_CHECK_CODE, US_GAME_CODE_REGEX, US_GAME_LIST_LIMIT, US_GET_GAMES_OPTIONS,
-  US_GET_GAMES_URL, US_PRICE_RANGES
+  US_GET_GAMES_URL, US_PRICE_RANGES, JP_GET_GAMES_URL, JP_NSUID_REGEX
 } from './constants';
 import {
   AlgoliaResponse, EShop, EURequestOptions, GameEU, GameJP, GameUS, PriceResponse, Region, TitleData, USRequestOptions
@@ -230,20 +230,17 @@ export const getGamesAmerica = async (options: USRequestOptions = {}, offset = 0
  */
 export const getGamesJapan = async (): Promise<GameJP[]> => {
   try {
-    const currentGamesJP = await fetch(JP_GET_GAMES_CURRENT);
-    const comingGamesJP = await fetch(JP_GET_GAMES_COMING);
-    if (!currentGamesJP.ok) throw new Error('JP_current_games_request_failed');
-    if (!comingGamesJP.ok) throw new Error('JP_coming_games_request_failed');
+    const gamesJP = await fetch(JP_GET_GAMES_URL);
 
-    const parsedCurrentGames = xml2json(await currentGamesJP.text());
-    const parsedComingGames = xml2json(await comingGamesJP.text());
-    const currentGames: GameJP[] = parsedCurrentGames.TitleInfoList.TitleInfo;
-    const comingGames: GameJP[] = parsedComingGames.TitleInfoList.TitleInfo;
+    if (!gamesJP.ok) throw new Error('JP_games_request_failed');
 
-    return currentGames.concat(comingGames);
+    const parsedGamesJP = xml2json(await gamesJP.text());
+
+    const allGamesJP: GameJP[] = parsedGamesJP.TitleInfoList.TitleInfo;
+
+    return allGamesJP;
   } catch (err) {
-    if (/(?:JP_current_games_request_failed)/i.test(err.toString())) throw new EshopError('Fetching of Current JP Games failed');
-    if (/(?:JP_coming_games_request_failed)/i.test(err.toString())) throw new EshopError('Fetching of Upcoming JP Games failed');
+    if (/(?:JP_games_request_failed)/i.test(err.toString())) throw new EshopError('Fetching of JP Games failed');
     throw err;
   }
 };

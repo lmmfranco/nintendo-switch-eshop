@@ -62,11 +62,8 @@ export const EU_DEFAULT_LOCALE = 'en';
 /** Default limit used when getting EU games - defaults to `9999` */
 export const EU_GAME_LIST_LIMIT = 9999;
 
-/** URL for getting currently released JP Games */
-export const JP_GET_GAMES_CURRENT = 'https://www.nintendo.co.jp/data/software/xml-system/switch-onsale.xml';
-
-/** URL for getting upcoming JP Games */
-export const JP_GET_GAMES_COMING = 'https://www.nintendo.co.jp/data/software/xml-system/switch-coming.xml';
+/** URL for getting JP Games */
+export const JP_GET_GAMES_URL = 'https://www.nintendo.co.jp/data/software/xml/switch.xml';
 
 /** Sample game code for JP store */
 export const JP_GAME_CHECK_CODE = '70010000000039';
