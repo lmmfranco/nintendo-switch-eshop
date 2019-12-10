@@ -111,11 +111,15 @@ export interface AlgoliaResponse {
   results: AlgoliaResults[];
 }
 
-export interface GameJP extends Record<string, string | number> {
+export interface GameJP extends Record<string, string | number | undefined> {
+  /** The game code for the game */
+  InitialCode: string;
   /** The game url */
   LinkURL: string;
   /** The Link Target, if it exists */
   LinkTarget: string;
+  /** The type of screenshot, if it exists */
+  ScreenshotImgFlg: number;
   /** The screenshot URL, if it exists */
   ScreenshotImgURL: string;
   /** The variation of the thumbnail */
@@ -127,10 +131,13 @@ export interface GameJP extends Record<string, string | number> {
   TitleNameRuby: string;
   SoftType: string;
   D: number;
-  SalesDateStr: string;
+  SalesDate: string;
   MakerName: string;
   Hard: string;
   Memo: string;
+  PlatformID: string;
+  Price: string;
+  MakerKana: string;
 }
 
 export interface EShop {

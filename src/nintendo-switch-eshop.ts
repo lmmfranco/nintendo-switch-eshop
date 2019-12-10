@@ -2,17 +2,8 @@ import { stringify } from '@favware/querystring';
 import { countries, Country, regions } from 'country-data';
 import { parse as xml2json } from 'fast-xml-parser';
 import fetch from 'node-fetch';
-import {
-  EshopError, EU_DEFAULT_LOCALE, EU_GAME_CHECK_CODE, EU_GAME_CODE_REGEX,
-  EU_GAME_LIST_LIMIT, EU_GET_GAMES_OPTIONS, EU_GET_GAMES_URL, JP_GAME_CHECK_CODE,
-  JP_GAME_CODE_REGEX,
-  PRICE_GET_OPTIONS, PRICE_GET_URL, PRICE_LIST_LIMIT, US_ALGOLIA_HEADERS,
-  US_GAME_CHECK_CODE, US_GAME_CODE_REGEX, US_GAME_LIST_LIMIT, US_GET_GAMES_OPTIONS,
-  US_GET_GAMES_URL, US_PRICE_RANGES, JP_GET_GAMES_URL, JP_NSUID_REGEX
-} from './constants';
-import {
-  AlgoliaResponse, EShop, EURequestOptions, GameEU, GameJP, GameUS, PriceResponse, Region, TitleData, USRequestOptions
-} from './interfaces';
+import * as constants from './constants';
+import * as interfaces from './interfaces';
 
 /**
  * Removed duplicates from an array
@@ -62,8 +53,8 @@ const isStringArray = (array: string | string[]): array is string[] => {
  * @param games _(Optional)_ Array of games to filter by
  * @returns Promise containing all the games
  */
-export const getGamesAmerica = async (options: USRequestOptions = {}, offset = 0, games: GameUS[] = []): Promise<GameUS[]> => {
-  const limit = hasProp(options, 'limit') ? options.limit : US_GAME_LIST_LIMIT;
+export const getGamesAmerica = async (options: interfaces.USRequestOptions = {}, offset = 0, games: interfaces.GameUS[] = []): Promise<interfaces.GameUS[]> => {
+  const limit = hasProp(options, 'limit') ? options.limit : constants.US_GAME_LIST_LIMIT;
   const shopProp = hasProp(options, 'shop') ? options.shop : 'ncom';
   let shop = shopProp === 'all' ? [ 'ncom', 'retail' ] : shopProp;
   shop = shop === 'unfiltered' ? undefined : shop;
@@ -87,10 +78,9 @@ export const getGamesAmerica = async (options: USRequestOptions = {}, offset = 0
     shopFilters = isStringArray(shop) ? shop.map(value => shopMapper(value)) : shopMapper(shop);
   }
 
-
   const sortingOptions = {
-    direction: US_GET_GAMES_OPTIONS.direction,
-    sortBy: US_GET_GAMES_OPTIONS.sort,
+    direction: constants.US_GET_GAMES_OPTIONS.direction,
+    sortBy: constants.US_GET_GAMES_OPTIONS.sort,
   };
 
   const body = {
@@ -101,7 +91,7 @@ export const getGamesAmerica = async (options: USRequestOptions = {}, offset = 0
             ? `_${sortingOptions.sortBy}_${sortingOptions.direction}` : '')}`,
           params: stringify({
             facetFilters: [
-              [ US_GET_GAMES_OPTIONS.system ],
+              [ constants.US_GET_GAMES_OPTIONS.system ],
               shopFilters
             ],
             hitsPerPage: limit,
@@ -110,18 +100,18 @@ export const getGamesAmerica = async (options: USRequestOptions = {}, offset = 0
         }
       ],
     }),
-    headers: US_ALGOLIA_HEADERS,
+    headers: constants.US_ALGOLIA_HEADERS,
     method: 'POST',
   };
 
   try {
     if (hasProp(options, 'limit')) {
-      const gamesUS = await fetch(US_GET_GAMES_URL, body);
+      const gamesUS = await fetch(constants.US_GET_GAMES_URL, body);
 
       if (!gamesUS.ok) throw new Error('US_games_request_failed');
 
-      const filteredResponse: AlgoliaResponse = await gamesUS.json();
-      const accumulatedGames: GameUS[] = arrayRemoveDuplicates(games.concat(filteredResponse.results[0].hits), 'slug');
+      const filteredResponse: interfaces.AlgoliaResponse = await gamesUS.json();
+      const accumulatedGames: interfaces.GameUS[] = arrayRemoveDuplicates(games.concat(filteredResponse.results[0].hits), 'slug');
 
       if (!hasProp(options, 'limit') && filteredResponse.results[0].hits.length + offset < filteredResponse.results[0].nbHits) {
         return await getGamesAmerica(options, offset + (limit as number), accumulatedGames);
@@ -142,7 +132,7 @@ export const getGamesAmerica = async (options: USRequestOptions = {}, offset = 0
           indexName: 'noa_aem_game_en_us',
           params: stringify({
             facetFilters: [
-              [ US_GET_GAMES_OPTIONS.system ],
+              [ constants.US_GET_GAMES_OPTIONS.system ],
               shopFilters
             ],
             facets: [
@@ -152,14 +142,14 @@ export const getGamesAmerica = async (options: USRequestOptions = {}, offset = 0
           }),
         } ],
       }),
-      headers: US_ALGOLIA_HEADERS,
+      headers: constants.US_ALGOLIA_HEADERS,
       method: 'POST',
     };
 
-    const gamesToCount = await fetch(US_GET_GAMES_URL, categoriesRequestOptions);
+    const gamesToCount = await fetch(constants.US_GET_GAMES_URL, categoriesRequestOptions);
     if (!gamesToCount.ok) throw new Error('US_games_request_failed');
 
-    const response: AlgoliaResponse = await gamesToCount.json();
+    const response: interfaces.AlgoliaResponse = await gamesToCount.json();
     const categoryCount = response.results[0].facets.categories;
 
     // Loop through all the categories and fetch the games.
@@ -168,7 +158,7 @@ export const getGamesAmerica = async (options: USRequestOptions = {}, offset = 0
         indexName: 'noa_aem_game_en_us',
         params: stringify({
           facetFilters: JSON.stringify([
-            [ US_GET_GAMES_OPTIONS.system ],
+            [ constants.US_GET_GAMES_OPTIONS.system ],
             [ `categories:${category}` ],
             shopFilters
           ]),
@@ -176,11 +166,11 @@ export const getGamesAmerica = async (options: USRequestOptions = {}, offset = 0
         }),
       } ];
 
-      const manyPriceRangeRequests = US_PRICE_RANGES.map(priceRange => ({
+      const manyPriceRangeRequests = constants.US_PRICE_RANGES.map(priceRange => ({
         indexName: 'noa_aem_game_en_us',
         params: stringify({
           facetFilters: JSON.stringify([
-            [ US_GET_GAMES_OPTIONS.system ],
+            [ constants.US_GET_GAMES_OPTIONS.system ],
             [ `categories:${category}` ],
             [ `priceRange:${priceRange}` ],
             shopFilters
@@ -195,15 +185,15 @@ export const getGamesAmerica = async (options: USRequestOptions = {}, offset = 0
 
       const allGamesRequestOptions = {
         body: JSON.stringify({ requests: count > 100 ? manyPriceRangeRequests : normalRequest }),
-        headers: US_ALGOLIA_HEADERS,
+        headers: constants.US_ALGOLIA_HEADERS,
         method: 'POST',
       };
 
-      const allGamesResponse = await fetch(US_GET_GAMES_URL, allGamesRequestOptions);
+      const allGamesResponse = await fetch(constants.US_GET_GAMES_URL, allGamesRequestOptions);
 
       if (!allGamesResponse.ok) throw new Error('US_games_request_failed');
 
-      const gamesResponse: AlgoliaResponse = await allGamesResponse.json();
+      const gamesResponse: interfaces.AlgoliaResponse = await allGamesResponse.json();
 
       return count > 100
         ? gamesResponse.results
@@ -218,7 +208,7 @@ export const getGamesAmerica = async (options: USRequestOptions = {}, offset = 0
 
     return allGames;
   } catch (err) {
-    if (/(?:US_games_request_failed)/i.test(err.toString())) throw new EshopError('Fetching of US Games failed');
+    if (/(?:US_games_request_failed)/i.test(err.toString())) throw new constants.EshopError('Fetching of US Games failed');
     throw err;
   }
 };
@@ -228,19 +218,19 @@ export const getGamesAmerica = async (options: USRequestOptions = {}, offset = 0
  *
  * @returns Promise containing all the games
  */
-export const getGamesJapan = async (): Promise<GameJP[]> => {
+export const getGamesJapan = async (): Promise<interfaces.GameJP[]> => {
   try {
-    const gamesJP = await fetch(JP_GET_GAMES_URL);
+    const gamesJP = await fetch(constants.JP_GET_GAMES_URL);
 
     if (!gamesJP.ok) throw new Error('JP_games_request_failed');
 
     const parsedGamesJP = xml2json(await gamesJP.text());
 
-    const allGamesJP: GameJP[] = parsedGamesJP.TitleInfoList.TitleInfo;
+    const allGamesJP: interfaces.GameJP[] = parsedGamesJP.TitleInfoList.TitleInfo;
 
     return allGamesJP;
   } catch (err) {
-    if (/(?:JP_games_request_failed)/i.test(err.toString())) throw new EshopError('Fetching of JP Games failed');
+    if (/(?:JP_games_request_failed)/i.test(err.toString())) throw new constants.EshopError('Fetching of JP Games failed');
     throw err;
   }
 };
@@ -254,23 +244,25 @@ export const getGamesJapan = async (): Promise<GameJP[]> => {
  * @param options - Request options to pass to the eShop request {@link EURequestOptions | See EURequestOptions for details}
  * @returns Promise containing all requested EU/PAL games
  */
-export const getGamesEurope = async (options: EURequestOptions = { limit: EU_GAME_LIST_LIMIT, locale: EU_DEFAULT_LOCALE }): Promise<GameEU[]> => {
-  if (!options.limit) options.limit = EU_GAME_LIST_LIMIT;
-  if (!options.locale) options.locale = EU_DEFAULT_LOCALE;
+export const getGamesEurope = async (
+  options: interfaces.EURequestOptions = { limit: constants.EU_GAME_LIST_LIMIT, locale: constants.EU_DEFAULT_LOCALE }
+): Promise<interfaces.GameEU[]> => {
+  if (!options.limit) options.limit = constants.EU_GAME_LIST_LIMIT;
+  if (!options.locale) options.locale = constants.EU_DEFAULT_LOCALE;
 
   try {
-    const gamesEU = await fetch(`${EU_GET_GAMES_URL.replace('{locale}', options.locale)}?${stringify({
+    const gamesEU = await fetch(`${constants.EU_GET_GAMES_URL.replace('{locale}', options.locale)}?${stringify({
       rows: options.limit,
-      ...EU_GET_GAMES_OPTIONS,
+      ...constants.EU_GET_GAMES_OPTIONS,
     })}`);
 
     if (!gamesEU.ok) throw new Error('EU_games_request_failed');
 
     const gamesData = await gamesEU.json();
 
-    return gamesData.response.docs as GameEU[];
+    return gamesData.response.docs as interfaces.GameEU[];
   } catch (err) {
-    if (/(?:EU_games_request_failed)/i.test(err.toString())) throw new EshopError('Fetching of EU Games failed');
+    if (/(?:EU_games_request_failed)/i.test(err.toString())) throw new constants.EshopError('Fetching of EU Games failed');
     throw err;
   }
 };
@@ -284,24 +276,26 @@ export const getGamesEurope = async (options: EURequestOptions = { limit: EU_GAM
  * @param prices _(Optional)_ An array of {@link TitleData}
  * @returns A promise containing the pricing information.
  */
-export const getPrices = async (country: string, gameIds: string[] | string, offset = 0, prices: TitleData[] = []): Promise<PriceResponse> => {
+export const getPrices = async (
+  country: string, gameIds: string[] | string, offset = 0, prices: interfaces.TitleData[] = []
+): Promise<interfaces.PriceResponse> => {
   try {
-    const filteredIds = gameIds.slice(offset, offset + PRICE_LIST_LIMIT);
-    const priceData = await fetch(`${PRICE_GET_URL}?${stringify({
+    const filteredIds = gameIds.slice(offset, offset + constants.PRICE_LIST_LIMIT);
+    const priceData = await fetch(`${constants.PRICE_GET_URL}?${stringify({
       country,
       ids: filteredIds,
-      limit: PRICE_LIST_LIMIT,
-      ...PRICE_GET_OPTIONS,
+      limit: constants.PRICE_LIST_LIMIT,
+      ...constants.PRICE_GET_OPTIONS,
     })}`);
 
     if (priceData.status === 403) throw new Error('PRICE_Rate_Limit');
     if (!priceData.ok) throw new Error('PRICE_get_request_failed');
-    const response: PriceResponse = await priceData.json();
+    const response: interfaces.PriceResponse = await priceData.json();
 
     if (response.prices && response.prices.length + offset < gameIds.length) {
       const accumulatedPrices = prices.concat(response.prices);
 
-      return await getPrices(country, gameIds, offset + PRICE_LIST_LIMIT, accumulatedPrices);
+      return await getPrices(country, gameIds, offset + constants.PRICE_LIST_LIMIT, accumulatedPrices);
     } else if (response.prices) {
       response.prices = response.prices.concat(prices);
 
@@ -310,8 +304,8 @@ export const getPrices = async (country: string, gameIds: string[] | string, off
 
     return response;
   } catch (err) {
-    if (/(?:PRICE_Rate_Limit)/i.test(err.toString())) throw new EshopError('Looks like you ran into a rate limit while getting price data, please do not spam the Nintendo servers.');
-    if (/(?:PRICE_get_request_failed)/i.test(err.toString())) throw new EshopError('Fetching of eShop prices failed');
+    if (/(?:PRICE_Rate_Limit)/i.test(err.toString())) throw new constants.EshopError('Looks like you ran into a rate limit while getting price data, please do not spam the Nintendo servers.');
+    if (/(?:PRICE_get_request_failed)/i.test(err.toString())) throw new constants.EshopError('Fetching of eShop prices failed');
     throw err;
   }
 };
@@ -324,10 +318,10 @@ export const getPrices = async (country: string, gameIds: string[] | string, off
  * @param region A region id that will be appended in the final shop object for filtering purposes.
  * @returns A list of shop objects with country code, name and default currency.
  */
-export const getShopsByCountryCodes = async (countryCodes: string[], gameCode: string, region: Region): Promise<EShop[]> => {
+export const getShopsByCountryCodes = async (countryCodes: string[], gameCode: string, region: interfaces.Region): Promise<interfaces.EShop[]> => {
   try {
     const countryList: Country[] = countryCodes.map((code: string) => countries.all.filter((country: Country) => country.alpha2 === code)[0]);
-    const shops: PriceResponse[] = [];
+    const shops: interfaces.PriceResponse[] = [];
 
     for (const country of countryList) {
       try {
@@ -339,8 +333,8 @@ export const getShopsByCountryCodes = async (countryCodes: string[], gameCode: s
       }
     }
 
-    const activeShops = shops.filter((shop: PriceResponse) => shop && shop.prices && shop.prices.length && shop.prices[0].regular_price);
-    const eShops = activeShops.map((shop: PriceResponse) => (
+    const activeShops = shops.filter((shop: interfaces.PriceResponse) => shop && shop.prices && shop.prices.length && shop.prices[0].regular_price);
+    const eShops = activeShops.map((shop: interfaces.PriceResponse) => (
       {
         code: shop.country.alpha2,
         country: shop.country.name,
@@ -367,13 +361,13 @@ export const getShopsByCountryCodes = async (countryCodes: string[], gameCode: s
  *
  * @returns A list of shop objects with country code, name and default currency.
  */
-export const getShopsAmerica = async (): Promise<EShop[]> => {
+export const getShopsAmerica = async (): Promise<interfaces.EShop[]> => {
   return getShopsByCountryCodes(
     regions.southAmerica.countries.concat(
       regions.centralAfrica.countries, regions.northernAmerica.countries
     ),
-    US_GAME_CHECK_CODE,
-    Region.AMERICAS
+    constants.US_GAME_CHECK_CODE,
+    interfaces.Region.AMERICAS
   );
 };
 
@@ -385,15 +379,15 @@ export const getShopsAmerica = async (): Promise<EShop[]> => {
  *
  * @returns A list of shop objects with country code, name and default currency.
  */
-export const getShopsEurope = async (): Promise<EShop[]> => {
+export const getShopsEurope = async (): Promise<interfaces.EShop[]> => {
   return getShopsByCountryCodes(
     regions.northernEurope.countries.concat(
       regions.southernEurope.countries, regions.easternEurope.countries,
       regions.westernEurope.countries, regions.australia.countries,
       regions.southernAfrica.countries
     ),
-    EU_GAME_CHECK_CODE,
-    Region.EUROPE
+    constants.EU_GAME_CHECK_CODE,
+    interfaces.Region.EUROPE
   );
 };
 
@@ -405,14 +399,14 @@ export const getShopsEurope = async (): Promise<EShop[]> => {
  *
  * @returns A list of shop objects with country code, name and default currency.
  */
-export const getShopsAsia = async (): Promise<EShop[]> => {
+export const getShopsAsia = async (): Promise<interfaces.EShop[]> => {
   return getShopsByCountryCodes(
     regions.southernAsia.countries.concat(
       regions.southernAsia.countries, regions.southeastAsia.countries,
       regions.eastAsia.countries, regions.westernAsia.countries
     ),
-    JP_GAME_CHECK_CODE,
-    Region.ASIA
+    constants.JP_GAME_CHECK_CODE,
+    interfaces.Region.ASIA
   );
 };
 
@@ -424,7 +418,7 @@ export const getShopsAsia = async (): Promise<EShop[]> => {
  *
  * @returns A list of shop objects with country code, name and default currency.
  */
-export const getActiveShops = async (): Promise<EShop[]> => {
+export const getActiveShops = async (): Promise<interfaces.EShop[]> => {
   try {
     const shopsAmerica = await getShopsAmerica();
     const shopsAsia = await getShopsAsia();
@@ -443,20 +437,19 @@ export const getActiveShops = async (): Promise<EShop[]> => {
  * @param region Region code
  * @returns The 4-digit resulting game code
  */
-export const parseGameCode = (game: GameUS | GameEU | GameJP, region: Region): string | null => {
+export const parseGameCode = (game: interfaces.GameUS | interfaces.GameEU | interfaces.GameJP, region: interfaces.Region): string | null => {
   let codeParse: RegExpExecArray | null;
 
   switch (region) {
-    case Region.EUROPE:
-      codeParse = EU_GAME_CODE_REGEX.exec((game as GameEU).product_code_txt[0]);
-      break;
-    case Region.ASIA:
-      codeParse = JP_GAME_CODE_REGEX.exec((game as GameJP).ScreenshotImgURL);
-      break;
     default:
-    case Region.AMERICAS:
-      codeParse = US_GAME_CODE_REGEX.exec((game as GameUS).game_code);
+    case interfaces.Region.EUROPE:
+      codeParse = constants.EU_GAME_CODE_REGEX.exec((game as interfaces.GameEU).product_code_txt[0]);
       break;
+    case interfaces.Region.ASIA:
+      codeParse = constants.JP_GAME_CODE_REGEX.exec((game as interfaces.GameJP).InitialCode);
+      break;
+    case interfaces.Region.AMERICAS:
+      codeParse = constants.US_GAME_CODE_REGEX.exec((game as interfaces.GameUS).game_code);
   }
 
   return (codeParse && codeParse.length > 1) ? codeParse[1] : null;
@@ -469,16 +462,17 @@ export const parseGameCode = (game: GameUS | GameEU | GameJP, region: Region): s
  * @param region Region code
  * @returns The 14-digits NSUID
  */
-export const parseNSUID = (game: GameUS | GameEU | GameJP, region: Region): string | null => {
+export const parseNSUID = (game: interfaces.GameUS | interfaces.GameEU | interfaces.GameJP, region: interfaces.Region): string | null => {
   switch (region) {
-    case Region.EUROPE:
-      return (game as GameEU).nsuid_txt ? (game as GameEU).nsuid_txt[0] : null;
-    case Region.ASIA:
-      const nsuidParse = JP_NSUID_REGEX.exec((game as GameJP).LinkURL);
+    case interfaces.Region.EUROPE:
+      return (game as interfaces.GameEU).nsuid_txt ? (game as interfaces.GameEU).nsuid_txt[0] : null;
+    case interfaces.Region.ASIA:
+      console.log(game);
+      const nsuidParse = constants.JP_NSUID_REGEX.exec((game as interfaces.GameJP).LinkURL);
 
       return (nsuidParse && nsuidParse.length > 0) ? nsuidParse[0] : null;
     default:
-    case Region.AMERICAS:
-      return (game as GameUS).nsuid;
+    case interfaces.Region.AMERICAS:
+      return (game as interfaces.GameUS).nsuid;
   }
 };
