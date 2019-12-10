@@ -69,7 +69,7 @@ export const JP_GET_GAMES_URL = 'https://www.nintendo.co.jp/data/software/xml/sw
 export const JP_GAME_CHECK_CODE = '70010000000039';
 
 /** Regex for JP game codes */
-export const JP_GAME_CODE_REGEX = /\/HAC(\w{4})/;
+export const JP_GAME_CODE_REGEX = /HAC(\w{4})/;
 
 /** Regex for JP NSUID */
 export const JP_NSUID_REGEX = /\d{14}/;

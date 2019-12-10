@@ -12,7 +12,7 @@ describe('Success: parseGameCode', () => {
   test('Region == ASIA', () => {
     const data = parseGameCode(JAPANESE_GAME, Region.ASIA);
     expect(typeof data).toBe('string');
-    expect(data).toBe('1234');
+    expect(data).toBe('ATBC');
   });
 
   test('Region == Europe', () => {

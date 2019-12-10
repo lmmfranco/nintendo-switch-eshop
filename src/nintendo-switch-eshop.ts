@@ -467,7 +467,6 @@ export const parseNSUID = (game: interfaces.GameUS | interfaces.GameEU | interfa
     case interfaces.Region.EUROPE:
       return (game as interfaces.GameEU).nsuid_txt ? (game as interfaces.GameEU).nsuid_txt[0] : null;
     case interfaces.Region.ASIA:
-      console.log(game);
       const nsuidParse = constants.JP_NSUID_REGEX.exec((game as interfaces.GameJP).LinkURL);
 
       return (nsuidParse && nsuidParse.length > 0) ? nsuidParse[0] : null;
