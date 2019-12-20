@@ -2,6 +2,7 @@ import { stringify } from '@favware/querystring';
 import { countries, Country, regions } from 'country-data';
 import { parse as xml2json } from 'fast-xml-parser';
 import fetch from 'node-fetch';
+import { deprecate } from 'util';
 import * as constants from './constants';
 import * as interfaces from './interfaces';
 
@@ -437,7 +438,7 @@ export const getActiveShops = async (): Promise<interfaces.EShop[]> => {
  * @param region Region code
  * @returns The 4-digit resulting game code
  */
-export const parseGameCode = (game: interfaces.GameUS | interfaces.GameEU | interfaces.GameJP, region: interfaces.Region): string | null => {
+export const parseGameCode = (game: interfaces.GameUS | interfaces.GameEU | interfaces.GameJP, region: interfaces.Region) => {
   let codeParse: RegExpExecArray | null;
 
   switch (region) {
@@ -449,7 +450,15 @@ export const parseGameCode = (game: interfaces.GameUS | interfaces.GameEU | inte
       codeParse = constants.JP_GAME_CODE_REGEX.exec((game as interfaces.GameJP).InitialCode);
       break;
     case interfaces.Region.AMERICAS:
-      codeParse = constants.US_GAME_CODE_REGEX.exec((game as interfaces.GameUS).game_code);
+      return deprecate(
+        () => (
+          constants.US_GAME_CODE_REGEX.exec((game as interfaces.GameUS).game_code!)?.length || false
+            ? constants.US_GAME_CODE_REGEX.exec((game as interfaces.GameUS).game_code!)![1]
+            : ''
+        ),
+        'game_code is no longer returned by the API for American games so it can no longer be parsed from the data.',
+        'DEP0001'
+      )();
   }
 
   return (codeParse && codeParse.length > 1) ? codeParse[1] : null;

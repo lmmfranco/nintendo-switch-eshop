@@ -58,8 +58,8 @@ export interface GameEU {
 }
 
 export interface GameUS {
-  /** Product code. Can be parsed for a region wide code. */
-  game_code: string;
+  /** @deprecated Product code. Can be parsed for a region wide code. */
+  game_code?: string;
   buyonline: boolean;
   front_box_art: string;
   /** USA eShop price (in dollars) */
