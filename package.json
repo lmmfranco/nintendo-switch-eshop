@@ -32,7 +32,7 @@
 		"@favware/eslint-config": "^3.1.6",
 		"@favware/ts-config": "^1.1.1",
 		"@types/jest": "^24.0.24",
-		"@types/node": "^12.12.21",
+		"@types/node": "^13.1.1",
 		"@types/node-fetch": "^2.5.4",
 		"common-tags": "^1.8.0",
 		"cz-conventional-changelog": "^3.0.2",
