@@ -44,7 +44,7 @@
 		"standard-version": "^7.0.1",
 		"ts-jest": "^24.2.0",
 		"ts-node": "^8.5.4",
-		"typedoc": "^0.15.4",
+		"typedoc": "^0.16.2",
 		"typedoc-plugin-nojekyll": "^1.0.1",
 		"typescript": "^3.7.4"
 	},
