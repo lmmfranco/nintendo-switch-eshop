@@ -39,7 +39,7 @@
 		"eslint": "^6.8.0",
 		"husky": "^4.0.7",
 		"jest": "^24.9.0",
-		"lint-staged": "^9.5.0",
+		"lint-staged": "^10.0.0",
 		"replace": "^1.1.1",
 		"standard-version": "^7.0.1",
 		"ts-jest": "^24.2.0",
