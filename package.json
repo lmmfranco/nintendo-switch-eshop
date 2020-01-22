@@ -19,7 +19,7 @@
 		"up": "yarn upgrade-interactive --latest"
 	},
 	"dependencies": {
-		"@favware/querystring": "^4.1.3",
+		"@favware/querystring": "^4.2.0",
 		"@types/country-data": "^0.0.1",
 		"country-data": "^0.0.31",
 		"fast-xml-parser": "^3.15.1",
@@ -27,26 +27,26 @@
 		"tslib": "latest"
 	},
 	"devDependencies": {
-		"@commitlint/cli": "^8.2.0",
+		"@commitlint/cli": "^8.3.5",
 		"@commitlint/config-conventional": "^8.2.0",
-		"@favware/eslint-config": "^3.1.6",
-		"@favware/ts-config": "^1.1.1",
-		"@types/jest": "^24.0.24",
-		"@types/node": "^13.1.1",
+		"@favware/eslint-config": "^3.2.0",
+		"@favware/ts-config": "^1.1.2",
+		"@types/jest": "^24.9.0",
+		"@types/node": "^13.1.8",
 		"@types/node-fetch": "^2.5.4",
 		"common-tags": "^1.8.0",
 		"cz-conventional-changelog": "^3.0.2",
 		"eslint": "^6.8.0",
-		"husky": "^4.0.7",
+		"husky": "^4.2.0",
 		"jest": "^24.9.0",
-		"lint-staged": "^10.0.0",
+		"lint-staged": "^10.0.2",
 		"replace": "^1.1.1",
-		"standard-version": "^7.0.1",
+		"standard-version": "^7.1.0",
 		"ts-jest": "^24.2.0",
-		"ts-node": "^8.5.4",
-		"typedoc": "^0.16.2",
+		"ts-node": "^8.6.2",
+		"typedoc": "^0.16.8",
 		"typedoc-plugin-nojekyll": "^1.0.1",
-		"typescript": "^3.7.4"
+		"typescript": "^3.7.5"
 	},
 	"files": [
 		"dist/"
@@ -77,9 +77,8 @@
 		}
 	},
 	"lint-staged": {
-		"*.{js,ts}": [
-			"yarn lint",
-			"git add"
+		"*.ts": [
+			"yarn lint"
 		]
 	},
 	"config": {
