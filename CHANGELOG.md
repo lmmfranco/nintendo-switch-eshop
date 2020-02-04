@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.0](https://github.com/lmmfranco/nintendo-switch-eshop/compare/v2.2.8...v3.0.0) (2020-02-04)
+
+
+### ⚠ BREAKING CHANGES
+
+* getGamesAmerica's options no longer takes a "shop" property
+
+* remove the "shop" property from getGamesAmerica ([15a8a3c](https://github.com/lmmfranco/nintendo-switch-eshop/commit/15a8a3c58c94d6e0e3180458da0c8dc526a4bea2)), closes [#124](https://github.com/lmmfranco/nintendo-switch-eshop/issues/124)
+
 ### [2.2.8](https://github.com/lmmfranco/nintendo-switch-eshop/compare/v2.2.7...v2.2.8) (2019-12-20)
 
 ### [2.2.7](https://github.com/lmmfranco/nintendo-switch-eshop/compare/v2.2.6...v2.2.7) (2019-12-10)
