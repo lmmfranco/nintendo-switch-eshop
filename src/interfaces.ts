@@ -183,13 +183,6 @@ export interface RequestOptions {
   limit?: number;
 }
 
-export interface USRequestOptions extends RequestOptions {
-  /**
-   * Either `'retail'`,  `'ncom'` or `'all'`.
-   * @default ncom
-   */
-  shop?: 'retail' | 'ncom' | 'all' | 'unfiltered';
-}
 export interface EURequestOptions extends RequestOptions {
   /** Game information locale. (EU Only) */
   locale?: string;

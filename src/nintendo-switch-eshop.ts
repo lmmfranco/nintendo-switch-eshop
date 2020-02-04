@@ -33,17 +33,6 @@ const arrayRemoveDuplicates = (array: any[], property: string) => {
 const hasProp = <O extends {}>(obj: O, prop: keyof O) => obj && prop in obj;
 
 /**
- * TypeGuard to check if the variable is an array of strings
- *
- * @param array Array to check
- * @returns Boolean representing whether the input is an array
- * @private
- */
-const isStringArray = (array: string | string[]): array is string[] => {
-  return Array.isArray(array);
-};
-
-/**
  * Fetches all games on american eshops
  *
  * @remarks
@@ -54,30 +43,9 @@ const isStringArray = (array: string | string[]): array is string[] => {
  * @param games _(Optional)_ Array of games to filter by
  * @returns Promise containing all the games
  */
-export const getGamesAmerica = async (options: interfaces.USRequestOptions = {}, offset = 0, games: interfaces.GameUS[] = []): Promise<interfaces.GameUS[]> => {
+export const getGamesAmerica = async (options: interfaces.RequestOptions = {}, offset = 0, games: interfaces.GameUS[] = []): Promise<interfaces.GameUS[]> => {
   const limit = hasProp(options, 'limit') ? options.limit : constants.US_GAME_LIST_LIMIT;
-  const shopProp = hasProp(options, 'shop') ? options.shop : 'ncom';
-  let shop = shopProp === 'all' ? [ 'ncom', 'retail' ] : shopProp;
-  shop = shop === 'unfiltered' ? undefined : shop;
-
   const page = Math.floor(offset / (limit as number));
-
-  const shopMapper = (shopType: 'ncom' | 'retail' | string) => {
-    switch (shopType) {
-      case 'ncom':
-        return 'filterShops:On Nintendo.com';
-      case 'retail':
-        return 'filterShops:On retail';
-      default:
-        return '';
-    }
-  };
-
-  let shopFilters: ReturnType<typeof shopMapper> | (ReturnType<typeof shopMapper>)[] = [ '' ];
-
-  if (shop) {
-    shopFilters = isStringArray(shop) ? shop.map(value => shopMapper(value)) : shopMapper(shop);
-  }
 
   const sortingOptions = {
     direction: constants.US_GET_GAMES_OPTIONS.direction,
@@ -93,7 +61,6 @@ export const getGamesAmerica = async (options: interfaces.USRequestOptions = {},
           params: stringify({
             facetFilters: [
               [ constants.US_GET_GAMES_OPTIONS.system ],
-              shopFilters
             ],
             hitsPerPage: limit,
             page,
@@ -134,7 +101,6 @@ export const getGamesAmerica = async (options: interfaces.USRequestOptions = {},
           params: stringify({
             facetFilters: [
               [ constants.US_GET_GAMES_OPTIONS.system ],
-              shopFilters
             ],
             facets: [
               'categories'
@@ -161,7 +127,6 @@ export const getGamesAmerica = async (options: interfaces.USRequestOptions = {},
           facetFilters: JSON.stringify([
             [ constants.US_GET_GAMES_OPTIONS.system ],
             [ `categories:${category}` ],
-            shopFilters
           ]),
           hitsPerPage: 100,
         }),
@@ -174,7 +139,6 @@ export const getGamesAmerica = async (options: interfaces.USRequestOptions = {},
             [ constants.US_GET_GAMES_OPTIONS.system ],
             [ `categories:${category}` ],
             [ `priceRange:${priceRange}` ],
-            shopFilters
           ]),
           facets: [
             'platform',
