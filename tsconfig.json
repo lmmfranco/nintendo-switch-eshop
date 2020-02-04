@@ -8,7 +8,8 @@
     "moduleResolution": "node",
     "declarationMap": true,
     "resolveJsonModule": true,
-    "importHelpers": false
+    "importHelpers": false,
+    "tsBuildInfoFile": "dist/.tsbuildinfo"
   },
   "include": [
     "src"

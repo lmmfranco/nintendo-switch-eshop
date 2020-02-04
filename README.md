@@ -42,6 +42,6 @@ const { getGamesAmerica, getGamesEurope, getGamesJapan } = require('nintendo-swi
 
 **For calling functions with the correct parameters and syntax please refer to the documentation linked below**
 
-Copyright © `2017` `lmmfranco`
+Copyright © `2019` `lmmfranco`
 
 ## [API Documentation](https://lmmfranco.github.io/nintendo-switch-eshop)

@@ -1,7 +1,7 @@
 Apache License
 ==============
 
-Copyright © `2017` `lmmfranco` [lmmfranco@gmail.com](mailto:lmmfranco@gmail.com) 
+Copyright © `2019` `lmmfranco` [lmmfranco@gmail.com](mailto:lmmfranco@gmail.com) 
 
 _Version 2.0, January 2004_  
 _&lt;<http://www.apache.org/licenses/>&gt;_
