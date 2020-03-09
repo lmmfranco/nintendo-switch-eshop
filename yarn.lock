@@ -298,9 +298,9 @@
     eslint "^6.8.0"
 
 "@favware/querystring@^4.2.0":
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/@favware/querystring/-/querystring-4.2.0.tgz#57aa18bfc46b9614301e7ceb89943b8afd02337e"
-  integrity sha512-qx0xkStAVnFmydJsWe1nUgZeK5dc5hmEYGct2VQ7KeG/SVRBwCt8Df8tdVYsb2lDY3dju99KXwOtfc0+G/oC6g==
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/@favware/querystring/-/querystring-4.3.0.tgz#9a5b170da1487a11085d5726a97f7f090bf83b73"
+  integrity sha512-+MEsrDjmO03UwWFSEdZ3a7hjmAb8eijsyzxpFnALJAmlb7tKUyWa4pa95YLN81lG07aDx5oX/QuhjOsGC9qrjA==
 
 "@favware/ts-config@^1.1.2":
   version "1.1.2"
