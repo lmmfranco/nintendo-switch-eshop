@@ -303,9 +303,9 @@
   integrity sha512-+MEsrDjmO03UwWFSEdZ3a7hjmAb8eijsyzxpFnALJAmlb7tKUyWa4pa95YLN81lG07aDx5oX/QuhjOsGC9qrjA==
 
 "@favware/ts-config@^1.1.2":
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/@favware/ts-config/-/ts-config-1.1.2.tgz#a6bbdffcbe395a7d14448db5d952aedd6620320b"
-  integrity sha512-kQv1hItPw7QcQVaQuP6mFXs7zEl6XxNHToZZW89xCDNIKxKmznT0WbXsTYee+Ae/NVs1/R2dPbaIIcsR0yKEeQ==
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/@favware/ts-config/-/ts-config-1.1.3.tgz#2376d8fc5838e71a4eed66f8ffc6b6b99be6cbf5"
+  integrity sha512-d3syi4sDrfrqoT7LJXZvscFTrerhC7DLu1vMUhudK5pj5wouuOV5u8aeMhK+YY6P7fz+rw28dSeZDFHf9aui1w==
 
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.0.0"
