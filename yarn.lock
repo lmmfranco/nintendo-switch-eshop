@@ -302,10 +302,10 @@
   resolved "https://registry.yarnpkg.com/@favware/querystring/-/querystring-4.3.0.tgz#9a5b170da1487a11085d5726a97f7f090bf83b73"
   integrity sha512-+MEsrDjmO03UwWFSEdZ3a7hjmAb8eijsyzxpFnALJAmlb7tKUyWa4pa95YLN81lG07aDx5oX/QuhjOsGC9qrjA==
 
-"@favware/ts-config@^1.1.2":
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/@favware/ts-config/-/ts-config-1.1.2.tgz#a6bbdffcbe395a7d14448db5d952aedd6620320b"
-  integrity sha512-kQv1hItPw7QcQVaQuP6mFXs7zEl6XxNHToZZW89xCDNIKxKmznT0WbXsTYee+Ae/NVs1/R2dPbaIIcsR0yKEeQ==
+"@favware/ts-config@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@favware/ts-config/-/ts-config-3.0.0.tgz#7230f447745e40dc6f868ba17fa97927fff82ba2"
+  integrity sha512-0aivPOrru5nAYGFdFZFaw9rODYXMvinmHhk9+78JJlqLoLNIukHZg614dSiUteScB5lpyeh38ZbWr2yuWBB51Q==
 
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.0.0"
