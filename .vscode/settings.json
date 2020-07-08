@@ -1,0 +1,17 @@
+{
+	"eslint.validate": ["typescript"],
+	"editor.tabSize": 2,
+	"editor.useTabStops": false,
+	"editor.insertSpaces": false,
+	"editor.detectIndentation": false,
+	"files.eol": "\n",
+	"[typescript]": {
+		"editor.defaultFormatter": "vscode.typescript-language-features"
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "vscode.typescript-language-features"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "vscode.json-language-features"
+	}
+}

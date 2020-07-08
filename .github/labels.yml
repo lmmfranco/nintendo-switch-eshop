@@ -1,9 +1,6 @@
 - name: 'Meta: Examples'
   description: Issues and PRs related to examples.
   color: ffff00
-- name: 'Meta: Typings'
-  description: Issues and PRs related to typings.
-  color: ffff00
 - name: 'Meta: Documentation'
   description: Issues and PRs related to documentation.
   color: ffff00
@@ -24,9 +21,6 @@
   color: ffff00
 - name: 'Meta: Dependencies'
   description: Issues and PRs related to dependencies.
-  color: ffff00
-- name: 'Meta: Tests'
-  description: Issues and PRs related to test code.
   color: ffff00
 - name: 'Meta: Bike-Shedding'
   description: Issues and PRs that nit pick
@@ -51,7 +45,7 @@
   color: f9d0c4
 - name: 'Bug: Fixed in master'
   description: Issues that report bugs from stable, but that are fixed in master.
-  color: B3E88C
+  color: B3E88C'
 - name: 'Bug: Confirmed'
   description: Issues that report confirmed bugs.
   color: f9d0c4
@@ -60,9 +54,6 @@
   color: B3E88C
 - name: 'Type: Maintenance'
   description: Issues and PRs related to the maintenance of a module.
-  color: 1d76db
-- name: 'Type: Caching'
-  description: Issues and PRs related to caching.
   color: 1d76db
 - name: 'Type: Proposal'
   description: Issues that request a new feature or a change in the api's interface.
@@ -98,13 +89,11 @@
   description: PRs that need documentation
   color: d4c5f9
 - name: 'Status: Help Wanted'
-  description: Issues that need assistance from volunteers or PRs that need help to
-    proceed.
+  description: Issues that need assistance from volunteers or PRs that need help to proceed.
   color: 128A0C
 - name: 'Status: Invalid'
-  description: Issues that will not be fixed or PRs that will not merge, e.g. due
-    to backwards compatibility.
-  color: 5319e7
+  description: Issues that will not be fixed or PRs that will not merge, e.g. due to backwards compatibility.
+  color: 671df0
 - name: 'Status: Duplicate'
   description: Issues/PRs that are duplicated.
   color: d93f0b
@@ -118,44 +107,32 @@
   description: PRs that are blocked by other issues/PRs.
   color: d81a0d
 - name: 'SEM: Patch'
-  description: PRs that contain bugfixes and should be released in the next patch
-    version.
+  description: PRs that contain bugfixes and should be released in the next patch version.
   color: 66d8eb
 - name: 'SEM: N/A'
-  description: PRs that only contain documentation changes and do not change the api's
-    interface.
+  description: PRs that only contain documentation changes and do not change the api's interface.
   color: a7f9f3
 - name: 'SEM: Major'
-  description: PRs that contain breaking changes and should be released in the next
-    major version.
+  description: PRs that contain breaking changes and should be released in the next major version.
   color: 9a35be
 - name: 'SEM: Minor'
-  description: PRs that contain new features and should be released in the next minor
-    version.
+  description: PRs that contain new features and should be released in the next minor version.
   color: d38dfa
 - name: 'Priority: Low'
-  description: Issues that must be fixed or PRs that must be finished and merged with
-    low priority.
+  description: Issues that must be fixed or PRs that must be finished and merged with low priority.
   color: 0e8a16
 - name: 'Priority: Medium'
-  description: Issues that must be fixed or PRs that must be finished and merged with
-    medium priority.
+  description: Issues that must be fixed or PRs that must be finished and merged with medium priority.
   color: fbca04
 - name: 'Priority: High'
-  description: Issues that must be fixed or PRs that must be finished and merged with
-    high priority.
+  description: Issues that must be fixed or PRs that must be finished and merged with high priority.
   color: d93f0b
 - name: 'Priority: Critical'
-  description: Issues that must be fixed or PRs that must be finished and merged with
-    maximum priority.
+  description: Issues that must be fixed or PRs that must be finished and merged with maximum priority.
   color: b60205
 - name: 'Type: Typo'
   description: Issues and PRs related to typos in the documentation or code.
   color: c5def5
-- name: 'Type: Question'
-  description: Issues that do not belong to the Issue Tracker and should be asked
-    in the official Discord Server.
-  color: cc317c
 - name: 'Type: Dependencies'
   description: Pull requests that update a dependency file
   color: 0025ff
