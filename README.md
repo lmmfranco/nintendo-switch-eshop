@@ -13,7 +13,7 @@
 
 **Project Status**
 
-[![GitHub](https://img.shields.io/github/license/lmmfranco/nintendo-switch-eshop?logo=github&style=flat-square)](https://github.com/lmmfranco/nintendo-switch-eshop/blob/master/LICENSE.md)
+[![GitHub](https://img.shields.io/github/license/lmmfranco/nintendo-switch-eshop?logo=github&style=flat-square)](https://github.com/lmmfranco/nintendo-switch-eshop/blob/master/LICENSE)
 [![npm](https://img.shields.io/npm/v/nintendo-switch-eshop?color=crimson&label=nintendo-switch-eshop%20version&logo=npm&style=flat-square)](https://www.npmjs.com/package/nintendo-switch-eshop)
 [![npm](https://img.shields.io/npm/dw/nintendo-switch-eshop?color=crimson&label=NPM%20Weekly%20Downloads&logo=npm&style=flat-square)](https://www.npmjs.com/package/nintendo-switch-eshop)
 [![npm](https://img.shields.io/npm/dt/nintendo-switch-eshop?color=crimson&label=NPM%20Total%20Downloads&logo=npm&style=flat-square)](https://www.npmjs.com/package/nintendo-switch-eshop)
