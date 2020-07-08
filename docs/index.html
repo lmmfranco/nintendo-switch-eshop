@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Nintendo Switch EShop</title>
-	<meta name="description" content="">
+	<meta name="description" content="Documentation for Nintendo Switch EShop">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
 </head>
@@ -13,7 +13,7 @@
 	<div class="tsd-page-toolbar">
 		<div class="container">
 			<div class="table-wrap">
-				<div class="table-cell" id="tsd-search" data-index="assets/js/search.js" data-base=".">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
 					<div class="field">
 						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
 						<input id="tsd-search-field" type="text" />
@@ -86,12 +86,12 @@
 				<pre><code class="language-sh">npm install nintendo-switch-eshop
 <span class="hljs-comment"># yarn add nintendo-switch-eshop</span></code></pre>
 				<p>Require your desired functions:</p>
-				<pre><code class="language-js"><span class="hljs-keyword">const</span> { getGamesAmerica, getGamesEurope, getGamesJapan } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'nintendo-switch-eshop'</span>);
-<span class="hljs-comment">// ES6 Style: import { getGamesAmerica, getGamesEurope, getGamesJapan } from 'nintendo-switch-eshop';</span>
-<span class="hljs-comment">// getGamesAmerica is also default exported: import getGamesAmerica from 'nintendo-switch-eshop';</span></code></pre>
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> { getGamesAmerica, getGamesEurope, getGamesJapan } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;nintendo-switch-eshop&#x27;</span>);
+<span class="hljs-comment">// ES6 Style: import { getGamesAmerica, getGamesEurope, getGamesJapan } from &#x27;nintendo-switch-eshop&#x27;;</span>
+<span class="hljs-comment">// getGamesAmerica is also default exported: import getGamesAmerica from &#x27;nintendo-switch-eshop&#x27;;</span></code></pre>
 				<p><strong>For calling functions with the correct parameters and syntax please refer to the documentation linked below</strong></p>
 				<p>Copyright © <code>2019</code> <code>lmmfranco</code></p>
-				<a href="#a-hrefhttpslmmfrancogithubionintendo-switch-eshopapi-documentationa" id="a-hrefhttpslmmfrancogithubionintendo-switch-eshopapi-documentationa" style="color: inherit; text-decoration: none;">
+				<a href="#api-documentation" id="api-documentation" style="color: inherit; text-decoration: none;">
 					<h2><a href="https://lmmfranco.github.io/nintendo-switch-eshop">API Documentation</a></h2>
 				</a>
 			</div>
@@ -102,19 +102,169 @@
 					<li class="globals  ">
 						<a href="globals.html"><em>Globals</em></a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_constants_.html">&quot;constants&quot;</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_interfaces_.html">&quot;interfaces&quot;</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_nintendo_switch_eshop_.html">&quot;nintendo-<wbr>switch-<wbr>eshop&quot;</a>
-					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-enum">
+						<a href="enums/region.html" class="tsd-kind-icon">Region</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/eshoperror.html" class="tsd-kind-icon">Eshop<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/algoliaresponse.html" class="tsd-kind-icon">Algolia<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/algoliaresults.html" class="tsd-kind-icon">Algolia<wbr>Results</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/category.html" class="tsd-kind-icon">Category</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/eshop.html" class="tsd-kind-icon">EShop</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/eurequestoptions.html" class="tsd-kind-icon">EURequest<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/gameeu.html" class="tsd-kind-icon">GameEU</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/gamejp.html" class="tsd-kind-icon">GameJP</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/gameus.html" class="tsd-kind-icon">GameUS</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/pricedata.html" class="tsd-kind-icon">Price<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/priceerror.html" class="tsd-kind-icon">Price<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/priceresponse.html" class="tsd-kind-icon">Price<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/requestoptions.html" class="tsd-kind-icon">Request<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/titledata.html" class="tsd-kind-icon">Title<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#eu_default_locale" class="tsd-kind-icon">EU_<wbr>DEFAULT_<wbr>LOCALE</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#eu_game_check_code" class="tsd-kind-icon">EU_<wbr>GAME_<wbr>CHECK_<wbr>CODE</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#eu_game_code_regex" class="tsd-kind-icon">EU_<wbr>GAME_<wbr>CODE_<wbr>REGEX</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#eu_game_list_limit" class="tsd-kind-icon">EU_<wbr>GAME_<wbr>LIST_<wbr>LIMIT</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#eu_get_games_url" class="tsd-kind-icon">EU_<wbr>GET_<wbr>GAMES_<wbr>URL</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#jp_game_check_code" class="tsd-kind-icon">JP_<wbr>GAME_<wbr>CHECK_<wbr>CODE</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#jp_game_code_regex" class="tsd-kind-icon">JP_<wbr>GAME_<wbr>CODE_<wbr>REGEX</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#jp_get_games_url" class="tsd-kind-icon">JP_<wbr>GET_<wbr>GAMES_<wbr>URL</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#jp_nsuid_regex" class="tsd-kind-icon">JP_<wbr>NSUID_<wbr>REGEX</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#price_get_url" class="tsd-kind-icon">PRICE_<wbr>GET_<wbr>URL</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#price_list_limit" class="tsd-kind-icon">PRICE_<wbr>LIST_<wbr>LIMIT</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#us_algolia_id" class="tsd-kind-icon">US_<wbr>ALGOLIA_<wbr>ID</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#us_algolia_key" class="tsd-kind-icon">US_<wbr>ALGOLIA_<wbr>KEY</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#us_game_check_code" class="tsd-kind-icon">US_<wbr>GAME_<wbr>CHECK_<wbr>CODE</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#us_game_code_regex" class="tsd-kind-icon">US_<wbr>GAME_<wbr>CODE_<wbr>REGEX</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#us_game_list_limit" class="tsd-kind-icon">US_<wbr>GAME_<wbr>LIST_<wbr>LIMIT</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#us_get_games_url" class="tsd-kind-icon">US_<wbr>GET_<wbr>GAMES_<wbr>URL</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#us_price_ranges" class="tsd-kind-icon">US_<wbr>PRICE_<wbr>RANGES</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#getactiveshops" class="tsd-kind-icon">get<wbr>Active<wbr>Shops</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#getgamesamerica" class="tsd-kind-icon">get<wbr>Games<wbr>America</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#getgameseurope" class="tsd-kind-icon">get<wbr>Games<wbr>Europe</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#getgamesjapan" class="tsd-kind-icon">get<wbr>Games<wbr>Japan</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#getprices" class="tsd-kind-icon">get<wbr>Prices</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#getshopsamerica" class="tsd-kind-icon">get<wbr>Shops<wbr>America</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#getshopsasia" class="tsd-kind-icon">get<wbr>Shops<wbr>Asia</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#getshopsbycountrycodes" class="tsd-kind-icon">get<wbr>Shops<wbr>ByCountry<wbr>Codes</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#getshopseurope" class="tsd-kind-icon">get<wbr>Shops<wbr>Europe</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#parsegamecode" class="tsd-kind-icon">parse<wbr>Game<wbr>Code</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#parsensuid" class="tsd-kind-icon">parseNSUID</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#american_game" class="tsd-kind-icon">AMERICAN_<wbr>GAME</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#american_game_with_game_code" class="tsd-kind-icon">AMERICAN_<wbr>GAME_<wbr>WITH_<wbr>GAME_<wbr>CODE</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#european_game" class="tsd-kind-icon">EUROPEAN_<wbr>GAME</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#eu_get_games_options" class="tsd-kind-icon">EU_<wbr>GET_<wbr>GAMES_<wbr>OPTIONS</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#japanese_game" class="tsd-kind-icon">JAPANESE_<wbr>GAME</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#japanese_game_fail" class="tsd-kind-icon">JAPANESE_<wbr>GAME_<wbr>FAIL</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#price_get_options" class="tsd-kind-icon">PRICE_<wbr>GET_<wbr>OPTIONS</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#us_algolia_headers" class="tsd-kind-icon">US_<wbr>ALGOLIA_<wbr>HEADERS</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#us_get_games_options" class="tsd-kind-icon">US_<wbr>GET_<wbr>GAMES_<wbr>OPTIONS</a>
+					</li>
 				</ul>
 			</nav>
 		</div>
@@ -125,57 +275,16 @@
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
-				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
-				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
-				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
-				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
-				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
-				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
-				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
-				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
-				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
-				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
-				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
 				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
-				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
 			</ul>
 			<ul class="tsd-legend">
-				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
-				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
 				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
-				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
 			</ul>
 			<ul class="tsd-legend">
-				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
 				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
-				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
 			</ul>
 		</div>
 	</div>
@@ -185,6 +294,5 @@
 </div>
 <div class="overlay"></div>
 <script src="assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>

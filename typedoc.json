@@ -2,7 +2,7 @@
 	"inputFiles": [
 		"./src"
 	],
-	"mode": "modules",
+	"mode": "file",
 	"out": "./docs/",
 	"readme": "./README.md",
 	"name": "Nintendo Switch EShop",
