@@ -1,6 +1,6 @@
 <div align="center">
   <p>
-  <a href="https://www.npmjs.com/package/nintendo-switch-eshop"><img src="https://storage.googleapis.com/data-sunlight-146313.appspot.com/website-project-icons/nintendoeshop.png" height="200" alt="logo"/></a>
+  <a href="https://www.npmjs.com/package/nintendo-switch-eshop"><img src="https://cdn.favware.tech/img/nintendoeshop.png" height="200" alt="logo"/></a>
   </p>
 
   <p>
@@ -45,6 +45,7 @@ const { getGamesAmerica, getGamesEurope, getGamesJapan } = require('nintendo-swi
 Copyright © `2019` `lmmfranco`
 
 ## [API Documentation](https://lmmfranco.github.io/nintendo-switch-eshop)
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
