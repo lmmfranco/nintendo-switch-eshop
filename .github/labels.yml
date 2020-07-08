@@ -142,6 +142,6 @@
 - name: 'Type: API Issue'
   description: Issues and PRs related to API issues
   color: ee0701
-- name: 'Type: API Issue'
-  description: Issues and PRs related to API issues
+- name: 'Type: Question'
+  description: Questions about the library
   color: cc317c
