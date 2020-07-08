@@ -1,0 +1,93 @@
+{
+  "projectName": "nintendo-switch-eshop",
+  "projectOwner": "lmmfranco",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "commitConvention": "angular",
+  "contributors": [
+    {
+      "login": "lmmfranco",
+      "name": "lmmfranco",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/5719409?v=4",
+      "profile": "https://github.com/lmmfranco",
+      "contributions": [
+        "code",
+        "ideas",
+        "projectManagement",
+        "question",
+        "review",
+        "doc"
+      ]
+    },
+    {
+      "login": "Favna",
+      "name": "Jeroen Claassens",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/4019718?v=4",
+      "profile": "https://favware.tech/",
+      "contributions": [
+        "code",
+        "ideas",
+        "projectManagement",
+        "question",
+        "review",
+        "userTesting",
+        "maintenance",
+        "doc"
+      ]
+    },
+    {
+      "login": "mmakarios",
+      "name": "Michel Makarios",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/9814055?v=4",
+      "profile": "https://github.com/mmakarios",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "revolter",
+      "name": "Iulian Onofrei",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/5748627?v=4",
+      "profile": "http://iulianonofrei.com/",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "Lililiuliu",
+      "name": "Lililiuliu",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/52712459?v=4",
+      "profile": "https://github.com/Lililiuliu",
+      "contributions": [
+        "bug",
+        "code"
+      ]
+    },
+    {
+      "login": "ende124",
+      "name": "ende124",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/3050747?v=4",
+      "profile": "https://github.com/ende124",
+      "contributions": [
+        "bug",
+        "code"
+      ]
+    },
+    {
+      "login": "junyeonglee",
+      "name": "junyeonglee",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/53418618?v=4",
+      "profile": "https://github.com/junyeonglee",
+      "contributions": [
+        "bug",
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7
+}
