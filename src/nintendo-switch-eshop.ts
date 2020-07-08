@@ -35,8 +35,8 @@ const arrayRemoveDuplicates = (array: any[], property: string) => {
  * @returns Promise containing all the games
  */
 export const getGamesAmerica = async (options: interfaces.RequestOptions = {}, offset = 0, games: interfaces.GameUS[] = []): Promise<interfaces.GameUS[]> => {
-	const limit = Reflect.get(options, 'limit') ?? constants.US_GAME_LIST_LIMIT;
-	const page = Math.floor(offset / (limit as number));
+	const limit = Reflect.get(options, 'limit') as number ?? constants.US_GAME_LIST_LIMIT;
+	const page = Math.floor(offset / (limit));
 
 	const sortingOptions = {
 		direction: constants.US_GET_GAMES_OPTIONS.direction,
@@ -73,7 +73,7 @@ export const getGamesAmerica = async (options: interfaces.RequestOptions = {}, o
 			const accumulatedGames: interfaces.GameUS[] = arrayRemoveDuplicates(games.concat(filteredResponse.results[0].hits), 'slug');
 
 			if (!Reflect.has(options, 'limit') && filteredResponse.results[0].hits.length + offset < filteredResponse.results[0].nbHits) {
-				return await getGamesAmerica(options, offset + (limit as number), accumulatedGames);
+				return await getGamesAmerica(options, offset + limit, accumulatedGames);
 			}
 
 			return accumulatedGames;
