@@ -1,7 +1,6 @@
 import { getPrices, US_GAME_CHECK_CODE, PRICE_LIST_LIMIT } from '../src';
 
 describe('getPrices', () => {
-  /* eslint-disable @typescript-eslint/camelcase */
   test('getPrices', async () => {
     const expectedReturn = {
       country: 'US',

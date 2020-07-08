@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/camelcase */
 import { GameJP, GameEU, GameUS } from '../src/interfaces';
 
 export const JAPANESE_GAME: GameJP = {

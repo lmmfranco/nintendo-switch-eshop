@@ -1,6 +1,6 @@
 {
   "extends": [
-    "@favware/eslint-config"
+    "@favware"
   ],
   "rules": {
     "@typescript-eslint/no-explicit-any": "off",

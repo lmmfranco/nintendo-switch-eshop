@@ -1,7 +1,7 @@
-import { stringify } from '@favware/querystring';
 import { countries, Country, regions } from 'country-data';
 import { parse as xml2json } from 'fast-xml-parser';
 import fetch from 'node-fetch';
+import { stringify } from 'querystring';
 import { deprecate } from 'util';
 import * as constants from './constants';
 import * as interfaces from './interfaces';
@@ -24,15 +24,6 @@ const arrayRemoveDuplicates = (array: any[], property: string) => {
 };
 
 /**
- * Checks if object has a certain property
- *
- * @param obj Object to traverse
- * @param prop Property to find
- * @private
- */
-const hasProp = <O extends {}>(obj: O, prop: keyof O) => obj && prop in obj;
-
-/**
  * Fetches all games on american eshops
  *
  * @remarks
@@ -44,7 +35,7 @@ const hasProp = <O extends {}>(obj: O, prop: keyof O) => obj && prop in obj;
  * @returns Promise containing all the games
  */
 export const getGamesAmerica = async (options: interfaces.RequestOptions = {}, offset = 0, games: interfaces.GameUS[] = []): Promise<interfaces.GameUS[]> => {
-  const limit = hasProp(options, 'limit') ? options.limit : constants.US_GAME_LIST_LIMIT;
+  const limit = Reflect.get(options, 'limit') ?? constants.US_GAME_LIST_LIMIT;
   const page = Math.floor(offset / (limit as number));
 
   const sortingOptions = {
@@ -60,7 +51,7 @@ export const getGamesAmerica = async (options: interfaces.RequestOptions = {}, o
             ? `_${sortingOptions.sortBy}_${sortingOptions.direction}` : '')}`,
           params: stringify({
             facetFilters: [
-              [ constants.US_GET_GAMES_OPTIONS.system ],
+              [ constants.US_GET_GAMES_OPTIONS.system ] as any,
             ],
             hitsPerPage: limit,
             page,
@@ -73,7 +64,7 @@ export const getGamesAmerica = async (options: interfaces.RequestOptions = {}, o
   };
 
   try {
-    if (hasProp(options, 'limit')) {
+    if (Reflect.has(options, 'limit')) {
       const gamesUS = await fetch(constants.US_GET_GAMES_URL, body);
 
       if (!gamesUS.ok) throw new Error('US_games_request_failed');
@@ -81,7 +72,7 @@ export const getGamesAmerica = async (options: interfaces.RequestOptions = {}, o
       const filteredResponse: interfaces.AlgoliaResponse = await gamesUS.json();
       const accumulatedGames: interfaces.GameUS[] = arrayRemoveDuplicates(games.concat(filteredResponse.results[0].hits), 'slug');
 
-      if (!hasProp(options, 'limit') && filteredResponse.results[0].hits.length + offset < filteredResponse.results[0].nbHits) {
+      if (!Reflect.has(options, 'limit') && filteredResponse.results[0].hits.length + offset < filteredResponse.results[0].nbHits) {
         return await getGamesAmerica(options, offset + (limit as number), accumulatedGames);
       }
 
@@ -100,7 +91,7 @@ export const getGamesAmerica = async (options: interfaces.RequestOptions = {}, o
           indexName: 'noa_aem_game_en_us',
           params: stringify({
             facetFilters: [
-              [ constants.US_GET_GAMES_OPTIONS.system ],
+              [ constants.US_GET_GAMES_OPTIONS.system ] as any,
             ],
             facets: [
               'categories'

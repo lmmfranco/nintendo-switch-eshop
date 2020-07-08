@@ -1,7 +1,4 @@
-import { getGamesAmerica } from './nintendo-switch-eshop';
-
-export * from './nintendo-switch-eshop';
 export * from './constants';
 export * from './interfaces';
-
-export default getGamesAmerica;
+export * from './nintendo-switch-eshop';
+export { getGamesAmerica as default } from './nintendo-switch-eshop';
