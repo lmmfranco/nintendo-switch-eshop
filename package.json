@@ -91,5 +91,9 @@
 		"extends": [
 			"@commitlint/config-conventional"
 		]
+	},
+	"resolutions": {
+		"lodash": "^4.17.19",
+		"dot-prop": "^5.2.0"
 	}
 }
