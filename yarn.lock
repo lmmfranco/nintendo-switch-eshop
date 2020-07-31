@@ -677,10 +677,10 @@
   resolved "https://registry.yarnpkg.com/@types/color-name/-/color-name-1.1.1.tgz#1c1261bbeaa10a8055bbc5d8ab84b7b2afc846a0"
   integrity sha512-rr+OQyAjxze7GgWrSaJwydHStIhHq2lvY3BOC2Mj7KnzI7XK0Uw1TOOdI9lDoajEbSWLiYgoo4f1R51erQfhPQ==
 
-"@types/country-data@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@types/country-data/-/country-data-0.0.1.tgz#505c5308e7026df7d339364d682e6d7d5961fb99"
-  integrity sha512-3Qsi6TB9V8PO4d0T5/kZC4RUL9Ricvg+WPAXfnhcFmwGg/lYRlyxi+clhAJq346FdvtBopdhwt33xgIzlYa5sQ==
+"@types/country-data@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@types/country-data/-/country-data-0.0.2.tgz#5a2c65151fc1fecbbb442221cb8dca8097caeba5"
+  integrity sha512-9TtlOfoHEMWojmAV1IoisMlM9kXGw4QDAamkXUiCZBtU9sY3187naTc1OXwD3QVE1mMkPZbBVdyjVdBu7wJlNA==
 
 "@types/eslint-visitor-keys@^1.0.0":
   version "1.0.0"
