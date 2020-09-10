@@ -50,7 +50,7 @@
 	},
 	"files": [
 		"dist/",
-		"!dist/.tsbuildinfo"
+		"!dist/tsconfig.tsbuildinfo"
 	],
 	"engines": {
 		"node": ">=10",
