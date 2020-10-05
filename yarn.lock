@@ -440,9 +440,9 @@
     eslint "^7.8.1"
 
 "@favware/ts-config@^3.0.3":
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/@favware/ts-config/-/ts-config-3.0.3.tgz#c783dc58e4a939d75b281f9c331d1782fb3e22c6"
-  integrity sha512-ak/HgwjRgPdD7g0W+7QNMMOPa2NuSUxCPgmMLpDNAJ51+6lvvhGrGhAd/Yu2f9Eq60pMQqOk0swB0e63CFMMNg==
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/@favware/ts-config/-/ts-config-3.0.4.tgz#a47ada9bbd9524eefdc6ea208647476388a168f3"
+  integrity sha512-vQOHMGFZ3HNCo2JYUuxNGr0jtwnYVh/qRUDC7Dj87Q0VTRZs/U1FcVNAjibvs8hRtNcLkGHe2IRDpIyl8lp0Ug==
 
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.1.0"
