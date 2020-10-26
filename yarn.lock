@@ -430,10 +430,10 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@favware/eslint-config@^6.0.1":
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/@favware/eslint-config/-/eslint-config-6.0.1.tgz#6ae9303d97d0c7d3ff31f2011ec136609125245b"
-  integrity sha512-wgO1OVYg0sUGlYZke4Wth7rWEPDwR5pbl7np4xgQS9k9PoXHXDzPQQM/V0CSZV5cEYlNt9B1hD86TgRcfNXLuw==
+"@favware/eslint-config@^6.0.2":
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/@favware/eslint-config/-/eslint-config-6.0.2.tgz#b4800be71b3526b6a3fe4489363c931c7a5b51ca"
+  integrity sha512-uskF051z8e1gyZq6g2Hnr2sCpni419K6wabi+4zRgYCrHldxLFGLMgQnK1ZKDOwXFSJAZ4AUbqUUvEZIHd0SxA==
 
 "@favware/ts-config@^3.0.4":
   version "3.0.4"
