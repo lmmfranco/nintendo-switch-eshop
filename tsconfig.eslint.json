@@ -4,9 +4,5 @@
     "allowJs": true,
     "checkJs": true
   },
-  "include": [
-    "src",
-		"__tests__",
-		"jest.config.js"
-  ]
+  "include": ["src", "__tests__", "jest.config.ts"]
 }

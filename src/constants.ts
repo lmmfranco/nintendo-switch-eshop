@@ -1,5 +1,3 @@
-
-
 /** Options used for getting US gmaes  */
 export const US_GET_GAMES_OPTIONS = { system: 'platform:Nintendo Switch', sort: 'title', direction: 'asc' };
 
@@ -22,29 +20,22 @@ export const US_GAME_CODE_REGEX = /HAC\w(\w{4})/;
 export const US_GAME_LIST_LIMIT = 200;
 
 /** Price ranges for US games */
-export const US_PRICE_RANGES = [
-	'Free to start',
-	'$0 - $4.99',
-	'$5 - $9.99',
-	'$10 - $19.99',
-	'$20 - $39.99',
-	'$40+'
-];
+export const US_PRICE_RANGES = ['Free to start', '$0 - $4.99', '$5 - $9.99', '$10 - $19.99', '$20 - $39.99', '$40+'];
 
 /** Request headers for US games */
 export const US_ALGOLIA_HEADERS = {
-	'Content-Type': 'application/json',
-	'X-Algolia-API-Key': US_ALGOLIA_KEY,
-	'X-Algolia-Application-Id': US_ALGOLIA_ID,
+  'Content-Type': 'application/json',
+  'X-Algolia-API-Key': US_ALGOLIA_KEY,
+  'X-Algolia-Application-Id': US_ALGOLIA_ID
 };
 
 /** Options used for getting EU gmaes  */
 export const EU_GET_GAMES_OPTIONS = {
-	fq: 'type:GAME AND system_type:nintendoswitch* AND product_code_txt:*',
-	q: '*',
-	sort: 'sorting_title asc',
-	start: '0',
-	wt: 'json',
+  fq: 'type:GAME AND system_type:nintendoswitch* AND product_code_txt:*',
+  q: '*',
+  sort: 'sorting_title asc',
+  start: '0',
+  wt: 'json'
 };
 
 /** URL for getting EU Games */
@@ -89,9 +80,9 @@ export class EshopError extends Error {
    * Create an EshopError
    * @param message The message the error should show
    */
-	public constructor(message: string) {
-		super(message);
-		this.message = message;
-		this.name = 'EshopError';
-	}
+  public constructor(message: string) {
+    super(message);
+    this.message = message;
+    this.name = 'EshopError';
+  }
 }

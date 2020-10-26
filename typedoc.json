@@ -1,17 +1,13 @@
 {
-	"inputFiles": [
-		"./src"
-	],
-	"mode": "file",
-	"out": "./docs/",
-	"readme": "./README.md",
-	"name": "Nintendo Switch EShop",
-	"exclude": [
-		"src/index.ts"
-	],
-	"excludeExternals": true,
-	"excludePrivate": true,
-	"excludeProtected": true,
-	"excludeNotExported": true,
-	"tsconfig": "./tsconfig.base.json"
+  "inputFiles": ["./src"],
+  "mode": "file",
+  "out": "./docs/",
+  "readme": "./README.md",
+  "name": "Nintendo Switch EShop",
+  "exclude": ["src/index.ts"],
+  "excludeExternals": true,
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "excludeNotExported": true,
+  "tsconfig": "./tsconfig.base.json"
 }
