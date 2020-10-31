@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.0.0](https://github.com/lmmfranco/nintendo-switch-eshop/compare/v3.0.3...v4.0.0) (2020-10-31)
+
+
+### ⚠ BREAKING CHANGES
+
+* use getQueriedGamesAmerica to get games based on a given query. For example when
+your users can perform a search (just like on the nintendo.com website) you can use this to severly
+limit the results to go through.
+* The repo files have been moved around a lot. This probably won't impact
+you too much, but if you were importing from a specific path (not the root of
+require('nintendo-switch-eshop')) then you'll have to change your imports.
+* **api:** getGamesAmerica no longer takes any parameters and
+should always return all games.
+
+Co-authored-by: Jeroen Claassens <support@favware.tech>
+
+### Features
+
+* add getQueriedGamesAmerica ([bfc1830](https://github.com/lmmfranco/nintendo-switch-eshop/commit/bfc18301af2325286810ae8342d708a6771c3132))
+* restructure repo ([59ead46](https://github.com/lmmfranco/nintendo-switch-eshop/commit/59ead46ba2c2cbdfe7f3ffcddc53a144dbf7391f))
+
+
+### Bug Fixes
+
+* **api:** updated getgamesamerica algolia request to retrieve all games ([#281](https://github.com/lmmfranco/nintendo-switch-eshop/issues/281)) ([2ace2cc](https://github.com/lmmfranco/nintendo-switch-eshop/commit/2ace2ccfd6f90894b327861f344aa3217d85a5f7))
+
 ### [3.0.3](https://github.com/lmmfranco/nintendo-switch-eshop/compare/v3.0.2...v3.0.3) (2020-09-10)
 
 ### [3.0.2](https://github.com/lmmfranco/nintendo-switch-eshop/compare/v3.0.1...v3.0.2) (2020-07-08)
