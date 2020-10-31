@@ -87,6 +87,16 @@
         "bug",
         "code"
       ]
+    },
+    {
+      "login": "bvanzile",
+      "name": "Bryan Van Zile",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/9438505?v=4",
+      "profile": "https://github.com/bvanzile",
+      "contributions": [
+        "code",
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7
