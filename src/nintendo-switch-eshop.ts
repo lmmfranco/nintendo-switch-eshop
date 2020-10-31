@@ -24,147 +24,125 @@ const arrayRemoveDuplicates = (array: any[], property: string) => {
 };
 
 /**
- * Fetches all games on american eshops
+ * Fetches all games on american e-shops
  *
  * @remarks
- * Paginates every 200 games, _(maximum item count per request)_
+ * Currently ONLY returns all games in the e-shop
  *
- * @param options _(Optional)_ Options for the request
- * @param offset _(Optional)_ Offset to start searching at
- * @param games _(Optional)_ Array of games to filter by
  * @returns Promise containing all the games
  */
-export const getGamesAmerica = async (
-  options: interfaces.RequestOptions = {},
-  offset = 0,
-  games: interfaces.GameUS[] = []
-): Promise<interfaces.GameUS[]> => {
-  const limit = (Reflect.get(options, 'limit') as number) ?? constants.US_GAME_LIST_LIMIT;
-  const page = Math.floor(offset / limit);
-
-  const sortingOptions = {
-    direction: constants.US_GET_GAMES_OPTIONS.direction,
-    sortBy: constants.US_GET_GAMES_OPTIONS.sort
-  };
+export const getGamesAmerica = async (): Promise<interfaces.GameUS[]> => {
+  const limit = constants.US_GAME_LIST_LIMIT;
+  const page = 0;
 
   const body = {
     body: JSON.stringify({
       requests: [
         {
-          indexName: `noa_aem_game_en_us${
-            sortingOptions.sortBy && sortingOptions.direction
-              ? `_${sortingOptions.sortBy}_${sortingOptions.direction}`
-              : ''
-          }`,
+          indexName: constants.US_INDEX_TITLE_ASC,
           params: stringify({
-            facetFilters: [[constants.US_GET_GAMES_OPTIONS.system] as any],
+            query: '',
             hitsPerPage: limit,
-            page
+            page: page,
+            analytics: false,
+            facets: JSON.stringify(constants.US_FACETS),
+            facetFilters: `[["${constants.US_ESRB_RATINGS_FILTERS.everyone}"],["${constants.US_PLATFORM_FACET_FILTER}"]]`
+          })
+        },
+        {
+          indexName: constants.US_INDEX_TITLE_DES,
+          params: stringify({
+            query: '',
+            hitsPerPage: limit,
+            page: page,
+            analytics: false,
+            facets: JSON.stringify(constants.US_FACETS),
+            facetFilters: `[["${constants.US_ESRB_RATINGS_FILTERS.everyone}"],["${constants.US_PLATFORM_FACET_FILTER}"]]`
+          })
+        },
+        {
+          indexName: constants.US_INDEX_TITLE_ASC,
+          params: stringify({
+            query: '',
+            hitsPerPage: limit,
+            page: page,
+            analytics: false,
+            facets: JSON.stringify(constants.US_FACETS),
+            facetFilters: `[["${constants.US_ESRB_RATINGS_FILTERS.everyone10}"],["${constants.US_PLATFORM_FACET_FILTER}"]]`
+          })
+        },
+        {
+          indexName: constants.US_INDEX_TITLE_DES,
+          params: stringify({
+            query: '',
+            hitsPerPage: limit,
+            page: page,
+            analytics: false,
+            facets: JSON.stringify(constants.US_FACETS),
+            facetFilters: `[["${constants.US_ESRB_RATINGS_FILTERS.everyone10}"],["${constants.US_PLATFORM_FACET_FILTER}"]]`
+          })
+        },
+        {
+          indexName: constants.US_INDEX_TITLE_ASC,
+          params: stringify({
+            query: '',
+            hitsPerPage: limit,
+            page: page,
+            analytics: false,
+            facets: JSON.stringify(constants.US_FACETS),
+            facetFilters: `[["${constants.US_ESRB_RATINGS_FILTERS.teen}"],["${constants.US_PLATFORM_FACET_FILTER}"]]`
+          })
+        },
+        {
+          indexName: constants.US_INDEX_TITLE_DES,
+          params: stringify({
+            query: '',
+            hitsPerPage: limit,
+            page: page,
+            analytics: false,
+            facets: JSON.stringify(constants.US_FACETS),
+            facetFilters: `[["${constants.US_ESRB_RATINGS_FILTERS.teen}"],["${constants.US_PLATFORM_FACET_FILTER}"]]`
+          })
+        },
+        {
+          indexName: constants.US_INDEX_TITLE_ASC,
+          params: stringify({
+            query: '',
+            hitsPerPage: limit,
+            page: page,
+            analytics: false,
+            facets: JSON.stringify(constants.US_FACETS),
+            facetFilters: `[["${constants.US_ESRB_RATINGS_FILTERS.mature}"],["${constants.US_PLATFORM_FACET_FILTER}"]]`
+          })
+        },
+        {
+          indexName: constants.US_INDEX_TITLE_ASC,
+          params: stringify({
+            query: '',
+            hitsPerPage: limit,
+            page: page,
+            analytics: false,
+            facets: JSON.stringify(constants.US_FACETS),
+            facetFilters: `[["${constants.US_AVAILABILITY_FILTER}"],["${constants.US_PLATFORM_FACET_FILTER}"]]`
           })
         }
       ]
     }),
-    headers: constants.US_ALGOLIA_HEADERS,
-    method: 'POST'
+    method: 'POST',
+    headers: constants.US_ALGOLIA_HEADERS
   };
 
   try {
-    if (Reflect.has(options, 'limit')) {
-      const gamesUS = await fetch(constants.US_GET_GAMES_URL, body);
+    const allGamesResponse = await fetch(constants.US_GET_GAMES_URL, body);
+    if (!allGamesResponse.ok) throw new Error('US_games_request_failed');
+    const gamesResponse: interfaces.AlgoliaResponse = await allGamesResponse.json();
 
-      if (!gamesUS.ok) throw new Error('US_games_request_failed');
-
-      const filteredResponse: interfaces.AlgoliaResponse = await gamesUS.json();
-      const accumulatedGames: interfaces.GameUS[] = arrayRemoveDuplicates(
-        games.concat(filteredResponse.results[0].hits),
-        'slug'
-      );
-
-      if (
-        !Reflect.has(options, 'limit') &&
-        filteredResponse.results[0].hits.length + offset < filteredResponse.results[0].nbHits
-      ) {
-        return await getGamesAmerica(options, offset + limit, accumulatedGames);
-      }
-
-      return accumulatedGames;
+    let allGames: any[] | PromiseLike<interfaces.GameUS[]> = [];
+    for (const results of gamesResponse.results) {
+      allGames = allGames.concat(results.hits);
     }
-    /**
-     * Using a workaround to get all the games.
-     * Basically, fetch all the games from the different categories one by one,
-     * if one category has > 100 games, fetch all the games in each price range one by one.
-     *
-     * Get the counts of all the games in the different categories.
-     */
-    const categoriesRequestOptions = {
-      body: JSON.stringify({
-        requests: [
-          {
-            indexName: 'noa_aem_game_en_us',
-            params: stringify({
-              facetFilters: [[constants.US_GET_GAMES_OPTIONS.system] as any],
-              facets: ['categories'],
-              hitsPerPage: 0
-            })
-          }
-        ]
-      }),
-      headers: constants.US_ALGOLIA_HEADERS,
-      method: 'POST'
-    };
 
-    const gamesToCount = await fetch(constants.US_GET_GAMES_URL, categoriesRequestOptions);
-    if (!gamesToCount.ok) throw new Error('US_games_request_failed');
-
-    const response: interfaces.AlgoliaResponse = await gamesToCount.json();
-    const categoryCount = response.results[0].facets.categories;
-
-    // Loop through all the categories and fetch the games.
-    const allGamesPromises = Object.entries(categoryCount).map(async ([category, count]) => {
-      const normalRequest = [
-        {
-          indexName: 'noa_aem_game_en_us',
-          params: stringify({
-            facetFilters: JSON.stringify([[constants.US_GET_GAMES_OPTIONS.system], [`categories:${category}`]]),
-            hitsPerPage: 100
-          })
-        }
-      ];
-
-      const manyPriceRangeRequests = constants.US_PRICE_RANGES.map((priceRange) => ({
-        indexName: 'noa_aem_game_en_us',
-        params: stringify({
-          facetFilters: JSON.stringify([
-            [constants.US_GET_GAMES_OPTIONS.system],
-            [`categories:${category}`],
-            [`priceRange:${priceRange}`]
-          ]),
-          facets: ['platform', 'categories'],
-          hitsPerPage: 100
-        })
-      }));
-
-      const allGamesRequestOptions = {
-        body: JSON.stringify({ requests: count > 100 ? manyPriceRangeRequests : normalRequest }),
-        headers: constants.US_ALGOLIA_HEADERS,
-        method: 'POST'
-      };
-
-      const allGamesResponse = await fetch(constants.US_GET_GAMES_URL, allGamesRequestOptions);
-
-      if (!allGamesResponse.ok) throw new Error('US_games_request_failed');
-
-      const gamesResponse: interfaces.AlgoliaResponse = await allGamesResponse.json();
-
-      return count > 100
-        ? gamesResponse.results.map((result) => result.hits).reduce((a, b) => a.concat(b, []))
-        : gamesResponse.results[0].hits;
-    });
-
-    // Finally fetch all the games and remove duplicates
-    let allGames = (await Promise.all(allGamesPromises)).reduce((a, b) => a.concat(b, []));
     allGames = arrayRemoveDuplicates(allGames, 'slug');
-
     return allGames;
   } catch (err) {
     if (/(?:US_games_request_failed)/i.test(err.toString()))

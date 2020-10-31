@@ -5,7 +5,7 @@ export const US_GET_GAMES_OPTIONS = { system: 'platform:Nintendo Switch', sort: 
 export const US_ALGOLIA_ID = 'U3B6GR4UA3';
 
 /** Algolia Key for getting US games */
-export const US_ALGOLIA_KEY = '9a20c93440cf63cf1a7008d75f7438bf';
+export const US_ALGOLIA_KEY = 'c4da8be7fd29f0f5bfa42920b0a99dc7';
 
 /** URL for getting US Games */
 export const US_GET_GAMES_URL = `https://${US_ALGOLIA_ID}-dsn.algolia.net/1/indexes/*/queries`;
@@ -17,10 +17,38 @@ export const US_GAME_CHECK_CODE = '70010000000185';
 export const US_GAME_CODE_REGEX = /HAC\w(\w{4})/;
 
 /** Default limit for getting US games - Defaults to 200  */
-export const US_GAME_LIST_LIMIT = 200;
+export const US_GAME_LIST_LIMIT = 1000;
+
+/** Index names for querying all games by both ascending and descending title */
+export const US_INDEX_TITLE_ASC = 'ncom_game_en_us_title_asc';
+export const US_INDEX_TITLE_DES = 'ncom_game_en_us_title_des';
+
+/** Static query parameters for facets/filters in US Algolia calls */
+export const US_FACETS = [
+  'generalFilters',
+  'platform',
+  'availability',
+  'genres',
+  'howToShop',
+  'virtualConsole',
+  'franchises',
+  'priceRange',
+  'esrbRating',
+  'playerFilters'
+];
+export const US_PLATFORM_FACET_FILTER = 'platform:Nintendo Switch';
 
 /** Price ranges for US games */
 export const US_PRICE_RANGES = ['Free to start', '$0 - $4.99', '$5 - $9.99', '$10 - $19.99', '$20 - $39.99', '$40+'];
+
+/** ESRB options and Coming Soon facet filters for querying all games in one request */
+export const US_ESRB_RATINGS_FILTERS = {
+  everyone: 'esrbRating:Everyone',
+  everyone10: 'esrbRating:Everyone 10+',
+  teen: 'esrbRating:Teen',
+  mature: 'esrbRating:Mature'
+};
+export const US_AVAILABILITY_FILTER = 'availability:Coming soon';
 
 /** Request headers for US games */
 export const US_ALGOLIA_HEADERS = {
