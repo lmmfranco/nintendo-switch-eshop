@@ -59,6 +59,40 @@ export interface GameEU {
   title_extras_txt: string[];
 }
 
+export interface QueriedGameUS {
+  type: string;
+  locale: string;
+  url: string;
+  title: string;
+  description: string;
+  lastModified: number;
+  id: string;
+  nsuid: string;
+  slug: string;
+  boxArt: string;
+  gallery: string;
+  platform: string;
+  releaseDateMask: string;
+  characters: string[];
+  categories: string[];
+  msrp: number | null;
+  esrb?: string;
+  esrbDescriptors?: string[];
+  virtualConsole: string;
+  generalFilters: string[];
+  filterShops: string[];
+  filterPlayers: string[];
+  publishers: string[];
+  developers: string[];
+  players: string;
+  featured: boolean;
+  freeToStart: boolean;
+  priceRange: string | null;
+  salePrice: number | null;
+  availability: string[];
+  objectID: string;
+}
+
 export interface GameUS {
   /** @deprecated Product code. Can be parsed for a region wide code. */
   game_code?: string;

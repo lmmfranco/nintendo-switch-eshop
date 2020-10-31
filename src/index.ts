@@ -1,6 +1,7 @@
 export { getGamesAmerica as default, getGamesAmerica } from './lib/getGames/getGamesAmerica';
 export { getGamesEurope } from './lib/getGames/getGamesEurope';
 export { getGamesJapan } from './lib/getGames/getGamesJapan';
+export { getQueriedGamesAmerica } from './lib/getGames/getQueriedGamesAmerica';
 export { getActiveShops } from './lib/getShops/getActiveShops';
 export { getShopsAmerica } from './lib/getShops/getShopsAmerica';
 export { getShopsAsia } from './lib/getShops/getShopsAsia';
