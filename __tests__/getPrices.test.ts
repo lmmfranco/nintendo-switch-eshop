@@ -1,4 +1,5 @@
-import { getPrices, PRICE_LIST_LIMIT, US_GAME_CHECK_CODE } from '../src';
+import { getPrices } from '../src';
+import { PRICE_LIST_LIMIT, US_GAME_CHECK_CODE } from '../src/lib/utils/constants';
 
 describe('getPrices', () => {
   test('getPrices', async () => {
