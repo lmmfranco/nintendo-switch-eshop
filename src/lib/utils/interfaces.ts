@@ -1,6 +1,8 @@
-import { Country } from 'country-data';
+import type { Country } from 'country-data';
+import type { Region } from './constants';
 
-export interface Category {
+/** @internal */
+interface Category {
   /** Categories array */
   category: string[];
 }
@@ -83,9 +85,10 @@ export interface GameUS {
   buyitnow: boolean;
 }
 
-export interface AlgoliaResults {
+/** @internal */
+interface AlgoliaResults<T extends GameUS | QueriedGameUS> {
   /** The games found */
-  hits: GameUS[];
+  hits: T[];
   /** Total number of hits with current query */
   nbHits: number;
   page: number;
@@ -107,8 +110,9 @@ export interface AlgoliaResults {
   index: string;
 }
 
-export interface AlgoliaResponse {
-  results: AlgoliaResults[];
+/** @internal */
+export interface AlgoliaResponse<T extends GameUS | QueriedGameUS> {
+  results: AlgoliaResults<T>[];
 }
 
 export interface GameJP extends Record<string, string | number | undefined> {
@@ -161,12 +165,14 @@ export interface TitleData {
   discount_price?: PriceData;
 }
 
-export interface PriceError {
+/** @internal */
+interface PriceError {
   code: string;
   message: string;
 }
 
-export interface PriceData {
+/** @internal */
+interface PriceData {
   amount: string;
   currency: string;
   raw_value: string;
@@ -174,7 +180,8 @@ export interface PriceData {
   end_datetime?: string;
 }
 
-export interface RequestOptions {
+/** @internal */
+interface RequestOptions {
   /**
    * Game count limit (Can only be lower than default page size).
    *
@@ -186,13 +193,4 @@ export interface RequestOptions {
 export interface EURequestOptions extends RequestOptions {
   /** Game information locale. (EU Only) */
   locale?: string;
-}
-
-/**
- * Predefined options for the unit system
- */
-export enum Region {
-  AMERICAS = 1,
-  EUROPE = 2,
-  ASIA = 3
 }

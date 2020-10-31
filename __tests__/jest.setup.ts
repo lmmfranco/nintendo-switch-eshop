@@ -3,3 +3,5 @@ jest.setTimeout(1000 * 60);
 
 // Retry failed twice just in case Tessarect still fails
 jest.retryTimes(2);
+
+export default undefined;

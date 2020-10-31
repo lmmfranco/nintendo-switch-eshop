@@ -9,5 +9,6 @@
   "excludePrivate": true,
   "excludeProtected": true,
   "excludeNotExported": true,
-  "tsconfig": "./tsconfig.base.json"
+	"tsconfig": "./tsconfig.base.json",
+	"skipInternal": true
 }

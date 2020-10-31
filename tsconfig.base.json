@@ -2,10 +2,10 @@
   "extends": "@favware/ts-config",
   "compilerOptions": {
     "target": "ES6",
-		"resolveJsonModule": true,
-		"useDefineForClassFields": true,
-		"isolatedModules": true,
-		"importsNotUsedAsValues": "error",
-		"preserveConstEnums": true
+    "lib": ["ESNext"],
+    "resolveJsonModule": true,
+    "importsNotUsedAsValues": "error",
+    "isolatedModules": true,
+    "preserveConstEnums": true
   }
 }

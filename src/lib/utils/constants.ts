@@ -102,15 +102,11 @@ export const PRICE_GET_OPTIONS = { lang: 'en' };
 /** Default limit used when getting price data - defaults to `50` */
 export const PRICE_LIST_LIMIT = 50;
 
-/** Class representing an error in the nintendo-switch-eshop library */
-export class EshopError extends Error {
-  /**
-   * Create an EshopError
-   * @param message The message the error should show
-   */
-  public constructor(message: string) {
-    super(message);
-    this.message = message;
-    this.name = 'EshopError';
-  }
+/**
+ * Predefined options for the unit system
+ */
+export const enum Region {
+  AMERICAS = 1,
+  EUROPE = 2,
+  ASIA = 3
 }

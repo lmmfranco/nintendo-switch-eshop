@@ -1,4 +1,4 @@
-import { GameEU, GameJP, GameUS } from '../src/interfaces';
+import type { GameEU, GameJP, GameUS } from '../src';
 
 export const JAPANESE_GAME: GameJP = {
   LinkURL: '123456789123456789',
