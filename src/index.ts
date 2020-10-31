@@ -10,7 +10,17 @@ export { getPrices } from './lib/other/getPrices';
 export { getShopsByCountryCodes } from './lib/other/getShopByCountryCode';
 export { parseGameCode } from './lib/other/parseGameCode';
 export { parseNSUID } from './lib/other/parseNSUID';
-export * from './lib/utils/constants';
+export {
+  EU_GET_GAMES_URL,
+  JP_GET_GAMES_URL,
+  PRICE_GET_URL,
+  QUERIED_US_ALGOLIA_KEY,
+  Region,
+  US_ALGOLIA_HEADERS,
+  US_ALGOLIA_ID,
+  US_ALGOLIA_KEY,
+  US_GET_GAMES_URL
+} from './lib/utils/constants';
 export type {
   EShop,
   EURequestOptions,

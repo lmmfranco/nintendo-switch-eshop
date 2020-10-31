@@ -1,10 +1,8 @@
 import fetch from 'node-fetch';
 import { stringify } from 'querystring';
-import { US_ALGOLIA_HEADERS, US_GET_GAMES_URL } from '../utils/constants';
+import { QUERIED_US_ALGOLIA_KEY, US_ALGOLIA_HEADERS, US_GET_GAMES_URL } from '../utils/constants';
 import type { AlgoliaResponse, QueriedGameUS } from '../utils/interfaces';
 import { EshopError } from '../utils/utils';
-
-const QUERY_NINTENDO_KEY = '9a20c93440cf63cf1a7008d75f7438bf';
 
 /**
  * Fetches a subset of games from the American e-shops as based on a given query
@@ -18,7 +16,7 @@ export const getQueriedGamesAmerica = async (query: string): Promise<QueriedGame
     method: 'POST',
     headers: {
       ...US_ALGOLIA_HEADERS,
-      'X-Algolia-API-Key': QUERY_NINTENDO_KEY
+      'X-Algolia-API-Key': QUERIED_US_ALGOLIA_KEY
     },
     body: JSON.stringify({
       requests: [

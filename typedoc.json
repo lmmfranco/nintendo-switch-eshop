@@ -10,5 +10,5 @@
   "excludeProtected": true,
   "excludeNotExported": true,
 	"tsconfig": "./tsconfig.base.json",
-	"skipInternal": true
+	"stripInternal": true
 }
