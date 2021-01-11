@@ -439,9 +439,9 @@
     strip-json-comments "^3.1.1"
 
 "@favware/eslint-config@^6.0.2":
-  version "6.0.2"
-  resolved "https://registry.yarnpkg.com/@favware/eslint-config/-/eslint-config-6.0.2.tgz#b4800be71b3526b6a3fe4489363c931c7a5b51ca"
-  integrity sha512-uskF051z8e1gyZq6g2Hnr2sCpni419K6wabi+4zRgYCrHldxLFGLMgQnK1ZKDOwXFSJAZ4AUbqUUvEZIHd0SxA==
+  version "6.0.3"
+  resolved "https://registry.yarnpkg.com/@favware/eslint-config/-/eslint-config-6.0.3.tgz#8acd265d1ab3b98e4173613e206efe6432b7026e"
+  integrity sha512-N4AtyeU179tmdAmcv0vNqdXDPHL+WT8U8dp2qjDBaFBMTXuK5rrbxJAtb+cFWSNDAn8p+vxilx6bymP/e3c7sw==
 
 "@favware/ts-config@^3.0.4":
   version "3.0.4"
