@@ -9,7 +9,7 @@ describe('getGamesAmerica', () => {
     expect(data.length).toBeGreaterThanOrEqual(1500);
   });
 
-  test('should work with default export', async () => {
+  test('should work with default export', () => {
     expect(defaultGetGamesAmerica).not.toBeUndefined();
   });
 });

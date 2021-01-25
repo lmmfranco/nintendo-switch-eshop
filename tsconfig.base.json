@@ -1,11 +1,7 @@
 {
-  "extends": "@favware/ts-config",
+  "extends": "@sapphire/ts-config",
   "compilerOptions": {
     "target": "ES6",
-    "lib": ["ESNext"],
-    "resolveJsonModule": true,
-    "importsNotUsedAsValues": "error",
-    "isolatedModules": true,
-    "preserveConstEnums": true
+    "isolatedModules": true
   }
 }

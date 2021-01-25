@@ -22,10 +22,7 @@ export const parseGameCode = (game: GameUS | GameEU | GameJP, region: Region): s
       break;
     case Region.AMERICAS:
       return deprecate(
-        () =>
-          US_GAME_CODE_REGEX.exec((game as GameUS).game_code!)?.length || false
-            ? US_GAME_CODE_REGEX.exec((game as GameUS).game_code!)![1]
-            : '',
+        () => (US_GAME_CODE_REGEX.exec((game as GameUS).game_code!)?.length || false ? US_GAME_CODE_REGEX.exec((game as GameUS).game_code!)![1] : ''),
         'game_code is no longer returned by the API for American games so it can no longer be parsed from the data.',
         'DEP0001'
       )();

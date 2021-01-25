@@ -1,9 +1,8 @@
 {
   "extends": [
-    "@favware"
+    "@sapphire"
   ],
   "rules": {
-    "@typescript-eslint/no-explicit-any": "off",
     "no-case-declarations": "off"
   }
 }

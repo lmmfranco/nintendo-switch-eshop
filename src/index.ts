@@ -21,13 +21,5 @@ export {
   US_ALGOLIA_KEY,
   US_GET_GAMES_URL
 } from './lib/utils/constants';
-export type {
-  EShop,
-  EURequestOptions,
-  GameEU,
-  GameJP,
-  GameUS,
-  PriceResponse,
-  QueriedGameUS
-} from './lib/utils/interfaces';
+export type { EShop, EURequestOptions, GameEU, GameJP, GameUS, PriceResponse, QueriedGameUS } from './lib/utils/interfaces';
 export { EshopError } from './lib/utils/utils';

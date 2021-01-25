@@ -2,7 +2,7 @@ import { parseNSUID, Region } from '../src';
 import { AMERICAN_GAME, EUROPEAN_GAME, JAPANESE_GAME, JAPANESE_GAME_FAIL } from './testUtils';
 
 describe('parse NSUID', () => {
-  test('Region == US', async () => {
+  test('Region == US', () => {
     const data = parseNSUID(AMERICAN_GAME, Region.AMERICAS);
     expect(typeof data).toBe('string');
     expect(data).toHaveLength(14);

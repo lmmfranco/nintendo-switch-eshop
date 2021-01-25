@@ -13,12 +13,7 @@ import { EshopError } from '../utils/utils';
  * @param prices _(Optional)_ An array of {@link TitleData}
  * @returns A promise containing the pricing information.
  */
-export const getPrices = async (
-  country: string,
-  gameIds: string[] | string,
-  offset = 0,
-  prices: TitleData[] = []
-): Promise<PriceResponse> => {
+export const getPrices = async (country: string, gameIds: string[] | string, offset = 0, prices: TitleData[] = []): Promise<PriceResponse> => {
   try {
     const filteredIds = gameIds.slice(offset, offset + PRICE_LIST_LIMIT);
     const priceData = await fetch(
@@ -47,9 +42,7 @@ export const getPrices = async (
     return response;
   } catch (err) {
     if (/(?:PRICE_Rate_Limit)/i.test(err.toString()))
-      throw new EshopError(
-        'Looks like you ran into a rate limit while getting price data, please do not spam the Nintendo servers.'
-      );
+      throw new EshopError('Looks like you ran into a rate limit while getting price data, please do not spam the Nintendo servers.');
     if (/(?:PRICE_get_request_failed)/i.test(err.toString())) throw new EshopError('Fetching of eShop prices failed');
     throw err;
   }

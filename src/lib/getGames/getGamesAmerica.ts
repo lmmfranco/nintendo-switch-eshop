@@ -34,7 +34,7 @@ export const getGamesAmerica = async (): Promise<GameUS[]> => {
           params: stringify({
             query: '',
             hitsPerPage: limit,
-            page: page,
+            page,
             analytics: false,
             facets: US_FACETS,
             facetFilters: `[["${US_ESRB_RATINGS_FILTERS.everyone}"],["${US_PLATFORM_FACET_FILTER}"]]`
@@ -45,7 +45,7 @@ export const getGamesAmerica = async (): Promise<GameUS[]> => {
           params: stringify({
             query: '',
             hitsPerPage: limit,
-            page: page,
+            page,
             analytics: false,
             facets: US_FACETS,
             facetFilters: `[["${US_ESRB_RATINGS_FILTERS.everyone}"],["${US_PLATFORM_FACET_FILTER}"]]`
@@ -56,7 +56,7 @@ export const getGamesAmerica = async (): Promise<GameUS[]> => {
           params: stringify({
             query: '',
             hitsPerPage: limit,
-            page: page,
+            page,
             analytics: false,
             facets: US_FACETS,
             facetFilters: `[["${US_ESRB_RATINGS_FILTERS.everyone10}"],["${US_PLATFORM_FACET_FILTER}"]]`
@@ -67,7 +67,7 @@ export const getGamesAmerica = async (): Promise<GameUS[]> => {
           params: stringify({
             query: '',
             hitsPerPage: limit,
-            page: page,
+            page,
             analytics: false,
             facets: US_FACETS,
             facetFilters: `[["${US_ESRB_RATINGS_FILTERS.everyone10}"],["${US_PLATFORM_FACET_FILTER}"]]`
@@ -78,7 +78,7 @@ export const getGamesAmerica = async (): Promise<GameUS[]> => {
           params: stringify({
             query: '',
             hitsPerPage: limit,
-            page: page,
+            page,
             analytics: false,
             facets: US_FACETS,
             facetFilters: `[["${US_ESRB_RATINGS_FILTERS.teen}"],["${US_PLATFORM_FACET_FILTER}"]]`
@@ -89,7 +89,7 @@ export const getGamesAmerica = async (): Promise<GameUS[]> => {
           params: stringify({
             query: '',
             hitsPerPage: limit,
-            page: page,
+            page,
             analytics: false,
             facets: US_FACETS,
             facetFilters: `[["${US_ESRB_RATINGS_FILTERS.teen}"],["${US_PLATFORM_FACET_FILTER}"]]`
@@ -100,7 +100,7 @@ export const getGamesAmerica = async (): Promise<GameUS[]> => {
           params: stringify({
             query: '',
             hitsPerPage: limit,
-            page: page,
+            page,
             analytics: false,
             facets: US_FACETS,
             facetFilters: `[["${US_ESRB_RATINGS_FILTERS.mature}"],["${US_PLATFORM_FACET_FILTER}"]]`
@@ -111,7 +111,7 @@ export const getGamesAmerica = async (): Promise<GameUS[]> => {
           params: stringify({
             query: '',
             hitsPerPage: limit,
-            page: page,
+            page,
             analytics: false,
             facets: US_FACETS,
             facetFilters: `[["${US_AVAILABILITY_FILTER}"],["${US_PLATFORM_FACET_FILTER}"]]`

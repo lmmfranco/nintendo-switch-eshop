@@ -102,8 +102,7 @@ export const AMERICAN_GAME: GameUS = {
   digitaldownload: false,
   eshop_price: 49.99,
   free_to_start: false,
-  front_box_art:
-    'https://media.nintendo.com/nintendo/bin/oiM2QlLg9frNJhSWvFGmi5NAvEAGlYVx/_3d_ldcR3G0YQl590uHXZ89Jmouu5aS9.png',
+  front_box_art: 'https://media.nintendo.com/nintendo/bin/oiM2QlLg9frNJhSWvFGmi5NAvEAGlYVx/_3d_ldcR3G0YQl590uHXZ89Jmouu5aS9.png',
   id: 'QY7EtPDIW1WGVWSEkQ7ZVLvCFvonU-Wl',
   nsuid: '70010000000141',
   number_of_players: '2 players simultaneous',
@@ -123,8 +122,7 @@ export const AMERICAN_GAME_WITH_GAME_CODE: GameUS = {
   digitaldownload: false,
   eshop_price: 49.99,
   free_to_start: false,
-  front_box_art:
-    'https://media.nintendo.com/nintendo/bin/oiM2QlLg9frNJhSWvFGmi5NAvEAGlYVx/_3d_ldcR3G0YQl590uHXZ89Jmouu5aS9.png',
+  front_box_art: 'https://media.nintendo.com/nintendo/bin/oiM2QlLg9frNJhSWvFGmi5NAvEAGlYVx/_3d_ldcR3G0YQl590uHXZ89Jmouu5aS9.png',
   id: 'QY7EtPDIW1WGVWSEkQ7ZVLvCFvonU-Wl',
   nsuid: '70010000000141',
   number_of_players: '2 players simultaneous',

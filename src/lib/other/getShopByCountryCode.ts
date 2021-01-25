@@ -11,15 +11,9 @@ import { getPrices } from './getPrices';
  * @param region A region id that will be appended in the final shop object for filtering purposes.
  * @returns A list of shop objects with country code, name and default currency.
  */
-export const getShopsByCountryCodes = async (
-  countryCodes: string[],
-  gameCode: string,
-  region: Region
-): Promise<EShop[]> => {
+export const getShopsByCountryCodes = async (countryCodes: string[], gameCode: string, region: Region): Promise<EShop[]> => {
   try {
-    const countryList: Country[] = countryCodes.map(
-      (code: string) => countries.all.filter((country: Country) => country.alpha2 === code)[0]
-    );
+    const countryList: Country[] = countryCodes.map((code: string) => countries.all.filter((country: Country) => country.alpha2 === code)[0]);
     const shops: PriceResponse[] = [];
 
     for (const country of countryList) {
@@ -32,9 +26,7 @@ export const getShopsByCountryCodes = async (
       }
     }
 
-    const activeShops = shops.filter(
-      (shop: PriceResponse) => shop && shop.prices && shop.prices.length && shop.prices[0].regular_price
-    );
+    const activeShops = shops.filter((shop: PriceResponse) => shop && shop.prices && shop.prices.length && shop.prices[0].regular_price);
     const eShops = activeShops.map((shop: PriceResponse) => ({
       code: shop.country.alpha2,
       country: shop.country.name,
@@ -47,9 +39,7 @@ export const getShopsByCountryCodes = async (
     return eShops;
   } catch (err) {
     if (/(?:ACTIVE_SHOPS_Rate_Limit)/i.test(err.toString()))
-      throw new Error(
-        'Looks like you ran into a rate limit while getting price data, please do not spam the Nintendo servers.'
-      );
+      throw new Error('Looks like you ran into a rate limit while getting price data, please do not spam the Nintendo servers.');
     throw new Error(err);
   }
 };
