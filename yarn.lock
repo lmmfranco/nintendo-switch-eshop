@@ -651,9 +651,9 @@
   integrity sha512-OoM2KYco1+HF+z/WjaAPhPhvEPGA8ddrn8ATLWvOvs4JiACRYbUGIMQrxRgb5afvEKIacLlGUKi/emZa8G9s+Q==
 
 "@sapphire/prettier-config@^1.0.6":
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/@sapphire/prettier-config/-/prettier-config-1.0.6.tgz#b561377518f4781626605197bb5651034596d4e4"
-  integrity sha512-wI5qf/rk0EJGoyBg/PPT4EutH79JpnEtXWRSnGWopk8e4s9vHKHjOvgSAUgQJm5eD7bcU2NdAFRvQtPrTcCIcw==
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@sapphire/prettier-config/-/prettier-config-1.0.7.tgz#1b21400346fde231fb9db4c8dad38932eae486e6"
+  integrity sha512-UR3kA+jgY+Ac87cA8AkpEbFKamCccItvDlQUgcDyrCqv5p29HD9D1aTg9aTBxIMCLuxFwEX8Q9Ng+xdSzdBdyg==
 
 "@sapphire/ts-config@^2.0.0":
   version "2.0.0"
