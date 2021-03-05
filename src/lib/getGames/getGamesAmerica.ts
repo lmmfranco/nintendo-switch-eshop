@@ -126,7 +126,7 @@ export const getGamesAmerica = async (): Promise<GameUS[]> => {
   try {
     const allGamesResponse = await fetch(US_GET_GAMES_URL, body);
     if (!allGamesResponse.ok) throw new Error('US_games_request_failed');
-    const gamesResponse: AlgoliaResponse<GameUS> = await allGamesResponse.json();
+    const gamesResponse: AlgoliaResponse = await allGamesResponse.json();
 
     let allGames: any[] | PromiseLike<GameUS[]> = [];
     for (const results of gamesResponse.results) {
