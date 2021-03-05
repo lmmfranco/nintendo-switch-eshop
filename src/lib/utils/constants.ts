@@ -8,7 +8,10 @@ export const US_ALGOLIA_KEY = 'c4da8be7fd29f0f5bfa42920b0a99dc7';
 export const QUERIED_US_ALGOLIA_KEY = '6efbfb0f8f80defc44895018caf77504';
 
 /** URL for getting US Games */
-export const US_GET_GAMES_URL = `https://${US_ALGOLIA_ID}-dsn.algolia.net/1/indexes/ncom_game_en_us/query`;
+export const US_GET_GAMES_URL = `https://${US_ALGOLIA_ID}-dsn.algolia.net/1/indexes/*/queries`;
+
+/** URL for getting Queried US Games */
+export const QUERIED_US_GET_GAMES_URL = `https://${US_ALGOLIA_ID}-dsn.algolia.net/1/indexes/ncom_game_en_us/query`;
 
 /**
  * Sample game code for US store
