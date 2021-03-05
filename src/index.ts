@@ -15,11 +15,25 @@ export {
   JP_GET_GAMES_URL,
   PRICE_GET_URL,
   QUERIED_US_ALGOLIA_KEY,
+  QUERIED_US_GET_GAMES_URL,
   Region,
   US_ALGOLIA_HEADERS,
   US_ALGOLIA_ID,
   US_ALGOLIA_KEY,
   US_GET_GAMES_URL
 } from './lib/utils/constants';
-export type { EShop, EURequestOptions, GameEU, GameJP, GameUS, PriceResponse, QueriedGameUS } from './lib/utils/interfaces';
+export type {
+  EShop,
+  EURequestOptions,
+  GameEU,
+  GameJP,
+  GameUS,
+  HighlightResult,
+  Nsuid,
+  PriceResponse,
+  QueriedGameResult,
+  QueriedGamesAmericaOptions,
+  QueriedGameUS,
+  TitleData
+} from './lib/utils/interfaces';
 export { EshopError } from './lib/utils/utils';
