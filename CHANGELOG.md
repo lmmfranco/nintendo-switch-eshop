@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.1.0](https://github.com/lmmfranco/nintendo-switch-eshop/compare/v5.0.0...v5.1.0) (2021-03-05)
+
+### Features
+
+- bundle ESM compatible exports ([b58a3aa](https://github.com/lmmfranco/nintendo-switch-eshop/commit/b58a3aa61c34a7ba2dbf8ac65379090f8a483cfa))
+
+### Bug Fixes
+
+- **getqueriedgamesamerica:** fixed type exports and TSDoc ([103f028](https://github.com/lmmfranco/nintendo-switch-eshop/commit/103f0283ab69e142238a881b7450c1587fcab39e))
+
 ## [5.0.0](https://github.com/lmmfranco/nintendo-switch-eshop/compare/v4.0.0...v5.0.0) (2021-03-05)
 
 ### ⚠ BREAKING CHANGES
