@@ -1,7 +1,3 @@
 {
-  "extends": "@sapphire/ts-config",
-  "compilerOptions": {
-    "target": "ES6",
-    "isolatedModules": true
-  }
+  "extends": "@sapphire/ts-config"
 }
