@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>PriceResponse | Nintendo Switch EShop</title>
+    <title>QueriedGameResult | Nintendo Switch EShop</title>
     <meta name="description" content="Documentation for Nintendo Switch EShop" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="../assets/css/main.css" />
@@ -53,10 +53,10 @@
               <a href="../modules.html">Nintendo Switch EShop</a>
             </li>
             <li>
-              <a href="priceresponse.html">PriceResponse</a>
+              <a href="queriedgameresult.html">QueriedGameResult</a>
             </li>
           </ul>
-          <h1>Interface PriceResponse</h1>
+          <h1>Interface QueriedGameResult</h1>
         </div>
       </div>
     </header>
@@ -67,7 +67,7 @@
             <h3>Hierarchy</h3>
             <ul class="tsd-hierarchy">
               <li>
-                <span class="target">PriceResponse</span>
+                <span class="target">QueriedGameResult</span>
               </li>
             </ul>
           </section>
@@ -79,13 +79,28 @@
                   <h3>Properties</h3>
                   <ul class="tsd-index-list">
                     <li class="tsd-kind-property tsd-parent-kind-interface">
-                      <a href="priceresponse.html#country" class="tsd-kind-icon">country</a>
+                      <a href="queriedgameresult.html#exhaustivenbhits" class="tsd-kind-icon">exhaustive<wbr />NbHits</a>
                     </li>
-                    <li class="tsd-kind-property tsd-parent-kind-interface"><a href="priceresponse.html#error" class="tsd-kind-icon">error</a></li>
+                    <li class="tsd-kind-property tsd-parent-kind-interface"><a href="queriedgameresult.html#hits" class="tsd-kind-icon">hits</a></li>
                     <li class="tsd-kind-property tsd-parent-kind-interface">
-                      <a href="priceresponse.html#personalized" class="tsd-kind-icon">personalized</a>
+                      <a href="queriedgameresult.html#hitsperpage" class="tsd-kind-icon">hits<wbr />Per<wbr />Page</a>
                     </li>
-                    <li class="tsd-kind-property tsd-parent-kind-interface"><a href="priceresponse.html#prices" class="tsd-kind-icon">prices</a></li>
+                    <li class="tsd-kind-property tsd-parent-kind-interface">
+                      <a href="queriedgameresult.html#nbhits" class="tsd-kind-icon">nb<wbr />Hits</a>
+                    </li>
+                    <li class="tsd-kind-property tsd-parent-kind-interface">
+                      <a href="queriedgameresult.html#nbpages" class="tsd-kind-icon">nb<wbr />Pages</a>
+                    </li>
+                    <li class="tsd-kind-property tsd-parent-kind-interface"><a href="queriedgameresult.html#page" class="tsd-kind-icon">page</a></li>
+                    <li class="tsd-kind-property tsd-parent-kind-interface">
+                      <a href="queriedgameresult.html#params" class="tsd-kind-icon">params</a>
+                    </li>
+                    <li class="tsd-kind-property tsd-parent-kind-interface">
+                      <a href="queriedgameresult.html#processingtimems" class="tsd-kind-icon">processing<wbr />TimeMS</a>
+                    </li>
+                    <li class="tsd-kind-property tsd-parent-kind-interface">
+                      <a href="queriedgameresult.html#query" class="tsd-kind-icon">query</a>
+                    </li>
                   </ul>
                 </section>
               </div>
@@ -94,74 +109,206 @@
           <section class="tsd-panel-group tsd-member-group">
             <h2>Properties</h2>
             <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-              <a name="country" class="tsd-anchor"></a>
-              <h3>country</h3>
+              <a name="exhaustivenbhits" class="tsd-anchor"></a>
+              <h3>exhaustive<wbr />NbHits</h3>
               <div class="tsd-signature tsd-kind-icon">
-                country<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Country</span>
+                exhaustive<wbr />NbHits<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">true</span>
               </div>
               <aside class="tsd-sources">
                 <ul>
                   <li>
                     Defined in
-                    <a href="https://github.com/lmmfranco/nintendo-switch-eshop/blob/692345e/src/lib/utils/interfaces.ts#L274"
-                      >lib/utils/interfaces.ts:274</a
+                    <a href="https://github.com/lmmfranco/nintendo-switch-eshop/blob/692345e/src/lib/utils/interfaces.ts#L91"
+                      >lib/utils/interfaces.ts:91</a
                     >
                   </li>
                 </ul>
               </aside>
-            </section>
-            <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-              <a name="error" class="tsd-anchor"></a>
-              <h3>error</h3>
-              <div class="tsd-signature tsd-kind-icon">
-                error<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">PriceError</span>
+              <div class="tsd-comment tsd-typography">
+                <div class="lead">
+                  <p>Whether the amount of hits is exhaustive or not</p>
+                </div>
               </div>
-              <aside class="tsd-sources">
-                <ul>
-                  <li>
-                    Defined in
-                    <a href="https://github.com/lmmfranco/nintendo-switch-eshop/blob/692345e/src/lib/utils/interfaces.ts#L272"
-                      >lib/utils/interfaces.ts:272</a
-                    >
-                  </li>
-                </ul>
-              </aside>
             </section>
             <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-              <a name="personalized" class="tsd-anchor"></a>
-              <h3>personalized</h3>
+              <a name="hits" class="tsd-anchor"></a>
+              <h3>hits</h3>
               <div class="tsd-signature tsd-kind-icon">
-                personalized<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span>
-              </div>
-              <aside class="tsd-sources">
-                <ul>
-                  <li>
-                    Defined in
-                    <a href="https://github.com/lmmfranco/nintendo-switch-eshop/blob/692345e/src/lib/utils/interfaces.ts#L273"
-                      >lib/utils/interfaces.ts:273</a
-                    >
-                  </li>
-                </ul>
-              </aside>
-            </section>
-            <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-              <a name="prices" class="tsd-anchor"></a>
-              <h3>prices</h3>
-              <div class="tsd-signature tsd-kind-icon">
-                prices<span class="tsd-signature-symbol">:</span>
-                <a href="titledata.html" class="tsd-signature-type" data-tsd-kind="Interface">TitleData</a
+                hits<span class="tsd-signature-symbol">:</span>
+                <a href="queriedgameus.html" class="tsd-signature-type" data-tsd-kind="Interface">QueriedGameUS</a
                 ><span class="tsd-signature-symbol">[]</span>
               </div>
               <aside class="tsd-sources">
                 <ul>
                   <li>
                     Defined in
-                    <a href="https://github.com/lmmfranco/nintendo-switch-eshop/blob/692345e/src/lib/utils/interfaces.ts#L275"
-                      >lib/utils/interfaces.ts:275</a
+                    <a href="https://github.com/lmmfranco/nintendo-switch-eshop/blob/692345e/src/lib/utils/interfaces.ts#L81"
+                      >lib/utils/interfaces.ts:81</a
                     >
                   </li>
                 </ul>
               </aside>
+              <div class="tsd-comment tsd-typography">
+                <div class="lead">
+                  <p>The hits for this query</p>
+                </div>
+              </div>
+            </section>
+            <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+              <a name="hitsperpage" class="tsd-anchor"></a>
+              <h3>hits<wbr />Per<wbr />Page</h3>
+              <div class="tsd-signature tsd-kind-icon">
+                hits<wbr />Per<wbr />Page<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span>
+              </div>
+              <aside class="tsd-sources">
+                <ul>
+                  <li>
+                    Defined in
+                    <a href="https://github.com/lmmfranco/nintendo-switch-eshop/blob/692345e/src/lib/utils/interfaces.ts#L89"
+                      >lib/utils/interfaces.ts:89</a
+                    >
+                  </li>
+                </ul>
+              </aside>
+              <div class="tsd-comment tsd-typography">
+                <div class="lead">
+                  <p>The amount of hits per page</p>
+                </div>
+              </div>
+            </section>
+            <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+              <a name="nbhits" class="tsd-anchor"></a>
+              <h3>nb<wbr />Hits</h3>
+              <div class="tsd-signature tsd-kind-icon">
+                nb<wbr />Hits<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span>
+              </div>
+              <aside class="tsd-sources">
+                <ul>
+                  <li>
+                    Defined in
+                    <a href="https://github.com/lmmfranco/nintendo-switch-eshop/blob/692345e/src/lib/utils/interfaces.ts#L83"
+                      >lib/utils/interfaces.ts:83</a
+                    >
+                  </li>
+                </ul>
+              </aside>
+              <div class="tsd-comment tsd-typography">
+                <div class="lead">
+                  <p>The amount of hits</p>
+                </div>
+              </div>
+            </section>
+            <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+              <a name="nbpages" class="tsd-anchor"></a>
+              <h3>nb<wbr />Pages</h3>
+              <div class="tsd-signature tsd-kind-icon">
+                nb<wbr />Pages<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span>
+              </div>
+              <aside class="tsd-sources">
+                <ul>
+                  <li>
+                    Defined in
+                    <a href="https://github.com/lmmfranco/nintendo-switch-eshop/blob/692345e/src/lib/utils/interfaces.ts#L87"
+                      >lib/utils/interfaces.ts:87</a
+                    >
+                  </li>
+                </ul>
+              </aside>
+              <div class="tsd-comment tsd-typography">
+                <div class="lead">
+                  <p>The amount of pages available</p>
+                </div>
+              </div>
+            </section>
+            <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+              <a name="page" class="tsd-anchor"></a>
+              <h3>page</h3>
+              <div class="tsd-signature tsd-kind-icon">
+                page<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span>
+              </div>
+              <aside class="tsd-sources">
+                <ul>
+                  <li>
+                    Defined in
+                    <a href="https://github.com/lmmfranco/nintendo-switch-eshop/blob/692345e/src/lib/utils/interfaces.ts#L85"
+                      >lib/utils/interfaces.ts:85</a
+                    >
+                  </li>
+                </ul>
+              </aside>
+              <div class="tsd-comment tsd-typography">
+                <div class="lead">
+                  <p>The page that the result is on</p>
+                </div>
+              </div>
+            </section>
+            <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+              <a name="params" class="tsd-anchor"></a>
+              <h3>params</h3>
+              <div class="tsd-signature tsd-kind-icon">
+                params<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span>
+              </div>
+              <aside class="tsd-sources">
+                <ul>
+                  <li>
+                    Defined in
+                    <a href="https://github.com/lmmfranco/nintendo-switch-eshop/blob/692345e/src/lib/utils/interfaces.ts#L95"
+                      >lib/utils/interfaces.ts:95</a
+                    >
+                  </li>
+                </ul>
+              </aside>
+              <div class="tsd-comment tsd-typography">
+                <div class="lead">
+                  <p>The params that were used</p>
+                </div>
+              </div>
+            </section>
+            <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+              <a name="processingtimems" class="tsd-anchor"></a>
+              <h3>processing<wbr />TimeMS</h3>
+              <div class="tsd-signature tsd-kind-icon">
+                processing<wbr />TimeMS<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span>
+              </div>
+              <aside class="tsd-sources">
+                <ul>
+                  <li>
+                    Defined in
+                    <a href="https://github.com/lmmfranco/nintendo-switch-eshop/blob/692345e/src/lib/utils/interfaces.ts#L97"
+                      >lib/utils/interfaces.ts:97</a
+                    >
+                  </li>
+                </ul>
+              </aside>
+              <div class="tsd-comment tsd-typography">
+                <div class="lead">
+                  <p>
+                    The amount of time it took the <a href="https://www.nintendo.com" class="external">nintendo.com</a> API to process this request
+                  </p>
+                </div>
+              </div>
+            </section>
+            <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+              <a name="query" class="tsd-anchor"></a>
+              <h3>query</h3>
+              <div class="tsd-signature tsd-kind-icon">
+                query<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span>
+              </div>
+              <aside class="tsd-sources">
+                <ul>
+                  <li>
+                    Defined in
+                    <a href="https://github.com/lmmfranco/nintendo-switch-eshop/blob/692345e/src/lib/utils/interfaces.ts#L93"
+                      >lib/utils/interfaces.ts:93</a
+                    >
+                  </li>
+                </ul>
+              </aside>
+              <div class="tsd-comment tsd-typography">
+                <div class="lead">
+                  <p>The query that was used</p>
+                </div>
+              </div>
             </section>
           </section>
         </div>
@@ -205,30 +352,45 @@
               <li class="tsd-kind-interface">
                 <a href="nsuid.html" class="tsd-kind-icon">Nsuid</a>
               </li>
+              <li class="tsd-kind-interface">
+                <a href="priceresponse.html" class="tsd-kind-icon">Price<wbr />Response</a>
+              </li>
             </ul>
             <ul class="current">
               <li class="current tsd-kind-interface">
-                <a href="priceresponse.html" class="tsd-kind-icon">Price<wbr />Response</a>
+                <a href="queriedgameresult.html" class="tsd-kind-icon">Queried<wbr />Game<wbr />Result</a>
                 <ul>
                   <li class="tsd-kind-property tsd-parent-kind-interface">
-                    <a href="priceresponse.html#country" class="tsd-kind-icon">country</a>
+                    <a href="queriedgameresult.html#exhaustivenbhits" class="tsd-kind-icon">exhaustive<wbr />NbHits</a>
                   </li>
                   <li class="tsd-kind-property tsd-parent-kind-interface">
-                    <a href="priceresponse.html#error" class="tsd-kind-icon">error</a>
+                    <a href="queriedgameresult.html#hits" class="tsd-kind-icon">hits</a>
                   </li>
                   <li class="tsd-kind-property tsd-parent-kind-interface">
-                    <a href="priceresponse.html#personalized" class="tsd-kind-icon">personalized</a>
+                    <a href="queriedgameresult.html#hitsperpage" class="tsd-kind-icon">hits<wbr />Per<wbr />Page</a>
                   </li>
                   <li class="tsd-kind-property tsd-parent-kind-interface">
-                    <a href="priceresponse.html#prices" class="tsd-kind-icon">prices</a>
+                    <a href="queriedgameresult.html#nbhits" class="tsd-kind-icon">nb<wbr />Hits</a>
+                  </li>
+                  <li class="tsd-kind-property tsd-parent-kind-interface">
+                    <a href="queriedgameresult.html#nbpages" class="tsd-kind-icon">nb<wbr />Pages</a>
+                  </li>
+                  <li class="tsd-kind-property tsd-parent-kind-interface">
+                    <a href="queriedgameresult.html#page" class="tsd-kind-icon">page</a>
+                  </li>
+                  <li class="tsd-kind-property tsd-parent-kind-interface">
+                    <a href="queriedgameresult.html#params" class="tsd-kind-icon">params</a>
+                  </li>
+                  <li class="tsd-kind-property tsd-parent-kind-interface">
+                    <a href="queriedgameresult.html#processingtimems" class="tsd-kind-icon">processing<wbr />TimeMS</a>
+                  </li>
+                  <li class="tsd-kind-property tsd-parent-kind-interface">
+                    <a href="queriedgameresult.html#query" class="tsd-kind-icon">query</a>
                   </li>
                 </ul>
               </li>
             </ul>
             <ul class="after-current">
-              <li class="tsd-kind-interface">
-                <a href="queriedgameresult.html" class="tsd-kind-icon">Queried<wbr />Game<wbr />Result</a>
-              </li>
               <li class="tsd-kind-interface">
                 <a href="queriedgameus.html" class="tsd-kind-icon">Queried<wbr />GameUS</a>
               </li>
