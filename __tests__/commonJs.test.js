@@ -1,17 +1,28 @@
 /* eslint-disable @typescript-eslint/no-var-requires, @typescript-eslint/no-require-imports */
-const { getGamesAmerica } = require('../src');
+const { getQueriedGamesAmerica } = require('../src');
 
-describe('getGamesAmerica - CommonJS', () => {
-  test('should allow custom limit', async () => {
-    const data = await getGamesAmerica({ limit: 1 });
-    expect(data).toBeInstanceOf(Object);
-    expect(data).toHaveLength(1);
-  });
+describe('CommonJS Require test', () => {
+  test('GIVEN Pokemon THEN returns results with some known games', async () => {
+    const data = await getQueriedGamesAmerica('Pokemon');
 
-  test('should allow unfiltered shop', async () => {
-    jest.setTimeout(60000);
-    const data = await getGamesAmerica();
     expect(data).toBeInstanceOf(Object);
-    expect(data.length).toBeGreaterThanOrEqual(1500);
+    expect(data.length).toBeGreaterThanOrEqual(20);
+
+    expect(data).toEqual(
+      expect.arrayContaining([
+        // Expect Pokémon™ Legends: Arceus to be in the data
+        expect.objectContaining({
+          title: 'Pokémon™ Legends: Arceus'
+        }),
+        // Expect Pokémon™ Brilliant Diamond to be in the data
+        expect.objectContaining({
+          title: 'Pokémon™ Brilliant Diamond'
+        }),
+        // Expect New Pokémon Snap to be in the data
+        expect.objectContaining({
+          title: 'New Pokémon Snap™'
+        })
+      ])
+    );
   });
 });
