@@ -75,7 +75,7 @@ jobs:
         run: yarn build
 
   NodeTesting:
-    name: Unit Test on NodeJS v${{ matrix.node_version }} - ${{ matrix.os }}
+    name: Unit Test
     runs-on: ubuntu-latest
     if: "!contains(needs.pre_ci.outputs.commit_message, '[skip ci]')"
     needs: pre_ci
