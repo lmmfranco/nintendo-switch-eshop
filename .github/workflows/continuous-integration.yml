@@ -1,4 +1,4 @@
-name: Code Quality
+name: Continuous Integration
 
 on:
   push:
@@ -30,8 +30,8 @@ jobs:
     outputs:
       commit_message: $( [ -z "${{ steps.pr_get_commit_message.outputs.pr_commit_message }}" ] && echo "${{ steps.push_get_commit_message.outputs.push_commit_message }}" || echo "${{ steps.pr_get_commit_message.outputs.pr_commit_message }}" )
 
-  ESLint:
-    name: ESLint
+  NodeLinting:
+    name: Running ESLint
     runs-on: ubuntu-latest
     if: "!contains(needs.pre_ci.outputs.commit_message, '[skip ci]')"
     needs: pre_ci
@@ -43,17 +43,17 @@ jobs:
         with:
           node-version: 15
       - name: Restore CI Cache
-        uses: actions/cache@v1
+        uses: actions/cache@v2.1.4
         with:
           path: node_modules
           key: ${{ runner.os }}-15-${{ hashFiles('**/yarn.lock') }}
-      - name: Install Deps
-        run: yarn
+      - name: Install Dependencies
+        run: yarn --ignore-scripts --frozen-lockfile
       - name: Run ESLint
         run: yarn lint --fix=false
 
-  Typescript:
-    name: Typescript
+  NodeBuilding:
+    name: Compile TypeScript
     runs-on: ubuntu-latest
     if: "!contains(needs.pre_ci.outputs.commit_message, '[skip ci]')"
     needs: pre_ci
@@ -65,11 +65,33 @@ jobs:
         with:
           node-version: 15
       - name: Restore CI Cache
-        uses: actions/cache@v1
+        uses: actions/cache@v2.1.4
         with:
           path: node_modules
-          key: ${{ runner.os }}-10-${{ hashFiles('**/yarn.lock') }}
-      - name: Install Deps
-        run: yarn
-      - name: Build Code
+          key: ${{ runner.os }}-15-${{ hashFiles('**/yarn.lock') }}
+      - name: Install Dependencies
+        run: yarn --ignore-scripts --frozen-lockfile
+      - name: Compile TypeScript
         run: yarn build
+
+  NodeTesting:
+    name: Unit Test on NodeJS v${{ matrix.node_version }} - ${{ matrix.os }}
+    runs-on: ubuntu-latest
+    if: "!contains(needs.pre_ci.outputs.commit_message, '[skip ci]')"
+    needs: pre_ci
+    steps:
+      - name: Checkout Project
+        uses: actions/checkout@v2
+      - name: Use Node.js 15
+        uses: actions/setup-node@v2
+        with:
+          node-version: 15
+      - name: Restore CI Cache
+        uses: actions/cache@v2.1.4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-15-${{ hashFiles('**/yarn.lock') }}
+      - name: Install Dependencies
+        run: yarn --ignore-scripts --frozen-lockfile
+      - name: Test
+        run: yarn test
