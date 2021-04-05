@@ -688,12 +688,12 @@
     prettier "2.x"
 
 "@sapphire/ts-config@^2.0.1":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@sapphire/ts-config/-/ts-config-2.1.0.tgz#40db7091cb4af478e4168b768702110013a14255"
-  integrity sha512-ekuBg7CV6SwNpvI4Mh9sXGgYv9lgH+bQwhkqG5agJ/x3QoDred8dsaKeIQONZ58McbNzHviWD6UKbzICrMogsg==
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@sapphire/ts-config/-/ts-config-2.1.1.tgz#390cd91a8dd767e4b4a4972349b3f8bdb496bd5d"
+  integrity sha512-/faCiBhI/RtdsOvJfX0NQqi3WEWQ0dCvd4sp7pL421Se8sY5lv3OD/qEmG56EA5IRwKQO+MuElVlMLVSPMHQlQ==
   dependencies:
-    tslib "2.x"
-    typescript "4.x"
+    tslib "2.1.0"
+    typescript "4.2.3"
 
 "@sinonjs/commons@^1.7.0":
   version "1.8.2"
@@ -5842,7 +5842,7 @@ ts-node@^9.1.1:
     source-map-support "^0.5.17"
     yn "3.1.1"
 
-tslib@2.x:
+tslib@2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.1.0.tgz#da60860f1c2ecaa5703ab7d39bc05b6bf988b97a"
   integrity sha512-hcVC3wYEziELGGmEEXue7D75zbwIIVUMWAVbHItGPx0ziyXxrOMQx4rQEVEV45Ut/1IotuEvwqPopzIOkDMf0A==
@@ -5956,7 +5956,7 @@ typedoc@^0.20.29:
     shiki "^0.9.3"
     typedoc-default-themes "^0.12.9"
 
-typescript@4.x, typescript@^4.2.3:
+typescript@4.2.3, typescript@4.x, typescript@^4.2.3:
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.2.3.tgz#39062d8019912d43726298f09493d598048c1ce3"
   integrity sha512-qOcYwxaByStAWrBf4x0fibwZvMRG+r4cQoTjbPtUlrWjBHbmCAww1i448U0GJ+3cNNEtebDteo/cHOR3xJ4wEw==
