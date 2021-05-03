@@ -688,9 +688,9 @@
     prettier "2.x"
 
 "@sapphire/ts-config@^2.0.1":
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/@sapphire/ts-config/-/ts-config-2.2.0.tgz#7307be2572199ac08f6296558176e4536c0ae712"
-  integrity sha512-Mc6G4CP8iga5n9BLRMNDX0eOEFxvyolQn/l0pcugPFXYYloT05Ew8RW7w6YeuXyTedxbF9nwRDHumhVuZ+W+uw==
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@sapphire/ts-config/-/ts-config-2.2.1.tgz#c86c5afb79cab60b0bf287e5b780ec534d4ed965"
+  integrity sha512-L/6S/mpM9UylEVQvvtj7zoJv9AR/xCcK0CpEkMIuHwy0aAvhmwxyRvhpwFREFfAaMzJPh3oyauOW8YXv6vgjUw==
   dependencies:
     tslib "2.2.0"
     typescript "4.2.4"
