@@ -158,7 +158,7 @@
       /***/ (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
         'use strict';
         eval(
-          '__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   "Viewport": () => /* binding */ Viewport\n/* harmony export */ });\n/* harmony import */ var _EventTarget__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../EventTarget */ "./default/assets/js/src/typedoc/EventTarget.ts");\n/* harmony import */ var _utils_trottle__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/trottle */ "./default/assets/js/src/typedoc/utils/trottle.ts");\nvar __extends = (undefined && undefined.__extends) || (function () {\n    var extendStatics = function (d, b) {\n        extendStatics = Object.setPrototypeOf ||\n            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||\n            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };\n        return extendStatics(d, b);\n    };\n    return function (d, b) {\n        extendStatics(d, b);\n        function __() { this.constructor = d; }\n        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());\n    };\n})();\n\n\n/**\n * A global service that monitors the window size and scroll position.\n */\nvar Viewport = /** @class */ (function (_super) {\n    __extends(Viewport, _super);\n    /**\n     * Create new Viewport instance.\n     */\n    function Viewport() {\n        var _this = _super.call(this) || this;\n        /**\n         * The current scroll position.\n         */\n        _this.scrollTop = 0;\n        /**\n         * The previous scrollTop.\n         */\n        _this.lastY = 0;\n        /**\n         * The width of the window.\n         */\n        _this.width = 0;\n        /**\n         * The height of the window.\n         */\n        _this.height = 0;\n        /**\n         * Boolean indicating whether the toolbar is shown.\n         */\n        _this.showToolbar = true;\n        _this.toolbar = (document.querySelector(".tsd-page-toolbar"));\n        _this.secondaryNav = (document.querySelector(".tsd-navigation.secondary"));\n        window.addEventListener("scroll", (0,_utils_trottle__WEBPACK_IMPORTED_MODULE_1__.throttle)(function () { return _this.onScroll(); }, 10));\n        window.addEventListener("resize", (0,_utils_trottle__WEBPACK_IMPORTED_MODULE_1__.throttle)(function () { return _this.onResize(); }, 10));\n        _this.onResize();\n        _this.onScroll();\n        return _this;\n    }\n    /**\n     * Trigger a resize event.\n     */\n    Viewport.prototype.triggerResize = function () {\n        var event = new CustomEvent("resize", {\n            detail: {\n                width: this.width,\n                height: this.height,\n            },\n        });\n        this.dispatchEvent(event);\n    };\n    /**\n     * Triggered when the size of the window has changed.\n     */\n    Viewport.prototype.onResize = function () {\n        this.width = window.innerWidth || 0;\n        this.height = window.innerHeight || 0;\n        var event = new CustomEvent("resize", {\n            detail: {\n                width: this.width,\n                height: this.height,\n            },\n        });\n        this.dispatchEvent(event);\n    };\n    /**\n     * Triggered when the user scrolled the viewport.\n     */\n    Viewport.prototype.onScroll = function () {\n        this.scrollTop = window.scrollY || 0;\n        var event = new CustomEvent("scroll", {\n            detail: {\n                scrollTop: this.scrollTop,\n            },\n        });\n        this.dispatchEvent(event);\n        this.hideShowToolbar();\n    };\n    /**\n     * Handle hiding/showing of the toolbar.\n     */\n    Viewport.prototype.hideShowToolbar = function () {\n        var isShown = this.showToolbar;\n        this.showToolbar = this.lastY >= this.scrollTop || this.scrollTop === 0;\n        if (isShown !== this.showToolbar) {\n            this.toolbar.classList.toggle("tsd-page-toolbar--hide");\n            this.secondaryNav.classList.toggle("tsd-navigation--toolbar-hide");\n        }\n        this.lastY = this.scrollTop;\n    };\n    Viewport.instance = new Viewport();\n    return Viewport;\n}(_EventTarget__WEBPACK_IMPORTED_MODULE_0__.EventTarget));\n\n\n\n//# sourceURL=webpack:///./default/assets/js/src/typedoc/services/Viewport.ts?'
+          '__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   "Viewport": () => /* binding */ Viewport\n/* harmony export */ });\n/* harmony import */ var _EventTarget__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../EventTarget */ "./default/assets/js/src/typedoc/EventTarget.ts");\n/* harmony import */ var _utils_trottle__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/trottle */ "./default/assets/js/src/typedoc/utils/trottle.ts");\nvar __extends = (undefined && undefined.__extends) || (function () {\n    var extendStatics = function (d, b) {\n        extendStatics = Object.setPrototypeOf ||\n            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||\n            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };\n        return extendStatics(d, b);\n    };\n    return function (d, b) {\n        extendStatics(d, b);\n        function __() { this.constructor = d; }\n        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());\n    };\n})();\n\n\n/**\n * A global service that monitors the window size and scroll position.\n */\nvar Viewport = /** @class */ (function (_super) {\n    __extends(Viewport, _super);\n    /**\n     * Create new Viewport instance.\n     */\n    function Viewport() {\n        var _this = _super.call(this) || this;\n        /**\n         * The current scroll position.\n         */\n        _this.scrollTop = 0;\n        /**\n         * The previous scrollTop.\n         */\n        _this.lastY = 0;\n        /**\n         * The width of the window.\n         */\n        _this.width = 0;\n        /**\n         * The height of the window.\n         */\n        _this.height = 0;\n        /**\n         * Boolean indicating whether the toolbar is shown.\n         */\n        _this.showToolbar = true;\n        _this.toolbar = (document.querySelector(".tsd-page-toolbar"));\n        _this.secondaryNav = (document.querySelector(".tsd-navigation.secondary"));\n        window.addEventListener("scroll", (0,_utils_trottle__WEBPACK_IMPORTED_MODULE_1__.throttle)(function () { return _this.onScroll(); }, 10));\n        window.addEventListener("resize", (0,_utils_trottle__WEBPACK_IMPORTED_MODULE_1__.throttle)(function () { return _this.onResize(); }, 10));\n        _this.onResize();\n        _this.onScroll();\n        return _this;\n    }\n    /**\n     * Trigger a resize event.\n     */\n    Viewport.prototype.triggerResize = function () {\n        var event = new CustomEvent("resize", {\n            detail: {\n                width: this.width,\n                height: this.height,\n            },\n        });\n        this.dispatchEvent(event);\n    };\n    /**\n     * Triggered when the size of the window has changed.\n     */\n    Viewport.prototype.onResize = function () {\n        this.width = window.innerWidth || 0;\n        this.height = window.innerHeight || 0;\n        var event = new CustomEvent("resize", {\n            detail: {\n                width: this.width,\n                height: this.height,\n            },\n        });\n        this.dispatchEvent(event);\n    };\n    /**\n     * Triggered when the user scrolled the viewport.\n     */\n    Viewport.prototype.onScroll = function () {\n        this.scrollTop = window.scrollY || 0;\n        var event = new CustomEvent("scroll", {\n            detail: {\n                scrollTop: this.scrollTop,\n            },\n        });\n        this.dispatchEvent(event);\n        this.hideShowToolbar();\n    };\n    /**\n     * Handle hiding/showing of the toolbar.\n     */\n    Viewport.prototype.hideShowToolbar = function () {\n        var isShown = this.showToolbar;\n        this.showToolbar = this.lastY >= this.scrollTop || this.scrollTop <= 0;\n        if (isShown !== this.showToolbar) {\n            this.toolbar.classList.toggle("tsd-page-toolbar--hide");\n            this.secondaryNav.classList.toggle("tsd-navigation--toolbar-hide");\n        }\n        this.lastY = this.scrollTop;\n    };\n    Viewport.instance = new Viewport();\n    return Viewport;\n}(_EventTarget__WEBPACK_IMPORTED_MODULE_0__.EventTarget));\n\n\n\n//# sourceURL=webpack:///./default/assets/js/src/typedoc/services/Viewport.ts?'
         );
 
         /***/
@@ -204,31 +204,37 @@
       }
 
     /******/
-  }; // The module cache
+  };
   /************************************************************************/
-  /******/ /******/ var __webpack_module_cache__ = {}; // The require function
+  /******/ // The module cache
+  /******/ var __webpack_module_cache__ = {};
   /******/
-  /******/ /******/ function __webpack_require__(moduleId) {
+  /******/ // The require function
+  /******/ function __webpack_require__(moduleId) {
     /******/ // Check if module is in cache
     /******/ if (__webpack_module_cache__[moduleId]) {
       /******/ return __webpack_module_cache__[moduleId].exports;
       /******/
-    } // Create a new module (and put it into the cache)
-    /******/ /******/ var module = (__webpack_module_cache__[moduleId] = {
+    }
+    /******/ // Create a new module (and put it into the cache)
+    /******/ var module = (__webpack_module_cache__[moduleId] = {
       /******/ // no module.id needed
       /******/ // no module.loaded needed
       /******/ exports: {}
       /******/
-    }); // Execute the module function
+    });
     /******/
-    /******/ /******/ __webpack_modules__[moduleId](module, module.exports, __webpack_require__); // Return the exports of the module
+    /******/ // Execute the module function
+    /******/ __webpack_modules__[moduleId](module, module.exports, __webpack_require__);
     /******/
-    /******/ /******/ return module.exports;
+    /******/ // Return the exports of the module
+    /******/ return module.exports;
     /******/
-  } /* webpack/runtime/compat get default export */
+  }
   /******/
   /************************************************************************/
-  /******/ /******/ (() => {
+  /******/ /* webpack/runtime/compat get default export */
+  /******/ (() => {
     /******/ // getDefaultExport function for compatibility with non-harmony modules
     /******/ __webpack_require__.n = (module) => {
       /******/ var getter = module && module.__esModule ? /******/ () => module['default'] : /******/ () => module;
@@ -237,9 +243,10 @@
       /******/
     };
     /******/
-  })(); /* webpack/runtime/define property getters */
+  })();
   /******/
-  /******/ /******/ (() => {
+  /******/ /* webpack/runtime/define property getters */
+  /******/ (() => {
     /******/ // define getter functions for harmony exports
     /******/ __webpack_require__.d = (exports, definition) => {
       /******/ for (var key in definition) {
@@ -252,14 +259,16 @@
       /******/
     };
     /******/
-  })(); /* webpack/runtime/hasOwnProperty shorthand */
+  })();
   /******/
-  /******/ /******/ (() => {
+  /******/ /* webpack/runtime/hasOwnProperty shorthand */
+  /******/ (() => {
     /******/ __webpack_require__.o = (obj, prop) => Object.prototype.hasOwnProperty.call(obj, prop);
     /******/
-  })(); /* webpack/runtime/make namespace object */
+  })();
   /******/
-  /******/ /******/ (() => {
+  /******/ /* webpack/runtime/make namespace object */
+  /******/ (() => {
     /******/ // define __esModule on exports
     /******/ __webpack_require__.r = (exports) => {
       /******/ if (typeof Symbol !== 'undefined' && Symbol.toStringTag) {
@@ -270,10 +279,12 @@
       /******/
     };
     /******/
-  })(); // startup // Load entry module
+  })();
   /******/
   /************************************************************************/
-  /******/ /******/ /******/ __webpack_require__('./default/assets/js/src/bootstrap.ts');
+  /******/ // startup
+  /******/ // Load entry module
+  /******/ __webpack_require__('./default/assets/js/src/bootstrap.ts');
   /******/ // This entry module used 'exports' so it can't be inlined
   /******/
 })();
