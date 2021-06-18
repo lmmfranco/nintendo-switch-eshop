@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [6.0.0](https://github.com/lmmfranco/nintendo-switch-eshop/compare/v5.1.0...v6.0.0) (2021-06-18)
+
+### ⚠ BREAKING CHANGES
+
+- `parseGameCode` has no longer been able to parse
+  American games due to API changes. Until now you would get an empty
+  string back and a deprecation warning.
+  Starting this version you will instead get `null`
+  back and the deprecation warning has been removed.
+
+### Features
+
+- update typings for `getGamesAmerica` ([5b162b4](https://github.com/lmmfranco/nintendo-switch-eshop/commit/5b162b4e7e3aaf9a2ab828f0e48ed14917667695))
+
+### Bug Fixes
+
+- **esm:** delete `__esModule` key ([523e2a5](https://github.com/lmmfranco/nintendo-switch-eshop/commit/523e2a5325033e303a2ea774545ba58ce6cd4b2d)), closes [#471](https://github.com/lmmfranco/nintendo-switch-eshop/issues/471)
+
 ## [5.1.0](https://github.com/lmmfranco/nintendo-switch-eshop/compare/v5.0.0...v5.1.0) (2021-03-05)
 
 ### Features
