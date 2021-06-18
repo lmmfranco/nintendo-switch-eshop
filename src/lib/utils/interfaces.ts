@@ -1,12 +1,6 @@
 import type { Country } from 'country-data';
 import type { Region } from './constants';
 
-/** @internal */
-interface Category {
-  /** Categories array */
-  category: string[];
-}
-
 export interface GameEU {
   age_rating_type: string;
   age_rating_value: string;
@@ -177,29 +171,63 @@ export interface Nsuid {
 }
 
 export interface GameUS {
-  /** @deprecated Product code. Can be parsed for a region wide code. */
-  game_code?: string;
-  buyonline: boolean;
-  front_box_art: string;
+  /** Unix timestamp when this entry was last edited on the API */
+  lastModified: number;
+  /** The title of the game */
+  title: string;
+  /** A longer description about this title */
+  description: string;
+  /** The URL to the game on {@linkplain https://nintendo.com}. Prepend `https://nintend.com` to this URL to get a fully qualified URL to the game. */
+  url: string;
   /** USA eShop price (in dollars) */
-  eshop_price: number;
   /** 14-digit game unique identifier */
   nsuid: string;
-  video_link: string;
-  number_of_players: string;
-  /** Canada eShop price (in canadian dollars) */
-  ca_price: number;
-  id: string;
-  title: string;
-  /** Gaming platform */
-  system: string;
-  free_to_start: boolean;
-  digitaldownload: boolean;
-  release_date: string;
-  categories: Category;
   /** Game URL name */
   slug: string;
-  buyitnow: boolean;
+  /** The boxart of this title, if this is an eShop game then it is the homescreen icon */
+  boxart: string;
+  /** A larger header image */
+  horizontalHeaderImage: string;
+  /** The platform on which this game was released */
+  platform: string;
+  /** The date this game was released in the {@linkplain https://en.wikipedia.org/wiki/ISO_8601 ISO 8601 Extended Format}  */
+  releaseDateDisplay: string;
+  /** The {@linkplain https://www.esrb.org ESRB} rating this game was given */
+  esrbRating: string;
+  /** The amount of players this game supports. This is a string because Nintendo is more verbose than just a number. */
+  numOfPlayers: string;
+  /** Whether this game is featured on {@linkplain https://nintendo.com}'s homepage */
+  featured: boolean;
+  /** Whether this game is free to start and only needs payment later */
+  freeToStart: boolean;
+  /** An array of ESRB descriptions such as `"Alcohol Reference"` and `"Violence"` */
+  esrbDescriptors: string[];
+  /** The franches this game is part of */
+  franchises: string[];
+  /** The genres this this game is part of */
+  genres: string[];
+  /** The studios that published this game */
+  publishers: string[];
+  /** The studios that developed this gamme */
+  developers: string[];
+  /** Qualifiers that could be used to find this game when applying filters on {@linkplain https://nintendo.com} */
+  generalFilters: string[];
+  /** A list of ways this game can be purchased */
+  howToShop: string[];
+  /** Qualifiers that could be used to find this game when applying player filters on {@linkplain https://nintendo.com}  */
+  playerFilters: string[];
+  /** The predefined price range in which this game falls, can be used when applying filters on {@linkplain https://nintendo.com} */
+  priceRange: string;
+  /** The {@linkplain https://en.wikipedia.org/wiki/List_price Manufacturer's Suggested Retail Price} for this game (in United States Dollars). */
+  msrp: number;
+  /** The price for this game when it is on sale. This is `null` when the game is _not_ on sale. */
+  salePrice: number | null;
+  /** The lowest price this game was ever available for. */
+  lowestPrice: number;
+  /** Identifiers about the availability of this game. */
+  availability: string[];
+  /** The internal ID that Nintendo has assigned to this game in their API. This doesn't really serve any use. */
+  objectID: string;
 }
 
 /** @internal */
