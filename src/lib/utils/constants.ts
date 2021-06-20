@@ -25,59 +25,7 @@ export const US_GAME_CHECK_CODE = '70010000000185';
  */
 export const US_GAME_CODE_REGEX = /HAC\w(\w{4})/;
 
-/**
- * Default limit for getting US games - Defaults to 200
- * @internal
- */
-export const US_GAME_LIST_LIMIT = 1000;
-
-/**
- * Index names for querying all games by both ascending and descending title
- * @internal
- */
-export const US_INDEX_TITLE_ASC = 'ncom_game_en_us_title_asc';
-
-/** @internal */
-export const US_INDEX_TITLE_DES = 'ncom_game_en_us_title_des';
-
-/**
- * Static query parameters for facets/filters in US Algolia calls
- * @internal
- */
-export const US_FACETS = JSON.stringify([
-  'generalFilters',
-  'platform',
-  'availability',
-  'genres',
-  'howToShop',
-  'virtualConsole',
-  'franchises',
-  'priceRange',
-  'esrbRating',
-  'playerFilters'
-]);
-
-/** @internal */
-export const US_PLATFORM_FACET_FILTER = 'platform:Nintendo Switch';
-
-/**
- * ESRB options and Coming Soon facet filters for querying all games in one request
- * @internal
- */
-export const US_ESRB_RATINGS_FILTERS = {
-  everyone: 'esrbRating:Everyone',
-  everyone10: 'esrbRating:Everyone 10+',
-  teen: 'esrbRating:Teen',
-  mature: 'esrbRating:Mature'
-};
-
-/** @internal */
-export const US_AVAILABILITY_FILTER = 'availability:Coming soon';
-
-/**
- * Request headers for US games
- * @internal
- */
+/** @internal Request headers for US games */
 export const US_ALGOLIA_HEADERS = {
   'Content-Type': 'application/json',
   'X-Algolia-API-Key': US_ALGOLIA_KEY,
@@ -85,7 +33,7 @@ export const US_ALGOLIA_HEADERS = {
 };
 
 /**
- * Options used for getting EU gmaes
+ * Options used for getting EU games
  * @internal
  */
 export const EU_GET_GAMES_OPTIONS = {
