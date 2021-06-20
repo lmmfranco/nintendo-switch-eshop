@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.0.1](https://github.com/lmmfranco/nintendo-switch-eshop/compare/v6.0.0...v6.0.1) (2021-06-20)
+
+### Bug Fixes
+
+- **getGamesAmerica:** improve requests being made for better api data ([881174d](https://github.com/lmmfranco/nintendo-switch-eshop/commit/881174de2b86b632f44f082aadbc97d9853917b0)), closes [#473](https://github.com/lmmfranco/nintendo-switch-eshop/issues/473)
+
 ## [6.0.0](https://github.com/lmmfranco/nintendo-switch-eshop/compare/v5.1.0...v6.0.0) (2021-06-18)
 
 ### ⚠ BREAKING CHANGES
