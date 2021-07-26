@@ -718,10 +718,10 @@
   dependencies:
     prettier "2.x"
 
-"@sapphire/ts-config@^2.3.2":
-  version "2.3.2"
-  resolved "https://registry.yarnpkg.com/@sapphire/ts-config/-/ts-config-2.3.2.tgz#5755048b1896ef2b9e9dcb368f9e51bd29ef4f2e"
-  integrity sha512-dGZz6V4K6oODjHWIRYfDrnabJZz0esG9ti83MG+bfigSI+fHetrATgMAQZt83WJAHc6rmQAes96gPbnXoSnhSA==
+"@sapphire/ts-config@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@sapphire/ts-config/-/ts-config-3.0.0.tgz#82494dff4efab42029d9a5901334f1da6987a119"
+  integrity sha512-UazEo7DI2DPPgodG8Ajd6i9BZwWTP/0KBgOgkFeyf/SJQHqkELAVqQmjevejNAhli8KeCvAdvw+3nhkbouPfeQ==
   dependencies:
     tslib "^2.3.0"
     typescript "^4.3.5"
