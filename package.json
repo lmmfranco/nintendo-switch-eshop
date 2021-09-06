@@ -39,7 +39,7 @@
     "@sapphire/ts-config": "^3.0.0",
     "@types/jest": "^27.0.1",
     "@types/node": "^16.6.1",
-    "@types/node-fetch": "^2.5.12",
+    "@types/node-fetch": "^3.0.3",
     "@typescript-eslint/eslint-plugin": "^4.29.1",
     "@typescript-eslint/parser": "^4.29.1",
     "common-tags": "^1.8.0",
