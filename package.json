@@ -29,7 +29,7 @@
     "@types/country-data": "^0.0.2",
     "country-data": "^0.0.31",
     "fast-xml-parser": "^3.19.0",
-    "node-fetch": "^2.6.1"
+    "node-fetch": "^3.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^13.1.0",
