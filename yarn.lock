@@ -705,17 +705,17 @@
     fastq "^1.6.0"
 
 "@sapphire/eslint-config@^4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@sapphire/eslint-config/-/eslint-config-4.0.0.tgz#ebf90a79f0af06b5e1ef8a92963f784f6765aa42"
-  integrity sha512-vSNHz0lxpow5KzxTZa73fgJ92GXwQhukyKV7clOX8JMTEaqdq0oj2hjQFoBrRzk44WvQlj9MA/n2hEwWdQC1EA==
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@sapphire/eslint-config/-/eslint-config-4.0.1.tgz#4b39c0426eca394efb012e97732f34d858cd52ea"
+  integrity sha512-5CEgSTdly/zkptb1r7fEnYIbovLWtdm5sKjrRpVoViK4SwL6mLFI0b2XuL0Auz+9wJ7wIbKMNxSEZ2K72CgTSQ==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^5.0.0"
     "@typescript-eslint/parser" "^5.0.0"
-    eslint "^8.0.0"
+    eslint "^8.0.1"
     eslint-config-prettier "^8.3.0"
     eslint-plugin-prettier "^4.0.0"
     prettier "^2.4.1"
-    typescript "^4.4.3"
+    typescript "^4.4.4"
 
 "@sapphire/prettier-config@^1.2.2":
   version "1.2.3"
@@ -2022,7 +2022,7 @@ eslint-visitor-keys@^3.0.0:
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-3.0.0.tgz#e32e99c6cdc2eb063f204eda5db67bfe58bb4186"
   integrity sha512-mJOZa35trBTb3IyRmo8xmKBZlxf+N7OnUl4+ZhJHs/r+0770Wh/LEACE2pqMGMe27G/4y8P2bYGk4J70IC5k1Q==
 
-eslint@^8.0.0:
+eslint@^8.0.0, eslint@^8.0.1:
   version "8.0.1"
   resolved "https://registry.yarnpkg.com/eslint/-/eslint-8.0.1.tgz#3610e7fe4a05c2154669515ca60835a76a19f700"
   integrity sha512-LsgcwZgQ72vZ+SMp4K6pAnk2yFDWL7Ti4pJaRvsZ0Hsw2h8ZjUIW38a9AFn2cZXdBMlScMFYYgsSp4ttFI/0bA==
@@ -4949,7 +4949,7 @@ typedoc@^0.22.5:
     minimatch "^3.0.4"
     shiki "^0.9.11"
 
-typescript@^4.4.3:
+typescript@^4.4.3, typescript@^4.4.4:
   version "4.4.4"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.4.4.tgz#2cd01a1a1f160704d3101fd5a58ff0f9fcb8030c"
   integrity sha512-DqGhF5IKoBl8WNf8C1gu8q0xZSInh9j1kJJMqT3a94w1JzVaBU4EXOSMrz9yDqMT0xt3selp83fuFMQ0uzv6qA==
