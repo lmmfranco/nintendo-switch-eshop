@@ -725,12 +725,12 @@
     prettier "^2.4.1"
 
 "@sapphire/ts-config@^3.1.1":
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/@sapphire/ts-config/-/ts-config-3.1.1.tgz#3f998405cc48a08dc3de83b09f5ef9f7ef273ea4"
-  integrity sha512-vDdGVb+4QNHlA+8OQcB3Go//wg2mcqojejpFqbglNL+EfFLRz1Aw055yR6RsxYWvWlGF9eopVf1lLM5MGcqB1Q==
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/@sapphire/ts-config/-/ts-config-3.1.2.tgz#d341468cdad27e51ed47f58f0a8087d092d9f32e"
+  integrity sha512-NzaSUohnHHhEl+KJvXn3kTIt+Jhc+DzyZhMTWUonnKGdaHuMrzMQH0lLwyZVIWJWphMk+e5ni9HTK7A2Htu0/g==
   dependencies:
     tslib "^2.3.1"
-    typescript "^4.4.3"
+    typescript "^4.4.4"
 
 "@sinonjs/commons@^1.7.0":
   version "1.8.3"
