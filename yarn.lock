@@ -718,9 +718,9 @@
     typescript "^4.4.3"
 
 "@sapphire/prettier-config@^1.2.2":
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/@sapphire/prettier-config/-/prettier-config-1.2.2.tgz#1a8df4f2b6cc2c8c080c7594aa9b602c30029b5e"
-  integrity sha512-H5pkvYRfF/XRo2gbCnkU70/Meshyl5bMMzoWHJ9lcvKatrxuBxIZiEPxIP68ArdEOeQJkPYU3O/IFM7s93tasQ==
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/@sapphire/prettier-config/-/prettier-config-1.2.3.tgz#ef95bc76119bc96630e7ef659d1d392656cdc7dc"
+  integrity sha512-Nf36z3eJbqy7Ilvehjd/A/TNgqsHYHDzd37/qEMjK0UkolWKBl/KiL8b/ylsoMm4huD7aM7+30y2AQdPu2qf6g==
   dependencies:
     prettier "^2.4.1"
 
