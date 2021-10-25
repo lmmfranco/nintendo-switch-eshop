@@ -7,43 +7,20 @@ on:
   pull_request:
 
 jobs:
-  pre_ci:
-    name: Prepare CI environment
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Project
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 2
-      - name: '[Push] Get commit message'
-        if: github.event_name == 'push'
-        id: push_get_commit_message
-        run: echo ::set-output name=push_commit_message::$(git log --format=%B -n 1 HEAD)
-      - name: '[Pull Request] Get commit message'
-        if: github.event_name == 'pull_request'
-        id: pr_get_commit_message
-        run: echo ::set-output name=pr_commit_message::$(git log --format=%B -n 1 HEAD^2)
-      - name: Add problem matchers
-        run: |
-          echo "::add-matcher::.github/problemMatchers/tsc.json"
-          echo "::add-matcher::.github/problemMatchers/eslint-stylish.json"
-    outputs:
-      commit_message: $( [ -z "${{ steps.pr_get_commit_message.outputs.pr_commit_message }}" ] && echo "${{ steps.push_get_commit_message.outputs.push_commit_message }}" || echo "${{ steps.pr_get_commit_message.outputs.pr_commit_message }}" )
-
   NodeLinting:
     name: Running ESLint
     runs-on: ubuntu-latest
-    if: "!contains(needs.pre_ci.outputs.commit_message, '[skip ci]')"
-    needs: pre_ci
     steps:
       - name: Checkout Project
-        uses: actions/checkout@v2
+        uses: actions/checkout@1e204e9a9253d643386038d443f96446fa156a97 # renovate: tag=v2
+      - name: Add problem matcher
+        run: echo "::add-matcher::.github/problemMatchers/eslint.json"
       - name: Use Node.js v16
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@270253e841af726300e85d718a5f606959b2903c # renovate: tag=v2
         with:
           node-version: 16
       - name: Restore CI Cache
-        uses: actions/cache@v2.1.5
+        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # renovate: tag=v2.1.6
         id: cache-restore
         with:
           path: node_modules
@@ -57,17 +34,17 @@ jobs:
   NodeBuilding:
     name: Compile TypeScript
     runs-on: ubuntu-latest
-    if: "!contains(needs.pre_ci.outputs.commit_message, '[skip ci]')"
-    needs: pre_ci
     steps:
       - name: Checkout Project
-        uses: actions/checkout@v2
+        uses: actions/checkout@1e204e9a9253d643386038d443f96446fa156a97 # renovate: tag=v2
+      - name: Add problem matcher
+        run: echo "::add-matcher::.github/problemMatchers/tsc.json"
       - name: Use Node.js v16
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@270253e841af726300e85d718a5f606959b2903c # renovate: tag=v2
         with:
           node-version: 16
       - name: Restore CI Cache
-        uses: actions/cache@v2.1.5
+        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # renovate: tag=v2.1.6
         id: cache-restore
         with:
           path: node_modules
@@ -75,23 +52,21 @@ jobs:
       - name: Install Dependencies if Cache Miss
         if: ${{ !steps.cache-restore.outputs.cache-hit }}
         run: yarn --frozen-lockfile
-      - name: Compile TypeScript
+      - name: Build Code
         run: yarn build
 
   NodeTesting:
     name: Unit Test
     runs-on: ubuntu-latest
-    if: "!contains(needs.pre_ci.outputs.commit_message, '[skip ci]')"
-    needs: pre_ci
     steps:
       - name: Checkout Project
-        uses: actions/checkout@v2
+        uses: actions/checkout@1e204e9a9253d643386038d443f96446fa156a97 # renovate: tag=v2
       - name: Use Node.js v16
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@270253e841af726300e85d718a5f606959b2903c # renovate: tag=v2
         with:
           node-version: 16
       - name: Restore CI Cache
-        uses: actions/cache@v2.1.5
+        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # renovate: tag=v2.1.6
         id: cache-restore
         with:
           path: node_modules

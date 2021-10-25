@@ -4,5 +4,6 @@
   "name": "Nintendo Switch EShop",
   "entryPoints": ["src/index.ts"],
   "excludeExternals": true,
-  "tsconfig": "./src/tsconfig.base.json"
+  "intentionallyNotExported": ["PriceError", "PriceData"],
+  "tsconfig": "./src/tsconfig.json"
 }

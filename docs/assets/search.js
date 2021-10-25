@@ -1,6 +1,6 @@
 window.searchData = {
   kinds: {
-    4: 'Enumeration',
+    8: 'Enumeration',
     16: 'Enumeration member',
     32: 'Variable',
     64: 'Function',
@@ -13,33 +13,33 @@ window.searchData = {
   },
   rows: [
     { id: 0, kind: 64, name: 'default', url: 'modules.html#default', classes: 'tsd-kind-function' },
-    { id: 1, kind: 16777216, name: 'getGamesAmerica', url: 'modules.html#getgamesamerica', classes: 'tsd-kind-reference' },
-    { id: 2, kind: 64, name: 'getGamesEurope', url: 'modules.html#getgameseurope', classes: 'tsd-kind-function' },
-    { id: 3, kind: 64, name: 'getGamesJapan', url: 'modules.html#getgamesjapan', classes: 'tsd-kind-function' },
-    { id: 4, kind: 64, name: 'getQueriedGamesAmerica', url: 'modules.html#getqueriedgamesamerica', classes: 'tsd-kind-function' },
-    { id: 5, kind: 64, name: 'getActiveShops', url: 'modules.html#getactiveshops', classes: 'tsd-kind-function' },
-    { id: 6, kind: 64, name: 'getShopsAmerica', url: 'modules.html#getshopsamerica', classes: 'tsd-kind-function' },
-    { id: 7, kind: 64, name: 'getShopsAsia', url: 'modules.html#getshopsasia', classes: 'tsd-kind-function' },
-    { id: 8, kind: 64, name: 'getShopsEurope', url: 'modules.html#getshopseurope', classes: 'tsd-kind-function' },
-    { id: 9, kind: 64, name: 'getPrices', url: 'modules.html#getprices', classes: 'tsd-kind-function' },
-    { id: 10, kind: 64, name: 'getShopsByCountryCodes', url: 'modules.html#getshopsbycountrycodes', classes: 'tsd-kind-function' },
-    { id: 11, kind: 64, name: 'parseGameCode', url: 'modules.html#parsegamecode', classes: 'tsd-kind-function' },
-    { id: 12, kind: 64, name: 'parseNSUID', url: 'modules.html#parsensuid', classes: 'tsd-kind-function' },
-    { id: 13, kind: 32, name: 'EU_GET_GAMES_URL', url: 'modules.html#eu_get_games_url', classes: 'tsd-kind-variable' },
-    { id: 14, kind: 32, name: 'JP_GET_GAMES_URL', url: 'modules.html#jp_get_games_url', classes: 'tsd-kind-variable' },
-    { id: 15, kind: 32, name: 'PRICE_GET_URL', url: 'modules.html#price_get_url', classes: 'tsd-kind-variable' },
-    { id: 16, kind: 32, name: 'QUERIED_US_ALGOLIA_KEY', url: 'modules.html#queried_us_algolia_key', classes: 'tsd-kind-variable' },
-    { id: 17, kind: 32, name: 'QUERIED_US_GET_GAMES_URL', url: 'modules.html#queried_us_get_games_url', classes: 'tsd-kind-variable' },
-    { id: 18, kind: 4, name: 'Region', url: 'enums/region.html', classes: 'tsd-kind-enum' },
-    { id: 19, kind: 16, name: 'AMERICAS', url: 'enums/region.html#americas', classes: 'tsd-kind-enum-member tsd-parent-kind-enum', parent: 'Region' },
-    { id: 20, kind: 16, name: 'EUROPE', url: 'enums/region.html#europe', classes: 'tsd-kind-enum-member tsd-parent-kind-enum', parent: 'Region' },
-    { id: 21, kind: 16, name: 'ASIA', url: 'enums/region.html#asia', classes: 'tsd-kind-enum-member tsd-parent-kind-enum', parent: 'Region' },
-    { id: 22, kind: 32, name: 'US_ALGOLIA_HEADERS', url: 'modules.html#us_algolia_headers', classes: 'tsd-kind-variable' },
+    { id: 1, kind: 16777216, name: 'getGamesAmerica', url: 'modules.html#getGamesAmerica', classes: 'tsd-kind-reference' },
+    { id: 2, kind: 64, name: 'getGamesEurope', url: 'modules.html#getGamesEurope', classes: 'tsd-kind-function' },
+    { id: 3, kind: 64, name: 'getGamesJapan', url: 'modules.html#getGamesJapan', classes: 'tsd-kind-function' },
+    { id: 4, kind: 64, name: 'getQueriedGamesAmerica', url: 'modules.html#getQueriedGamesAmerica', classes: 'tsd-kind-function' },
+    { id: 5, kind: 64, name: 'getActiveShops', url: 'modules.html#getActiveShops', classes: 'tsd-kind-function' },
+    { id: 6, kind: 64, name: 'getShopsAmerica', url: 'modules.html#getShopsAmerica', classes: 'tsd-kind-function' },
+    { id: 7, kind: 64, name: 'getShopsAsia', url: 'modules.html#getShopsAsia', classes: 'tsd-kind-function' },
+    { id: 8, kind: 64, name: 'getShopsEurope', url: 'modules.html#getShopsEurope', classes: 'tsd-kind-function' },
+    { id: 9, kind: 64, name: 'getPrices', url: 'modules.html#getPrices', classes: 'tsd-kind-function' },
+    { id: 10, kind: 64, name: 'getShopsByCountryCodes', url: 'modules.html#getShopsByCountryCodes', classes: 'tsd-kind-function' },
+    { id: 11, kind: 64, name: 'parseGameCode', url: 'modules.html#parseGameCode', classes: 'tsd-kind-function' },
+    { id: 12, kind: 64, name: 'parseNSUID', url: 'modules.html#parseNSUID', classes: 'tsd-kind-function' },
+    { id: 13, kind: 32, name: 'EU_GET_GAMES_URL', url: 'modules.html#EU_GET_GAMES_URL', classes: 'tsd-kind-variable' },
+    { id: 14, kind: 32, name: 'JP_GET_GAMES_URL', url: 'modules.html#JP_GET_GAMES_URL', classes: 'tsd-kind-variable' },
+    { id: 15, kind: 32, name: 'PRICE_GET_URL', url: 'modules.html#PRICE_GET_URL', classes: 'tsd-kind-variable' },
+    { id: 16, kind: 32, name: 'QUERIED_US_ALGOLIA_KEY', url: 'modules.html#QUERIED_US_ALGOLIA_KEY', classes: 'tsd-kind-variable' },
+    { id: 17, kind: 32, name: 'QUERIED_US_GET_GAMES_URL', url: 'modules.html#QUERIED_US_GET_GAMES_URL', classes: 'tsd-kind-variable' },
+    { id: 18, kind: 8, name: 'Region', url: 'enums/Region.html', classes: 'tsd-kind-enum' },
+    { id: 19, kind: 16, name: 'AMERICAS', url: 'enums/Region.html#AMERICAS', classes: 'tsd-kind-enum-member tsd-parent-kind-enum', parent: 'Region' },
+    { id: 20, kind: 16, name: 'EUROPE', url: 'enums/Region.html#EUROPE', classes: 'tsd-kind-enum-member tsd-parent-kind-enum', parent: 'Region' },
+    { id: 21, kind: 16, name: 'ASIA', url: 'enums/Region.html#ASIA', classes: 'tsd-kind-enum-member tsd-parent-kind-enum', parent: 'Region' },
+    { id: 22, kind: 32, name: 'US_ALGOLIA_HEADERS', url: 'modules.html#US_ALGOLIA_HEADERS', classes: 'tsd-kind-variable' },
     {
       id: 23,
       kind: 65536,
       name: '__type',
-      url: 'modules.html#us_algolia_headers.__type',
+      url: 'modules.html#US_ALGOLIA_HEADERS.__type',
       classes: 'tsd-kind-type-literal tsd-parent-kind-variable',
       parent: 'US_ALGOLIA_HEADERS'
     },
@@ -47,7 +47,7 @@ window.searchData = {
       id: 24,
       kind: 1024,
       name: 'Content-Type',
-      url: 'modules.html#us_algolia_headers.__type.content_type',
+      url: 'modules.html#US_ALGOLIA_HEADERS.__type.Content_Type',
       classes: 'tsd-kind-property tsd-parent-kind-type-literal',
       parent: 'US_ALGOLIA_HEADERS.__type'
     },
@@ -55,7 +55,7 @@ window.searchData = {
       id: 25,
       kind: 1024,
       name: 'X-Algolia-API-Key',
-      url: 'modules.html#us_algolia_headers.__type.x_algolia_api_key',
+      url: 'modules.html#US_ALGOLIA_HEADERS.__type.X_Algolia_API_Key',
       classes: 'tsd-kind-property tsd-parent-kind-type-literal',
       parent: 'US_ALGOLIA_HEADERS.__type'
     },
@@ -63,20 +63,20 @@ window.searchData = {
       id: 26,
       kind: 1024,
       name: 'X-Algolia-Application-Id',
-      url: 'modules.html#us_algolia_headers.__type.x_algolia_application_id',
+      url: 'modules.html#US_ALGOLIA_HEADERS.__type.X_Algolia_Application_Id',
       classes: 'tsd-kind-property tsd-parent-kind-type-literal',
       parent: 'US_ALGOLIA_HEADERS.__type'
     },
-    { id: 27, kind: 32, name: 'US_ALGOLIA_ID', url: 'modules.html#us_algolia_id', classes: 'tsd-kind-variable' },
-    { id: 28, kind: 32, name: 'US_ALGOLIA_KEY', url: 'modules.html#us_algolia_key', classes: 'tsd-kind-variable' },
-    { id: 29, kind: 32, name: 'US_GET_GAMES_URL', url: 'modules.html#us_get_games_url', classes: 'tsd-kind-variable' },
-    { id: 30, kind: 256, name: 'EShop', url: 'interfaces/eshop.html', classes: 'tsd-kind-interface' },
-    { id: 31, kind: 1024, name: 'code', url: 'interfaces/eshop.html#code', classes: 'tsd-kind-property tsd-parent-kind-interface', parent: 'EShop' },
+    { id: 27, kind: 32, name: 'US_ALGOLIA_ID', url: 'modules.html#US_ALGOLIA_ID', classes: 'tsd-kind-variable' },
+    { id: 28, kind: 32, name: 'US_ALGOLIA_KEY', url: 'modules.html#US_ALGOLIA_KEY', classes: 'tsd-kind-variable' },
+    { id: 29, kind: 32, name: 'US_GET_GAMES_URL', url: 'modules.html#US_GET_GAMES_URL', classes: 'tsd-kind-variable' },
+    { id: 30, kind: 256, name: 'EShop', url: 'interfaces/EShop.html', classes: 'tsd-kind-interface' },
+    { id: 31, kind: 1024, name: 'code', url: 'interfaces/EShop.html#code', classes: 'tsd-kind-property tsd-parent-kind-interface', parent: 'EShop' },
     {
       id: 32,
       kind: 1024,
       name: 'country',
-      url: 'interfaces/eshop.html#country',
+      url: 'interfaces/EShop.html#country',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'EShop'
     },
@@ -84,7 +84,7 @@ window.searchData = {
       id: 33,
       kind: 1024,
       name: 'currency',
-      url: 'interfaces/eshop.html#currency',
+      url: 'interfaces/EShop.html#currency',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'EShop'
     },
@@ -92,16 +92,16 @@ window.searchData = {
       id: 34,
       kind: 1024,
       name: 'region',
-      url: 'interfaces/eshop.html#region',
+      url: 'interfaces/EShop.html#region',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'EShop'
     },
-    { id: 35, kind: 256, name: 'EURequestOptions', url: 'interfaces/eurequestoptions.html', classes: 'tsd-kind-interface' },
+    { id: 35, kind: 256, name: 'EURequestOptions', url: 'interfaces/EURequestOptions.html', classes: 'tsd-kind-interface' },
     {
       id: 36,
       kind: 1024,
       name: 'locale',
-      url: 'interfaces/eurequestoptions.html#locale',
+      url: 'interfaces/EURequestOptions.html#locale',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'EURequestOptions'
     },
@@ -109,16 +109,16 @@ window.searchData = {
       id: 37,
       kind: 1024,
       name: 'limit',
-      url: 'interfaces/eurequestoptions.html#limit',
+      url: 'interfaces/EURequestOptions.html#limit',
       classes: 'tsd-kind-property tsd-parent-kind-interface tsd-is-inherited',
       parent: 'EURequestOptions'
     },
-    { id: 38, kind: 256, name: 'GameEU', url: 'interfaces/gameeu.html', classes: 'tsd-kind-interface' },
+    { id: 38, kind: 256, name: 'GameEU', url: 'interfaces/GameEU.html', classes: 'tsd-kind-interface' },
     {
       id: 39,
       kind: 1024,
       name: 'age_rating_type',
-      url: 'interfaces/gameeu.html#age_rating_type',
+      url: 'interfaces/GameEU.html#age_rating_type',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameEU'
     },
@@ -126,7 +126,7 @@ window.searchData = {
       id: 40,
       kind: 1024,
       name: 'age_rating_value',
-      url: 'interfaces/gameeu.html#age_rating_value',
+      url: 'interfaces/GameEU.html#age_rating_value',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameEU'
     },
@@ -134,7 +134,7 @@ window.searchData = {
       id: 41,
       kind: 1024,
       name: 'copyright_s',
-      url: 'interfaces/gameeu.html#copyright_s',
+      url: 'interfaces/GameEU.html#copyright_s',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameEU'
     },
@@ -142,7 +142,7 @@ window.searchData = {
       id: 42,
       kind: 1024,
       name: 'developer',
-      url: 'interfaces/gameeu.html#developer',
+      url: 'interfaces/GameEU.html#developer',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameEU'
     },
@@ -150,7 +150,7 @@ window.searchData = {
       id: 43,
       kind: 1024,
       name: 'excerpt',
-      url: 'interfaces/gameeu.html#excerpt',
+      url: 'interfaces/GameEU.html#excerpt',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameEU'
     },
@@ -158,7 +158,7 @@ window.searchData = {
       id: 44,
       kind: 1024,
       name: 'fs_id',
-      url: 'interfaces/gameeu.html#fs_id',
+      url: 'interfaces/GameEU.html#fs_id',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameEU'
     },
@@ -166,7 +166,7 @@ window.searchData = {
       id: 45,
       kind: 1024,
       name: 'game_series_t',
-      url: 'interfaces/gameeu.html#game_series_t',
+      url: 'interfaces/GameEU.html#game_series_t',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameEU'
     },
@@ -174,7 +174,7 @@ window.searchData = {
       id: 46,
       kind: 1024,
       name: 'gift_finder_carousel_image_url_s',
-      url: 'interfaces/gameeu.html#gift_finder_carousel_image_url_s',
+      url: 'interfaces/GameEU.html#gift_finder_carousel_image_url_s',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameEU'
     },
@@ -182,7 +182,7 @@ window.searchData = {
       id: 47,
       kind: 1024,
       name: 'gift_finder_description_s',
-      url: 'interfaces/gameeu.html#gift_finder_description_s',
+      url: 'interfaces/GameEU.html#gift_finder_description_s',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameEU'
     },
@@ -190,7 +190,7 @@ window.searchData = {
       id: 48,
       kind: 1024,
       name: 'gift_finder_detail_page_image_url_s',
-      url: 'interfaces/gameeu.html#gift_finder_detail_page_image_url_s',
+      url: 'interfaces/GameEU.html#gift_finder_detail_page_image_url_s',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameEU'
     },
@@ -198,7 +198,7 @@ window.searchData = {
       id: 49,
       kind: 1024,
       name: 'gift_finder_detail_page_store_link_s',
-      url: 'interfaces/gameeu.html#gift_finder_detail_page_store_link_s',
+      url: 'interfaces/GameEU.html#gift_finder_detail_page_store_link_s',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameEU'
     },
@@ -206,7 +206,7 @@ window.searchData = {
       id: 50,
       kind: 1024,
       name: 'gift_finder_wishlist_image_url_s',
-      url: 'interfaces/gameeu.html#gift_finder_wishlist_image_url_s',
+      url: 'interfaces/GameEU.html#gift_finder_wishlist_image_url_s',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameEU'
     },
@@ -214,7 +214,7 @@ window.searchData = {
       id: 51,
       kind: 1024,
       name: 'image_url',
-      url: 'interfaces/gameeu.html#image_url',
+      url: 'interfaces/GameEU.html#image_url',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameEU'
     },
@@ -222,7 +222,7 @@ window.searchData = {
       id: 52,
       kind: 1024,
       name: 'image_url_h2x1_s',
-      url: 'interfaces/gameeu.html#image_url_h2x1_s',
+      url: 'interfaces/GameEU.html#image_url_h2x1_s',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameEU'
     },
@@ -230,7 +230,7 @@ window.searchData = {
       id: 53,
       kind: 1024,
       name: 'image_url_sq_s',
-      url: 'interfaces/gameeu.html#image_url_sq_s',
+      url: 'interfaces/GameEU.html#image_url_sq_s',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameEU'
     },
@@ -238,7 +238,7 @@ window.searchData = {
       id: 54,
       kind: 1024,
       name: 'image_url_tm_s',
-      url: 'interfaces/gameeu.html#image_url_tm_s',
+      url: 'interfaces/GameEU.html#image_url_tm_s',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameEU'
     },
@@ -246,7 +246,7 @@ window.searchData = {
       id: 55,
       kind: 1024,
       name: 'originally_for_t',
-      url: 'interfaces/gameeu.html#originally_for_t',
+      url: 'interfaces/GameEU.html#originally_for_t',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameEU'
     },
@@ -254,7 +254,7 @@ window.searchData = {
       id: 56,
       kind: 1024,
       name: 'pretty_agerating_s',
-      url: 'interfaces/gameeu.html#pretty_agerating_s',
+      url: 'interfaces/GameEU.html#pretty_agerating_s',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameEU'
     },
@@ -262,7 +262,7 @@ window.searchData = {
       id: 57,
       kind: 1024,
       name: 'pretty_date_s',
-      url: 'interfaces/gameeu.html#pretty_date_s',
+      url: 'interfaces/GameEU.html#pretty_date_s',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameEU'
     },
@@ -270,7 +270,7 @@ window.searchData = {
       id: 58,
       kind: 1024,
       name: 'publisher',
-      url: 'interfaces/gameeu.html#publisher',
+      url: 'interfaces/GameEU.html#publisher',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameEU'
     },
@@ -278,7 +278,7 @@ window.searchData = {
       id: 59,
       kind: 1024,
       name: 'sorting_title',
-      url: 'interfaces/gameeu.html#sorting_title',
+      url: 'interfaces/GameEU.html#sorting_title',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameEU'
     },
@@ -286,7 +286,7 @@ window.searchData = {
       id: 60,
       kind: 1024,
       name: 'title',
-      url: 'interfaces/gameeu.html#title',
+      url: 'interfaces/GameEU.html#title',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameEU'
     },
@@ -294,16 +294,16 @@ window.searchData = {
       id: 61,
       kind: 1024,
       name: 'type',
-      url: 'interfaces/gameeu.html#type',
+      url: 'interfaces/GameEU.html#type',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameEU'
     },
-    { id: 62, kind: 1024, name: 'url', url: 'interfaces/gameeu.html#url', classes: 'tsd-kind-property tsd-parent-kind-interface', parent: 'GameEU' },
+    { id: 62, kind: 1024, name: 'url', url: 'interfaces/GameEU.html#url', classes: 'tsd-kind-property tsd-parent-kind-interface', parent: 'GameEU' },
     {
       id: 63,
       kind: 1024,
       name: 'add_on_content_b',
-      url: 'interfaces/gameeu.html#add_on_content_b',
+      url: 'interfaces/GameEU.html#add_on_content_b',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameEU'
     },
@@ -311,7 +311,7 @@ window.searchData = {
       id: 64,
       kind: 1024,
       name: 'club_nintendo',
-      url: 'interfaces/gameeu.html#club_nintendo',
+      url: 'interfaces/GameEU.html#club_nintendo',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameEU'
     },
@@ -319,7 +319,7 @@ window.searchData = {
       id: 65,
       kind: 1024,
       name: 'near_field_comm_b',
-      url: 'interfaces/gameeu.html#near_field_comm_b',
+      url: 'interfaces/GameEU.html#near_field_comm_b',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameEU'
     },
@@ -327,7 +327,7 @@ window.searchData = {
       id: 66,
       kind: 1024,
       name: 'physical_version_b',
-      url: 'interfaces/gameeu.html#physical_version_b',
+      url: 'interfaces/GameEU.html#physical_version_b',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameEU'
     },
@@ -335,7 +335,7 @@ window.searchData = {
       id: 67,
       kind: 1024,
       name: 'play_mode_handheld_mode_b',
-      url: 'interfaces/gameeu.html#play_mode_handheld_mode_b',
+      url: 'interfaces/GameEU.html#play_mode_handheld_mode_b',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameEU'
     },
@@ -343,7 +343,7 @@ window.searchData = {
       id: 68,
       kind: 1024,
       name: 'play_mode_tabletop_mode_b',
-      url: 'interfaces/gameeu.html#play_mode_tabletop_mode_b',
+      url: 'interfaces/GameEU.html#play_mode_tabletop_mode_b',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameEU'
     },
@@ -351,7 +351,7 @@ window.searchData = {
       id: 69,
       kind: 1024,
       name: 'play_mode_tv_mode_b',
-      url: 'interfaces/gameeu.html#play_mode_tv_mode_b',
+      url: 'interfaces/GameEU.html#play_mode_tv_mode_b',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameEU'
     },
@@ -359,7 +359,7 @@ window.searchData = {
       id: 70,
       kind: 1024,
       name: 'change_date',
-      url: 'interfaces/gameeu.html#change_date',
+      url: 'interfaces/GameEU.html#change_date',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameEU'
     },
@@ -367,7 +367,7 @@ window.searchData = {
       id: 71,
       kind: 1024,
       name: 'date_from',
-      url: 'interfaces/gameeu.html#date_from',
+      url: 'interfaces/GameEU.html#date_from',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameEU'
     },
@@ -375,7 +375,7 @@ window.searchData = {
       id: 72,
       kind: 1024,
       name: 'priority',
-      url: 'interfaces/gameeu.html#priority',
+      url: 'interfaces/GameEU.html#priority',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameEU'
     },
@@ -383,7 +383,7 @@ window.searchData = {
       id: 73,
       kind: 1024,
       name: 'age_rating_sorting_i',
-      url: 'interfaces/gameeu.html#age_rating_sorting_i',
+      url: 'interfaces/GameEU.html#age_rating_sorting_i',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameEU'
     },
@@ -391,7 +391,7 @@ window.searchData = {
       id: 74,
       kind: 1024,
       name: 'players_from',
-      url: 'interfaces/gameeu.html#players_from',
+      url: 'interfaces/GameEU.html#players_from',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameEU'
     },
@@ -399,7 +399,7 @@ window.searchData = {
       id: 75,
       kind: 1024,
       name: 'players_to',
-      url: 'interfaces/gameeu.html#players_to',
+      url: 'interfaces/GameEU.html#players_to',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameEU'
     },
@@ -407,7 +407,7 @@ window.searchData = {
       id: 76,
       kind: 1024,
       name: 'compatible_controller',
-      url: 'interfaces/gameeu.html#compatible_controller',
+      url: 'interfaces/GameEU.html#compatible_controller',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameEU'
     },
@@ -415,7 +415,7 @@ window.searchData = {
       id: 77,
       kind: 1024,
       name: 'game_categories_txt',
-      url: 'interfaces/gameeu.html#game_categories_txt',
+      url: 'interfaces/GameEU.html#game_categories_txt',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameEU'
     },
@@ -423,7 +423,7 @@ window.searchData = {
       id: 78,
       kind: 1024,
       name: 'game_category',
-      url: 'interfaces/gameeu.html#game_category',
+      url: 'interfaces/GameEU.html#game_category',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameEU'
     },
@@ -431,7 +431,7 @@ window.searchData = {
       id: 79,
       kind: 1024,
       name: 'language_availability',
-      url: 'interfaces/gameeu.html#language_availability',
+      url: 'interfaces/GameEU.html#language_availability',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameEU'
     },
@@ -439,7 +439,7 @@ window.searchData = {
       id: 80,
       kind: 1024,
       name: 'nsuid_txt',
-      url: 'interfaces/gameeu.html#nsuid_txt',
+      url: 'interfaces/GameEU.html#nsuid_txt',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameEU'
     },
@@ -447,7 +447,7 @@ window.searchData = {
       id: 81,
       kind: 1024,
       name: 'playable_on_txt',
-      url: 'interfaces/gameeu.html#playable_on_txt',
+      url: 'interfaces/GameEU.html#playable_on_txt',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameEU'
     },
@@ -455,7 +455,7 @@ window.searchData = {
       id: 82,
       kind: 1024,
       name: 'product_code_txt',
-      url: 'interfaces/gameeu.html#product_code_txt',
+      url: 'interfaces/GameEU.html#product_code_txt',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameEU'
     },
@@ -463,7 +463,7 @@ window.searchData = {
       id: 83,
       kind: 1024,
       name: 'system_names_txt',
-      url: 'interfaces/gameeu.html#system_names_txt',
+      url: 'interfaces/GameEU.html#system_names_txt',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameEU'
     },
@@ -471,7 +471,7 @@ window.searchData = {
       id: 84,
       kind: 1024,
       name: 'system_type',
-      url: 'interfaces/gameeu.html#system_type',
+      url: 'interfaces/GameEU.html#system_type',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameEU'
     },
@@ -479,16 +479,16 @@ window.searchData = {
       id: 85,
       kind: 1024,
       name: 'title_extras_txt',
-      url: 'interfaces/gameeu.html#title_extras_txt',
+      url: 'interfaces/GameEU.html#title_extras_txt',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameEU'
     },
-    { id: 86, kind: 256, name: 'GameJP', url: 'interfaces/gamejp.html', classes: 'tsd-kind-interface' },
+    { id: 86, kind: 256, name: 'GameJP', url: 'interfaces/GameJP.html', classes: 'tsd-kind-interface' },
     {
       id: 87,
       kind: 1024,
       name: 'InitialCode',
-      url: 'interfaces/gamejp.html#initialcode',
+      url: 'interfaces/GameJP.html#InitialCode',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameJP'
     },
@@ -496,7 +496,7 @@ window.searchData = {
       id: 88,
       kind: 1024,
       name: 'LinkURL',
-      url: 'interfaces/gamejp.html#linkurl',
+      url: 'interfaces/GameJP.html#LinkURL',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameJP'
     },
@@ -504,7 +504,7 @@ window.searchData = {
       id: 89,
       kind: 1024,
       name: 'LinkTarget',
-      url: 'interfaces/gamejp.html#linktarget',
+      url: 'interfaces/GameJP.html#LinkTarget',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameJP'
     },
@@ -512,7 +512,7 @@ window.searchData = {
       id: 90,
       kind: 1024,
       name: 'ScreenshotImgFlg',
-      url: 'interfaces/gamejp.html#screenshotimgflg',
+      url: 'interfaces/GameJP.html#ScreenshotImgFlg',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameJP'
     },
@@ -520,7 +520,7 @@ window.searchData = {
       id: 91,
       kind: 1024,
       name: 'ScreenshotImgURL',
-      url: 'interfaces/gamejp.html#screenshotimgurl',
+      url: 'interfaces/GameJP.html#ScreenshotImgURL',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameJP'
     },
@@ -528,7 +528,7 @@ window.searchData = {
       id: 92,
       kind: 1024,
       name: 'ThumbVariation',
-      url: 'interfaces/gamejp.html#thumbvariation',
+      url: 'interfaces/GameJP.html#ThumbVariation',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameJP'
     },
@@ -536,7 +536,7 @@ window.searchData = {
       id: 93,
       kind: 1024,
       name: 'ComingThumb',
-      url: 'interfaces/gamejp.html#comingthumb',
+      url: 'interfaces/GameJP.html#ComingThumb',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameJP'
     },
@@ -544,7 +544,7 @@ window.searchData = {
       id: 94,
       kind: 1024,
       name: 'TitleName',
-      url: 'interfaces/gamejp.html#titlename',
+      url: 'interfaces/GameJP.html#TitleName',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameJP'
     },
@@ -552,7 +552,7 @@ window.searchData = {
       id: 95,
       kind: 1024,
       name: 'TitleNameRuby',
-      url: 'interfaces/gamejp.html#titlenameruby',
+      url: 'interfaces/GameJP.html#TitleNameRuby',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameJP'
     },
@@ -560,16 +560,16 @@ window.searchData = {
       id: 96,
       kind: 1024,
       name: 'SoftType',
-      url: 'interfaces/gamejp.html#softtype',
+      url: 'interfaces/GameJP.html#SoftType',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameJP'
     },
-    { id: 97, kind: 1024, name: 'D', url: 'interfaces/gamejp.html#d', classes: 'tsd-kind-property tsd-parent-kind-interface', parent: 'GameJP' },
+    { id: 97, kind: 1024, name: 'D', url: 'interfaces/GameJP.html#D', classes: 'tsd-kind-property tsd-parent-kind-interface', parent: 'GameJP' },
     {
       id: 98,
       kind: 1024,
       name: 'SalesDate',
-      url: 'interfaces/gamejp.html#salesdate',
+      url: 'interfaces/GameJP.html#SalesDate',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameJP'
     },
@@ -577,7 +577,7 @@ window.searchData = {
       id: 99,
       kind: 1024,
       name: 'MakerName',
-      url: 'interfaces/gamejp.html#makername',
+      url: 'interfaces/GameJP.html#MakerName',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameJP'
     },
@@ -585,7 +585,7 @@ window.searchData = {
       id: 100,
       kind: 1024,
       name: 'Hard',
-      url: 'interfaces/gamejp.html#hard',
+      url: 'interfaces/GameJP.html#Hard',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameJP'
     },
@@ -593,7 +593,7 @@ window.searchData = {
       id: 101,
       kind: 1024,
       name: 'Memo',
-      url: 'interfaces/gamejp.html#memo',
+      url: 'interfaces/GameJP.html#Memo',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameJP'
     },
@@ -601,7 +601,7 @@ window.searchData = {
       id: 102,
       kind: 1024,
       name: 'PlatformID',
-      url: 'interfaces/gamejp.html#platformid',
+      url: 'interfaces/GameJP.html#PlatformID',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameJP'
     },
@@ -609,7 +609,7 @@ window.searchData = {
       id: 103,
       kind: 1024,
       name: 'Price',
-      url: 'interfaces/gamejp.html#price',
+      url: 'interfaces/GameJP.html#Price',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameJP'
     },
@@ -617,16 +617,16 @@ window.searchData = {
       id: 104,
       kind: 1024,
       name: 'MakerKana',
-      url: 'interfaces/gamejp.html#makerkana',
+      url: 'interfaces/GameJP.html#MakerKana',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameJP'
     },
-    { id: 105, kind: 256, name: 'GameUS', url: 'interfaces/gameus.html', classes: 'tsd-kind-interface' },
+    { id: 105, kind: 256, name: 'GameUS', url: 'interfaces/GameUS.html', classes: 'tsd-kind-interface' },
     {
       id: 106,
       kind: 1024,
       name: 'lastModified',
-      url: 'interfaces/gameus.html#lastmodified',
+      url: 'interfaces/GameUS.html#lastModified',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameUS'
     },
@@ -634,7 +634,7 @@ window.searchData = {
       id: 107,
       kind: 1024,
       name: 'title',
-      url: 'interfaces/gameus.html#title',
+      url: 'interfaces/GameUS.html#title',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameUS'
     },
@@ -642,16 +642,16 @@ window.searchData = {
       id: 108,
       kind: 1024,
       name: 'description',
-      url: 'interfaces/gameus.html#description',
+      url: 'interfaces/GameUS.html#description',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameUS'
     },
-    { id: 109, kind: 1024, name: 'url', url: 'interfaces/gameus.html#url', classes: 'tsd-kind-property tsd-parent-kind-interface', parent: 'GameUS' },
+    { id: 109, kind: 1024, name: 'url', url: 'interfaces/GameUS.html#url', classes: 'tsd-kind-property tsd-parent-kind-interface', parent: 'GameUS' },
     {
       id: 110,
       kind: 1024,
       name: 'nsuid',
-      url: 'interfaces/gameus.html#nsuid',
+      url: 'interfaces/GameUS.html#nsuid',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameUS'
     },
@@ -659,7 +659,7 @@ window.searchData = {
       id: 111,
       kind: 1024,
       name: 'slug',
-      url: 'interfaces/gameus.html#slug',
+      url: 'interfaces/GameUS.html#slug',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameUS'
     },
@@ -667,7 +667,7 @@ window.searchData = {
       id: 112,
       kind: 1024,
       name: 'boxart',
-      url: 'interfaces/gameus.html#boxart',
+      url: 'interfaces/GameUS.html#boxart',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameUS'
     },
@@ -675,7 +675,7 @@ window.searchData = {
       id: 113,
       kind: 1024,
       name: 'horizontalHeaderImage',
-      url: 'interfaces/gameus.html#horizontalheaderimage',
+      url: 'interfaces/GameUS.html#horizontalHeaderImage',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameUS'
     },
@@ -683,7 +683,7 @@ window.searchData = {
       id: 114,
       kind: 1024,
       name: 'platform',
-      url: 'interfaces/gameus.html#platform',
+      url: 'interfaces/GameUS.html#platform',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameUS'
     },
@@ -691,7 +691,7 @@ window.searchData = {
       id: 115,
       kind: 1024,
       name: 'releaseDateDisplay',
-      url: 'interfaces/gameus.html#releasedatedisplay',
+      url: 'interfaces/GameUS.html#releaseDateDisplay',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameUS'
     },
@@ -699,7 +699,7 @@ window.searchData = {
       id: 116,
       kind: 1024,
       name: 'esrbRating',
-      url: 'interfaces/gameus.html#esrbrating',
+      url: 'interfaces/GameUS.html#esrbRating',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameUS'
     },
@@ -707,7 +707,7 @@ window.searchData = {
       id: 117,
       kind: 1024,
       name: 'numOfPlayers',
-      url: 'interfaces/gameus.html#numofplayers',
+      url: 'interfaces/GameUS.html#numOfPlayers',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameUS'
     },
@@ -715,7 +715,7 @@ window.searchData = {
       id: 118,
       kind: 1024,
       name: 'featured',
-      url: 'interfaces/gameus.html#featured',
+      url: 'interfaces/GameUS.html#featured',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameUS'
     },
@@ -723,7 +723,7 @@ window.searchData = {
       id: 119,
       kind: 1024,
       name: 'freeToStart',
-      url: 'interfaces/gameus.html#freetostart',
+      url: 'interfaces/GameUS.html#freeToStart',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameUS'
     },
@@ -731,7 +731,7 @@ window.searchData = {
       id: 120,
       kind: 1024,
       name: 'esrbDescriptors',
-      url: 'interfaces/gameus.html#esrbdescriptors',
+      url: 'interfaces/GameUS.html#esrbDescriptors',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameUS'
     },
@@ -739,7 +739,7 @@ window.searchData = {
       id: 121,
       kind: 1024,
       name: 'franchises',
-      url: 'interfaces/gameus.html#franchises',
+      url: 'interfaces/GameUS.html#franchises',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameUS'
     },
@@ -747,7 +747,7 @@ window.searchData = {
       id: 122,
       kind: 1024,
       name: 'genres',
-      url: 'interfaces/gameus.html#genres',
+      url: 'interfaces/GameUS.html#genres',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameUS'
     },
@@ -755,7 +755,7 @@ window.searchData = {
       id: 123,
       kind: 1024,
       name: 'publishers',
-      url: 'interfaces/gameus.html#publishers',
+      url: 'interfaces/GameUS.html#publishers',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameUS'
     },
@@ -763,7 +763,7 @@ window.searchData = {
       id: 124,
       kind: 1024,
       name: 'developers',
-      url: 'interfaces/gameus.html#developers',
+      url: 'interfaces/GameUS.html#developers',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameUS'
     },
@@ -771,7 +771,7 @@ window.searchData = {
       id: 125,
       kind: 1024,
       name: 'generalFilters',
-      url: 'interfaces/gameus.html#generalfilters',
+      url: 'interfaces/GameUS.html#generalFilters',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameUS'
     },
@@ -779,7 +779,7 @@ window.searchData = {
       id: 126,
       kind: 1024,
       name: 'howToShop',
-      url: 'interfaces/gameus.html#howtoshop',
+      url: 'interfaces/GameUS.html#howToShop',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameUS'
     },
@@ -787,7 +787,7 @@ window.searchData = {
       id: 127,
       kind: 1024,
       name: 'playerFilters',
-      url: 'interfaces/gameus.html#playerfilters',
+      url: 'interfaces/GameUS.html#playerFilters',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameUS'
     },
@@ -795,7 +795,7 @@ window.searchData = {
       id: 128,
       kind: 1024,
       name: 'priceRange',
-      url: 'interfaces/gameus.html#pricerange',
+      url: 'interfaces/GameUS.html#priceRange',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameUS'
     },
@@ -803,7 +803,7 @@ window.searchData = {
       id: 129,
       kind: 1024,
       name: 'msrp',
-      url: 'interfaces/gameus.html#msrp',
+      url: 'interfaces/GameUS.html#msrp',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameUS'
     },
@@ -811,7 +811,7 @@ window.searchData = {
       id: 130,
       kind: 1024,
       name: 'salePrice',
-      url: 'interfaces/gameus.html#saleprice',
+      url: 'interfaces/GameUS.html#salePrice',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameUS'
     },
@@ -819,7 +819,7 @@ window.searchData = {
       id: 131,
       kind: 1024,
       name: 'lowestPrice',
-      url: 'interfaces/gameus.html#lowestprice',
+      url: 'interfaces/GameUS.html#lowestPrice',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameUS'
     },
@@ -827,7 +827,7 @@ window.searchData = {
       id: 132,
       kind: 1024,
       name: 'availability',
-      url: 'interfaces/gameus.html#availability',
+      url: 'interfaces/GameUS.html#availability',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameUS'
     },
@@ -835,16 +835,16 @@ window.searchData = {
       id: 133,
       kind: 1024,
       name: 'objectID',
-      url: 'interfaces/gameus.html#objectid',
+      url: 'interfaces/GameUS.html#objectID',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'GameUS'
     },
-    { id: 134, kind: 256, name: 'HighlightResult', url: 'interfaces/highlightresult.html', classes: 'tsd-kind-interface' },
+    { id: 134, kind: 256, name: 'HighlightResult', url: 'interfaces/HighlightResult.html', classes: 'tsd-kind-interface' },
     {
       id: 135,
       kind: 1024,
       name: 'title',
-      url: 'interfaces/highlightresult.html#title',
+      url: 'interfaces/HighlightResult.html#title',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'HighlightResult'
     },
@@ -852,7 +852,7 @@ window.searchData = {
       id: 136,
       kind: 1024,
       name: 'nsuid',
-      url: 'interfaces/highlightresult.html#nsuid',
+      url: 'interfaces/HighlightResult.html#nsuid',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'HighlightResult'
     },
@@ -860,16 +860,16 @@ window.searchData = {
       id: 137,
       kind: 1024,
       name: 'publishers',
-      url: 'interfaces/highlightresult.html#publishers',
+      url: 'interfaces/HighlightResult.html#publishers',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'HighlightResult'
     },
-    { id: 138, kind: 256, name: 'Nsuid', url: 'interfaces/nsuid.html', classes: 'tsd-kind-interface' },
+    { id: 138, kind: 256, name: 'Nsuid', url: 'interfaces/Nsuid.html', classes: 'tsd-kind-interface' },
     {
       id: 139,
       kind: 1024,
       name: 'value',
-      url: 'interfaces/nsuid.html#value',
+      url: 'interfaces/Nsuid.html#value',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'Nsuid'
     },
@@ -877,7 +877,7 @@ window.searchData = {
       id: 140,
       kind: 1024,
       name: 'matchLevel',
-      url: 'interfaces/nsuid.html#matchlevel',
+      url: 'interfaces/Nsuid.html#matchLevel',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'Nsuid'
     },
@@ -885,7 +885,7 @@ window.searchData = {
       id: 141,
       kind: 1024,
       name: 'matchedWords',
-      url: 'interfaces/nsuid.html#matchedwords',
+      url: 'interfaces/Nsuid.html#matchedWords',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'Nsuid'
     },
@@ -893,16 +893,16 @@ window.searchData = {
       id: 142,
       kind: 1024,
       name: 'fullyHighlighted',
-      url: 'interfaces/nsuid.html#fullyhighlighted',
+      url: 'interfaces/Nsuid.html#fullyHighlighted',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'Nsuid'
     },
-    { id: 143, kind: 256, name: 'PriceResponse', url: 'interfaces/priceresponse.html', classes: 'tsd-kind-interface' },
+    { id: 143, kind: 256, name: 'PriceResponse', url: 'interfaces/PriceResponse.html', classes: 'tsd-kind-interface' },
     {
       id: 144,
       kind: 1024,
       name: 'error',
-      url: 'interfaces/priceresponse.html#error',
+      url: 'interfaces/PriceResponse.html#error',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'PriceResponse'
     },
@@ -910,7 +910,7 @@ window.searchData = {
       id: 145,
       kind: 1024,
       name: 'personalized',
-      url: 'interfaces/priceresponse.html#personalized',
+      url: 'interfaces/PriceResponse.html#personalized',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'PriceResponse'
     },
@@ -918,7 +918,7 @@ window.searchData = {
       id: 146,
       kind: 1024,
       name: 'country',
-      url: 'interfaces/priceresponse.html#country',
+      url: 'interfaces/PriceResponse.html#country',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'PriceResponse'
     },
@@ -926,16 +926,16 @@ window.searchData = {
       id: 147,
       kind: 1024,
       name: 'prices',
-      url: 'interfaces/priceresponse.html#prices',
+      url: 'interfaces/PriceResponse.html#prices',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'PriceResponse'
     },
-    { id: 148, kind: 256, name: 'QueriedGameResult', url: 'interfaces/queriedgameresult.html', classes: 'tsd-kind-interface' },
+    { id: 148, kind: 256, name: 'QueriedGameResult', url: 'interfaces/QueriedGameResult.html', classes: 'tsd-kind-interface' },
     {
       id: 149,
       kind: 1024,
       name: 'hits',
-      url: 'interfaces/queriedgameresult.html#hits',
+      url: 'interfaces/QueriedGameResult.html#hits',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'QueriedGameResult'
     },
@@ -943,7 +943,7 @@ window.searchData = {
       id: 150,
       kind: 1024,
       name: 'nbHits',
-      url: 'interfaces/queriedgameresult.html#nbhits',
+      url: 'interfaces/QueriedGameResult.html#nbHits',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'QueriedGameResult'
     },
@@ -951,7 +951,7 @@ window.searchData = {
       id: 151,
       kind: 1024,
       name: 'page',
-      url: 'interfaces/queriedgameresult.html#page',
+      url: 'interfaces/QueriedGameResult.html#page',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'QueriedGameResult'
     },
@@ -959,7 +959,7 @@ window.searchData = {
       id: 152,
       kind: 1024,
       name: 'nbPages',
-      url: 'interfaces/queriedgameresult.html#nbpages',
+      url: 'interfaces/QueriedGameResult.html#nbPages',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'QueriedGameResult'
     },
@@ -967,7 +967,7 @@ window.searchData = {
       id: 153,
       kind: 1024,
       name: 'hitsPerPage',
-      url: 'interfaces/queriedgameresult.html#hitsperpage',
+      url: 'interfaces/QueriedGameResult.html#hitsPerPage',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'QueriedGameResult'
     },
@@ -975,7 +975,7 @@ window.searchData = {
       id: 154,
       kind: 1024,
       name: 'exhaustiveNbHits',
-      url: 'interfaces/queriedgameresult.html#exhaustivenbhits',
+      url: 'interfaces/QueriedGameResult.html#exhaustiveNbHits',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'QueriedGameResult'
     },
@@ -983,7 +983,7 @@ window.searchData = {
       id: 155,
       kind: 1024,
       name: 'query',
-      url: 'interfaces/queriedgameresult.html#query',
+      url: 'interfaces/QueriedGameResult.html#query',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'QueriedGameResult'
     },
@@ -991,7 +991,7 @@ window.searchData = {
       id: 156,
       kind: 1024,
       name: 'params',
-      url: 'interfaces/queriedgameresult.html#params',
+      url: 'interfaces/QueriedGameResult.html#params',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'QueriedGameResult'
     },
@@ -999,16 +999,16 @@ window.searchData = {
       id: 157,
       kind: 1024,
       name: 'processingTimeMS',
-      url: 'interfaces/queriedgameresult.html#processingtimems',
+      url: 'interfaces/QueriedGameResult.html#processingTimeMS',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'QueriedGameResult'
     },
-    { id: 158, kind: 256, name: 'QueriedGamesAmericaOptions', url: 'interfaces/queriedgamesamericaoptions.html', classes: 'tsd-kind-interface' },
+    { id: 158, kind: 256, name: 'QueriedGamesAmericaOptions', url: 'interfaces/QueriedGamesAmericaOptions.html', classes: 'tsd-kind-interface' },
     {
       id: 159,
       kind: 1024,
       name: 'hitsPerPage',
-      url: 'interfaces/queriedgamesamericaoptions.html#hitsperpage',
+      url: 'interfaces/QueriedGamesAmericaOptions.html#hitsPerPage',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'QueriedGamesAmericaOptions'
     },
@@ -1016,16 +1016,16 @@ window.searchData = {
       id: 160,
       kind: 1024,
       name: 'page',
-      url: 'interfaces/queriedgamesamericaoptions.html#page',
+      url: 'interfaces/QueriedGamesAmericaOptions.html#page',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'QueriedGamesAmericaOptions'
     },
-    { id: 161, kind: 256, name: 'QueriedGameUS', url: 'interfaces/queriedgameus.html', classes: 'tsd-kind-interface' },
+    { id: 161, kind: 256, name: 'QueriedGameUS', url: 'interfaces/QueriedGameUS.html', classes: 'tsd-kind-interface' },
     {
       id: 162,
       kind: 1024,
       name: 'availability',
-      url: 'interfaces/queriedgameus.html#availability',
+      url: 'interfaces/QueriedGameUS.html#availability',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'QueriedGameUS'
     },
@@ -1033,7 +1033,7 @@ window.searchData = {
       id: 163,
       kind: 1024,
       name: 'boxart',
-      url: 'interfaces/queriedgameus.html#boxart',
+      url: 'interfaces/QueriedGameUS.html#boxart',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'QueriedGameUS'
     },
@@ -1041,7 +1041,7 @@ window.searchData = {
       id: 164,
       kind: 1024,
       name: 'description',
-      url: 'interfaces/queriedgameus.html#description',
+      url: 'interfaces/QueriedGameUS.html#description',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'QueriedGameUS'
     },
@@ -1049,7 +1049,7 @@ window.searchData = {
       id: 165,
       kind: 1024,
       name: 'developers',
-      url: 'interfaces/queriedgameus.html#developers',
+      url: 'interfaces/QueriedGameUS.html#developers',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'QueriedGameUS'
     },
@@ -1057,7 +1057,7 @@ window.searchData = {
       id: 166,
       kind: 1024,
       name: 'esrbDescriptors',
-      url: 'interfaces/queriedgameus.html#esrbdescriptors',
+      url: 'interfaces/QueriedGameUS.html#esrbDescriptors',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'QueriedGameUS'
     },
@@ -1065,7 +1065,7 @@ window.searchData = {
       id: 167,
       kind: 1024,
       name: 'esrbRating',
-      url: 'interfaces/queriedgameus.html#esrbrating',
+      url: 'interfaces/QueriedGameUS.html#esrbRating',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'QueriedGameUS'
     },
@@ -1073,7 +1073,7 @@ window.searchData = {
       id: 168,
       kind: 1024,
       name: 'featured',
-      url: 'interfaces/queriedgameus.html#featured',
+      url: 'interfaces/QueriedGameUS.html#featured',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'QueriedGameUS'
     },
@@ -1081,7 +1081,7 @@ window.searchData = {
       id: 169,
       kind: 1024,
       name: 'franchises',
-      url: 'interfaces/queriedgameus.html#franchises',
+      url: 'interfaces/QueriedGameUS.html#franchises',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'QueriedGameUS'
     },
@@ -1089,7 +1089,7 @@ window.searchData = {
       id: 170,
       kind: 1024,
       name: 'freeToStart',
-      url: 'interfaces/queriedgameus.html#freetostart',
+      url: 'interfaces/QueriedGameUS.html#freeToStart',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'QueriedGameUS'
     },
@@ -1097,7 +1097,7 @@ window.searchData = {
       id: 171,
       kind: 1024,
       name: 'generalFilters',
-      url: 'interfaces/queriedgameus.html#generalfilters',
+      url: 'interfaces/QueriedGameUS.html#generalFilters',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'QueriedGameUS'
     },
@@ -1105,7 +1105,7 @@ window.searchData = {
       id: 172,
       kind: 1024,
       name: 'genres',
-      url: 'interfaces/queriedgameus.html#genres',
+      url: 'interfaces/QueriedGameUS.html#genres',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'QueriedGameUS'
     },
@@ -1113,7 +1113,7 @@ window.searchData = {
       id: 173,
       kind: 1024,
       name: 'horizontalHeaderImage',
-      url: 'interfaces/queriedgameus.html#horizontalheaderimage',
+      url: 'interfaces/QueriedGameUS.html#horizontalHeaderImage',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'QueriedGameUS'
     },
@@ -1121,7 +1121,7 @@ window.searchData = {
       id: 174,
       kind: 1024,
       name: 'howToShop',
-      url: 'interfaces/queriedgameus.html#howtoshop',
+      url: 'interfaces/QueriedGameUS.html#howToShop',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'QueriedGameUS'
     },
@@ -1129,7 +1129,7 @@ window.searchData = {
       id: 175,
       kind: 1024,
       name: 'lastModified',
-      url: 'interfaces/queriedgameus.html#lastmodified',
+      url: 'interfaces/QueriedGameUS.html#lastModified',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'QueriedGameUS'
     },
@@ -1137,7 +1137,7 @@ window.searchData = {
       id: 176,
       kind: 1024,
       name: 'lowestPrice',
-      url: 'interfaces/queriedgameus.html#lowestprice',
+      url: 'interfaces/QueriedGameUS.html#lowestPrice',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'QueriedGameUS'
     },
@@ -1145,7 +1145,7 @@ window.searchData = {
       id: 177,
       kind: 1024,
       name: 'msrp',
-      url: 'interfaces/queriedgameus.html#msrp',
+      url: 'interfaces/QueriedGameUS.html#msrp',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'QueriedGameUS'
     },
@@ -1153,7 +1153,7 @@ window.searchData = {
       id: 178,
       kind: 1024,
       name: 'nsuid',
-      url: 'interfaces/queriedgameus.html#nsuid',
+      url: 'interfaces/QueriedGameUS.html#nsuid',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'QueriedGameUS'
     },
@@ -1161,7 +1161,7 @@ window.searchData = {
       id: 179,
       kind: 1024,
       name: 'numOfPlayers',
-      url: 'interfaces/queriedgameus.html#numofplayers',
+      url: 'interfaces/QueriedGameUS.html#numOfPlayers',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'QueriedGameUS'
     },
@@ -1169,7 +1169,7 @@ window.searchData = {
       id: 180,
       kind: 1024,
       name: 'objectID',
-      url: 'interfaces/queriedgameus.html#objectid',
+      url: 'interfaces/QueriedGameUS.html#objectID',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'QueriedGameUS'
     },
@@ -1177,7 +1177,7 @@ window.searchData = {
       id: 181,
       kind: 1024,
       name: 'platform',
-      url: 'interfaces/queriedgameus.html#platform',
+      url: 'interfaces/QueriedGameUS.html#platform',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'QueriedGameUS'
     },
@@ -1185,7 +1185,7 @@ window.searchData = {
       id: 182,
       kind: 1024,
       name: 'playerFilters',
-      url: 'interfaces/queriedgameus.html#playerfilters',
+      url: 'interfaces/QueriedGameUS.html#playerFilters',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'QueriedGameUS'
     },
@@ -1193,7 +1193,7 @@ window.searchData = {
       id: 183,
       kind: 1024,
       name: 'priceRange',
-      url: 'interfaces/queriedgameus.html#pricerange',
+      url: 'interfaces/QueriedGameUS.html#priceRange',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'QueriedGameUS'
     },
@@ -1201,7 +1201,7 @@ window.searchData = {
       id: 184,
       kind: 1024,
       name: 'publishers',
-      url: 'interfaces/queriedgameus.html#publishers',
+      url: 'interfaces/QueriedGameUS.html#publishers',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'QueriedGameUS'
     },
@@ -1209,7 +1209,7 @@ window.searchData = {
       id: 185,
       kind: 1024,
       name: 'releaseDateDisplay',
-      url: 'interfaces/queriedgameus.html#releasedatedisplay',
+      url: 'interfaces/QueriedGameUS.html#releaseDateDisplay',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'QueriedGameUS'
     },
@@ -1217,7 +1217,7 @@ window.searchData = {
       id: 186,
       kind: 1024,
       name: 'salePrice',
-      url: 'interfaces/queriedgameus.html#saleprice',
+      url: 'interfaces/QueriedGameUS.html#salePrice',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'QueriedGameUS'
     },
@@ -1225,7 +1225,7 @@ window.searchData = {
       id: 187,
       kind: 1024,
       name: 'slug',
-      url: 'interfaces/queriedgameus.html#slug',
+      url: 'interfaces/QueriedGameUS.html#slug',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'QueriedGameUS'
     },
@@ -1233,7 +1233,7 @@ window.searchData = {
       id: 188,
       kind: 1024,
       name: 'title',
-      url: 'interfaces/queriedgameus.html#title',
+      url: 'interfaces/QueriedGameUS.html#title',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'QueriedGameUS'
     },
@@ -1241,7 +1241,7 @@ window.searchData = {
       id: 189,
       kind: 1024,
       name: 'url',
-      url: 'interfaces/queriedgameus.html#url',
+      url: 'interfaces/QueriedGameUS.html#url',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'QueriedGameUS'
     },
@@ -1249,7 +1249,7 @@ window.searchData = {
       id: 190,
       kind: 1024,
       name: '_distinctSeqID',
-      url: 'interfaces/queriedgameus.html#_distinctseqid',
+      url: 'interfaces/QueriedGameUS.html#_distinctSeqID',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'QueriedGameUS'
     },
@@ -1257,16 +1257,16 @@ window.searchData = {
       id: 191,
       kind: 1024,
       name: '_highlightResult',
-      url: 'interfaces/queriedgameus.html#_highlightresult',
+      url: 'interfaces/QueriedGameUS.html#_highlightResult',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'QueriedGameUS'
     },
-    { id: 192, kind: 256, name: 'TitleData', url: 'interfaces/titledata.html', classes: 'tsd-kind-interface' },
+    { id: 192, kind: 256, name: 'TitleData', url: 'interfaces/TitleData.html', classes: 'tsd-kind-interface' },
     {
       id: 193,
       kind: 1024,
       name: 'title_id',
-      url: 'interfaces/titledata.html#title_id',
+      url: 'interfaces/TitleData.html#title_id',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'TitleData'
     },
@@ -1274,7 +1274,7 @@ window.searchData = {
       id: 194,
       kind: 1024,
       name: 'sales_status',
-      url: 'interfaces/titledata.html#sales_status',
+      url: 'interfaces/TitleData.html#sales_status',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'TitleData'
     },
@@ -1282,7 +1282,7 @@ window.searchData = {
       id: 195,
       kind: 1024,
       name: 'regular_price',
-      url: 'interfaces/titledata.html#regular_price',
+      url: 'interfaces/TitleData.html#regular_price',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'TitleData'
     },
@@ -1290,16 +1290,16 @@ window.searchData = {
       id: 196,
       kind: 1024,
       name: 'discount_price',
-      url: 'interfaces/titledata.html#discount_price',
+      url: 'interfaces/TitleData.html#discount_price',
       classes: 'tsd-kind-property tsd-parent-kind-interface',
       parent: 'TitleData'
     },
-    { id: 197, kind: 128, name: 'EshopError', url: 'classes/eshoperror.html', classes: 'tsd-kind-class' },
+    { id: 197, kind: 128, name: 'EshopError', url: 'classes/EshopError.html', classes: 'tsd-kind-class' },
     {
       id: 198,
       kind: 512,
       name: 'constructor',
-      url: 'classes/eshoperror.html#constructor',
+      url: 'classes/EshopError.html#constructor',
       classes: 'tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite',
       parent: 'EshopError'
     }

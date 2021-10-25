@@ -2,22 +2,25 @@
 <html class="default no-js">
   <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="x-ua-compatible" content="IE=edge" />
     <title>EURequestOptions | Nintendo Switch EShop</title>
     <meta name="description" content="Documentation for Nintendo Switch EShop" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="../assets/css/main.css" />
-    <script async src="../assets/js/search.js" id="search-script"></script>
+    <link rel="stylesheet" href="../assets/style.css" />
+    <link rel="stylesheet" href="../assets/highlight.css" />
+    <script async src="../assets/search.js" id="search-script"></script>
   </head>
   <body>
+    <script>
+      document.body.classList.add(localStorage.getItem('tsd-theme') || 'os');
+    </script>
     <header>
       <div class="tsd-page-toolbar">
         <div class="container">
           <div class="table-wrap">
-            <div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+            <div class="table-cell" id="tsd-search" data-base="..">
               <div class="field">
-                <label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
-                <input id="tsd-search-field" type="text" />
+                <label for="tsd-search-field" class="tsd-widget search no-caption">Search</label><input type="text" id="tsd-search-field" />
               </div>
               <ul class="results">
                 <li class="state loading">Preparing search index...</li>
@@ -37,8 +40,7 @@
                       <li data-value="private" class="selected">All</li>
                     </ul>
                   </div>
-                  <input type="checkbox" id="tsd-filter-inherited" checked />
-                  <label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+                  <input type="checkbox" id="tsd-filter-inherited" checked /><label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
                 </div>
               </div>
               <a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
@@ -49,12 +51,8 @@
       <div class="tsd-page-title">
         <div class="container">
           <ul class="tsd-breadcrumb">
-            <li>
-              <a href="../modules.html">Nintendo Switch EShop</a>
-            </li>
-            <li>
-              <a href="eurequestoptions.html">EURequestOptions</a>
-            </li>
+            <li><a href="../modules.html">Nintendo Switch EShop</a></li>
+            <li><a href="EURequestOptions.html">EURequestOptions</a></li>
           </ul>
           <h1>Interface EURequestOptions</h1>
         </div>
@@ -69,9 +67,7 @@
               <li>
                 <span class="tsd-signature-type">RequestOptions</span>
                 <ul class="tsd-hierarchy">
-                  <li>
-                    <span class="target">EURequestOptions</span>
-                  </li>
+                  <li><span class="target">EURequestOptions</span></li>
                 </ul>
               </li>
             </ul>
@@ -84,10 +80,10 @@
                   <h3>Properties</h3>
                   <ul class="tsd-index-list">
                     <li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-                      <a href="eurequestoptions.html#limit" class="tsd-kind-icon">limit</a>
+                      <a href="EURequestOptions.html#limit" class="tsd-kind-icon">limit</a>
                     </li>
                     <li class="tsd-kind-property tsd-parent-kind-interface">
-                      <a href="eurequestoptions.html#locale" class="tsd-kind-icon">locale</a>
+                      <a href="EURequestOptions.html#locale" class="tsd-kind-icon">locale</a>
                     </li>
                   </ul>
                 </section>
@@ -97,17 +93,17 @@
           <section class="tsd-panel-group tsd-member-group">
             <h2>Properties</h2>
             <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-              <a name="limit" class="tsd-anchor"></a>
+              <a id="limit" class="tsd-anchor"></a>
               <h3><span class="tsd-flag ts-flagOptional">Optional</span> limit</h3>
               <div class="tsd-signature tsd-kind-icon">
-                limit<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span>
+                limit<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">number</span>
               </div>
               <aside class="tsd-sources">
                 <p>Inherited from RequestOptions.limit</p>
                 <ul>
                   <li>
                     Defined in
-                    <a href="https://github.com/lmmfranco/nintendo-switch-eshop/blob/a38aa3b/src/lib/utils/interfaces.ts#L335"
+                    <a href="https://github.com/lmmfranco/nintendo-switch-eshop/blob/6ce77e6/src/lib/utils/interfaces.ts#L335"
                       >lib/utils/interfaces.ts:335</a
                     >
                   </li>
@@ -124,16 +120,16 @@
               </div>
             </section>
             <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-              <a name="locale" class="tsd-anchor"></a>
+              <a id="locale" class="tsd-anchor"></a>
               <h3><span class="tsd-flag ts-flagOptional">Optional</span> locale</h3>
               <div class="tsd-signature tsd-kind-icon">
-                locale<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span>
+                locale<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span>
               </div>
               <aside class="tsd-sources">
                 <ul>
                   <li>
                     Defined in
-                    <a href="https://github.com/lmmfranco/nintendo-switch-eshop/blob/a38aa3b/src/lib/utils/interfaces.ts#L340"
+                    <a href="https://github.com/lmmfranco/nintendo-switch-eshop/blob/6ce77e6/src/lib/utils/interfaces.ts#L340"
                       >lib/utils/interfaces.ts:340</a
                     >
                   </li>
@@ -150,132 +146,19 @@
         <div class="col-4 col-menu menu-sticky-wrap menu-highlight">
           <nav class="tsd-navigation primary">
             <ul>
-              <li class="">
-                <a href="../modules.html">Exports</a>
-              </li>
+              <li class=""><a href="../modules.html">Exports</a></li>
             </ul>
           </nav>
           <nav class="tsd-navigation secondary menu-sticky">
-            <ul class="before-current">
-              <li class="tsd-kind-reference">
-                <a href="../modules.html#getgamesamerica" class="tsd-kind-icon">get<wbr />Games<wbr />America</a>
-              </li>
-              <li class="tsd-kind-enum">
-                <a href="../enums/region.html" class="tsd-kind-icon">Region</a>
-              </li>
-              <li class="tsd-kind-class">
-                <a href="../classes/eshoperror.html" class="tsd-kind-icon">Eshop<wbr />Error</a>
-              </li>
-              <li class="tsd-kind-interface">
-                <a href="eshop.html" class="tsd-kind-icon">EShop</a>
-              </li>
-            </ul>
-            <ul class="current">
+            <ul>
               <li class="current tsd-kind-interface">
-                <a href="eurequestoptions.html" class="tsd-kind-icon">EURequest<wbr />Options</a>
+                <a href="EURequestOptions.html" class="tsd-kind-icon">EURequest<wbr />Options</a>
                 <ul>
                   <li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-                    <a href="eurequestoptions.html#limit" class="tsd-kind-icon">limit</a>
+                    <a href="EURequestOptions.html#limit" class="tsd-kind-icon">limit</a>
                   </li>
-                  <li class="tsd-kind-property tsd-parent-kind-interface">
-                    <a href="eurequestoptions.html#locale" class="tsd-kind-icon">locale</a>
-                  </li>
+                  <li class="tsd-kind-property tsd-parent-kind-interface"><a href="EURequestOptions.html#locale" class="tsd-kind-icon">locale</a></li>
                 </ul>
-              </li>
-            </ul>
-            <ul class="after-current">
-              <li class="tsd-kind-interface">
-                <a href="gameeu.html" class="tsd-kind-icon">GameEU</a>
-              </li>
-              <li class="tsd-kind-interface">
-                <a href="gamejp.html" class="tsd-kind-icon">GameJP</a>
-              </li>
-              <li class="tsd-kind-interface">
-                <a href="gameus.html" class="tsd-kind-icon">GameUS</a>
-              </li>
-              <li class="tsd-kind-interface">
-                <a href="highlightresult.html" class="tsd-kind-icon">Highlight<wbr />Result</a>
-              </li>
-              <li class="tsd-kind-interface">
-                <a href="nsuid.html" class="tsd-kind-icon">Nsuid</a>
-              </li>
-              <li class="tsd-kind-interface">
-                <a href="priceresponse.html" class="tsd-kind-icon">Price<wbr />Response</a>
-              </li>
-              <li class="tsd-kind-interface">
-                <a href="queriedgameresult.html" class="tsd-kind-icon">Queried<wbr />Game<wbr />Result</a>
-              </li>
-              <li class="tsd-kind-interface">
-                <a href="queriedgameus.html" class="tsd-kind-icon">Queried<wbr />GameUS</a>
-              </li>
-              <li class="tsd-kind-interface">
-                <a href="queriedgamesamericaoptions.html" class="tsd-kind-icon">Queried<wbr />Games<wbr />America<wbr />Options</a>
-              </li>
-              <li class="tsd-kind-interface">
-                <a href="titledata.html" class="tsd-kind-icon">Title<wbr />Data</a>
-              </li>
-              <li class="tsd-kind-variable">
-                <a href="../modules.html#eu_get_games_url" class="tsd-kind-icon">EU_<wbr />GET_<wbr />GAMES_<wbr />URL</a>
-              </li>
-              <li class="tsd-kind-variable">
-                <a href="../modules.html#jp_get_games_url" class="tsd-kind-icon">JP_<wbr />GET_<wbr />GAMES_<wbr />URL</a>
-              </li>
-              <li class="tsd-kind-variable">
-                <a href="../modules.html#price_get_url" class="tsd-kind-icon">PRICE_<wbr />GET_<wbr />URL</a>
-              </li>
-              <li class="tsd-kind-variable">
-                <a href="../modules.html#queried_us_algolia_key" class="tsd-kind-icon">QUERIED_<wbr />US_<wbr />ALGOLIA_<wbr />KEY</a>
-              </li>
-              <li class="tsd-kind-variable">
-                <a href="../modules.html#queried_us_get_games_url" class="tsd-kind-icon">QUERIED_<wbr />US_<wbr />GET_<wbr />GAMES_<wbr />URL</a>
-              </li>
-              <li class="tsd-kind-variable">
-                <a href="../modules.html#us_algolia_headers" class="tsd-kind-icon">US_<wbr />ALGOLIA_<wbr />HEADERS</a>
-              </li>
-              <li class="tsd-kind-variable">
-                <a href="../modules.html#us_algolia_id" class="tsd-kind-icon">US_<wbr />ALGOLIA_<wbr />ID</a>
-              </li>
-              <li class="tsd-kind-variable">
-                <a href="../modules.html#us_algolia_key" class="tsd-kind-icon">US_<wbr />ALGOLIA_<wbr />KEY</a>
-              </li>
-              <li class="tsd-kind-variable">
-                <a href="../modules.html#us_get_games_url" class="tsd-kind-icon">US_<wbr />GET_<wbr />GAMES_<wbr />URL</a>
-              </li>
-              <li class="tsd-kind-function">
-                <a href="../modules.html#default" class="tsd-kind-icon">default</a>
-              </li>
-              <li class="tsd-kind-function">
-                <a href="../modules.html#getactiveshops" class="tsd-kind-icon">get<wbr />Active<wbr />Shops</a>
-              </li>
-              <li class="tsd-kind-function">
-                <a href="../modules.html#getgameseurope" class="tsd-kind-icon">get<wbr />Games<wbr />Europe</a>
-              </li>
-              <li class="tsd-kind-function">
-                <a href="../modules.html#getgamesjapan" class="tsd-kind-icon">get<wbr />Games<wbr />Japan</a>
-              </li>
-              <li class="tsd-kind-function">
-                <a href="../modules.html#getprices" class="tsd-kind-icon">get<wbr />Prices</a>
-              </li>
-              <li class="tsd-kind-function">
-                <a href="../modules.html#getqueriedgamesamerica" class="tsd-kind-icon">get<wbr />Queried<wbr />Games<wbr />America</a>
-              </li>
-              <li class="tsd-kind-function">
-                <a href="../modules.html#getshopsamerica" class="tsd-kind-icon">get<wbr />Shops<wbr />America</a>
-              </li>
-              <li class="tsd-kind-function">
-                <a href="../modules.html#getshopsasia" class="tsd-kind-icon">get<wbr />Shops<wbr />Asia</a>
-              </li>
-              <li class="tsd-kind-function">
-                <a href="../modules.html#getshopsbycountrycodes" class="tsd-kind-icon">get<wbr />Shops<wbr />ByCountry<wbr />Codes</a>
-              </li>
-              <li class="tsd-kind-function">
-                <a href="../modules.html#getshopseurope" class="tsd-kind-icon">get<wbr />Shops<wbr />Europe</a>
-              </li>
-              <li class="tsd-kind-function">
-                <a href="../modules.html#parsegamecode" class="tsd-kind-icon">parse<wbr />Game<wbr />Code</a>
-              </li>
-              <li class="tsd-kind-function">
-                <a href="../modules.html#parsensuid" class="tsd-kind-icon">parseNSUID</a>
               </li>
             </ul>
           </nav>
@@ -293,12 +176,21 @@
             <li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
           </ul>
         </div>
+        <h2>Settings</h2>
+        <p>
+          Theme
+          <select id="theme">
+            <option value="os">OS</option>
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+          </select>
+        </p>
       </div>
     </footer>
     <div class="container tsd-generator">
       <p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
     </div>
     <div class="overlay"></div>
-    <script src="../assets/js/main.js"></script>
+    <script src="../assets/main.js"></script>
   </body>
 </html>

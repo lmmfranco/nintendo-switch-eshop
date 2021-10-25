@@ -1,9 +1,0 @@
-pull_request_rules:
-  - name: Automatic Dependabot merging
-    conditions:
-      - author=dependabot[bot]
-      - base=master
-      - label~=^Meta:\ Dependencies
-    actions:
-      merge:
-        method: squash

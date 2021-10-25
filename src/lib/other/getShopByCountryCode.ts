@@ -38,8 +38,10 @@ export const getShopsByCountryCodes = async (countryCodes: string[], gameCode: s
 
     return eShops;
   } catch (err) {
-    if (/(?:ACTIVE_SHOPS_Rate_Limit)/i.test(err.toString()))
+    if (/(?:ACTIVE_SHOPS_Rate_Limit)/i.test((err as Error).message)) {
       throw new Error('Looks like you ran into a rate limit while getting price data, please do not spam the Nintendo servers.');
-    throw new Error(err);
+    }
+
+    throw err as Error;
   }
 };

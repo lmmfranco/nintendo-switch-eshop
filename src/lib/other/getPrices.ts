@@ -1,4 +1,4 @@
-import fetch from 'node-fetch';
+import { fetch, FetchResultTypes } from '@sapphire/fetch';
 import { stringify } from 'querystring';
 import { PRICE_GET_OPTIONS, PRICE_GET_URL, PRICE_LIST_LIMIT } from '../utils/constants';
 import type { PriceResponse, TitleData } from '../utils/interfaces';
@@ -16,18 +16,15 @@ import { EshopError } from '../utils/utils';
 export const getPrices = async (country: string, gameIds: string[] | string, offset = 0, prices: TitleData[] = []): Promise<PriceResponse> => {
   try {
     const filteredIds = gameIds.slice(offset, offset + PRICE_LIST_LIMIT);
-    const priceData = await fetch(
+    const response = await fetch<PriceResponse>(
       `${PRICE_GET_URL}?${stringify({
         country,
         ids: filteredIds,
         limit: PRICE_LIST_LIMIT,
         ...PRICE_GET_OPTIONS
-      })}`
+      })}`,
+      FetchResultTypes.JSON
     );
-
-    if (priceData.status === 403) throw new Error('PRICE_Rate_Limit');
-    if (!priceData.ok) throw new Error('PRICE_get_request_failed');
-    const response: PriceResponse = await priceData.json();
 
     if (response.prices && response.prices.length + offset < gameIds.length) {
       const accumulatedPrices = prices.concat(response.prices);
@@ -41,9 +38,12 @@ export const getPrices = async (country: string, gameIds: string[] | string, off
 
     return response;
   } catch (err) {
-    if (/(?:PRICE_Rate_Limit)/i.test(err.toString()))
+    if (/(?:PRICE_Rate_Limit)/i.test((err as Error).message)) {
       throw new EshopError('Looks like you ran into a rate limit while getting price data, please do not spam the Nintendo servers.');
-    if (/(?:PRICE_get_request_failed)/i.test(err.toString())) throw new EshopError('Fetching of eShop prices failed');
+    }
+    if (/(?:PRICE_get_request_failed)/i.test((err as Error).message)) {
+      throw new EshopError('Fetching of eShop prices failed');
+    }
     throw err;
   }
 };

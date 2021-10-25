@@ -19,6 +19,6 @@ export const getActiveShops = async (): Promise<EShop[]> => {
 
     return shopsAmerica.concat(shopsAsia, shopsEurope);
   } catch (err) {
-    throw new Error(err);
+    throw err as Error;
   }
 };

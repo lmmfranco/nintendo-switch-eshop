@@ -1,4 +1,4 @@
-import fetch from 'node-fetch';
+import { fetch, FetchResultTypes } from '@sapphire/fetch';
 import { stringify } from 'querystring';
 import { US_ALGOLIA_HEADERS, US_GET_GAMES_URL } from '../utils/constants';
 import type { AlgoliaResponse, GameUS } from '../utils/interfaces';
@@ -72,9 +72,7 @@ export const getGamesAmerica = async (): Promise<GameUS[]> => {
   };
 
   try {
-    const allGamesResponse = await fetch(US_GET_GAMES_URL, requestOptions);
-    if (!allGamesResponse.ok) throw new Error('US_games_request_failed');
-    const gamesResponse: AlgoliaResponse = await allGamesResponse.json();
+    const gamesResponse = await fetch<AlgoliaResponse>(US_GET_GAMES_URL, requestOptions, FetchResultTypes.JSON);
 
     let allGames: any[] | PromiseLike<GameUS[]> = [];
     for (const results of gamesResponse.results) {
@@ -84,7 +82,9 @@ export const getGamesAmerica = async (): Promise<GameUS[]> => {
     allGames = arrayRemoveDuplicates(allGames, 'slug');
     return allGames;
   } catch (err) {
-    if (/(?:US_games_request_failed)/i.test(err.toString())) throw new EshopError('Fetching of US Games failed');
+    if (/(?:US_games_request_failed)/i.test((err as Error).message)) {
+      throw new EshopError('Fetching of US Games failed');
+    }
     throw err;
   }
 };
