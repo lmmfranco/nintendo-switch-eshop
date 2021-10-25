@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.0.2](https://github.com/lmmfranco/nintendo-switch-eshop/compare/v6.0.1...v6.0.2) (2021-10-25)
+
+### Bug Fixes
+
+- rework some internals ([08c5d52](https://github.com/lmmfranco/nintendo-switch-eshop/commit/08c5d52a870306d1b561b9fdc25f18d3f96e4df6))
+
 ### [6.0.1](https://github.com/lmmfranco/nintendo-switch-eshop/compare/v6.0.0...v6.0.1) (2021-06-20)
 
 ### Bug Fixes
