@@ -4,5 +4,13 @@
     "allowJs": true,
     "checkJs": true
   },
-  "include": ["src", "__tests__", "jest.config.ts"]
+  "include": [
+    "src",
+    "__tests__",
+    "jest.config.ts",
+    "documentation/src",
+    "documentation/docusaurus.config.js",
+    "documentation/babel.config.js",
+    "documentation/sidebars.js"
+  ]
 }

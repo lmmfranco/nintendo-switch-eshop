@@ -1,0 +1,76 @@
+:root {
+  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary-dark: rgb(33, 175, 144);
+  --ifm-color-primary-darker: rgb(31, 165, 136);
+  --ifm-color-primary-darkest: rgb(26, 136, 112);
+  --ifm-color-primary-light: rgb(70, 203, 174);
+  --ifm-color-primary-lighter: rgb(102, 212, 189);
+  --ifm-color-primary-lightest: rgb(146, 224, 208);
+  --ifm-code-font-size: 95%;
+  --ifm-font-family-monospace: 'Fira Code', 'Meslo NGF', 'JetBrains Mono', 'Menlo', SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+    'Courier New', monospace;
+
+  --sapphire-paper-drop-shadow-4: rgb(0 0 0 / 20%) 0px 2px 4px -1px, rgb(0 0 0 / 14%) 0px 4px 5px 0px, rgb(0 0 0 / 12%) 0px 1px 10px 0px;
+}
+
+html[data-theme='dark'] {
+  --sapphire-paper-drop-shadow-4: rgb(0 0 0 / 20%) 0px 2px 4px -1px, rgb(0 0 0 / 14%) 0px 4px 5px 0px, rgb(0 0 0 / 12%) 0px 1px 10px 0px;
+}
+
+.docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+}
+
+.docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+}
+
+html[data-theme='dark'] .docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.prism-code.language-typescript,
+.prism-code.language-javascript {
+  counter-reset: line-number;
+}
+
+.prism-code.language-typescript .token-line::marker,
+.prism-code.language-javascript .token-line::marker {
+  color: var(--ifm-color-gray-700);
+  content: counter(line-number);
+}
+
+.prism-code.language-typescript .token-line,
+.prism-code.language-javascript .token-line {
+  counter-increment: line-number;
+  display: list-item;
+  padding-left: var(--ifm-pre-padding);
+  margin-left: var(--ifm-global-spacing);
+}
+
+.footer--dark {
+  --ifm-footer-background-color: var(--ifm-footer-background-color);
+  --ifm-footer-color: var(--ifm-font-color-base);
+  --ifm-footer-link-color: var(--ifm-link-color);
+  --ifm-footer-title-color: var(--ifm-font-color-base);
+}
+
+@media screen and (min-width: 966px) {
+  footer > .container {
+    display: grid;
+    place-content: center;
+  }
+}
+
+@media screen and (max-width: 966px) {
+  footer > div > div.row.footer__links {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}

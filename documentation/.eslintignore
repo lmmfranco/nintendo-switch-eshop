@@ -1,0 +1,7 @@
+# Node modules
+node_modules/
+
+# Generated data
+.docusaurus/
+
+src/index.d.ts

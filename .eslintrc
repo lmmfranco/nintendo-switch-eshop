@@ -1,7 +1,5 @@
 {
-  "extends": [
-    "@sapphire"
-  ],
+  "extends": ["@sapphire"],
   "rules": {
     "no-case-declarations": "off"
   }

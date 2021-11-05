@@ -1,6 +1,9 @@
 {
   "name": "nintendo-switch-eshop",
   "version": "6.0.2",
+  "workspaces": [
+    "documentation/"
+  ],
   "description": "Unofficial API lib for Nintendo Switch eShop game listing and pricing information.",
   "author": "lmmfranco",
   "license": "Apache-2.0",
@@ -12,11 +15,10 @@
   },
   "scripts": {
     "test": "jest",
-    "lint": "eslint src __tests__ --ext js,ts --fix",
+    "lint": "eslint src __tests__ docummentation/src --ext mjs,js,ts --fix",
     "build": "tsc -b src && gen-esm-wrapper dist/index.js dist/index.mjs",
     "watch": "tsc -b src -w",
     "clean": "tsc -b src --clean",
-    "docs": "typedoc",
     "sversion": "standard-version",
     "update": "yarn upgrade-interactive",
     "prepublishOnly": "yarn build",
@@ -54,7 +56,6 @@
     "standard-version": "^9.3.2",
     "ts-jest": "^27.0.7",
     "ts-node": "^10.4.0",
-    "typedoc": "^0.22.7",
     "typescript": "^4.4.4"
   },
   "files": [
