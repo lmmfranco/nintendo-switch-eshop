@@ -16,7 +16,7 @@ Predefined options for the unit system
 
 #### Defined in
 
-[lib/utils/constants.ts:114](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/utils/constants.ts#L114)
+[lib/utils/constants.ts:114](https://github.com/lmmfranco/nintendo-switch-eshop/blob/45a9477/src/lib/utils/constants.ts#L114)
 
 ___
 
@@ -26,7 +26,7 @@ ___
 
 #### Defined in
 
-[lib/utils/constants.ts:116](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/utils/constants.ts#L116)
+[lib/utils/constants.ts:116](https://github.com/lmmfranco/nintendo-switch-eshop/blob/45a9477/src/lib/utils/constants.ts#L116)
 
 ___
 
@@ -36,4 +36,4 @@ ___
 
 #### Defined in
 
-[lib/utils/constants.ts:115](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/utils/constants.ts#L115)
+[lib/utils/constants.ts:115](https://github.com/lmmfranco/nintendo-switch-eshop/blob/45a9477/src/lib/utils/constants.ts#L115)

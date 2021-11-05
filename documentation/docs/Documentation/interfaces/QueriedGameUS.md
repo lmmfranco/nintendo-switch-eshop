@@ -16,7 +16,7 @@ Additional information returned by the API, it doesn't really serve any purpose 
 
 #### Defined in
 
-[lib/utils/interfaces.ts:155](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/utils/interfaces.ts#L155)
+[lib/utils/interfaces.ts:155](https://github.com/lmmfranco/nintendo-switch-eshop/blob/45a9477/src/lib/utils/interfaces.ts#L155)
 
 ___
 
@@ -28,7 +28,7 @@ Additional information returned by the API, it doesn't really serve any purpose 
 
 #### Defined in
 
-[lib/utils/interfaces.ts:157](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/utils/interfaces.ts#L157)
+[lib/utils/interfaces.ts:157](https://github.com/lmmfranco/nintendo-switch-eshop/blob/45a9477/src/lib/utils/interfaces.ts#L157)
 
 ___
 
@@ -40,7 +40,7 @@ Whether this game is available or not
 
 #### Defined in
 
-[lib/utils/interfaces.ts:96](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/utils/interfaces.ts#L96)
+[lib/utils/interfaces.ts:96](https://github.com/lmmfranco/nintendo-switch-eshop/blob/45a9477/src/lib/utils/interfaces.ts#L96)
 
 ___
 
@@ -52,7 +52,7 @@ The box art of the game, if any. Generally undefined for games that are yet to r
 
 #### Defined in
 
-[lib/utils/interfaces.ts:98](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/utils/interfaces.ts#L98)
+[lib/utils/interfaces.ts:98](https://github.com/lmmfranco/nintendo-switch-eshop/blob/45a9477/src/lib/utils/interfaces.ts#L98)
 
 ___
 
@@ -64,7 +64,7 @@ A description about this game
 
 #### Defined in
 
-[lib/utils/interfaces.ts:100](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/utils/interfaces.ts#L100)
+[lib/utils/interfaces.ts:100](https://github.com/lmmfranco/nintendo-switch-eshop/blob/45a9477/src/lib/utils/interfaces.ts#L100)
 
 ___
 
@@ -76,7 +76,7 @@ A list of companies that developed this game
 
 #### Defined in
 
-[lib/utils/interfaces.ts:102](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/utils/interfaces.ts#L102)
+[lib/utils/interfaces.ts:102](https://github.com/lmmfranco/nintendo-switch-eshop/blob/45a9477/src/lib/utils/interfaces.ts#L102)
 
 ___
 
@@ -88,7 +88,7 @@ A list of [ESRB descriptors](https://www.esrb.org/ratings-guide/)
 
 #### Defined in
 
-[lib/utils/interfaces.ts:104](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/utils/interfaces.ts#L104)
+[lib/utils/interfaces.ts:104](https://github.com/lmmfranco/nintendo-switch-eshop/blob/45a9477/src/lib/utils/interfaces.ts#L104)
 
 ___
 
@@ -100,7 +100,7 @@ The [ESRB Rating](https://www.esrb.org/ratings-guide/)
 
 #### Defined in
 
-[lib/utils/interfaces.ts:106](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/utils/interfaces.ts#L106)
+[lib/utils/interfaces.ts:106](https://github.com/lmmfranco/nintendo-switch-eshop/blob/45a9477/src/lib/utils/interfaces.ts#L106)
 
 ___
 
@@ -112,7 +112,7 @@ Whether this game is featured on the [nintendo.com](https://www.nintendo.com) ho
 
 #### Defined in
 
-[lib/utils/interfaces.ts:108](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/utils/interfaces.ts#L108)
+[lib/utils/interfaces.ts:108](https://github.com/lmmfranco/nintendo-switch-eshop/blob/45a9477/src/lib/utils/interfaces.ts#L108)
 
 ___
 
@@ -124,7 +124,7 @@ The franchises this game is a part of
 
 #### Defined in
 
-[lib/utils/interfaces.ts:110](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/utils/interfaces.ts#L110)
+[lib/utils/interfaces.ts:110](https://github.com/lmmfranco/nintendo-switch-eshop/blob/45a9477/src/lib/utils/interfaces.ts#L110)
 
 ___
 
@@ -136,7 +136,7 @@ Whether this game is free to start
 
 #### Defined in
 
-[lib/utils/interfaces.ts:112](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/utils/interfaces.ts#L112)
+[lib/utils/interfaces.ts:112](https://github.com/lmmfranco/nintendo-switch-eshop/blob/45a9477/src/lib/utils/interfaces.ts#L112)
 
 ___
 
@@ -148,7 +148,7 @@ A list of general filters that could potentially be searched on [nintendo.com](h
 
 #### Defined in
 
-[lib/utils/interfaces.ts:114](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/utils/interfaces.ts#L114)
+[lib/utils/interfaces.ts:114](https://github.com/lmmfranco/nintendo-switch-eshop/blob/45a9477/src/lib/utils/interfaces.ts#L114)
 
 ___
 
@@ -160,7 +160,7 @@ A list of genres this game
 
 #### Defined in
 
-[lib/utils/interfaces.ts:116](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/utils/interfaces.ts#L116)
+[lib/utils/interfaces.ts:116](https://github.com/lmmfranco/nintendo-switch-eshop/blob/45a9477/src/lib/utils/interfaces.ts#L116)
 
 ___
 
@@ -172,7 +172,7 @@ A large wide image such as a screenshot or artwork of the game, if any.
 
 #### Defined in
 
-[lib/utils/interfaces.ts:118](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/utils/interfaces.ts#L118)
+[lib/utils/interfaces.ts:118](https://github.com/lmmfranco/nintendo-switch-eshop/blob/45a9477/src/lib/utils/interfaces.ts#L118)
 
 ___
 
@@ -184,7 +184,7 @@ A list of methods through which the game can be acquired, such as retail or digi
 
 #### Defined in
 
-[lib/utils/interfaces.ts:120](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/utils/interfaces.ts#L120)
+[lib/utils/interfaces.ts:120](https://github.com/lmmfranco/nintendo-switch-eshop/blob/45a9477/src/lib/utils/interfaces.ts#L120)
 
 ___
 
@@ -196,7 +196,7 @@ A Unix timestamp in **milliseconds** indicating when the information on this gam
 
 #### Defined in
 
-[lib/utils/interfaces.ts:122](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/utils/interfaces.ts#L122)
+[lib/utils/interfaces.ts:122](https://github.com/lmmfranco/nintendo-switch-eshop/blob/45a9477/src/lib/utils/interfaces.ts#L122)
 
 ___
 
@@ -208,7 +208,7 @@ The lowest price at which this game was ever sold
 
 #### Defined in
 
-[lib/utils/interfaces.ts:124](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/utils/interfaces.ts#L124)
+[lib/utils/interfaces.ts:124](https://github.com/lmmfranco/nintendo-switch-eshop/blob/45a9477/src/lib/utils/interfaces.ts#L124)
 
 ___
 
@@ -220,7 +220,7 @@ The [manufacturer's suggested retail price](https://en.wikipedia.org/wiki/List_p
 
 #### Defined in
 
-[lib/utils/interfaces.ts:126](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/utils/interfaces.ts#L126)
+[lib/utils/interfaces.ts:126](https://github.com/lmmfranco/nintendo-switch-eshop/blob/45a9477/src/lib/utils/interfaces.ts#L126)
 
 ___
 
@@ -232,7 +232,7 @@ The unique ID for this game.
 
 #### Defined in
 
-[lib/utils/interfaces.ts:128](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/utils/interfaces.ts#L128)
+[lib/utils/interfaces.ts:128](https://github.com/lmmfranco/nintendo-switch-eshop/blob/45a9477/src/lib/utils/interfaces.ts#L128)
 
 ___
 
@@ -244,7 +244,7 @@ The amount of players that can simultaneously play this game
 
 #### Defined in
 
-[lib/utils/interfaces.ts:130](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/utils/interfaces.ts#L130)
+[lib/utils/interfaces.ts:130](https://github.com/lmmfranco/nintendo-switch-eshop/blob/45a9477/src/lib/utils/interfaces.ts#L130)
 
 ___
 
@@ -256,7 +256,7 @@ A unique [GUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) tha
 
 #### Defined in
 
-[lib/utils/interfaces.ts:132](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/utils/interfaces.ts#L132)
+[lib/utils/interfaces.ts:132](https://github.com/lmmfranco/nintendo-switch-eshop/blob/45a9477/src/lib/utils/interfaces.ts#L132)
 
 ___
 
@@ -268,7 +268,7 @@ The platform this game released on
 
 #### Defined in
 
-[lib/utils/interfaces.ts:134](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/utils/interfaces.ts#L134)
+[lib/utils/interfaces.ts:134](https://github.com/lmmfranco/nintendo-switch-eshop/blob/45a9477/src/lib/utils/interfaces.ts#L134)
 
 ___
 
@@ -280,7 +280,7 @@ A list of player filters that could potentially be searched on [nintendo.com](ht
 
 #### Defined in
 
-[lib/utils/interfaces.ts:136](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/utils/interfaces.ts#L136)
+[lib/utils/interfaces.ts:136](https://github.com/lmmfranco/nintendo-switch-eshop/blob/45a9477/src/lib/utils/interfaces.ts#L136)
 
 ___
 
@@ -292,7 +292,7 @@ A category price range that this game falls under. Can be used on [nintendo.com]
 
 #### Defined in
 
-[lib/utils/interfaces.ts:138](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/utils/interfaces.ts#L138)
+[lib/utils/interfaces.ts:138](https://github.com/lmmfranco/nintendo-switch-eshop/blob/45a9477/src/lib/utils/interfaces.ts#L138)
 
 ___
 
@@ -304,7 +304,7 @@ A list of companies that published this game
 
 #### Defined in
 
-[lib/utils/interfaces.ts:140](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/utils/interfaces.ts#L140)
+[lib/utils/interfaces.ts:140](https://github.com/lmmfranco/nintendo-switch-eshop/blob/45a9477/src/lib/utils/interfaces.ts#L140)
 
 ___
 
@@ -318,7 +318,7 @@ A display of the release of this game. Can be either an ISO timestamp or some ot
 
 #### Defined in
 
-[lib/utils/interfaces.ts:145](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/utils/interfaces.ts#L145)
+[lib/utils/interfaces.ts:145](https://github.com/lmmfranco/nintendo-switch-eshop/blob/45a9477/src/lib/utils/interfaces.ts#L145)
 
 ___
 
@@ -330,7 +330,7 @@ The price of this game if and when it is on sale
 
 #### Defined in
 
-[lib/utils/interfaces.ts:147](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/utils/interfaces.ts#L147)
+[lib/utils/interfaces.ts:147](https://github.com/lmmfranco/nintendo-switch-eshop/blob/45a9477/src/lib/utils/interfaces.ts#L147)
 
 ___
 
@@ -342,7 +342,7 @@ A unique [slug](https://en.wikipedia.org/wiki/Clean_URL#Slug) for this game
 
 #### Defined in
 
-[lib/utils/interfaces.ts:149](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/utils/interfaces.ts#L149)
+[lib/utils/interfaces.ts:149](https://github.com/lmmfranco/nintendo-switch-eshop/blob/45a9477/src/lib/utils/interfaces.ts#L149)
 
 ___
 
@@ -354,7 +354,7 @@ The title of this game
 
 #### Defined in
 
-[lib/utils/interfaces.ts:151](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/utils/interfaces.ts#L151)
+[lib/utils/interfaces.ts:151](https://github.com/lmmfranco/nintendo-switch-eshop/blob/45a9477/src/lib/utils/interfaces.ts#L151)
 
 ___
 
@@ -366,4 +366,4 @@ A unique to the information about this game. Prefix it with `https://www.nintend
 
 #### Defined in
 
-[lib/utils/interfaces.ts:153](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/utils/interfaces.ts#L153)
+[lib/utils/interfaces.ts:153](https://github.com/lmmfranco/nintendo-switch-eshop/blob/45a9477/src/lib/utils/interfaces.ts#L153)
