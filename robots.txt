@@ -1,0 +1,4 @@
+# https://www.robotstxt.org/robotstxt.html
+Sitemap: https://lmmfranco.github.io/nintendo-switch-eshop/sitemap.xml
+User-agent: *
+Disallow:
