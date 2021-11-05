@@ -1,8 +1,8 @@
 <div align="center">
 
-<a href="https://www.npmjs.com/package/nintendo-switch-eshop"><img src="https://cdn.favware.tech/img/nintendoeshop.png" height="100" alt="logo"/></a>
+# ***WARNING: AFTER YEARS OF DILIGENT MAINTENANCE, OWNERSHIP OF THIS PACKAGE HAS OFFICIALLY BEEN TRANSFERRED TO [Favna](https://github.com/favna). THE LATEST VERSION OF THE PACKAGES' SOURCE CODE CAN BE FOUND AT [his fork](https://github.com/favna/nintendo-switch-eshop)***
 
-# nintendo-switch-eshop
+## nintendo-switch-eshop
 
 **A Node.JS lib written to extract Nintendo Switch's eShop game and pricing information**
 
