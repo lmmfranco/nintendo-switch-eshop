@@ -12,7 +12,7 @@ const config = {
   url: 'https://lmmfranco.github.io',
   baseUrl: '/nintendo-switch-eshop/',
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'throw',
+  onBrokenMarkdownLinks: 'warn',
   onDuplicateRoutes: 'throw',
   favicon: 'img/favicon.ico',
   tagline: Description,

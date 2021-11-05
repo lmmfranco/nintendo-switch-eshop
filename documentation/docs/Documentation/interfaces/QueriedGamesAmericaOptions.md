@@ -24,7 +24,7 @@ The amount of hits to be received per page
 
 #### Defined in
 
-[lib/utils/interfaces.ts:64](https://github.com/lmmfranco/nintendo-switch-eshop/blob/ea8f3cb/src/lib/utils/interfaces.ts#L64)
+[lib/utils/interfaces.ts:64](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/utils/interfaces.ts#L64)
 
 ___
 
@@ -40,4 +40,4 @@ The page number to get
 
 #### Defined in
 
-[lib/utils/interfaces.ts:70](https://github.com/lmmfranco/nintendo-switch-eshop/blob/ea8f3cb/src/lib/utils/interfaces.ts#L70)
+[lib/utils/interfaces.ts:70](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/utils/interfaces.ts#L70)

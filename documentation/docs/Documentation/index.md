@@ -46,7 +46,7 @@ URL for getting EU Games
 
 #### Defined in
 
-[lib/utils/constants.ts:48](https://github.com/lmmfranco/nintendo-switch-eshop/blob/ea8f3cb/src/lib/utils/constants.ts#L48)
+[lib/utils/constants.ts:48](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/utils/constants.ts#L48)
 
 ___
 
@@ -58,7 +58,7 @@ URL for getting JP Games
 
 #### Defined in
 
-[lib/utils/constants.ts:75](https://github.com/lmmfranco/nintendo-switch-eshop/blob/ea8f3cb/src/lib/utils/constants.ts#L75)
+[lib/utils/constants.ts:75](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/utils/constants.ts#L75)
 
 ___
 
@@ -70,7 +70,7 @@ URL for getting game prices
 
 #### Defined in
 
-[lib/utils/constants.ts:96](https://github.com/lmmfranco/nintendo-switch-eshop/blob/ea8f3cb/src/lib/utils/constants.ts#L96)
+[lib/utils/constants.ts:96](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/utils/constants.ts#L96)
 
 ___
 
@@ -82,7 +82,7 @@ Algolia key for getting US games with a query
 
 #### Defined in
 
-[lib/utils/constants.ts:8](https://github.com/lmmfranco/nintendo-switch-eshop/blob/ea8f3cb/src/lib/utils/constants.ts#L8)
+[lib/utils/constants.ts:8](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/utils/constants.ts#L8)
 
 ___
 
@@ -94,7 +94,7 @@ URL for getting Queried US Games
 
 #### Defined in
 
-[lib/utils/constants.ts:14](https://github.com/lmmfranco/nintendo-switch-eshop/blob/ea8f3cb/src/lib/utils/constants.ts#L14)
+[lib/utils/constants.ts:14](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/utils/constants.ts#L14)
 
 ___
 
@@ -114,7 +114,7 @@ ___
 
 #### Defined in
 
-[lib/utils/constants.ts:29](https://github.com/lmmfranco/nintendo-switch-eshop/blob/ea8f3cb/src/lib/utils/constants.ts#L29)
+[lib/utils/constants.ts:29](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/utils/constants.ts#L29)
 
 ___
 
@@ -126,7 +126,7 @@ Algolia ID for getting US games
 
 #### Defined in
 
-[lib/utils/constants.ts:2](https://github.com/lmmfranco/nintendo-switch-eshop/blob/ea8f3cb/src/lib/utils/constants.ts#L2)
+[lib/utils/constants.ts:2](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/utils/constants.ts#L2)
 
 ___
 
@@ -138,7 +138,7 @@ Algolia Key for getting US games
 
 #### Defined in
 
-[lib/utils/constants.ts:5](https://github.com/lmmfranco/nintendo-switch-eshop/blob/ea8f3cb/src/lib/utils/constants.ts#L5)
+[lib/utils/constants.ts:5](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/utils/constants.ts#L5)
 
 ___
 
@@ -150,7 +150,7 @@ URL for getting US Games
 
 #### Defined in
 
-[lib/utils/constants.ts:11](https://github.com/lmmfranco/nintendo-switch-eshop/blob/ea8f3cb/src/lib/utils/constants.ts#L11)
+[lib/utils/constants.ts:11](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/utils/constants.ts#L11)
 
 ## Functions
 
@@ -171,7 +171,7 @@ Promise containing all the games
 
 #### Defined in
 
-[lib/getGames/getGamesAmerica.ts:15](https://github.com/lmmfranco/nintendo-switch-eshop/blob/ea8f3cb/src/lib/getGames/getGamesAmerica.ts#L15)
+[lib/getGames/getGamesAmerica.ts:15](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/getGames/getGamesAmerica.ts#L15)
 
 ___
 
@@ -192,7 +192,7 @@ A list of shop objects with country code, name and default currency.
 
 #### Defined in
 
-[lib/getShops/getActiveShops.ts:14](https://github.com/lmmfranco/nintendo-switch-eshop/blob/ea8f3cb/src/lib/getShops/getActiveShops.ts#L14)
+[lib/getShops/getActiveShops.ts:14](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/getShops/getActiveShops.ts#L14)
 
 ___
 
@@ -219,7 +219,7 @@ Promise containing all requested EU/PAL games
 
 #### Defined in
 
-[lib/getGames/getGamesEurope.ts:16](https://github.com/lmmfranco/nintendo-switch-eshop/blob/ea8f3cb/src/lib/getGames/getGamesEurope.ts#L16)
+[lib/getGames/getGamesEurope.ts:16](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/getGames/getGamesEurope.ts#L16)
 
 ___
 
@@ -237,7 +237,7 @@ Promise containing all the games
 
 #### Defined in
 
-[lib/getGames/getGamesJapan.ts:12](https://github.com/lmmfranco/nintendo-switch-eshop/blob/ea8f3cb/src/lib/getGames/getGamesJapan.ts#L12)
+[lib/getGames/getGamesJapan.ts:12](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/getGames/getGamesJapan.ts#L12)
 
 ___
 
@@ -264,7 +264,7 @@ A promise containing the pricing information.
 
 #### Defined in
 
-[lib/other/getPrices.ts:16](https://github.com/lmmfranco/nintendo-switch-eshop/blob/ea8f3cb/src/lib/other/getPrices.ts#L16)
+[lib/other/getPrices.ts:16](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/other/getPrices.ts#L16)
 
 ___
 
@@ -293,7 +293,7 @@ Promise containing the first `hitsPerPage` games that match your query
 
 #### Defined in
 
-[lib/getGames/getQueriedGamesAmerica.ts:15](https://github.com/lmmfranco/nintendo-switch-eshop/blob/ea8f3cb/src/lib/getGames/getQueriedGamesAmerica.ts#L15)
+[lib/getGames/getQueriedGamesAmerica.ts:15](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/getGames/getQueriedGamesAmerica.ts#L15)
 
 ___
 
@@ -314,7 +314,7 @@ A list of shop objects with country code, name and default currency.
 
 #### Defined in
 
-[lib/getShops/getShopsAmerica.ts:14](https://github.com/lmmfranco/nintendo-switch-eshop/blob/ea8f3cb/src/lib/getShops/getShopsAmerica.ts#L14)
+[lib/getShops/getShopsAmerica.ts:14](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/getShops/getShopsAmerica.ts#L14)
 
 ___
 
@@ -335,7 +335,7 @@ A list of shop objects with country code, name and default currency.
 
 #### Defined in
 
-[lib/getShops/getShopsAsia.ts:14](https://github.com/lmmfranco/nintendo-switch-eshop/blob/ea8f3cb/src/lib/getShops/getShopsAsia.ts#L14)
+[lib/getShops/getShopsAsia.ts:14](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/getShops/getShopsAsia.ts#L14)
 
 ___
 
@@ -361,7 +361,7 @@ A list of shop objects with country code, name and default currency.
 
 #### Defined in
 
-[lib/other/getShopByCountryCode.ts:14](https://github.com/lmmfranco/nintendo-switch-eshop/blob/ea8f3cb/src/lib/other/getShopByCountryCode.ts#L14)
+[lib/other/getShopByCountryCode.ts:14](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/other/getShopByCountryCode.ts#L14)
 
 ___
 
@@ -382,7 +382,7 @@ A list of shop objects with country code, name and default currency.
 
 #### Defined in
 
-[lib/getShops/getShopsEurope.ts:14](https://github.com/lmmfranco/nintendo-switch-eshop/blob/ea8f3cb/src/lib/getShops/getShopsEurope.ts#L14)
+[lib/getShops/getShopsEurope.ts:14](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/getShops/getShopsEurope.ts#L14)
 
 ___
 
@@ -407,7 +407,7 @@ The 4-digit resulting game code
 
 #### Defined in
 
-[lib/other/parseGameCode.ts:11](https://github.com/lmmfranco/nintendo-switch-eshop/blob/ea8f3cb/src/lib/other/parseGameCode.ts#L11)
+[lib/other/parseGameCode.ts:11](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/other/parseGameCode.ts#L11)
 
 ___
 
@@ -432,4 +432,4 @@ The 14-digits NSUID
 
 #### Defined in
 
-[lib/other/parseNSUID.ts:11](https://github.com/lmmfranco/nintendo-switch-eshop/blob/ea8f3cb/src/lib/other/parseNSUID.ts#L11)
+[lib/other/parseNSUID.ts:11](https://github.com/lmmfranco/nintendo-switch-eshop/blob/4384436/src/lib/other/parseNSUID.ts#L11)
