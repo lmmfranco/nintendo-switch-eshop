@@ -141,7 +141,7 @@ const config = {
         title: 'Nintendo Switch EShop',
         logo: {
           alt: 'Nintendo Switch EShop Logo',
-          src: '../img/nintendoeshop.png'
+          src: 'img/nintendoeshop.png'
         },
         items: [
           {

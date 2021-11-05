@@ -29,7 +29,7 @@ RequestOptions.limit
 
 #### Defined in
 
-[lib/utils/interfaces.ts:335](https://github.com/lmmfranco/nintendo-switch-eshop/blob/45a9477/src/lib/utils/interfaces.ts#L335)
+[lib/utils/interfaces.ts:335](https://github.com/lmmfranco/nintendo-switch-eshop/blob/a444be3/src/lib/utils/interfaces.ts#L335)
 
 ___
 
@@ -41,4 +41,4 @@ Game information locale. (EU Only)
 
 #### Defined in
 
-[lib/utils/interfaces.ts:340](https://github.com/lmmfranco/nintendo-switch-eshop/blob/45a9477/src/lib/utils/interfaces.ts#L340)
+[lib/utils/interfaces.ts:340](https://github.com/lmmfranco/nintendo-switch-eshop/blob/a444be3/src/lib/utils/interfaces.ts#L340)

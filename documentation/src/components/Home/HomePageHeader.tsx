@@ -11,7 +11,7 @@ const HomePageHeader: FC = () => {
     <>
       <header className={clsx('hero', styles.heroBanner)}>
         <div className="container">
-          <img src="/img/nintendoeshop.png" alt="Nintendo Switch EShop API Logo" className={styles.logo}></img>
+          <img src={`${siteConfig.baseUrl}img/nintendoeshop.png`} alt="Nintendo Switch EShop API Logo" className={styles.logo}></img>
           <h1 className="hero__title">{siteConfig.title}</h1>
           <InstallTabs />
         </div>

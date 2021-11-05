@@ -14,7 +14,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[lib/utils/interfaces.ts:293](https://github.com/lmmfranco/nintendo-switch-eshop/blob/45a9477/src/lib/utils/interfaces.ts#L293)
+[lib/utils/interfaces.ts:293](https://github.com/lmmfranco/nintendo-switch-eshop/blob/a444be3/src/lib/utils/interfaces.ts#L293)
 
 ___
 
@@ -24,7 +24,7 @@ ___
 
 #### Defined in
 
-[lib/utils/interfaces.ts:294](https://github.com/lmmfranco/nintendo-switch-eshop/blob/45a9477/src/lib/utils/interfaces.ts#L294)
+[lib/utils/interfaces.ts:294](https://github.com/lmmfranco/nintendo-switch-eshop/blob/a444be3/src/lib/utils/interfaces.ts#L294)
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 #### Defined in
 
-[lib/utils/interfaces.ts:295](https://github.com/lmmfranco/nintendo-switch-eshop/blob/45a9477/src/lib/utils/interfaces.ts#L295)
+[lib/utils/interfaces.ts:295](https://github.com/lmmfranco/nintendo-switch-eshop/blob/a444be3/src/lib/utils/interfaces.ts#L295)
 
 ___
 
@@ -44,4 +44,4 @@ ___
 
 #### Defined in
 
-[lib/utils/interfaces.ts:296](https://github.com/lmmfranco/nintendo-switch-eshop/blob/45a9477/src/lib/utils/interfaces.ts#L296)
+[lib/utils/interfaces.ts:296](https://github.com/lmmfranco/nintendo-switch-eshop/blob/a444be3/src/lib/utils/interfaces.ts#L296)

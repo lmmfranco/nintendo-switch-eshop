@@ -16,7 +16,7 @@ Whether the amount of hits is exhaustive or not
 
 #### Defined in
 
-[lib/utils/interfaces.ts:85](https://github.com/lmmfranco/nintendo-switch-eshop/blob/45a9477/src/lib/utils/interfaces.ts#L85)
+[lib/utils/interfaces.ts:85](https://github.com/lmmfranco/nintendo-switch-eshop/blob/a444be3/src/lib/utils/interfaces.ts#L85)
 
 ___
 
@@ -28,7 +28,7 @@ The hits for this query
 
 #### Defined in
 
-[lib/utils/interfaces.ts:75](https://github.com/lmmfranco/nintendo-switch-eshop/blob/45a9477/src/lib/utils/interfaces.ts#L75)
+[lib/utils/interfaces.ts:75](https://github.com/lmmfranco/nintendo-switch-eshop/blob/a444be3/src/lib/utils/interfaces.ts#L75)
 
 ___
 
@@ -40,7 +40,7 @@ The amount of hits per page
 
 #### Defined in
 
-[lib/utils/interfaces.ts:83](https://github.com/lmmfranco/nintendo-switch-eshop/blob/45a9477/src/lib/utils/interfaces.ts#L83)
+[lib/utils/interfaces.ts:83](https://github.com/lmmfranco/nintendo-switch-eshop/blob/a444be3/src/lib/utils/interfaces.ts#L83)
 
 ___
 
@@ -52,7 +52,7 @@ The amount of hits
 
 #### Defined in
 
-[lib/utils/interfaces.ts:77](https://github.com/lmmfranco/nintendo-switch-eshop/blob/45a9477/src/lib/utils/interfaces.ts#L77)
+[lib/utils/interfaces.ts:77](https://github.com/lmmfranco/nintendo-switch-eshop/blob/a444be3/src/lib/utils/interfaces.ts#L77)
 
 ___
 
@@ -64,7 +64,7 @@ The amount of pages available
 
 #### Defined in
 
-[lib/utils/interfaces.ts:81](https://github.com/lmmfranco/nintendo-switch-eshop/blob/45a9477/src/lib/utils/interfaces.ts#L81)
+[lib/utils/interfaces.ts:81](https://github.com/lmmfranco/nintendo-switch-eshop/blob/a444be3/src/lib/utils/interfaces.ts#L81)
 
 ___
 
@@ -76,7 +76,7 @@ The page that the result is on
 
 #### Defined in
 
-[lib/utils/interfaces.ts:79](https://github.com/lmmfranco/nintendo-switch-eshop/blob/45a9477/src/lib/utils/interfaces.ts#L79)
+[lib/utils/interfaces.ts:79](https://github.com/lmmfranco/nintendo-switch-eshop/blob/a444be3/src/lib/utils/interfaces.ts#L79)
 
 ___
 
@@ -88,7 +88,7 @@ The params that were used
 
 #### Defined in
 
-[lib/utils/interfaces.ts:89](https://github.com/lmmfranco/nintendo-switch-eshop/blob/45a9477/src/lib/utils/interfaces.ts#L89)
+[lib/utils/interfaces.ts:89](https://github.com/lmmfranco/nintendo-switch-eshop/blob/a444be3/src/lib/utils/interfaces.ts#L89)
 
 ___
 
@@ -100,7 +100,7 @@ The amount of time it took the [nintendo.com](https://www.nintendo.com) API to p
 
 #### Defined in
 
-[lib/utils/interfaces.ts:91](https://github.com/lmmfranco/nintendo-switch-eshop/blob/45a9477/src/lib/utils/interfaces.ts#L91)
+[lib/utils/interfaces.ts:91](https://github.com/lmmfranco/nintendo-switch-eshop/blob/a444be3/src/lib/utils/interfaces.ts#L91)
 
 ___
 
@@ -112,4 +112,4 @@ The query that was used
 
 #### Defined in
 
-[lib/utils/interfaces.ts:87](https://github.com/lmmfranco/nintendo-switch-eshop/blob/45a9477/src/lib/utils/interfaces.ts#L87)
+[lib/utils/interfaces.ts:87](https://github.com/lmmfranco/nintendo-switch-eshop/blob/a444be3/src/lib/utils/interfaces.ts#L87)

@@ -34,4 +34,4 @@ Error.constructor
 
 #### Defined in
 
-[lib/utils/utils.ts:24](https://github.com/lmmfranco/nintendo-switch-eshop/blob/45a9477/src/lib/utils/utils.ts#L24)
+[lib/utils/utils.ts:24](https://github.com/lmmfranco/nintendo-switch-eshop/blob/a444be3/src/lib/utils/utils.ts#L24)
